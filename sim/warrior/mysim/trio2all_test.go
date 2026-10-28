@@ -23,11 +23,14 @@ func malyceBuild(file string) *proto.Player {
 
 type t2 struct{ name, skarr, wy, lock string; aoe bool }
 
-func runT2(c t2, sc string) []*proto.UnitMetrics {
+func runT2(c t2, sc string) []*proto.UnitMetrics { return runT2Tal(c, sc, "") }
+
+func runT2Tal(c t2, sc, lockTal string) []*proto.UnitMetrics {
 	sk := warrior(wb{"s", c.skarr, true})
 	w := wyther(c.wy, "50%", true)
 	m := malyceBuild(c.lock)
 	if c.aoe { m.Rotation = core.APLRotationFromJsonString(lockAoE) }
+	if lockTal != "" { m.TalentsString = lockTal }
 	players := []*proto.Player{w, sk}
 	if sc != "stress boss 90s" { players = append(players, m) }
 	r := &proto.Raid{Parties: []*proto.Party{{Players: players, Buffs: &proto.PartyBuffs{BloodPact: true}}}, Buffs: &proto.RaidBuffs{}, Debuffs: &proto.Debuffs{},
