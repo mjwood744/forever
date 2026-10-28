@@ -67,6 +67,11 @@ type HunterPet struct {
 	abilities []*core.Spell
 	closers   []*core.Spell
 
+	// Cast only while the pet is tanking (an enemy's target is the pet): Growl on cooldown, and the
+	// turtle's Shell Shield when its health runs low. Nil where the pet has no such spell.
+	growl       *core.Spell
+	shellShield *core.Spell
+
 	uptimePercent float64
 }
 
@@ -168,8 +173,16 @@ func (hp *HunterPet) registerStatInheritance() {
 func (hp *HunterPet) ApplyTalents() {
 	opts := hp.hunterOwner.Options
 	// The family's armor share is stated on armor from items, which a pet has none of: its armor is
-	// its owner's, inherited, and the second effect is left out.
-	spelldata.ParseStatic(&hp.Character, hp.family.Passive.Highest(), spelldata.SkipEffects(2))
+	// its owner's, inherited, and the second effect is left out of the parse.
+	passive := hp.family.Passive.Highest()
+	spelldata.ParseStatic(&hp.Character, passive, spelldata.SkipEffects(2))
+	// ASSUMPTION: the server applies the second effect (A_MOD_BASE_RESISTANCE_PCT, armor) to the pet's
+	// base armor, as Classic's creature stat code does, and the base armor is the pet's own creature
+	// armor (petBaseStats), not the share it inherits from its owner. Turtle +13%, Boar +9%, Crocilisk
+	// +10%, Bear and Wolf +5% of 3566 at level 60. Not yet read on a pet sheet in game.
+	if armorPct := passive.Effect(dbcenums.A_MOD_BASE_RESISTANCE_PCT, 1); armorPct != spelldata.NilEffect {
+		hp.AddStat(stats.Armor, petBaseStats[stats.Armor]*armorPct.Percent())
+	}
 	spelldata.ParseStatic(&hp.Character, spellData.PetAggression.Rank(opts.PetAggression))
 
 	// An attack speed acts through a Simulation, which a static passive has none of, so these two
@@ -205,6 +218,9 @@ func (hp *HunterPet) Initialize() {
 	for _, ladder := range hp.family.Abilities {
 		hp.registerAbility(ladder.Highest())
 	}
+	// Every family learns Growl, so the family table does not list it.
+	hp.growl = hp.registerGrowl(spellData.GrowlTriggered.Highest())
+	hp.registerDeath()
 	slices.SortStableFunc(hp.abilities, func(a, b *core.Spell) int {
 		return cmp.Compare(max(b.CD.Duration, b.SharedCD.Duration), max(a.CD.Duration, a.SharedCD.Duration))
 	})
@@ -237,6 +253,22 @@ func (hp *HunterPet) ExecuteCustomRotation(sim *core.Simulation) {
 		return
 	}
 
+	if hp.Metrics.IsTanking() {
+		// Shell Shield costs a GCD; Growl is off it, so the pet goes on to its other abilities.
+		// ASSUMPTION: the autocast fires Shell Shield below half health. Not read in game.
+		if hp.shellShield != nil && hp.CurrentHealthPercent() < 0.5 && hp.shellShield.CanCast(sim, hp.CurrentTarget) {
+			hp.shellShield.Cast(sim, hp.CurrentTarget)
+			return
+		}
+		if hp.growl != nil && hp.growl.IsReady(sim) {
+			if !hp.growl.CanCast(sim, target) {
+				// Short of focus: a tanking pet saves it for Growl rather than spending it on a filler.
+				return
+			}
+			hp.growl.Cast(sim, target)
+		}
+	}
+
 	for _, spell := range hp.abilities {
 		if spell.CanCast(sim, target) {
 			spell.Cast(sim, target)
@@ -250,8 +282,8 @@ func (hp *HunterPet) ExecuteCustomRotation(sim *core.Simulation) {
 }
 
 // An ability by the client's name of its row, so the generated family table needs no hand list
-// beside it. A name not here is one the sim has nothing to measure - Cower, Growl, Prowl, Shell
-// Shield - and stays unregistered.
+// beside it. A name not here is one the sim has nothing to measure - Cower, Prowl - and stays
+// unregistered. Growl, which every family learns, is registered by Initialize.
 func (hp *HunterPet) registerAbility(rank *spelldata.Spell) {
 	var spell *core.Spell
 	switch rank.Name {
@@ -269,6 +301,9 @@ func (hp *HunterPet) registerAbility(rank *spelldata.Spell) {
 		spell = hp.registerFuriousHowl(rank)
 	case "Trickster's Dance":
 		spell = hp.registerSelfBuff(rank)
+	case "Shell Shield":
+		hp.shellShield = hp.registerSelfBuff(rank)
+		return
 	case "Charge":
 		hp.closers = append(hp.closers, hp.registerCharge(rank))
 		return
@@ -488,4 +523,36 @@ func (hp *HunterPet) registerCharge(rank *spelldata.Spell) *core.Spell {
 		hp.MoveTo(core.MaxMeleeRange-1, sim)
 	}
 	return hp.RegisterSpell(config)
+}
+
+// Growl: the row's E_THREAT is flat threat on the target (415 at level 60, "taunt" in name only - it
+// has no attack-me effect in the game files), on a 5 s category cooldown for 15 focus, rolled as a
+// magic hit. No damage, so its threat is the flat amount times the pet's threat multiplier.
+func (hp *HunterPet) registerGrowl(rank *spelldata.Spell) *core.Spell {
+	if rank == spelldata.Nil {
+		return nil
+	}
+	config := hp.spellConfig(rank)
+	config.ProcMask = core.ProcMaskEmpty
+	config.ThreatMultiplier = 1
+	config.Cast.DefaultCast.NonEmpty = true
+	config.ApplyEffects = func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
+		spell.CalcAndDealOutcome(sim, target, hitOutcome(spell, rank))
+	}
+	return hp.RegisterSpell(config)
+}
+
+// A pet that dies leaves the fight for the rest of the iteration (Revive Pet is not modelled), and
+// every enemy it was tanking turns on its owner.
+func (hp *HunterPet) registerDeath() {
+	hp.RegisterDeathEffect(func(sim *core.Simulation) {
+		for _, enemy := range sim.Encounter.ActiveTargetUnits {
+			if enemy.CurrentTarget == &hp.Unit {
+				enemy.CurrentTarget = &hp.hunterOwner.Unit
+			}
+		}
+		if hp.IsEnabled() {
+			hp.Disable(sim)
+		}
+	})
 }

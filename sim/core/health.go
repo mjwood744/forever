@@ -126,7 +126,9 @@ func (character *Character) trackChanceOfDeath(healingModel *proto.HealingModel)
 		OnSpellHitTaken: func(aura *Aura, sim *Simulation, spell *Spell, result *SpellResult) {
 			if result.Damage > 0 {
 				aura.Unit.RemoveHealth(sim, result.Damage)
-				if aura.Unit.Rotation != nil {
+				// A pet's rotation does not react to the damage it takes, so a hit on a dismissed pet
+				// cannot wake its rotation.
+				if aura.Unit.Rotation != nil && aura.Unit.Type != PetUnit {
 					aura.Unit.ReactToEvent(sim, false, true)
 				}
 
@@ -187,6 +189,15 @@ func (character *Character) Died(sim *Simulation) {
 	if sim.Log != nil {
 		character.Log(sim, "Dead")
 	}
+	for _, effect := range character.deathEffects {
+		effect(sim)
+	}
+}
+
+// Runs effect when the character dies. A player keeps acting after death, as it always has in the
+// sim (death is only counted); a pet registers what its death does, such as leaving the fight.
+func (character *Character) RegisterDeathEffect(effect func(sim *Simulation)) {
+	character.deathEffects = append(character.deathEffects, effect)
 }
 
 func (character *Character) applyHealingModel(healingModel *proto.HealingModel) {

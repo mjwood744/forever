@@ -345,6 +345,9 @@ func (raid *Raid) applyCharacterEffects(raidConfig *proto.Raid) *proto.RaidStats
 
 			for _, pet := range char.Pets {
 				pet.EnableHealthBar()
+				// A pet loses health to the damage it takes and can die, as a player does, so a pet in a
+				// tank slot reports its chance of death. Pets have no healing model.
+				pet.trackChanceOfDeath(nil)
 			}
 		}
 

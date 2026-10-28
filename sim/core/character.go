@@ -87,6 +87,9 @@ type Character struct {
 
 	// Used for manually modifying a rotation before it's constructed
 	rotationTransformations []RotationTransformation
+
+	// Run once when the character dies (see Died); a pet uses it to drop out of the fight.
+	deathEffects []func(sim *Simulation)
 }
 
 func NewCharacter(party *Party, partyIndex int, player *proto.Player) Character {
