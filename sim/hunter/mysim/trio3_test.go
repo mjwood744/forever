@@ -296,3 +296,100 @@ func TestT3Wyldd(t *testing.T) {
 		}
 	}
 }
+
+// Level 30: each with 21 points from its level order (level-60 spells and gear), then one swap at a time.
+func TestT3L30(t *testing.T) {
+	H1, W1, S1 := "3520001523", "--50500151031", "-320303202015"
+	cs := []struct{ n, h, w, s string }{
+		{"Snapshot (all three from level orders)", H1, W1, S1},
+		{"Hawke: Intimidation instead of Improved Mend Pet 2 + Ferocity 1", "3520001504001", W1, S1},
+		{"Wyldd: Balance 21 (damage-first)", H1, "5532220101", S1},
+		{"Shryke: Assassination 21 instead of Combat", H1, W1, "01532310501"},
+	}
+	for _, sc := range []string{"4 mobs 45s", "trio boss 32k", "stress boss 90s"} {
+		for _, c := range cs {
+			if sc == "stress boss 90s" && strings.HasPrefix(c.n, "Shryke") {
+				continue
+			}
+			h := hk{"", c.h, proto.HunterOptions_Turtle, 10, 10, 5, 0, "80", ""}
+			x := t3{c.n, hawkeTank(h), wyldd(c.w, "50%"), shrykeFeint(c.s, "p1_bscombat", true)}
+			pr3("L30", sc, x, runT3(x, sc, 1000))
+		}
+	}
+}
+
+// Level 60 red team: one swap at a time against the locked builds.
+func TestT3Red(t *testing.T) {
+	H, W, S := bmTank, wylddResto, rogueBuilds[3].tal
+	cs := []struct{ n, h, w, s string }{
+		{"Locked", H, W, S},
+		{"Hawke: Improved Mend Pet 2 -> Efficiency 2", "5520001505121251-00532501", W, S},
+		{"Hawke: Intimidation + Spirit Bond 2 -> Lethal Shots... (preset BM pet talents)", bmTalents, W, S},
+		{"Wyldd: Improved Wrath 5 -> Tranquil Spirit 5", H, "05322201--5050035153113031", S},
+		{"Wyldd: Nature's Reach 2 + Splendor 1 -> Improved Regrowth +2, Subtlety 1", H, "55322200--5051035103113051", S},
+		{"Shryke: Opportunity 2 -> Lethality +2", H, W, "00532310301-32030320201515231"},
+		{"Shryke: Hack and Slash 5 -> Lightning Reflexes 5", H, W, "00532310101-32530320201510231-002"},
+	}
+	for _, sc := range t3scens {
+		for _, c := range cs {
+			if sc == "stress boss 90s" && strings.HasPrefix(c.n, "Shryke") {
+				continue
+			}
+			h := hk{"", c.h, proto.HunterOptions_Turtle, 10, 10, 5, 0, "80", ""}
+			x := t3{c.n, hawkeTank(h), wyldd(c.w, "50%"), shrykeFeint(c.s, "p1_bscombat", true)}
+			pr3("RED", sc, x, runT3(x, sc, 1000))
+		}
+	}
+}
+
+type bonus3 struct {
+	n string
+	s proto.Stat
+	a float64
+}
+
+// Stat values: extra of one stat on one of the three, measured against the locked trio.
+func TestT3Weights(t *testing.T) {
+	st := func(n string, s proto.Stat, a float64) bonus3 { return bonus3{n, s, a} }
+	base := st("base", proto.Stat_StatStrength, 0)
+	sets := map[int][]bonus3{
+		0: {base, st("Agility", proto.Stat_StatAgility, 40), st("Stamina", proto.Stat_StatStamina, 40), st("Intellect", proto.Stat_StatIntellect, 40),
+			st("Ranged attack power", proto.Stat_StatRangedAttackPower, 80), st("Hit rating", proto.Stat_StatHitRating, 40), st("Crit rating", proto.Stat_StatCritRating, 40),
+			st("Haste rating", proto.Stat_StatHasteRating, 40), st("Armor", proto.Stat_StatArmor, 400), st("MP5", proto.Stat_StatMP5, 10)},
+		1: {base, st("Intellect", proto.Stat_StatIntellect, 40), st("Spirit", proto.Stat_StatSpirit, 40), st("MP5", proto.Stat_StatMP5, 10),
+			st("Spell damage", proto.Stat_StatSpellDamage, 40), st("Healing power", proto.Stat_StatHealingPower, 40), st("Crit rating", proto.Stat_StatCritRating, 40),
+			st("Haste rating", proto.Stat_StatHasteRating, 40)},
+		2: {base, st("Strength", proto.Stat_StatStrength, 40), st("Agility", proto.Stat_StatAgility, 40), st("Attack power", proto.Stat_StatAttackPower, 80),
+			st("Hit rating", proto.Stat_StatHitRating, 40), st("Crit rating", proto.Stat_StatCritRating, 40), st("Haste rating", proto.Stat_StatHasteRating, 40),
+			st("Expertise rating", proto.Stat_StatExpertiseRating, 40)},
+	}
+	names := map[int]string{0: "Hawke", 1: "Wyldd", 2: "Shryke"}
+	h := hk{"", bmTank, proto.HunterOptions_Turtle, 10, 10, 5, 0, "80", ""}
+	scs := map[int][]string{0: {"4 mobs 45s", "trio boss 32k", "stress boss 90s"}, 1: {"4 mobs 45s", "stress boss 90s"}, 2: {"4 mobs 45s", "trio boss 32k"}}
+	for _, who := range []int{0, 1, 2} {
+		for _, sc := range scs[who] {
+			var b0 []*proto.UnitMetrics
+			for _, b := range sets[who] {
+				c := t3{b.n, hawkeTank(h), wyldd(wylddResto, "50%"), shrykeFeint(rogueBuilds[3].tal, "p1_bscombat", true)}
+				ps := []*proto.Player{c.hunter, c.druid, c.rogue}
+				if b.a != 0 {
+					us := &proto.UnitStats{Stats: make([]float64, 40)}
+					us.Stats[b.s] = b.a
+					ps[who].BonusStats = us
+				}
+				res := runT3(c, sc, 3000)
+				m := res.RaidMetrics.Parties[0].Players
+				if b.a == 0 {
+					b0 = m
+				}
+				a := b.a
+				if a == 0 {
+					a = 1
+				}
+				p, q := m[who], b0[who]
+				fmt.Printf("SW|%s|%s|%s|dDPS/pt=%.3f|dHPS/pt=%.3f|dOOM/pt=%.4f|petDeath=%.3f|petTPS=%.1f|petDTPS=%.1f\n", names[who], sc, b.n,
+					(p.Dps.Avg-q.Dps.Avg)/a, (p.Hps.Avg-q.Hps.Avg)/a, (p.SecondsOomAvg-q.SecondsOomAvg)/a, m[0].Pets[0].ChanceOfDeath, m[0].Pets[0].Threat.Avg, m[0].Pets[0].Dtps.Avg)
+			}
+		}
+	}
+}
