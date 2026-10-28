@@ -57,6 +57,7 @@ const (
 
 // Shaman represents a shaman character.
 type Shaman struct {
+	riptides []*core.Spell
 	core.Character
 
 	// Elemental Weapons' share of the imbues' attack power, and the threat Spirit Weapons adds to

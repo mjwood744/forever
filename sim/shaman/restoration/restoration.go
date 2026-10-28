@@ -75,6 +75,7 @@ func (resto *RestorationShaman) Initialize() {
 	// resto.RegisterEarthlivingImbue(procMask)
 
 	resto.Shaman.Initialize()
+	resto.Shaman.RegisterHealingSpells()
 }
 
 func (resto *RestorationShaman) ApplyTalents() {
