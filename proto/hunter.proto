@@ -144,6 +144,12 @@ message HunterOptions {
 		FasterAttackVII    = 9;
 	}
 	PetAttackSpeed pet_attack_speed = 12;
+
+	// Beast Training for a pet that tanks: Great Stamina's and Natural Armor's ranks (1-10) and Pet
+	// Hardiness's (1-5), 0 for untrained. Pet Hardiness shares a slot with Pet Aggression.
+	int32 great_stamina = 13;
+	int32 natural_armor = 14;
+	int32 pet_hardiness = 15;
 }
 
 message Hunter {

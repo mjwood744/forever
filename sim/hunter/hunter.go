@@ -127,6 +127,7 @@ func (hunter *Hunter) Initialize() {
 	hunter.registerAspects()
 	hunter.registerHuntersMark()
 	hunter.addPvpGloves()
+	hunter.registerPetTankSpells()
 }
 
 // A ranged cast shortens with ranged haste. Core's cast path applies spell haste, which the physical

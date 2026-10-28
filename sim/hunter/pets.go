@@ -184,6 +184,7 @@ func (hp *HunterPet) ApplyTalents() {
 		hp.AddStat(stats.Armor, petBaseStats[stats.Armor]*armorPct.Percent())
 	}
 	spelldata.ParseStatic(&hp.Character, spellData.PetAggression.Rank(opts.PetAggression))
+	hp.applyTankTraining()
 
 	// An attack speed acts through a Simulation, which a static passive has none of, so these two
 	// are auras the pet is never without.
