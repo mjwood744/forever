@@ -13,6 +13,7 @@ var TalentTreeSizes = [3]int{16, 20, 16}
 
 type Druid struct {
 	core.Character
+	rejuvs, regrowths []*core.Spell
 	SelfBuffs
 
 	Talents *proto.DruidTalents

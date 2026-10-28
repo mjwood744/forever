@@ -30,6 +30,8 @@ func (druid *Druid) registerRestorationTalents() {
 
 	// Tier 7
 	druid.applyWildGrowth()
+
+	druid.applyHealingTalentMods()
 }
 
 func (druid *Druid) applyNaturalShapeshifter() {

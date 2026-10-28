@@ -49,6 +49,8 @@ func (resto *RestorationDruid) GetDruid() *druid.Druid {
 
 func (resto *RestorationDruid) Initialize() {
 	resto.Druid.Initialize()
+	resto.Druid.RegisterHealingSpells()
+	resto.Druid.RegisterBalanceSpells()
 }
 
 func (resto *RestorationDruid) ApplyTalents() {
