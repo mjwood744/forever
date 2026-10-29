@@ -203,7 +203,7 @@ func New(char *core.Character, selfBuffs SelfBuffs, talents string) *Priest {
 	core.FillTalentsProto(priest.Talents.ProtoReflect(), talents, TalentTreeSizes)
 	priest.EnableManaBar()
 	priest.AddStatDependency(stats.Strength, stats.AttackPower, 1)
-	priest.AddStatDependency(stats.Agility, stats.PhysicalCritPercent, core.CritPerAgiMaxLevel[char.Class])
+	priest.AddStatDependency(stats.Agility, stats.PhysicalCritPercent, core.CritPerAgiAt(char.Class, char.Level))
 
 	return priest
 }

@@ -166,7 +166,7 @@ func NewWarrior(character *core.Character, options *proto.WarriorOptions, talent
 	warrior.PseudoStats.CanParry = true
 
 	warrior.AddStatDependency(stats.Strength, stats.AttackPower, 2)
-	warrior.AddStatDependency(stats.Agility, stats.PhysicalCritPercent, core.CritPerAgiMaxLevel[character.Class])
+	warrior.AddStatDependency(stats.Agility, stats.PhysicalCritPercent, core.CritPerAgiAt(character.Class, character.Level))
 	warrior.AddStatDependency(stats.BonusArmor, stats.Armor, 1)
 
 	// Without a delay the sim re-queues Heroic Strike faster than a player can, which lands

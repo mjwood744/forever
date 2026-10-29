@@ -58,7 +58,7 @@ func (character *Character) EnableManaBarWithModifier() {
 
 	if character.Unit.Type == PlayerUnit {
 		// Pets might have different scaling so let them handle their scaling
-		character.AddStatDependency(stats.Intellect, stats.SpellCritPercent, CritPerIntMaxLevel[character.Class])
+		character.AddStatDependency(stats.Intellect, stats.SpellCritPercent, CritPerIntAt(character.Class, character.Level))
 
 		// Assumes all units have >= 20 intellect.
 		// See https://wowwiki-archive.fandom.com/wiki/Base_mana.

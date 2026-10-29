@@ -147,12 +147,12 @@ func NewCharacter(party *Party, partyIndex int, player *proto.Player) Character 
 	consumables := character.Consumables
 	applyTemporaryEnchants(consumables.MhImbueId, consumables.OhImbueId, consumables.MhWeaponImbueId, consumables.OhWeaponImbueId, &character.Equipment)
 
-	character.baseStats = BaseStats[BaseStatsKey{Race: character.Race, Class: character.Class}]
+	character.baseStats = BaseStatsAt(character.Race, character.Class, character.Level)
 
 	character.AddStats(character.baseStats)
 	character.AddStat(stats.Health, 20-10*20)
 	character.addUniversalStatDependencies()
-	character.AddStatDependency(stats.Agility, stats.DodgePercent, dodgePerAgility(character.Class))
+	character.AddStatDependency(stats.Agility, stats.DodgePercent, dodgePerAgility(character.Class, character.Level))
 	character.PseudoStats.BaseDodgeChance += ClassBaseDodge[character.Class]
 	if _, ok := ClassWeaponTypeCapabilities[character.Class][proto.WeaponType_WeaponTypeShield]; ok {
 		character.PseudoStats.BlockValuePerStrength = 0.05
