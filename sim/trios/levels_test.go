@@ -60,6 +60,14 @@ func init() {
 	sim.RegisterAll()
 	load("quest_gear.json", &questGear)
 	load("talents.json", &talentsAt)
+	// TALENTS=other.json swaps in another build for the characters that file lists.
+	if f := os.Getenv("TALENTS"); f != "" {
+		var other map[string]map[string]string
+		load(f, &other)
+		for name, at := range other {
+			talentsAt[name] = at
+		}
+	}
 	load("keys.json", &keysAt)
 	for _, ck := range keysAt {
 		for _, lv := range ck.Levels {
