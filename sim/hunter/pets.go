@@ -30,30 +30,34 @@ var petAttackSpeeds = map[proto.HunterOptions_PetAttackSpeed]spelldata.Ladder{
 }
 
 // A tamed pet's own armor, health and weapon are the creature values for its level in the game files
-// (core.CreatureArmorMaxLevel, core.CreatureHealthMaxLevel, core.CreatureAutoAttackDpsMaxLevel), and its own
+// (core.CreatureStatsAt), and its own
 // attack power is 30% of the creature dps as attack power, 14 a point of dps, with nothing from Strength:
 // 36, 61 and 103 on the sheets of a level 11 Carrion Bird, a level 17 Cat and a level 30 pet, each the
 // creature dps × 4.2 rounded down, with the owner's 10% rounded down beside it.
 // TODO: Health is one reading, 550 with Great Stamina 2 at 35 owner Stamina, which the creature health
 // fits with ~1.1 health a point of the owner's Stamina, and half of it with the warlock's 7.5. The creature
 // health is kept until a second reading at another Stamina.
-var petBaseStats = stats.Stats{
-	stats.Health:      core.CreatureHealthMaxLevel,
-	stats.Armor:       core.CreatureArmorMaxLevel,
-	stats.AttackPower: 0.3 * 14 * core.CreatureAutoAttackDpsMaxLevel,
+func petBaseStatsAt(level int32) stats.Stats {
+	health, armor, dps := core.CreatureStatsAt(level)
+	return stats.Stats{
+		stats.Health:      health,
+		stats.Armor:       armor,
+		stats.AttackPower: 0.3 * 14 * dps,
+	}
 }
 
 // The swing before attack power is the creature dps over the 2.0 s, spanning 20% either side: a level 11
 // Carrion Bird's 20-27 at 44 attack power and 2.0 s, and a level 17 Cat's 28-37 and 27-37 at 75 and 72,
 // swinging at 1.5 s with Faster Attack III, are the creature dps plus attack power over 14, over the swing
 // as sped up, with the Cat's +10%. The sheet leaves happiness out.
-const petSwingAverage = core.CreatureAutoAttackDpsMaxLevel * 2
-
-var petSwing = core.Weapon{
-	BaseDamageMin: petSwingAverage * (1 - 0.2),
-	BaseDamageMax: petSwingAverage * (1 + 0.2),
-	SwingSpeed:    2,
-	MaxRange:      core.MaxMeleeRange,
+func petSwingAt(level int32) core.Weapon {
+	_, _, dps := core.CreatureStatsAt(level)
+	return core.Weapon{
+		BaseDamageMin: dps * 2 * (1 - 0.2),
+		BaseDamageMax: dps * 2 * (1 + 0.2),
+		SwingSpeed:    2,
+		MaxRange:      core.MaxMeleeRange,
+	}
 }
 
 type HunterPet struct {
@@ -85,7 +89,7 @@ func (hunter *Hunter) NewHunterPet() *HunterPet {
 		Pet: core.NewPet(core.PetConfig{
 			Name:                  family.Name,
 			Owner:                 &hunter.Character,
-			BaseStats:             petBaseStats,
+			BaseStats:             petBaseStatsAt(hunter.Level),
 			StatInheritance:       hunter.makeStatInheritance(),
 			EnabledOnStart:        true,
 			StartsAtOwnerDistance: true,
@@ -99,7 +103,7 @@ func (hunter *Hunter) NewHunterPet() *HunterPet {
 
 	// Normalized in ApplyTalents to the Faster or Slower Attack passive's swing.
 	hp.EnableAutoAttacks(hp, core.AutoAttackOptions{
-		MainHand:       petSwing,
+		MainHand:       petSwingAt(hunter.Level),
 		AutoSwingMelee: true,
 	})
 
@@ -115,7 +119,7 @@ func (hunter *Hunter) NewHunterPet() *HunterPet {
 // higher crit (inheritedCrit), the owner's ranged hit, 17/8 of it as spell hit, and the owner's
 // expertise, the armor, attack power and crit read on a level 17 pet sheet at two gear states. Not
 // linear, so the pet snapshots them; registerStatInheritance says when.
-// TODO: The health a point of Stamina is not read; see petBaseStats.
+// TODO: The health a point of Stamina is not read; see petBaseStatsAt.
 func (hunter *Hunter) makeStatInheritance() core.PetStatInheritance {
 	return func(ownerStats stats.Stats) stats.Stats {
 		hit := inheritedHit(ownerStats)
@@ -178,10 +182,10 @@ func (hp *HunterPet) ApplyTalents() {
 	spelldata.ParseStatic(&hp.Character, passive, spelldata.SkipEffects(2))
 	// ASSUMPTION: the server applies the second effect (A_MOD_BASE_RESISTANCE_PCT, armor) to the pet's
 	// base armor, as Classic's creature stat code does, and the base armor is the pet's own creature
-	// armor (petBaseStats), not the share it inherits from its owner. Turtle +13%, Boar +9%, Crocilisk
+	// armor (petBaseStatsAt), not the share it inherits from its owner. Turtle +13%, Boar +9%, Crocilisk
 	// +10%, Bear and Wolf +5% of 3566 at level 60. Not yet read on a pet sheet in game.
 	if armorPct := passive.Effect(dbcenums.A_MOD_BASE_RESISTANCE_PCT, 1); armorPct != spelldata.NilEffect {
-		hp.AddStat(stats.Armor, petBaseStats[stats.Armor]*armorPct.Percent())
+		hp.AddStat(stats.Armor, petBaseStatsAt(hp.Level)[stats.Armor]*armorPct.Percent())
 	}
 	spelldata.ParseStatic(&hp.Character, spellData.PetAggression.Rank(opts.PetAggression))
 	hp.applyTankTraining()

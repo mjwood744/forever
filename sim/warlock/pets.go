@@ -209,9 +209,29 @@ func (warlock *Warlock) demon(summon proto.WarlockOptions_Summon) *WarlockPet {
 	return nil
 }
 
+// The model for a demon of a lower level: the creature shares and swings follow the creature values of
+// that level (core.CreatureStatsAt), and the Voidwalker's and Sayaad's attack power is 3 × level + 6. The
+// Imp's attributes are its level-60 ones.
+func (model petModel) atLevel(level int32) petModel {
+	if level >= core.CharacterLevel {
+		return model
+	}
+	health, armor, dps := core.CreatureStatsAt(level)
+	base := model.baseStats
+	base[stats.Health] *= health / core.CreatureHealthMaxLevel
+	base[stats.Armor] *= armor / core.CreatureArmorMaxLevel
+	if base[stats.AttackPower] == 3*core.CharacterLevel+6 {
+		base[stats.AttackPower] = float64(3*level + 6)
+	}
+	model.baseStats = base
+	model.meleeMin *= dps / core.CreatureAutoAttackDpsMaxLevel
+	model.meleeMax *= dps / core.CreatureAutoAttackDpsMaxLevel
+	return model
+}
+
 func (warlock *Warlock) registerPet(summon proto.WarlockOptions_Summon, name string) *WarlockPet {
 	enabledOnStart := warlock.Options.Summon == summon
-	model := petModels[summon]
+	model := petModels[summon].atLevel(warlock.Level)
 
 	pet := &WarlockPet{
 		owner:  warlock,
