@@ -5,9 +5,8 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var eviscerateRank = spellData.Eviscerate.Rank(8)
-
 func (rogue *Rogue) registerEviscerate() {
+	eviscerateRank := spellData.Eviscerate.KnownUpTo(rogue.Level, 8)
 	eviscerateBaseDamage := eviscerateRank.DamageEffect().Average()
 	eviscerateDamagePerPoint := float64(eviscerateRank.DamageEffect().PointsPerResource)
 	eviscerateApScalingPerPoint := 0.04 // Estimated from in-game tests.

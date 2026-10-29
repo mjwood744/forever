@@ -8,7 +8,7 @@ import (
 // Only the highest rank is registered: the mage casts the rank configured here, not every rank
 // spellData.BlastWave lists.
 func (mage *Mage) registerBlastWaveSpell() {
-	mage.registerBlastWaveRank(spellData.BlastWave.Len(), spellData.BlastWave.Highest())
+	mage.registerBlastWaveRank(spellData.BlastWave.Len(), spellData.BlastWave.Known(mage.Level))
 }
 
 // The daze (effect 2) does nothing to a boss.

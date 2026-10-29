@@ -14,7 +14,7 @@ func (mage *Mage) registerScorchSpell() {
 
 	// Only the highest rank is registered: the mage casts the rank configured here, not every rank
 	// spellData.Scorch lists.
-	mage.registerScorchRank(spellData.Scorch.Highest(), procChance)
+	mage.registerScorchRank(spellData.Scorch.Known(mage.Level), procChance)
 }
 
 func (mage *Mage) registerScorchRank(rank *spelldata.Spell, procChance float64) {

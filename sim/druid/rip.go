@@ -6,7 +6,7 @@ import (
 )
 
 func (druid *Druid) registerRipSpell() {
-	rank := spellData.Rip.Highest()
+	rank := spellData.Rip.Known(druid.Level)
 	tick := rank.PeriodicDamageEffect()
 	config := spelldata.SpellConfig(&druid.Unit, rank, spelldata.Melee(core.ProcMaskMeleeMHSpecial))
 	config.ExtraCastCondition = druid.requiresComboPoints(rank)

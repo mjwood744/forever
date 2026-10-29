@@ -5,12 +5,11 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var moonfireRank = spellData.Moonfire.Highest()
-var moonfireDamage = moonfireRank.DamageEffect()
-
 // One spell carries the hit and the dot, so a SPELLMOD_DAMAGE (direct hits only) and a SPELLMOD_DOT
 // (ticks only) that both name Moonfire, as Improved Moonfire does, each reach their own half.
 func (druid *Druid) registerMoonfireSpell() {
+	moonfireRank := spellData.Moonfire.Known(druid.Level)
+	moonfireDamage := moonfireRank.DamageEffect()
 	config := spelldata.SpellConfig(&druid.Unit, moonfireRank, spelldata.Magic(core.ProcMaskSpellDamage))
 	config.Dot = spelldata.DotConfig(moonfireRank, moonfireRank.PeriodicEffect())
 

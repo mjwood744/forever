@@ -8,7 +8,7 @@ import (
 // Only the highest rank is registered: the mage casts the rank configured here, not every rank
 // spellData.FrostBlast lists.
 func (mage *Mage) registerFrostBlastSpell() {
-	mage.registerFrostBlastRank(spellData.FrostBlast.Len(), spellData.FrostBlast.Highest())
+	mage.registerFrostBlastRank(spellData.FrostBlast.Len(), spellData.FrostBlast.Known(mage.Level))
 }
 
 // Frost Blast

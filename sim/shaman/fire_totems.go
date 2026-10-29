@@ -5,16 +5,9 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var searingTotemRank = spellData.SearingTotem.Highest()
-var searingAttackRank = spellData.SearingTotemTriggered.Highest()
-
 // 10587's tooltip names the pulse, 10581, and the passive that casts it, 10584.
-var magmaTotemRank = spellData.MagmaTotem.Highest()
 var magmaPulseRank = spellData.MagmaTotemTriggered.ByID(10581)
 var magmaPassiveRank = spellData.MagmaTotemTriggered.ByID(10584)
-
-var fireNovaRank = spellData.FireNova.Highest()
-var fireNovaDamageRank = spellData.FireNovaTriggered.Highest()
 
 // A fire totem's own attack: the totem's, not the caster's, so it lands no proc of the caster's.
 // It reports as the totem's spell tagged 1, so the results show the totem and its hits as one row.
@@ -52,6 +45,8 @@ func (shaman *Shaman) registerFireTotem(rank *spelldata.Spell, mask int64, perio
 
 // The totem attacks its target once a cast of its attack, 10436's 2.2 s.
 func (shaman *Shaman) registerSearingTotemSpell() {
+	searingAttackRank := spellData.SearingTotemTriggered.Known(shaman.Level)
+	searingTotemRank := spellData.SearingTotem.Known(shaman.Level)
 	damage := searingAttackRank.DamageEffect()
 
 	attackConfig := shaman.newTotemAttackConfig(searingTotemRank, searingAttackRank)
@@ -72,6 +67,7 @@ func (shaman *Shaman) registerSearingTotemSpell() {
 
 // The passive casts the pulse on every enemy around the totem each of its periods.
 func (shaman *Shaman) registerMagmaTotemSpell() {
+	magmaTotemRank := spellData.MagmaTotem.Known(shaman.Level)
 	damage := magmaPulseRank.DamageEffect()
 
 	pulseConfig := shaman.newTotemAttackConfig(magmaTotemRank, magmaPulseRank)
@@ -96,6 +92,8 @@ func (shaman *Shaman) registerMagmaTotemSpell() {
 // The hit lacks Not a Proc, so only listeners that can proc from procs hear it. It reports as the
 // cast's spell tagged 1, so the results show the cast and its hits as one row.
 func (shaman *Shaman) registerFireNovaSpell() {
+	fireNovaDamageRank := spellData.FireNovaTriggered.Known(shaman.Level)
+	fireNovaRank := spellData.FireNova.Known(shaman.Level)
 	damage := fireNovaDamageRank.DamageEffect()
 
 	novaConfig := spelldata.SpellConfig(&shaman.Unit, fireNovaDamageRank,

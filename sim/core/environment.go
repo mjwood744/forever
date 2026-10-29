@@ -73,7 +73,7 @@ func NewEnvironment(raidProto *proto.Raid, encounterProto *proto.Encounter, runF
 
 // The construction phase.
 func (env *Environment) construct(raidProto *proto.Raid, encounterProto *proto.Encounter) {
-	env.Encounter = NewEncounter(encounterProto)
+	env.Encounter = NewEncounterAt(encounterProto, RaidLevel(raidProto))
 	env.BaseDuration = env.Encounter.Duration
 	env.DurationVariation = env.Encounter.DurationVariation
 	env.Raid = NewRaid(raidProto, env.Encounter.AreaTypes)

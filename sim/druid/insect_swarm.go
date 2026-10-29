@@ -6,9 +6,8 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var insectSwarmRank = spellData.InsectSwarm.Highest()
-
 func (druid *Druid) registerInsectSwarmSpell() {
+	insectSwarmRank := spellData.InsectSwarm.Known(druid.Level)
 	auras := druid.NewEnemyAuraArray(func(target *core.Unit) *core.Aura {
 		return buffs.NewSpellDataInsectSwarmAura(target, true, 0)
 	})

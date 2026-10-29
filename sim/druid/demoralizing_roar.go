@@ -7,7 +7,7 @@ import (
 )
 
 func (druid *Druid) registerDemoralizingRoarSpell() {
-	rank := spellData.DemoralizingRoar.Highest()
+	rank := spellData.DemoralizingRoar.Known(druid.Level)
 	druid.DemoralizingRoarAuras = druid.NewEnemyAuraArray(func(target *core.Unit) *core.Aura {
 		return buffs.NewSpellDataDemoralizingRoarAura(target, true, 0)
 	})

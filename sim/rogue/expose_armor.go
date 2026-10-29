@@ -8,9 +8,8 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var exposeArmorRank = spellData.ExposeArmor.Highest()
-
 func (rogue *Rogue) registerExposeArmorSpell() {
+	exposeArmorRank := spellData.ExposeArmor.Known(rogue.Level)
 	rogue.ExposeArmorAuras = rogue.NewEnemyAuraArray(func(target *core.Unit) *core.Aura {
 		// The generated aura is the five-point finisher, which is what the raid
 		// config applies; a cast that spends fewer combo points needs a driver
@@ -50,6 +49,7 @@ func (rogue *Rogue) registerExposeArmorSpell() {
 }
 
 func (rogue *Rogue) GetExposeArmorValue() float64 {
+	exposeArmorRank := spellData.ExposeArmor.Known(rogue.Level)
 	return math.Abs((float64(exposeArmorRank.EffectN(1).PointsPerResource) * float64(rogue.ComboPoints())))
 }
 

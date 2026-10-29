@@ -13,7 +13,7 @@ var frigidPowerRank = spellData.IceBarrierTriggered.ByID(1326891)
 // Only the highest rank is registered: the mage casts the rank configured here, not every rank
 // spellData.IceBarrier lists.
 func (mage *Mage) registerIceBarrierSpell() {
-	mage.registerIceBarrierRank(spellData.IceBarrier.Len(), spellData.IceBarrier.Highest())
+	mage.registerIceBarrierRank(spellData.IceBarrier.Len(), spellData.IceBarrier.Known(mage.Level))
 }
 
 // Ice Barrier

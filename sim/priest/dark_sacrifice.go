@@ -30,7 +30,7 @@ func (priest *Priest) registerDarkSacrifice(_ int32, rank *spelldata.Spell) {
 	}
 
 	darkSacrifice := priest.RegisterSpell(config)
-	if rank != spellData.DarkSacrifice.Highest() {
+	if rank != spellData.DarkSacrifice.Known(priest.Level) {
 		return
 	}
 

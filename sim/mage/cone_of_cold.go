@@ -8,7 +8,7 @@ import (
 // Only the highest rank is registered: the mage casts the rank configured here, not every rank
 // spellData.ConeOfCold lists.
 func (mage *Mage) registerConeOfColdSpell() {
-	mage.registerConeOfColdRank(spellData.ConeOfCold.Len(), spellData.ConeOfCold.Highest())
+	mage.registerConeOfColdRank(spellData.ConeOfCold.Len(), spellData.ConeOfCold.Known(mage.Level))
 }
 
 // The slow (effect 1) does nothing to a boss.

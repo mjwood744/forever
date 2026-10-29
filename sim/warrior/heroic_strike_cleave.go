@@ -5,12 +5,8 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var heroicStrikeRank = spellData.HeroicStrike.Highest()
-
-var cleaveRank = spellData.Cleave.Highest()
-var cleaveTargets = int32(cleaveRank.DamageEffect().ChainTargets)
-
 func (warrior *Warrior) registerHeroicStrike() {
+	heroicStrikeRank := spellData.HeroicStrike.Known(warrior.Level)
 	config := spelldata.SpellConfig(&warrior.Unit, heroicStrikeRank, spelldata.Melee(core.ProcMaskMeleeMHSpecial))
 	config.Flags &^= core.SpellFlagAPL
 
@@ -28,6 +24,8 @@ func (warrior *Warrior) registerHeroicStrike() {
 }
 
 func (warrior *Warrior) registerCleave() {
+	cleaveRank := spellData.Cleave.Known(warrior.Level)
+	cleaveTargets := int32(cleaveRank.DamageEffect().ChainTargets)
 	config := spelldata.SpellConfig(&warrior.Unit, cleaveRank, spelldata.Melee(core.ProcMaskMeleeMHSpecial))
 	config.Flags &^= core.SpellFlagAPL
 

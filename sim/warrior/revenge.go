@@ -5,8 +5,6 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var revengeRank = spellData.Revenge.Highest()
-
 // The "high amount of threat" the game files state with no number: Revenge's threat is 2.25 times
 // its damage, measured in game on Rank 2.
 // TODO: Ingame test needed -- confirm the multiplier on the top rank.
@@ -16,6 +14,7 @@ const revengeThreatMultiplier = 2.25
 var revengeWindow = spellData.DefensiveStateTriggered.Highest()
 
 func (warrior *Warrior) registerRevenge() {
+	revengeRank := spellData.Revenge.Known(warrior.Level)
 	actionID := core.ActionID{SpellID: revengeRank.ID}
 
 	aura := warrior.RegisterAura(core.Aura{

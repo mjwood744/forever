@@ -8,7 +8,7 @@ import (
 // Only the highest rank is registered: the mage casts the rank configured here, not every rank
 // spellData.ArcaneWrath lists.
 func (mage *Mage) registerArcaneWrathSpell() {
-	mage.registerArcaneWrathRank(spellData.ArcaneWrath.Len(), spellData.ArcaneWrath.Highest())
+	mage.registerArcaneWrathRank(spellData.ArcaneWrath.Len(), spellData.ArcaneWrath.Known(mage.Level))
 }
 
 // Arcane Wrath

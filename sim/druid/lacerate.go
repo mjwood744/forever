@@ -6,7 +6,7 @@ import (
 )
 
 func (druid *Druid) registerLacerateSpell() {
-	rank := spellData.Lacerate.Highest()
+	rank := spellData.Lacerate.Known(druid.Level)
 	tick := rank.PeriodicDamageEffect()
 	perStack := rank.EffectN(2).Percent()
 	config := spelldata.SpellConfig(&druid.Unit, rank, spelldata.Melee(core.ProcMaskMeleeMHSpecial))

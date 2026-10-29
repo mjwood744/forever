@@ -5,13 +5,12 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var interceptRank = spellData.Intercept.Highest()
-
 // The damage sits on the stun the charge triggers, not on Intercept itself.
-var interceptStun = interceptRank.EffectN(2).Trigger()
-var interceptStunDamage = interceptStun.DamageEffect().Average()
 
 func (warrior *Warrior) registerIntercept() {
+	interceptRank := spellData.Intercept.Known(warrior.Level)
+	interceptStun := interceptRank.EffectN(2).Trigger()
+	interceptStunDamage := interceptStun.DamageEffect().Average()
 	actionID := core.ActionID{SpellID: interceptRank.ID}
 	chargeMinRange := float64(interceptRank.MinRange)
 
@@ -29,7 +28,7 @@ func (warrior *Warrior) registerIntercept() {
 
 	aura := warrior.registerDashAura("Intercept", actionID, config.Cast.CD.Duration, func(sim *core.Simulation) {
 		// Targets at raid boss level are immune to the stun and its damage; no game files row states it.
-		if interceptTarget.Level >= core.CharacterLevel+3 {
+		if interceptTarget.Level >= warrior.Level+3 {
 			return
 		}
 		stun.CalcAndDealDamage(sim, interceptTarget, interceptStunDamage, stun.OutcomeMagicHitAndCrit)

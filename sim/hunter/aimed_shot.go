@@ -5,9 +5,8 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var aimedShotRank = spellData.AimedShot.Highest()
-
 func (hunter *Hunter) registerAimedShot() {
+	aimedShotRank := spellData.AimedShot.Known(hunter.Level)
 	config := spelldata.SpellConfig(&hunter.Unit, aimedShotRank, spelldata.Melee(core.ProcMaskRangedSpecial))
 	hunter.hasteRangedCast(&config)
 

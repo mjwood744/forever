@@ -5,16 +5,15 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var executeRank = spellData.Execute.Highest()
-
 // TODO: The dummy effect carries the base damage, and no finder picks it out: the row states no
 // damage effect, and both of its effects share the aura and misc values Effect() selects on.
-var executeBaseDamage = executeRank.EffectN(1).Average()
 
 // The tooltip's $*10;F1: the dummy's chain amplitude, times 10, per extra point of rage.
-var executeDamagePerRage = float64(executeRank.EffectN(1).ChainAmp) * 10
 
 func (warrior *Warrior) registerExecute() {
+	executeRank := spellData.Execute.Known(warrior.Level)
+	executeBaseDamage := executeRank.EffectN(1).Average()
+	executeDamagePerRage := float64(executeRank.EffectN(1).ChainAmp) * 10
 
 	var rageMetrics *core.ResourceMetrics
 

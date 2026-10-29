@@ -162,6 +162,7 @@ func (hunter *Hunter) registerLightningReflexes() {
 var laceratingStrikesBleed = spellData.LaceratingStrikesTriggered.Highest()
 
 func (hunter *Hunter) registerLaceratingStrikes() {
+	mongooseBiteRank := spellData.MongooseBite.Known(hunter.Level)
 	if !hunter.Talents.LaceratingStrikes {
 		return
 	}

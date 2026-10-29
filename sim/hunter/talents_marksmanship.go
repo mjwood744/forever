@@ -157,6 +157,7 @@ func (hunter *Hunter) registerMortalShots() {
 var rapidRecuperationBuff = spellData.RapidRecuperationTriggered.Highest()
 
 func (hunter *Hunter) registerRapidRecuperation() {
+	serpentStingRank := spellData.SerpentSting.Known(hunter.Level)
 	if hunter.Talents.RapidRecuperation == 0 {
 		return
 	}

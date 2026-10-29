@@ -5,9 +5,8 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var sinisterStrikeRank = spellData.SinisterStrike.Highest()
-
 func (rogue *Rogue) registerSinisterStrikeSpell() {
+	sinisterStrikeRank := spellData.SinisterStrike.Known(rogue.Level)
 	sinisterStrikeBaseDamage := sinisterStrikeRank.DamageEffect().Average()
 	config := spelldata.SpellConfig(&rogue.Unit, sinisterStrikeRank, spelldata.Melee(core.ProcMaskMeleeMHSpecial))
 	config.Flags |= SpellFlagBuilder | SpellFlagColdBlooded

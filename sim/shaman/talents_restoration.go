@@ -93,10 +93,9 @@ func (shaman *Shaman) applyTidalMastery() {
 	spelldata.ParseStatic(&shaman.Character, spellData.TidalMastery.Rank(shaman.Talents.TidalMastery))
 }
 
-var manaTideTotemRank = spellData.ManaTideTotem.Highest()
-
 // The talent teaches Mana Tide Totem, a water totem, so it takes down Mana Spring.
 func (shaman *Shaman) applyManaTideTotem() {
+	manaTideTotemRank := spellData.ManaTideTotem.Known(shaman.Level)
 	if !shaman.Talents.ManaTideTotem {
 		return
 	}

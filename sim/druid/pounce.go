@@ -6,8 +6,8 @@ import (
 )
 
 func (druid *Druid) registerPounceSpell() {
-	rank := spellData.Pounce.Highest()
-	bleedRank := spellData.PounceBleed.Highest()
+	rank := spellData.Pounce.Known(druid.Level)
+	bleedRank := spellData.PounceBleed.Known(druid.Level)
 
 	// TODO: Ingame research needed -- Genesis names Pounce 9827 by its class flags, and the bleed 9826
 	// states none, so the bleed here takes no class-flag modifier.

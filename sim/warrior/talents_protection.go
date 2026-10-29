@@ -174,9 +174,8 @@ func (warrior *Warrior) registerConcussionBlow() {
 	warrior.RegisterSpell(config)
 }
 
-var shieldSlamRank = spellData.ShieldSlam.Highest()
-
 func (warrior *Warrior) registerShieldSlam() {
+	shieldSlamRank := spellData.ShieldSlam.Known(warrior.Level)
 	if !warrior.Talents.ShieldSlam {
 		return
 	}

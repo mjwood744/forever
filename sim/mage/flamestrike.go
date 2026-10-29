@@ -9,7 +9,7 @@ import (
 // Only the highest rank is registered: the mage casts the rank configured here, not every rank
 // spellData.Flamestrike lists.
 func (mage *Mage) registerFlamestrikeSpells() {
-	mage.registerFlamestrikeSpell(spellData.Flamestrike.Len(), spellData.Flamestrike.Highest())
+	mage.registerFlamestrikeSpell(spellData.Flamestrike.Len(), spellData.Flamestrike.Known(mage.Level))
 }
 
 // The burn is its own spell (MageSpellFlamestrikeDot) on the cast's row, tagged like Fireball's DoT so

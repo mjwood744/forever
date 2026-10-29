@@ -94,6 +94,8 @@ message Player {
 	bool challenge_mode = 58;
 	// A weapon skill missing from the list is at the maximum for the player's level.
 	repeated WeaponSkillValue weapon_skills = 61;
+	// The character's level. 0 means the top level, 60.
+	int32 level = 62;
 
 	HealingModel healing_model = 49;
 

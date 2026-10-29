@@ -5,10 +5,9 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var kickRank = spellData.Kick.Highest()
-
 // This exists purely to model the DPS loss of having to occasionally kick
 func (rogue *Rogue) registerKickSpell() {
+	kickRank := spellData.Kick.Known(rogue.Level)
 	kickBaseDamage := kickRank.DamageEffect().Average()
 	config := spelldata.SpellConfig(&rogue.Unit, kickRank, spelldata.Melee(core.ProcMaskMeleeMHSpecial))
 

@@ -18,11 +18,6 @@ const trapTotalAPShare = 0.10
 const trapTriggerRadius = 5
 const trapArmingDelay = 500 * time.Millisecond
 
-var immolationTrapRank = spellData.ImmolationTrap.Highest()
-var immolationTrapEffectRank = spellData.ImmolationTrapTriggered.Highest()
-var explosiveTrapRank = spellData.ExplosiveTrap.Highest()
-var explosiveTrapEffectRank = spellData.ExplosiveTrapTriggered.Highest()
-
 func (hunter *Hunter) registerTraps() {
 	hunter.registerImmolationTrap()
 	hunter.registerExplosiveTrap()
@@ -52,6 +47,8 @@ func (hunter *Hunter) trapConfig(rank *spelldata.Spell, trigger *core.Spell) cor
 }
 
 func (hunter *Hunter) registerImmolationTrap() {
+	immolationTrapEffectRank := spellData.ImmolationTrapTriggered.Known(hunter.Level)
+	immolationTrapRank := spellData.ImmolationTrap.Known(hunter.Level)
 	tick := immolationTrapEffectRank.PeriodicEffect()
 
 	config := spelldata.SpellConfig(&hunter.Unit, immolationTrapEffectRank,
@@ -77,6 +74,8 @@ func (hunter *Hunter) registerImmolationTrap() {
 }
 
 func (hunter *Hunter) registerExplosiveTrap() {
+	explosiveTrapEffectRank := spellData.ExplosiveTrapTriggered.Known(hunter.Level)
+	explosiveTrapRank := spellData.ExplosiveTrap.Known(hunter.Level)
 	hit := explosiveTrapEffectRank.EffectN(1)
 	// Effect 2 is a persistent area aura the resolvers do not read, so its dot is built here.
 	area := explosiveTrapEffectRank.EffectN(2)

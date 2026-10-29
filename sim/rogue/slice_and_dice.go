@@ -7,9 +7,8 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var sliceAndDiceRank = spellData.SliceAndDice.Highest()
-
 func (rogue *Rogue) registerSliceAndDice() {
+	sliceAndDiceRank := spellData.SliceAndDice.Known(rogue.Level)
 	config := spelldata.SpellConfig(&rogue.Unit, sliceAndDiceRank, spelldata.Melee(core.ProcMaskEmpty))
 	config.ExtraCastCondition = rogue.FinisherExtraCastCondition
 	talentModifier := spellData.ImprovedSliceAndDice.MultiplierAt(rogue.Talents.ImprovedSliceAndDice)

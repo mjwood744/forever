@@ -18,14 +18,14 @@ func (mage *Mage) registerArmorSpells() {
 
 	// Only the highest rank is registered: the mage casts the rank configured here, not every rank
 	// spellData.FrostArmor lists.
-	frostArmorRank := spellData.FrostArmor.Highest()
+	frostArmorRank := spellData.FrostArmor.Known(mage.Level)
 	mage.registerArmor(frostArmorRank, MageSpellFrostArmor, stats.Stats{
 		stats.Armor: warding * frostArmorRank.EffectN(1).BaseValue(),
 	})
 
 	// Only the highest rank is registered: the mage casts the rank configured here, not every rank
 	// spellData.IceArmor lists.
-	iceArmorRank := spellData.IceArmor.Highest()
+	iceArmorRank := spellData.IceArmor.Known(mage.Level)
 	iceArmor := mage.registerArmor(iceArmorRank, MageSpellIceArmor, stats.Stats{
 		stats.Armor:           warding * iceArmorRank.EffectN(1).BaseValue(),
 		stats.FrostResistance: warding * iceArmorRank.EffectN(3).BaseValue(),
@@ -33,7 +33,7 @@ func (mage *Mage) registerArmorSpells() {
 
 	// Only the highest rank is registered: the mage casts the rank configured here, not every rank
 	// spellData.MageArmor lists.
-	mageArmorRank := spellData.MageArmor.Highest()
+	mageArmorRank := spellData.MageArmor.Known(mage.Level)
 	resist := shielding * mageArmorRank.EffectN(1).BaseValue()
 	mageArmor := mage.registerArmor(mageArmorRank, MageSpellMageArmor, stats.Stats{
 		stats.ArcaneResistance: resist,

@@ -154,9 +154,8 @@ func (rogue *Rogue) registerSealFate() {
 	rogue.MakeProcTriggerAura(trigger)
 }
 
-var mutilateCastRank = spellData.Mutilate.Highest()
-
 func (rogue *Rogue) registerMutilate() {
+	mutilateCastRank := spellData.Mutilate.Known(rogue.Level)
 	if !rogue.Talents.Mutilate {
 		return
 	}
@@ -188,6 +187,7 @@ func (rogue *Rogue) registerMutilate() {
 }
 
 func (rogue *Rogue) newMutilateHitSpell(isMH bool) *core.Spell {
+	mutilateCastRank := spellData.Mutilate.Known(rogue.Level)
 	hitRank := mutilateCastRank.EffectN(3).Trigger() // 1241590, off hand
 	spellOpt := spelldata.Melee(core.ProcMaskMeleeOHSpecial)
 	if isMH {

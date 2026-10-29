@@ -43,7 +43,7 @@ func (hunter *Hunter) registerPetTankSpells() {
 // Mend Pet: a 5 s channel healing the pet each second. Improved Mend Pet cuts its cost by 10% a rank.
 func (hunter *Hunter) registerMendPet() {
 	pet := hunter.Pet
-	rank := spellData.MendPet.Highest()
+	rank := spellData.MendPet.Known(hunter.Level)
 	tick := rank.PeriodicEffect()
 	config := spelldata.SpellConfig(&hunter.Unit, rank, spelldata.Magic(core.ProcMaskSpellHealing))
 	config.Flags |= core.SpellFlagChanneled

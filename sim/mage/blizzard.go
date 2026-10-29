@@ -9,7 +9,7 @@ import (
 // Only the highest rank is registered: the mage casts the rank configured here, not every rank
 // spellData.Blizzard lists.
 func (mage *Mage) registerBlizzardSpell() {
-	mage.registerBlizzardRank(spellData.Blizzard.Len(), spellData.Blizzard.Highest())
+	mage.registerBlizzardRank(spellData.Blizzard.Len(), spellData.Blizzard.Known(mage.Level))
 }
 
 // Each tick casts the same rank of spellData.BlizzardTriggered on every enemy in the area, and rolls

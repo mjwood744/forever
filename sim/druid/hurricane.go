@@ -6,13 +6,12 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var hurricaneRank = spellData.Hurricane.Highest()
-
 // The damage each second is its own row, which the channel casts on every tick.
-var hurricaneTickRank = spellData.HurricaneTriggered.Highest()
-var hurricaneTickDamage = hurricaneTickRank.DamageEffect()
 
 func (druid *Druid) registerHurricaneSpell() {
+	hurricaneRank := spellData.Hurricane.Known(druid.Level)
+	hurricaneTickRank := spellData.HurricaneTriggered.Known(druid.Level)
+	hurricaneTickDamage := hurricaneTickRank.DamageEffect()
 	tickConfig := spelldata.SpellConfig(&druid.Unit, hurricaneTickRank,
 		spelldata.Magic(core.ProcMaskSpellDamage), spelldata.Proc())
 	tickConfig.ApplyEffects = func(sim *core.Simulation, _ *core.Unit, spell *core.Spell) {

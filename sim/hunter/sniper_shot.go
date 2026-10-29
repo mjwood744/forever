@@ -5,9 +5,8 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var sniperShotRank = spellData.SniperShot.Highest()
-
 func (hunter *Hunter) registerSniperShot() {
+	sniperShotRank := spellData.SniperShot.Known(hunter.Level)
 	if !hunter.Talents.SniperShot {
 		return
 	}

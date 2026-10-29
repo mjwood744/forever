@@ -8,7 +8,7 @@ import (
 // Only the highest rank is registered: the mage casts the rank configured here, not every rank
 // spellData.IceLance lists.
 func (mage *Mage) registerIceLanceSpell() {
-	mage.registerIceLanceRank(spellData.IceLance.Len(), spellData.IceLance.Highest())
+	mage.registerIceLanceRank(spellData.IceLance.Len(), spellData.IceLance.Known(mage.Level))
 }
 
 // Ice Lance

@@ -8,7 +8,7 @@ import (
 // Only the highest rank is registered: the mage casts the rank configured here, not every rank
 // spellData.FrostNova lists.
 func (mage *Mage) registerFrostNovaSpell() {
-	mage.registerFrostNovaRank(spellData.FrostNova.Len(), spellData.FrostNova.Highest())
+	mage.registerFrostNovaRank(spellData.FrostNova.Len(), spellData.FrostNova.Known(mage.Level))
 }
 
 // Frost Nova

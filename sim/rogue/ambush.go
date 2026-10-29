@@ -5,9 +5,8 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var ambushRank = spellData.Ambush.Highest()
-
 func (rogue *Rogue) registerAmbushSpell() {
+	ambushRank := spellData.Ambush.Known(rogue.Level)
 	ambushBaseDamage := ambushRank.DamageEffect().Average()
 	comboPointGen := ambushRank.EnergizeEffect().Average()
 	config := spelldata.SpellConfig(&rogue.Unit, ambushRank, spelldata.Melee(core.ProcMaskMeleeMHSpecial))

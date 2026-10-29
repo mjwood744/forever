@@ -154,7 +154,14 @@ func (druid *Druid) RegisterBaselineSpells() {
 }
 
 func (druid *Druid) RegisterBalanceSpells() {
-	StarfireRankMap.Each(func(_ int32, r *spelldata.Spell) { druid.registerStarfireSpell(r) })
+	// The top rank the druid knows and the cheaper one below it, which an APL can cast in its place:
+	// StarfireRankMap's ranks 6 and 7 at level 60.
+	knownStarfire := spellData.Starfire.Known(druid.Level)
+	spellData.Starfire.Each(func(n int32, r *spelldata.Spell) {
+		if r == knownStarfire || spellData.Starfire.Rank(n+1) == knownStarfire {
+			druid.registerStarfireSpell(r)
+		}
+	})
 	druid.registerMoonfireSpell()
 	druid.registerWrathSpell()
 	druid.registerHurricaneSpell()

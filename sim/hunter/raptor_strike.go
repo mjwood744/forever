@@ -5,9 +5,8 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var raptorStrikeRank = spellData.RaptorStrike.Highest()
-
 func (hunter *Hunter) registerRaptorStrike() {
+	raptorStrikeRank := spellData.RaptorStrike.Known(hunter.Level)
 	config := spelldata.SpellConfig(&hunter.Unit, raptorStrikeRank,
 		spelldata.Melee(core.ProcMaskMeleeMHSpecial), spelldata.Flags(core.SpellFlagNoOnCastComplete))
 	// The APL queues it through the tag 1 spell below; the next swing casts it.

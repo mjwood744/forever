@@ -5,14 +5,13 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var aspectOfTheHawkRank = spellData.AspectOfTheHawk.Highest()
-var aspectOfTheBeastRank = spellData.AspectOfTheBeast.Highest()
-
 // The hastes the aspects proc: Quick Shots off Hawk, Quick Strikes off Beast.
 var quickShots = spellData.AspectOfTheHawkTriggered.Highest()
 var quickStrikes = spellData.AspectOfTheBeastTriggered.Highest()
 
 func (hunter *Hunter) registerAspects() {
+	aspectOfTheBeastRank := spellData.AspectOfTheBeast.Known(hunter.Level)
+	aspectOfTheHawkRank := spellData.AspectOfTheHawk.Known(hunter.Level)
 	hunter.AspectOfTheHawkAura = hunter.registerAspect(aspectOfTheHawkRank)
 	hunter.AspectOfTheBeastAura = hunter.registerAspect(aspectOfTheBeastRank)
 
@@ -44,6 +43,8 @@ func (hunter *Hunter) registerAspect(row *spelldata.Spell) *core.Aura {
 // the parse has no row for. The tooltip names Auto Shot and melee auto attacks where the rows hear
 // every ranged and melee hit, so each mask is narrowed to the white hits by hand.
 func (hunter *Hunter) registerDeadlyAspects() {
+	aspectOfTheBeastRank := spellData.AspectOfTheBeast.Known(hunter.Level)
+	aspectOfTheHawkRank := spellData.AspectOfTheHawk.Known(hunter.Level)
 	rank := hunter.Talents.DeadlyAspects
 	if rank == 0 {
 		return

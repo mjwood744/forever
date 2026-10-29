@@ -220,7 +220,7 @@ func (hp *HunterPet) Initialize() {
 		hp.registerAbility(ladder.Highest())
 	}
 	// Every family learns Growl, so the family table does not list it.
-	hp.growl = hp.registerGrowl(spellData.GrowlTriggered.Highest())
+	hp.growl = hp.registerGrowl(spellData.GrowlTriggered.Known(hp.Level))
 	hp.registerDeath()
 	slices.SortStableFunc(hp.abilities, func(a, b *core.Spell) int {
 		return cmp.Compare(max(b.CD.Duration, b.SharedCD.Duration), max(a.CD.Duration, a.SharedCD.Duration))

@@ -64,7 +64,7 @@ func (shaman *Shaman) registerChainHeal(_ int32, rank *spelldata.Spell) {
 	maxHits := max(1, int(heal.ChainTargets))
 	bounce := float64(heal.ChainAmp)
 	riptideBonus := 1.0
-	if r := spellData.Riptide.Highest(); r != nil && r.EffectN(3) != nil {
+	if r := spellData.Riptide.Known(shaman.Level); r != nil && r.EffectN(3) != nil {
 		riptideBonus = 1 + r.EffectN(3).BasePoints/100
 	}
 

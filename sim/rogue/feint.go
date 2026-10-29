@@ -5,10 +5,9 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var feintRank = spellData.Feint.Highest()
-
 // This exists purely to model the DPS loss of having to occasionally feint
 func (rogue *Rogue) registerFeintSpell() {
+	feintRank := spellData.Feint.Known(rogue.Level)
 	config := spelldata.SpellConfig(&rogue.Unit, feintRank, spelldata.Melee(core.ProcMaskMeleeMHSpecial))
 
 	config.ApplyEffects = func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {

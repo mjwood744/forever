@@ -173,7 +173,7 @@ func TestSniperShotExtendsAutoShotRange(t *testing.T) {
 		rotation := &proto.APLRotation{Type: proto.APLRotation_TypeAPL}
 		if castSniperShot {
 			rotation.PriorityList = []*proto.APLListItem{{Action: &proto.APLAction{Action: &proto.APLAction_CastSpell{
-				CastSpell: &proto.APLActionCastSpell{SpellId: &proto.ActionID{RawId: &proto.ActionID_SpellId{SpellId: sniperShotRank.ID}}},
+				CastSpell: &proto.APLActionCastSpell{SpellId: &proto.ActionID{RawId: &proto.ActionID_SpellId{SpellId: spellData.SniperShot.Highest().ID}}},
 			}}}}
 		}
 		player := &proto.Player{
@@ -200,7 +200,7 @@ func TestSniperShotExtendsAutoShotRange(t *testing.T) {
 				case action.Id.GetOtherId() == proto.OtherAction_OtherActionShoot:
 					autoShots += target.Casts
 					landed += target.Hits + target.Crits
-				case action.Id.GetSpellId() == sniperShotRank.ID:
+				case action.Id.GetSpellId() == spellData.SniperShot.Highest().ID:
 					sniperShots += target.Casts
 				}
 			}
@@ -238,7 +238,7 @@ func TestEachHunterKeepsOneStingPerTarget(t *testing.T) {
 	other := sim.Raid.Parties[0].Players[1].(*Hunter)
 	target := sim.Encounter.AllTargetUnits[0]
 
-	serpent := hunter.GetSpell(core.ActionID{SpellID: serpentStingRank.ID}).Dot(target)
+	serpent := hunter.GetSpell(core.ActionID{SpellID: spellData.SerpentSting.Highest().ID}).Dot(target)
 	scorpid := target.GetAura("Scorpid Sting-" + hunter.Label)
 	otherScorpid := target.GetAura("Scorpid Sting-" + other.Label)
 
@@ -287,7 +287,7 @@ func TestTheHuntersOwnMarkCarriesTheMarkTag(t *testing.T) {
 	hunter := sim.Raid.Parties[0].Players[0].(*Hunter)
 	target := sim.Encounter.AllTargetUnits[0]
 
-	mark := hunter.GetSpell(core.ActionID{SpellID: huntersMarkRank.ID})
+	mark := hunter.GetSpell(core.ActionID{SpellID: spellData.HuntersMark.Highest().ID})
 	if mark == nil {
 		t.Fatal("the hunter has no Hunter's Mark")
 	}
@@ -335,7 +335,7 @@ func TestLaceratingStrikesRollsItsUntickedDamageIntoTheNextBite(t *testing.T) {
 	target := sim.Encounter.AllTargetUnits[0]
 
 	trigger := hunter.GetAura("Lacerating Strikes - Trigger")
-	bite := hunter.GetSpell(core.ActionID{SpellID: mongooseBiteRank.ID})
+	bite := hunter.GetSpell(core.ActionID{SpellID: spellData.MongooseBite.Highest().ID})
 	if trigger == nil || bite == nil {
 		t.Fatal("the SV hunter has no Lacerating Strikes or no Mongoose Bite")
 	}
@@ -476,8 +476,8 @@ func TestSurvivalistsDisciplineShortensTheTrapCooldown(t *testing.T) {
 		hunter := sim.Raid.Parties[0].Players[0].(*Hunter)
 		target := sim.Encounter.AllTargetUnits[0]
 
-		explosive := hunter.GetSpell(core.ActionID{SpellID: explosiveTrapRank.ID})
-		immolation := hunter.GetSpell(core.ActionID{SpellID: immolationTrapRank.ID})
+		explosive := hunter.GetSpell(core.ActionID{SpellID: spellData.ExplosiveTrap.Highest().ID})
+		immolation := hunter.GetSpell(core.ActionID{SpellID: spellData.ImmolationTrap.Highest().ID})
 		if explosive == nil || immolation == nil {
 			t.Fatal("the hunter has no Explosive Trap or no Immolation Trap")
 		}

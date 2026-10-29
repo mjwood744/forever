@@ -8,7 +8,7 @@ import (
 // Only the highest rank is registered: the mage casts the rank configured here, not every rank
 // spellData.ArcaneBlast lists.
 func (mage *Mage) registerArcaneBlastSpell() {
-	mage.registerArcaneBlastRank(spellData.ArcaneBlast.Len(), spellData.ArcaneBlast.Highest())
+	mage.registerArcaneBlastRank(spellData.ArcaneBlast.Len(), spellData.ArcaneBlast.Known(mage.Level))
 }
 
 func (mage *Mage) registerArcaneBlastRank(_ int32, rank *spelldata.Spell) {

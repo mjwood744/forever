@@ -8,7 +8,7 @@ import (
 // Only the highest rank is registered: the mage casts the rank configured here, not every rank
 // spellData.Pyroblast lists.
 func (mage *Mage) registerPyroblastSpell() {
-	mage.registerPyroblastRank(spellData.Pyroblast.Len(), spellData.Pyroblast.Highest())
+	mage.registerPyroblastRank(spellData.Pyroblast.Len(), spellData.Pyroblast.Known(mage.Level))
 }
 
 // Pyroblast

@@ -93,14 +93,13 @@ func (shaman *Shaman) registerWaterShieldSpell() func(sim *core.Simulation) {
 	return spendGlobe
 }
 
-var lightningShieldRank = spellData.LightningShield.Highest()
-
 // The shield's effect 1 fires 26545, a dummy, and the orb its tooltip names deals the damage.
-var lightningShieldOrb = lightningShieldRank.Refs()[0]
 
 // 10432 holds three charges for 10 minutes, and a hit taken spends one, at most once every 3.5 s, to
 // strike the attacker with the orb.
 func (shaman *Shaman) registerLightningShieldSpell() func(sim *core.Simulation, attacker *core.Unit) {
+	lightningShieldRank := spellData.LightningShield.Known(shaman.Level)
+	lightningShieldOrb := lightningShieldRank.Refs()[0]
 	orbConfig := spelldata.SpellConfig(&shaman.Unit, lightningShieldOrb,
 		spelldata.Magic(core.ProcMaskSpellDamageProc), spelldata.Proc(), spelldata.Flags(core.SpellFlagProc|SpellFlagShamanSpell))
 	orbConfig.ClassSpellMask = SpellMaskLightningShield

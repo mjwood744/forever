@@ -199,9 +199,8 @@ func (warrior *Warrior) registerImpale() {
 	spelldata.ParseStatic(&warrior.Character, spellData.Impale.Rank(warrior.Talents.Impale))
 }
 
-var mortalStrikeRank = spellData.MortalStrike.Highest()
-
 func (warrior *Warrior) registerMortalStrike() {
+	mortalStrikeRank := spellData.MortalStrike.Known(warrior.Level)
 	if !warrior.Talents.MortalStrike {
 		return
 	}

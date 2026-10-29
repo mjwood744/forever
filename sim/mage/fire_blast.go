@@ -13,7 +13,7 @@ import (
 // Only the highest rank is registered: the mage casts the rank configured here, not every rank
 // spellData.FireBlast lists.
 func (mage *Mage) registerFireBlastSpell() {
-	mage.registerFireBlastRank(spellData.FireBlast.Len(), spellData.FireBlast.Highest())
+	mage.registerFireBlastRank(spellData.FireBlast.Len(), spellData.FireBlast.Known(mage.Level))
 }
 
 func (mage *Mage) registerFireBlastRank(_ int32, rank *spelldata.Spell) {

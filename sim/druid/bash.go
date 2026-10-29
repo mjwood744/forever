@@ -7,7 +7,7 @@ import (
 
 // The row rolls a melee hit and refunds on a miss; the stun lands only on a hit.
 func (druid *Druid) registerBashSpell() {
-	rank := spellData.Bash.Highest()
+	rank := spellData.Bash.Known(druid.Level)
 	stuns := druid.NewEnemyAuraArray(func(target *core.Unit) *core.Aura {
 		return target.RegisterAura(spelldata.AuraConfig(rank, spelldata.Label(rank.Name)))
 	})

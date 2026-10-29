@@ -102,7 +102,7 @@ func NewPet(config PetConfig) Pet {
 				Type:        PetUnit,
 				Index:       config.Owner.Party.Raid.getNextPetIndex(),
 				Label:       fmt.Sprintf("%s - %s", config.Owner.Label, config.Name),
-				Level:       CharacterLevel,
+				Level:       config.Owner.Level,
 				PseudoStats: stats.NewPseudoStats(),
 				auraTracker: newAuraTracker(),
 				Metrics:     NewUnitMetrics(),

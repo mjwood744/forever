@@ -6,9 +6,8 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var sunderArmorRank = spellData.SunderArmor.Highest()
-
 func (warrior *Warrior) registerSunderArmor() {
+	sunderArmorRank := spellData.SunderArmor.Known(warrior.Level)
 	warrior.SunderArmorAuras = warrior.NewEnemyAuraArray(func(target *core.Unit) *core.Aura {
 		return buffs.NewSpellDataSunderArmorAura(target, true, 0)
 	})

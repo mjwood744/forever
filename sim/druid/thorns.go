@@ -7,7 +7,7 @@ import (
 )
 
 func (druid *Druid) registerThornsSpell() {
-	rank := spellData.Thorns.Highest()
+	rank := spellData.Thorns.Known(druid.Level)
 	aura := druid.GetAura("Thorns (Player)")
 	if aura == nil {
 		aura = buffs.NewSpellDataThornsAura(&druid.Unit, true, 0)

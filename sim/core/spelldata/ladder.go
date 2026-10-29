@@ -72,6 +72,28 @@ func (l Ladder) Highest() *Spell {
 	return l.ranks[len(l.ranks)-1]
 }
 
+// The highest rank a character of this level has been taught: the last rank whose SpellLevel is at or
+// below the level. A character below the first rank's level gets rank 1, so the spell still registers;
+// a rotation at that level must not cast it, as the game's own action bar would not offer it.
+func (l Ladder) Known(level int32) *Spell {
+	return l.KnownUpTo(level, l.Len())
+}
+
+// Known, but never above rank top: a ladder whose last ranks no trainer teaches stops at the last one
+// that is taught.
+func (l Ladder) KnownUpTo(level int32, top int32) *Spell {
+	top = min(top, l.Len())
+	if top <= 0 {
+		return Nil
+	}
+	for n := top; n > 1; n-- {
+		if int32(l.ranks[n-1].SpellLevel) <= level {
+			return l.ranks[n-1]
+		}
+	}
+	return l.ranks[0]
+}
+
 // The rank with this spell id. Panics on an id the ladder does not carry, the way MustFind does on a
 // spell the store does not carry.
 func (l Ladder) ByID(id int32) *Spell {

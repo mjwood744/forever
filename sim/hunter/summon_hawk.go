@@ -8,14 +8,10 @@ import (
 	"github.com/wowsims/forever/sim/core/stats"
 )
 
-var summonHawkRank = spellData.SummonHawk.Highest()
-var summonHawkBaseDamage = summonHawkRank.DamageEffect().Average()
-
 // The creature the dive leaves behind, up for 18 s.
 var hawkSummon = spellData.SummonHawkTriggered.ByID(1293248)
 
 // The tooltip's ${$s1+($rap*($s4/100))}: effect 4 is the share of ranged attack power.
-var summonHawkAPShare = summonHawkRank.EffectN(4).Percent()
 
 // A hawk the dive leaves behind: a guardian with a pet's base stats and swing damage, summoned at
 // the enemy by the cast.
@@ -63,6 +59,7 @@ var hawkSwing = core.Weapon{
 // the tamed pet's: 1% hit took a hawk from 1 miss in 32 swings to none in 515 against a target 8
 // levels below it.
 func (hunter *Hunter) newHawks() []*HawkPet {
+	summonHawkRank := spellData.SummonHawk.Known(hunter.Level)
 	if !hunter.Talents.SummonHawk {
 		return nil
 	}
@@ -120,6 +117,9 @@ func (hunter *Hunter) pets() []*core.Pet {
 // The dive's damage, then a hawk for 18 s. The hawks take turns, so one past the count replaces
 // the one with the least time left.
 func (hunter *Hunter) registerSummonHawk() {
+	summonHawkRank := spellData.SummonHawk.Known(hunter.Level)
+	summonHawkAPShare := summonHawkRank.EffectN(4).Percent()
+	summonHawkBaseDamage := summonHawkRank.DamageEffect().Average()
 	if !hunter.Talents.SummonHawk {
 		return
 	}

@@ -6,7 +6,7 @@ import (
 )
 
 func (druid *Druid) registerRavageSpell() {
-	rank := spellData.Ravage.Highest()
+	rank := spellData.Ravage.Known(druid.Level)
 	config := spelldata.SpellConfig(&druid.Unit, rank, spelldata.Melee(core.ProcMaskMeleeMHSpecial))
 	// The row's stealth requirement (ATTR_REQ_STEALTH) is not read by CastRequirement, so Prowl or
 	// Shadowmeld is checked here; "behind the target" is the tooltip's.

@@ -5,9 +5,8 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var shieldBashRank = spellData.ShieldBash.Highest()
-
 func (warrior *Warrior) registerShieldBash() {
+	shieldBashRank := spellData.ShieldBash.Known(warrior.Level)
 	// TODO: Manual review needed -- the game files state no threat coefficient; 1 until measured in game.
 	config := spelldata.SpellConfig(&warrior.Unit, shieldBashRank, spelldata.Melee(core.ProcMaskMeleeOHSpecial))
 

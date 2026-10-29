@@ -6,7 +6,7 @@ import (
 )
 
 func (druid *Druid) registerCowerSpell() {
-	rank := spellData.Cower.Highest()
+	rank := spellData.Cower.Known(druid.Level)
 	config := spelldata.SpellConfig(&druid.Unit, rank, spelldata.Melee(core.ProcMaskEmpty))
 	config.ApplyEffects = func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
 		result := spell.CalcAndDealDamage(sim, target, 0, spell.OutcomeMeleeSpecialHit)

@@ -12,9 +12,8 @@ import (
 // How close to running out the warrior's own shout has to be before recasting it is worth a global.
 const ShoutExpirationThreshold = time.Second * 3
 
-var battleShoutRank = spellData.BattleShout.Highest()
-
 func (warrior *Warrior) registerBattleShout() {
+	battleShoutRank := spellData.BattleShout.Known(warrior.Level)
 	// A warrior that shouts builds its own copy. One that never shouts gets the
 	// isPlayer=false constructor, whose aura is the raid's external copy, and the
 	// raid's Battle Shout state sets what that copy is worth.

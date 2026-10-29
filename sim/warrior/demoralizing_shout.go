@@ -6,9 +6,8 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var demoralizingShoutRank = spellData.DemoralizingShout.Highest()
-
 func (warrior *Warrior) registerDemoralizingShout() {
+	demoralizingShoutRank := spellData.DemoralizingShout.Known(warrior.Level)
 	warrior.DemoralizingShoutAuras = warrior.NewEnemyAuraArray(func(target *core.Unit) *core.Aura {
 		// Nothing in the warrior tree prices this shout's aura: Forever has no
 		// Improved Demoralizing Shout, and Booming Voice widens the radius and

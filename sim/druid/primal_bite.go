@@ -9,7 +9,7 @@ func (druid *Druid) registerPrimalBiteSpell() {
 	if !druid.Talents.PrimalBite {
 		return
 	}
-	rank := spellData.PrimalBite.Highest()
+	rank := spellData.PrimalBite.Known(druid.Level)
 	var results core.SpellResultSlice
 	config := spelldata.SpellConfig(&druid.Unit, rank, spelldata.Melee(core.ProcMaskMeleeMHSpecial))
 	// TODO: Ingame research needed -- the tooltip's "generating a high amount of threat"; the row states no

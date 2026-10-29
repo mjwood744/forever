@@ -6,9 +6,8 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var huntersMarkRank = spellData.HuntersMark.Highest()
-
 func (hunter *Hunter) registerHuntersMark() {
+	huntersMarkRank := spellData.HuntersMark.Known(hunter.Level)
 	auras := hunter.NewEnemyAuraArray(func(target *core.Unit) *core.Aura {
 		return buffs.NewSpellDataHuntersMarkAura(target, true, 0)
 	})

@@ -7,6 +7,35 @@ import (
 )
 
 const CharacterLevel = 60
+
+// PlayerLevel is the level a player is simmed at: the level set on the player, or CharacterLevel when none is
+// set.
+func PlayerLevel(player *proto.Player) int32 {
+	if player == nil || player.Level <= 0 || player.Level > CharacterLevel {
+		return CharacterLevel
+	}
+	return player.Level
+}
+
+// RaidLevel is the highest level among the raid's players. Mobs without a level of their own are raid bosses
+// three levels above it, and mob crit chance is read against it.
+func RaidLevel(raid *proto.Raid) int32 {
+	level := int32(0)
+	if raid != nil {
+		for _, party := range raid.Parties {
+			for _, player := range party.Players {
+				if player != nil && player.Class != proto.Class_ClassUnknown {
+					level = max(level, PlayerLevel(player))
+				}
+			}
+		}
+	}
+	if level == 0 {
+		return CharacterLevel
+	}
+	return level
+}
+
 const MinIlvl = 60
 const MaxIlvl = 600
 

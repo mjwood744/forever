@@ -5,9 +5,8 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var garroteRank = spellData.Garrote.Highest()
-
 func (rogue *Rogue) registerGarrote() {
+	garroteRank := spellData.Garrote.Known(rogue.Level)
 	tick := garroteRank.PeriodicEffect()
 	apScaling := 0.03 // Estimated from in-game tests.
 	comboPointGen := garroteRank.EnergizeEffect().Average()

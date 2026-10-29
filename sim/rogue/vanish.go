@@ -5,9 +5,8 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var vanishRank = spellData.Vanish.Highest()
-
 func (rogue *Rogue) registerVanishSpell() {
+	vanishRank := spellData.Vanish.Known(rogue.Level)
 	config := spelldata.SpellConfig(&rogue.Unit, vanishRank, spelldata.Flags(core.SpellFlagAPL|core.SpellFlagMCD))
 
 	config.ApplyEffects = func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {

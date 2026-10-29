@@ -6,9 +6,9 @@ import (
 )
 
 // Rank 8 is the highest trainable. Rank 9 exists from a AQ book; acquisition TBD
-var backstabRank = spellData.Backstab.Rank(8)
 
 func (rogue *Rogue) registerBackstabSpell() {
+	backstabRank := spellData.Backstab.KnownUpTo(rogue.Level, 8)
 	backstabBaseDamage := backstabRank.DamageEffect().Average()
 	comboPointGen := backstabRank.EnergizeEffect().Average()
 	config := spelldata.SpellConfig(&rogue.Unit, backstabRank, spelldata.Melee(core.ProcMaskMeleeMHSpecial))

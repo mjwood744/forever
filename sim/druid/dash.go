@@ -6,7 +6,7 @@ import (
 )
 
 func (druid *Druid) registerDashSpell() {
-	rank := spellData.Dash.Highest()
+	rank := spellData.Dash.Known(druid.Level)
 	druid.DashAura = druid.RegisterAura(spelldata.AuraConfig(rank))
 	movement := druid.DashAura.NewActiveMovementSpeedEffect(rank.EffectN(1).Percent())
 	druid.CatFormAura.ApplyOnExpire(func(_ *core.Aura, sim *core.Simulation) {

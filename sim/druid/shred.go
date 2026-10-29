@@ -6,7 +6,7 @@ import (
 )
 
 func (druid *Druid) registerShredSpell() {
-	rank := spellData.Shred.Highest()
+	rank := spellData.Shred.Known(druid.Level)
 	config := spelldata.SpellConfig(&druid.Unit, rank, spelldata.Melee(core.ProcMaskMeleeMHSpecial))
 	config.ExtraCastCondition = func(_ *core.Simulation, _ *core.Unit) bool {
 		return druid.BehindTarget()

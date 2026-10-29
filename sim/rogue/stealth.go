@@ -5,9 +5,8 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var stealthRank = spellData.Stealth.Highest()
-
 func (rogue *Rogue) registerStealthAura() {
+	stealthRank := spellData.Stealth.Known(rogue.Level)
 	config := spelldata.SpellConfig(&rogue.Unit, stealthRank, spelldata.Flags(core.SpellFlagAPL|core.SpellFlagPrepullOnly))
 
 	config.ApplyEffects = func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {

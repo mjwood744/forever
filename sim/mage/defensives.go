@@ -10,13 +10,13 @@ var counterspellRank = spellData.Counterspell.Highest()
 func (mage *Mage) registerDefensiveSpells() {
 	// Only the highest rank is registered: the mage casts the rank configured here, not every rank
 	// spellData.FireWard lists.
-	mage.registerWardSpell(spellData.FireWard.Highest(), nil, nil)
+	mage.registerWardSpell(spellData.FireWard.Known(mage.Level), nil, nil)
 	// Only the highest rank is registered: the mage casts the rank configured here, not every rank
 	// spellData.FrostWard lists.
-	mage.registerFrostWardSpell(spellData.FrostWard.Highest())
+	mage.registerFrostWardSpell(spellData.FrostWard.Known(mage.Level))
 	// Only the highest rank is registered: the mage casts the rank configured here, not every rank
 	// spellData.ManaShield lists.
-	mage.registerManaShieldSpell(spellData.ManaShield.Len(), spellData.ManaShield.Highest())
+	mage.registerManaShieldSpell(spellData.ManaShield.Len(), spellData.ManaShield.Known(mage.Level))
 	mage.registerCounterspellSpell()
 }
 

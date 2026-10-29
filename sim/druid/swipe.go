@@ -7,7 +7,7 @@ import (
 
 // The 3% attack power share is an override on the row: the game files state none.
 func (druid *Druid) registerSwipeBearSpell() {
-	rank := spellData.Swipe.Highest()
+	rank := spellData.Swipe.Known(druid.Level)
 	damageEffect := rank.DamageEffect()
 	base := damageEffect.Average()
 	targets := int32(damageEffect.ChainTargets)

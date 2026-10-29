@@ -5,13 +5,12 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var serpentStingRank = spellData.SerpentSting.Highest()
-
 // TODO: In-game testing required. The row states no attack power share on the tick; the Forever
 // notes say 10% of ranged attack power over the duration, 2% a tick, read at each tick.
 const serpentStingTickAPShare = 0.02
 
 func (hunter *Hunter) registerSerpentSting() {
+	serpentStingRank := spellData.SerpentSting.Known(hunter.Level)
 	tick := serpentStingRank.PeriodicEffect()
 
 	config := spelldata.SpellConfig(&hunter.Unit, serpentStingRank, spelldata.Flags(core.SpellFlagAPL))
