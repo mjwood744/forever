@@ -287,7 +287,7 @@ func (warlock *Warlock) applyFelDomination() {
 		return
 	}
 
-	rankedSpell := spellData.FelDomination.ByID(18708)
+	rankedSpell := spellData.FelDomination.KnownUpToID(warlock.Level, 18708)
 	summons := rankedSpell.EffectN(1).ClassFlags
 
 	auraConfig := spelldata.AuraConfig(rankedSpell)

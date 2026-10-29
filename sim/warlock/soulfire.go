@@ -7,7 +7,7 @@ import (
 
 // The 1 min cooldown is the row's category cooldown, and the Soul Shard each cast takes the row's reagent.
 func (warlock *Warlock) registerSoulfire() {
-	rankedSpell := spellData.SoulFire.ByID(17924)
+	rankedSpell := spellData.SoulFire.KnownUpToID(warlock.Level, 17924)
 	soulFireHit := rankedSpell.DamageEffect()
 
 	config := spelldata.SpellConfig(&warlock.Unit, rankedSpell, spelldata.Magic(core.ProcMaskSpellDamage))

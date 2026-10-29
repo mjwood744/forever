@@ -5,12 +5,11 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var overpowerRank = spellData.Overpower.ByID(11585)
-
 // The window a dodge opens: the aura Offensive State (DND) fires on the hit.
 var overpowerWindow = spellData.OffensiveStateTriggered.Highest()
 
 func (warrior *Warrior) registerOverpower() {
+	overpowerRank := spellData.Overpower.KnownUpToID(warrior.Level, 11585)
 	warrior.OverpowerAura = warrior.RegisterAura(spelldata.AuraConfig(overpowerWindow, spelldata.Label("Overpower Aura")))
 
 	trigger := spelldata.ProcTrigger(&warrior.Character, spellData.OffensiveState.Highest(),

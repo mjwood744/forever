@@ -9,7 +9,7 @@ import (
 // TODO: Bane of Doom Effect (18662) summons a Doomguard (11859) for 15s, which needs the target to die while
 // Doom is on it.
 func (warlock *Warlock) registerBaneOfDoom() {
-	rankedSpell := spellData.BaneOfDoom.ByID(603)
+	rankedSpell := spellData.BaneOfDoom.KnownUpToID(warlock.Level, 603)
 	doomTick := rankedSpell.PeriodicEffect()
 
 	config := spelldata.SpellConfig(&warlock.Unit, rankedSpell, spelldata.Magic(core.ProcMaskSpellDamage))

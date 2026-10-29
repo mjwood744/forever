@@ -7,12 +7,12 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var chargeRank = spellData.Charge.ByID(11578)
-
-var vanguardChargeRank = chargeRank.OverriddenBy(spellData.Vanguard.Highest())
-
 func (warrior *Warrior) registerCharge() {
-	rank := core.Ternary(warrior.Talents.Vanguard, vanguardChargeRank, chargeRank)
+	chargeRank := spellData.Charge.KnownUpToID(warrior.Level, 11578)
+	rank := chargeRank
+	if warrior.Talents.Vanguard {
+		rank = chargeRank.OverriddenBy(spellData.Vanguard.Highest())
+	}
 	actionID := core.ActionID{SpellID: chargeRank.ID}
 	metrics := warrior.NewRageMetrics(actionID)
 	metrics.NoThreat = rank.GeneratesNoThreat()

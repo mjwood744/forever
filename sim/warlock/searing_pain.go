@@ -6,7 +6,7 @@ import (
 )
 
 func (warlock *Warlock) registerSearingPain() {
-	rankedSpell := spellData.SearingPain.ByID(17923)
+	rankedSpell := spellData.SearingPain.KnownUpToID(warlock.Level, 17923)
 	searingPainHit := rankedSpell.DamageEffect()
 
 	config := spelldata.SpellConfig(&warlock.Unit, rankedSpell, spelldata.Magic(core.ProcMaskSpellDamage))

@@ -8,7 +8,7 @@ import (
 func (druid *Druid) registerFerociousBiteSpell() {
 	// Rank 5 (31018) is taught by an item, Book of Ferocious Bite V (24101), not by the trainer.
 	// TODO: Ingame research needed -- whether that book can be obtained.
-	rank := spellData.FerociousBite.ByID(22829)
+	rank := spellData.FerociousBite.KnownUpToID(druid.Level, 22829)
 	damageEffect := rank.DamageEffect()
 	perEnergy := rank.EffectN(2).BaseValue() / 100
 	config := spelldata.SpellConfig(&druid.Unit, rank, spelldata.Melee(core.ProcMaskMeleeMHSpecial))

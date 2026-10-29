@@ -10,7 +10,7 @@ const immolateTag = "Immolate"
 
 // A hit, then a dot. Effect 3 is a server script (E_SCRIPT_EFFECT) the game files do not describe.
 func (warlock *Warlock) registerImmolate() {
-	rankedSpell := spellData.Immolate.ByID(25309)
+	rankedSpell := spellData.Immolate.KnownUpToID(warlock.Level, 25309)
 	immolateHit := rankedSpell.DamageEffect()
 	immolateTick := rankedSpell.PeriodicEffect()
 

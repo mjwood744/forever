@@ -3,6 +3,7 @@ package buffs
 import (
 	"github.com/wowsims/forever/sim/core"
 	"github.com/wowsims/forever/sim/core/proto"
+	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
 // The debuffs the raid puts on a target: the generated rows, then the one the game files state in a
@@ -30,17 +31,17 @@ func NewSpellDataScorpidStingAuraFor(target *core.Unit, hunter *core.Unit, sting
 	return newCasterDebuff(target, scorpidStingMeta, hunter, stingTag, 0)
 }
 
-// A warlock's own Curse of the Elements, one per warlock, bidding in the curse's category.
-func NewSpellDataCurseOfElementsAuraFor(target *core.Unit, warlock *core.Unit) *core.Aura {
-	return newCasterDebuff(target, curseOfElementsMeta, warlock, CurseOfElementsCategory, 0)
+// A warlock's own Curse of the Elements at the rank cast, one per warlock, bidding in the curse's category.
+func NewSpellDataCurseOfElementsAuraFor(target *core.Unit, warlock *core.Unit, rank *spelldata.Spell) *core.Aura {
+	return newCasterDebuff(target, curseOfElementsMeta.atRank(rank), warlock, CurseOfElementsCategory, 0)
 }
 
-// A warlock's own Curse of Weakness, one per warlock, bidding in the curse's category.
-func NewSpellDataCurseOfWeaknessAuraFor(target *core.Unit, warlock *core.Unit) *core.Aura {
-	return newCasterDebuff(target, curseOfWeaknessMeta, warlock, CurseOfWeaknessCategory, 0)
+// A warlock's own Curse of Weakness at the rank cast, one per warlock, bidding in the curse's category.
+func NewSpellDataCurseOfWeaknessAuraFor(target *core.Unit, warlock *core.Unit, rank *spelldata.Spell) *core.Aura {
+	return newCasterDebuff(target, curseOfWeaknessMeta.atRank(rank), warlock, CurseOfWeaknessCategory, 0)
 }
 
-// A warlock's own Curse of Recklessness, one per warlock, bidding in the curse's category.
-func NewSpellDataCurseOfRecklessnessAuraFor(target *core.Unit, warlock *core.Unit) *core.Aura {
-	return newCasterDebuff(target, curseOfRecklessnessMeta, warlock, CurseOfRecklessnessCategory, 0)
+// A warlock's own Curse of Recklessness at the rank cast, one per warlock, bidding in the curse's category.
+func NewSpellDataCurseOfRecklessnessAuraFor(target *core.Unit, warlock *core.Unit, rank *spelldata.Spell) *core.Aura {
+	return newCasterDebuff(target, curseOfRecklessnessMeta.atRank(rank), warlock, CurseOfRecklessnessCategory, 0)
 }

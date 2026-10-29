@@ -5,7 +5,7 @@ import (
 )
 
 func (warlock *Warlock) registerDrainLife() {
-	rankedSpell := spellData.DrainLife.ByID(11700)
+	rankedSpell := spellData.DrainLife.KnownUpToID(warlock.Level, 11700)
 	drainLifeTick := rankedSpell.PeriodicEffect()
 
 	healthMetrics := warlock.NewHealthMetrics(core.ActionID{SpellID: rankedSpell.ID})

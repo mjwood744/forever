@@ -5,10 +5,8 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var chainLightningRanks = castableRanks(spellData.ChainLightning)
-
 func (shaman *Shaman) registerChainLightningSpell() {
-	shaman.registerWithOverloads(chainLightningRanks, chainLightningOverloadRanks, shaman.newChainLightningSpellConfig)
+	shaman.registerWithOverloads(castableRanks(spellData.ChainLightning, shaman.Level), chainLightningOverloadRanks, shaman.newChainLightningSpellConfig)
 }
 
 // The cast, with the overload it may trigger; the overload itself, from its own row, where overload is

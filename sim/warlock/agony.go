@@ -10,7 +10,7 @@ import (
 // on every tick, and does not ramp. Amplify Curse raises the whole tick, base and share. Damage multipliers
 // apply as each tick lands.
 func (warlock *Warlock) registerBaneOfAgony() {
-	rankedSpell := spellData.BaneOfAgony.ByID(11713)
+	rankedSpell := spellData.BaneOfAgony.KnownUpToID(warlock.Level, 11713)
 	agonyTick := rankedSpell.PeriodicEffect()
 
 	// What each target's Bane landed with: the Amplify Curse bonus, which the cast spends, and the spell

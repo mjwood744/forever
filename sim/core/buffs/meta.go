@@ -150,6 +150,17 @@ func newDebuff(target *core.Unit, m *Meta, isPlayer bool, talentPoints int32) *c
 // A caster's own copy of a generated debuff, one per caster: newDebuff's player copy labelled
 // "<Label>-<caster's label>" and tagged with tag, which the caster finds it by. It bids in Category
 // all the same.
+// The buff read from another rank of its spell, one a caster below level 60 knows; the buff itself for its
+// own rank.
+func (m *Meta) atRank(rank *spelldata.Spell) *Meta {
+	if rank == m.Spell {
+		return m
+	}
+	at := *m
+	at.Spell = rank
+	return &at
+}
+
 func newCasterDebuff(target *core.Unit, m *Meta, caster *core.Unit, tag string, talentPoints int32) *core.Aura {
 	return m.debuff(target, true, m.Label+"-"+caster.Label, tag, talentPoints)
 }

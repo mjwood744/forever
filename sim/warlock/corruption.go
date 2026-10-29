@@ -6,7 +6,7 @@ import (
 )
 
 func (warlock *Warlock) registerCorruption() {
-	rankedSpell := spellData.Corruption.ByID(25311)
+	rankedSpell := spellData.Corruption.KnownUpToID(warlock.Level, 25311)
 	corruptionTick := rankedSpell.PeriodicEffect()
 
 	config := spelldata.SpellConfig(&warlock.Unit, rankedSpell, spelldata.Magic(core.ProcMaskSpellDamage))

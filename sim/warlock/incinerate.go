@@ -8,7 +8,7 @@ import (
 // Granted by the Incinerate talent: effect 2 is the bonus against a target afflicted by Immolate.
 // TODO: Assumed any Immolate counts, not only this warlock's; confirm in-game.
 func (warlock *Warlock) registerIncinerate() {
-	rankedSpell := spellData.Incinerate.ByID(1293813)
+	rankedSpell := spellData.Incinerate.KnownUpToID(warlock.Level, 1293813)
 	incinerateHit := rankedSpell.DamageEffect()
 	immolateMult := 1 + rankedSpell.EffectN(2).Percent()
 

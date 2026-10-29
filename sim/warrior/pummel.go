@@ -5,10 +5,9 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var pummelRank = spellData.Pummel.ByID(6554)
-var pummelBaseDamage = pummelRank.DamageEffect().Average()
-
 func (warrior *Warrior) registerPummel() {
+	pummelRank := spellData.Pummel.KnownUpToID(warrior.Level, 6554)
+	pummelBaseDamage := pummelRank.DamageEffect().Average()
 	config := spelldata.SpellConfig(&warrior.Unit, pummelRank, spelldata.Melee(core.ProcMaskMeleeMHSpecial))
 
 	config.ApplyEffects = func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {

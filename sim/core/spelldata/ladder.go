@@ -94,6 +94,16 @@ func (l Ladder) KnownUpTo(level int32, top int32) *Spell {
 	return l.ranks[0]
 }
 
+// KnownUpTo, with the top rank named by its spell id.
+func (l Ladder) KnownUpToID(level int32, id int32) *Spell {
+	for n, s := range l.ranks {
+		if s.ID == id {
+			return l.KnownUpTo(level, int32(n+1))
+		}
+	}
+	return l.ByID(id)
+}
+
 // The rank with this spell id. Panics on an id the ladder does not carry, the way MustFind does on a
 // spell the store does not carry.
 func (l Ladder) ByID(id int32) *Spell {

@@ -9,7 +9,7 @@ import (
 // Demon Armor (11735), parsed from its row: armor and Shadow resistance. Its in-combat health regen is left
 // out by the parse. Demonic Aegis raises every amount it states.
 func (warlock *Warlock) registerArmors() {
-	rankedSpell := spellData.DemonArmor.ByID(11735)
+	rankedSpell := spellData.DemonArmor.KnownUpToID(warlock.Level, 11735)
 
 	opts := []spelldata.ParseOpt{}
 	if warlock.Talents.DemonicAegis > 0 {

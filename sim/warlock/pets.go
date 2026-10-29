@@ -413,7 +413,7 @@ func (warlock *Warlock) registerBloodPact() {
 }
 
 func (pet *WarlockPet) registerFirebolt() {
-	rankedSpell := spellData.Firebolt.ByID(11763)
+	rankedSpell := spellData.Firebolt.KnownUpToID(pet.Level, 11763)
 	fireboltHit := rankedSpell.DamageEffect()
 
 	pet.MinMana = rankedSpell.Cost()
@@ -435,7 +435,7 @@ func (pet *WarlockPet) registerFirebolt() {
 
 // The 12s cooldown is the row's category cooldown, which SpellConfig reads.
 func (pet *WarlockPet) registerLashOfPain() {
-	rankedSpell := spellData.LashOfPain.ByID(11780)
+	rankedSpell := spellData.LashOfPain.KnownUpToID(pet.Level, 11780)
 	lashHit := rankedSpell.DamageEffect()
 
 	pet.MinMana = rankedSpell.Cost()

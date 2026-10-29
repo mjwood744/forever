@@ -8,7 +8,7 @@ import (
 // Granted by the Shadowburn talent. The 15 sec cooldown is the row's category cooldown, and the Soul Shard
 // each cast takes the row's reagent; the one a kill returns is not modelled.
 func (warlock *Warlock) registerShadowBurn() {
-	rankedSpell := spellData.Shadowburn.ByID(18871)
+	rankedSpell := spellData.Shadowburn.KnownUpToID(warlock.Level, 18871)
 	shadowburnHit := rankedSpell.DamageEffect()
 
 	config := spelldata.SpellConfig(&warlock.Unit, rankedSpell, spelldata.Magic(core.ProcMaskSpellDamage))

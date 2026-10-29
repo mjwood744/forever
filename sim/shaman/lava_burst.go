@@ -5,10 +5,8 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var lavaBurstRanks = castableRanks(spellData.LavaBurst)
-
 func (shaman *Shaman) registerLavaBurstSpells() {
-	lavaBurstRanks.Each(func(_ int32, rank *spelldata.Spell) { shaman.registerLavaBurstSpell(rank) })
+	castableRanks(spellData.LavaBurst, shaman.Level).Each(func(_ int32, rank *spelldata.Spell) { shaman.registerLavaBurstSpell(rank) })
 }
 
 // Lightning Overload names Lightning Bolt and Chain Lightning only, so Lava Burst has no overload.

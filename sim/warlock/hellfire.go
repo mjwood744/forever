@@ -10,7 +10,7 @@ import (
 // for the same, spell power included. An area effect that ticks rolls hit on every tick, and crit unless
 // Hellfire Effect's row bars it.
 func (warlock *Warlock) registerHellfire() {
-	rankedSpell := spellData.Hellfire.ByID(11684)
+	rankedSpell := spellData.Hellfire.KnownUpToID(warlock.Level, 11684)
 	channelTick := rankedSpell.PeriodicEffect()
 	selfBurn := rankedSpell.EffectN(2)
 

@@ -9,7 +9,7 @@ import (
 // to other targets is dealt to it as well. The effect is a dummy, so the share is read off its value. It
 // holds one target at a time, and is a Bane: landing it takes any other Bane of this warlock's off the target.
 func (warlock *Warlock) registerBaneOfHavoc() {
-	rankedSpell := spellData.BaneOfHavoc.ByID(1225228)
+	rankedSpell := spellData.BaneOfHavoc.KnownUpToID(warlock.Level, 1225228)
 	havocShare := rankedSpell.EffectN(1).Percent()
 
 	// The target the Bane is on, if any

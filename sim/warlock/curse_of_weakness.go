@@ -10,10 +10,10 @@ import (
 // physical damage done by the target. Its category keeps it from stacking with another warlock's copy
 // or a raid one.
 func (warlock *Warlock) registerCurseOfWeakness() {
-	rankedSpell := spellData.CurseOfWeakness.ByID(11708)
+	rankedSpell := spellData.CurseOfWeakness.KnownUpToID(warlock.Level, 11708)
 
 	warlock.CurseOfWeaknessAuras = warlock.NewEnemyAuraArray(func(target *core.Unit) *core.Aura {
-		return buffs.NewSpellDataCurseOfWeaknessAuraFor(target, &warlock.Unit)
+		return buffs.NewSpellDataCurseOfWeaknessAuraFor(target, &warlock.Unit, rankedSpell)
 	})
 	config := spelldata.SpellConfig(&warlock.Unit, rankedSpell, spelldata.Flags(core.SpellFlagAPL))
 	config.ProcMask = core.ProcMaskEmpty

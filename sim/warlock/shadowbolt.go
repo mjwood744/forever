@@ -7,7 +7,7 @@ import (
 
 // Nightfall's Shadow Trance makes it instant through the cast time modifier parsed onto that aura.
 func (warlock *Warlock) registerShadowBolt() {
-	rankedSpell := spellData.ShadowBolt.ByID(25307)
+	rankedSpell := spellData.ShadowBolt.KnownUpToID(warlock.Level, 25307)
 	shadowBoltHit := rankedSpell.DamageEffect()
 
 	config := spelldata.SpellConfig(&warlock.Unit, rankedSpell, spelldata.Magic(core.ProcMaskSpellDamage))

@@ -8,7 +8,7 @@ import (
 // A periodic leech like Drain Life's: each tick heals the caster for what it deals. The row does not mark
 // Periodic Can Crit, so the ticks do not crit.
 func (warlock *Warlock) registerSiphonLifeSpell() {
-	rankedSpell := spellData.SiphonLife.ByID(18881)
+	rankedSpell := spellData.SiphonLife.KnownUpToID(warlock.Level, 18881)
 	siphonLifeTick := rankedSpell.PeriodicEffect()
 
 	healthMetrics := warlock.NewHealthMetrics(core.ActionID{SpellID: rankedSpell.ID})

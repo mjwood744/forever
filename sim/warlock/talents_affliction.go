@@ -105,7 +105,7 @@ func (warlock *Warlock) registerAmplifyCurse() {
 		return
 	}
 
-	rankedSpell := spellData.AmplifyCurse.ByID(18288)
+	rankedSpell := spellData.AmplifyCurse.KnownUpToID(warlock.Level, 18288)
 	warlock.AmplifyCurseMultiplier = 1 + rankedSpell.EffectN(1).Percent()
 
 	// The curses the tooltip names spend it. Effect 1 names Curse of Weakness and effect 2 Curse of Exhaustion;

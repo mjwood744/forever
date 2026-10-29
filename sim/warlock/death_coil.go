@@ -8,7 +8,7 @@ import (
 // E_HEALTH_LEECH: the caster heals for all the damage dealt. The fear (effect 2) does not affect sims, and
 // the 2 min cooldown is the row's category cooldown.
 func (warlock *Warlock) registerDeathCoil() {
-	rankedSpell := spellData.DeathCoil.ByID(17926)
+	rankedSpell := spellData.DeathCoil.KnownUpToID(warlock.Level, 17926)
 	deathCoilHit := rankedSpell.EffectN(1)
 
 	healthMetrics := warlock.NewHealthMetrics(core.ActionID{SpellID: rankedSpell.ID})

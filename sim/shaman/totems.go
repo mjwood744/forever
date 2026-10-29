@@ -8,8 +8,6 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var graceOfAirTotemRank = spellData.GraceOfAirTotem.ByID(25359)
-
 // A totem's cast: the row's cost, GCD and cooldown, and nothing it hits.
 func (shaman *Shaman) newTotemSpellConfig(rank *spelldata.Spell) core.SpellConfig {
 	config := spelldata.SpellConfig(&shaman.Unit, rank, spelldata.Flags(core.SpellFlagAPL|SpellFlagShamanSpell|SpellFlagInstant))
@@ -96,6 +94,7 @@ func (shaman *Shaman) registerStrengthOfEarthTotemSpell() {
 }
 
 func (shaman *Shaman) registerGraceOfAirTotemSpell() {
+	graceOfAirTotemRank := spellData.GraceOfAirTotem.KnownUpToID(shaman.Level, 25359)
 	shaman.registerBuffTotem(graceOfAirTotemRank, AirTotem,
 		buffs.NewSpellDataGraceOfAirTotemAura(&shaman.Unit, true, 0))
 }

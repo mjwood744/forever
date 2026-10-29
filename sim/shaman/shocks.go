@@ -5,10 +5,6 @@ import (
 	"github.com/wowsims/forever/sim/core/spelldata"
 )
 
-var earthShockRanks = castableRanks(spellData.EarthShock)
-var flameShockRanks = castableRanks(spellData.FlameShock)
-var frostShockRanks = castableRanks(spellData.FrostShock)
-
 // The three shocks share category 19, so the row's category cooldown is one timer for all of them.
 func (shaman *Shaman) newShockSpellConfig(rank *spelldata.Spell) core.SpellConfig {
 	return spelldata.SpellConfig(&shaman.Unit, rank,
@@ -60,7 +56,7 @@ func (shaman *Shaman) registerFrostShockSpell(rank *spelldata.Spell) {
 }
 
 func (shaman *Shaman) registerShocks() {
-	earthShockRanks.Each(func(_ int32, rank *spelldata.Spell) { shaman.registerEarthShockSpell(rank) })
-	flameShockRanks.Each(func(_ int32, rank *spelldata.Spell) { shaman.registerFlameShockSpell(rank) })
-	frostShockRanks.Each(func(_ int32, rank *spelldata.Spell) { shaman.registerFrostShockSpell(rank) })
+	castableRanks(spellData.EarthShock, shaman.Level).Each(func(_ int32, rank *spelldata.Spell) { shaman.registerEarthShockSpell(rank) })
+	castableRanks(spellData.FlameShock, shaman.Level).Each(func(_ int32, rank *spelldata.Spell) { shaman.registerFlameShockSpell(rank) })
+	castableRanks(spellData.FrostShock, shaman.Level).Each(func(_ int32, rank *spelldata.Spell) { shaman.registerFrostShockSpell(rank) })
 }
