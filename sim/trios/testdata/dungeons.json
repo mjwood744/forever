@@ -1,0 +1,11778 @@
+{
+"Ragefire Chasm": {
+"lastBoss": 16,
+"pulls": [
+{
+"label": "Boss: Taragaman the Hungerer",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Taragaman the Hungerer",
+"level": 16,
+"health": 1869.0,
+"armor": 713.0,
+"dps": 31.59,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Molten Elemental",
+"count": 12,
+"boss": false,
+"mobs": [
+{
+"name": "Molten Elemental",
+"level": 15,
+"health": 984.0,
+"armor": 1057.5,
+"dps": 19.48,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Ragefire Trogg",
+"count": 10,
+"boss": false,
+"mobs": [
+{
+"name": "Ragefire Trogg",
+"level": 15,
+"health": 984.0,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Earthborer",
+"count": 10,
+"boss": false,
+"mobs": [
+{
+"name": "Earthborer",
+"level": 14,
+"health": 900.0,
+"armor": 642.0,
+"dps": 16.45,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Ragefire Shaman + Ragefire Trogg",
+"count": 8,
+"boss": false,
+"mobs": [
+{
+"name": "Ragefire Trogg",
+"level": 15,
+"health": 984.0,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+},
+{
+"name": "Ragefire Shaman",
+"level": 15,
+"health": 903.0,
+"armor": 566.0,
+"dps": 18.23,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Searing Blade Enforcer",
+"count": 6,
+"boss": false,
+"mobs": [
+{
+"name": "Searing Blade Enforcer",
+"level": 15,
+"health": 984.0,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+},
+{
+"name": "Searing Blade Enforcer",
+"level": 15,
+"health": 984.0,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Searing Blade Cultist + Searing Blade Warlock",
+"count": 5,
+"boss": false,
+"mobs": [
+{
+"name": "Searing Blade Cultist",
+"level": 15,
+"health": 903.0,
+"armor": 566.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Searing Blade Cultist",
+"level": 15,
+"health": 903.0,
+"armor": 566.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Searing Blade Warlock",
+"level": 15,
+"health": 855.0,
+"armor": 363.0,
+"dps": 17.06,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Searing Blade Cultist",
+"count": 5,
+"boss": false,
+"mobs": [
+{
+"name": "Searing Blade Cultist",
+"level": 15,
+"health": 903.0,
+"armor": 566.0,
+"dps": 18.23,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Searing Blade Cultist + Searing Blade Warlock",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Searing Blade Cultist",
+"level": 15,
+"health": 903.0,
+"armor": 566.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Searing Blade Warlock",
+"level": 15,
+"health": 855.0,
+"armor": 363.0,
+"dps": 17.06,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Ragefire Shaman",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Ragefire Shaman",
+"level": 15,
+"health": 903.0,
+"armor": 566.0,
+"dps": 18.23,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Ragefire Trogg",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Ragefire Trogg",
+"level": 15,
+"health": 984.0,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+},
+{
+"name": "Ragefire Trogg",
+"level": 15,
+"health": 984.0,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Ragefire Shaman + Ragefire Trogg",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Ragefire Trogg",
+"level": 15,
+"health": 984.0,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+},
+{
+"name": "Ragefire Trogg",
+"level": 15,
+"health": 984.0,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+},
+{
+"name": "Ragefire Shaman",
+"level": 15,
+"health": 903.0,
+"armor": 566.0,
+"dps": 18.23,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Searing Blade Enforcer",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Searing Blade Enforcer",
+"level": 15,
+"health": 984.0,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+},
+{
+"name": "Searing Blade Enforcer",
+"level": 15,
+"health": 984.0,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+},
+{
+"name": "Searing Blade Enforcer",
+"level": 15,
+"health": 984.0,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Searing Blade Cultist",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Searing Blade Cultist",
+"level": 15,
+"health": 903.0,
+"armor": 566.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Searing Blade Cultist",
+"level": 15,
+"health": 903.0,
+"armor": 566.0,
+"dps": 18.23,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Searing Blade Enforcer",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Searing Blade Enforcer",
+"level": 15,
+"health": 984.0,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Ragefire Shaman + Ragefire Trogg",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Ragefire Trogg",
+"level": 15,
+"health": 984.0,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+},
+{
+"name": "Ragefire Trogg",
+"level": 15,
+"health": 984.0,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+},
+{
+"name": "Ragefire Trogg",
+"level": 15,
+"health": 984.0,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+},
+{
+"name": "Ragefire Shaman",
+"level": 15,
+"health": 903.0,
+"armor": 566.0,
+"dps": 18.23,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Earthborer + Molten Elemental",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Earthborer",
+"level": 14,
+"health": 900.0,
+"armor": 642.0,
+"dps": 16.45,
+"swing": 2.0
+},
+{
+"name": "Molten Elemental",
+"level": 15,
+"health": 984.0,
+"armor": 1057.5,
+"dps": 19.48,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Searing Blade Cultist + Searing Blade Enforcer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Searing Blade Cultist",
+"level": 15,
+"health": 903.0,
+"armor": 566.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Searing Blade Cultist",
+"level": 15,
+"health": 903.0,
+"armor": 566.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Searing Blade Enforcer",
+"level": 15,
+"health": 984.0,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Searing Blade Cultist + Searing Blade Enforcer + Searing Blade Warlock",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Searing Blade Cultist",
+"level": 15,
+"health": 903.0,
+"armor": 566.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Searing Blade Cultist",
+"level": 15,
+"health": 903.0,
+"armor": 566.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Searing Blade Enforcer",
+"level": 15,
+"health": 984.0,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+},
+{
+"name": "Searing Blade Warlock",
+"level": 15,
+"health": 855.0,
+"armor": 363.0,
+"dps": 17.06,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Jergosh the Invoker + Searing Blade Cultist",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Searing Blade Cultist",
+"level": 15,
+"health": 903.0,
+"armor": 566.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Searing Blade Cultist",
+"level": 15,
+"health": 903.0,
+"armor": 566.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Jergosh the Invoker",
+"level": 16,
+"health": 1382.0,
+"armor": 383.0,
+"dps": 22.43,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Oggleflint",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Oggleflint",
+"level": 16,
+"health": 1424.0,
+"armor": 713.0,
+"dps": 28.96,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Bazzalan",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Bazzalan",
+"level": 16,
+"health": 1513.0,
+"armor": 713.0,
+"dps": 28.96,
+"swing": 2.0
+}
+]
+}
+]
+},
+"Wailing Caverns": {
+"lastBoss": 21,
+"pulls": [
+{
+"label": "Boss: Lord Serpentis",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Lord Serpentis",
+"level": 21,
+"health": 2784.0,
+"armor": 740.0,
+"dps": 46.01,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Skum",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Skum",
+"level": 21,
+"health": 3908.0,
+"armor": 888.0,
+"dps": 34.61,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Verdan the Everliving",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Verdan the Everliving",
+"level": 21,
+"health": 4168.0,
+"armor": 888.0,
+"dps": 93.27,
+"swing": 3.5
+}
+]
+},
+{
+"label": "Druid of the Fang",
+"count": 35,
+"boss": false,
+"mobs": [
+{
+"name": "Druid of the Fang",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 25.69,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deviate Shambler",
+"count": 11,
+"boss": false,
+"mobs": [
+{
+"name": "Deviate Shambler",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 25.69,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Evolving Ectoplasm",
+"count": 10,
+"boss": false,
+"mobs": [
+{
+"name": "Evolving Ectoplasm",
+"level": 18,
+"health": 1251.0,
+"armor": 782.0,
+"dps": 24.78,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deviate Shambler + Druid of the Fang",
+"count": 7,
+"boss": false,
+"mobs": [
+{
+"name": "Druid of the Fang",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 25.69,
+"swing": 2.0
+},
+{
+"name": "Deviate Shambler",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 25.69,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deviate Viper",
+"count": 7,
+"boss": false,
+"mobs": [
+{
+"name": "Deviate Viper",
+"level": 20,
+"health": 1210.0,
+"armor": 852.0,
+"dps": 28.18,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Druid of the Fang",
+"count": 6,
+"boss": false,
+"mobs": [
+{
+"name": "Druid of the Fang",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 25.69,
+"swing": 2.0
+},
+{
+"name": "Druid of the Fang",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 25.69,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deviate Adder",
+"count": 6,
+"boss": false,
+"mobs": [
+{
+"name": "Deviate Adder",
+"level": 19,
+"health": 1347.0,
+"armor": 817.0,
+"dps": 26.11,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deviate Dreadfang + Druid of the Fang",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Druid of the Fang",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 25.69,
+"swing": 2.0
+},
+{
+"name": "Deviate Dreadfang",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deviate Dreadfang",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Deviate Dreadfang",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deviate Venomwing",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Deviate Venomwing",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deviate Guardian + Deviate Ravager",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Deviate Ravager",
+"level": 19,
+"health": 1347.0,
+"armor": 817.0,
+"dps": 26.11,
+"swing": 2.0
+},
+{
+"name": "Deviate Guardian",
+"level": 19,
+"health": 1347.0,
+"armor": 817.0,
+"dps": 26.11,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deviate Ravager",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Deviate Ravager",
+"level": 19,
+"health": 1347.0,
+"armor": 817.0,
+"dps": 26.11,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deviate Guardian",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Deviate Guardian",
+"level": 19,
+"health": 1347.0,
+"armor": 817.0,
+"dps": 26.11,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deviate Shambler + Druid of the Fang + Evolving Ectoplasm",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Evolving Ectoplasm",
+"level": 18,
+"health": 1251.0,
+"armor": 782.0,
+"dps": 24.78,
+"swing": 2.0
+},
+{
+"name": "Druid of the Fang",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 25.69,
+"swing": 2.0
+},
+{
+"name": "Deviate Shambler",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 25.69,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deviate Shambler + Evolving Ectoplasm",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Evolving Ectoplasm",
+"level": 18,
+"health": 1251.0,
+"armor": 782.0,
+"dps": 24.78,
+"swing": 2.0
+},
+{
+"name": "Deviate Shambler",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 25.69,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Kresh",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Kresh",
+"level": 20,
+"health": 1452.0,
+"armor": 21300.0,
+"dps": 28.18,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Lord Cobrahn",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Lord Cobrahn",
+"level": 20,
+"health": 2165.0,
+"armor": 712.0,
+"dps": 38.39,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Druid of the Fang + Lord Pythas",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Lord Pythas",
+"level": 21,
+"health": 2320.0,
+"armor": 740.0,
+"dps": 46.01,
+"swing": 2.0
+},
+{
+"name": "Druid of the Fang",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 25.69,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deviate Adder + Druid of the Fang",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Druid of the Fang",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 25.69,
+"swing": 2.0
+},
+{
+"name": "Deviate Adder",
+"level": 19,
+"health": 1347.0,
+"armor": 817.0,
+"dps": 26.11,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deviate Viper + Druid of the Fang",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Druid of the Fang",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 25.69,
+"swing": 2.0
+},
+{
+"name": "Druid of the Fang",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 25.69,
+"swing": 2.0
+},
+{
+"name": "Deviate Viper",
+"level": 20,
+"health": 1210.0,
+"armor": 852.0,
+"dps": 28.18,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deviate Faerie Dragon + Druid of the Fang",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Druid of the Fang",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 25.69,
+"swing": 2.0
+},
+{
+"name": "Druid of the Fang",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 25.69,
+"swing": 2.0
+},
+{
+"name": "Deviate Faerie Dragon",
+"level": 20,
+"health": 1452.0,
+"armor": 852.0,
+"dps": 28.18,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deviate Shambler",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Deviate Shambler",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 25.69,
+"swing": 2.0
+},
+{
+"name": "Deviate Shambler",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 25.69,
+"swing": 2.0
+}
+]
+}
+]
+},
+"Shadowfang Keep": {
+"lastBoss": 26,
+"pulls": [
+{
+"label": "Boss: Baron Silverlaine",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Baron Silverlaine",
+"level": 24,
+"health": 3255.0,
+"armor": 992.0,
+"dps": 33.15,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Commander Springvale",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Commander Springvale",
+"level": 24,
+"health": 2855.0,
+"armor": 829.0,
+"dps": 45.7,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Odo the Blindwatcher",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Odo the Blindwatcher",
+"level": 24,
+"health": 3255.0,
+"armor": 992.0,
+"dps": 37.05,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Wolf Master Nandos",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Wolf Master Nandos",
+"level": 25,
+"health": 4194.0,
+"armor": 1026.0,
+"dps": 67.57,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Fenrus the Devourer",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Fenrus the Devourer",
+"level": 25,
+"health": 3495.0,
+"armor": 1026.0,
+"dps": 67.57,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Sever",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Sever",
+"level": 25,
+"health": 4689.0,
+"armor": 888.0,
+"dps": 129.8,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Archmage Arugal",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Archmage Arugal",
+"level": 26,
+"health": 6510.0,
+"armor": 887.0,
+"dps": 111.15,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Shadowfang Darksoul",
+"count": 8,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowfang Darksoul",
+"level": 21,
+"health": 1392.0,
+"armor": 740.0,
+"dps": 27.35,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Son of Arugal",
+"count": 6,
+"boss": false,
+"mobs": [
+{
+"name": "Son of Arugal",
+"level": 25,
+"health": 2097.0,
+"armor": 1026.0,
+"dps": 33.98,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Shadowfang Moonwalker",
+"count": 6,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowfang Moonwalker",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 26.11,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Wailing Guardsman",
+"count": 6,
+"boss": false,
+"mobs": [
+{
+"name": "Wailing Guardsman",
+"level": 22,
+"health": 1686.0,
+"armor": 922.0,
+"dps": 30.25,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Shadowfang Ragetooth",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowfang Ragetooth",
+"level": 24,
+"health": 1953.0,
+"armor": 992.0,
+"dps": 33.15,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Bleak Worg + Shadowfang Whitescalp",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowfang Whitescalp",
+"level": 19,
+"health": 1212.0,
+"armor": 683.0,
+"dps": 24.03,
+"swing": 2.0
+},
+{
+"name": "Bleak Worg",
+"level": 19,
+"health": 1347.0,
+"armor": 817.0,
+"dps": 26.11,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Shadowfang Moonwalker + Slavering Worg",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowfang Moonwalker",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 26.11,
+"swing": 2.0
+},
+{
+"name": "Slavering Worg",
+"level": 19,
+"health": 1251.0,
+"armor": 782.0,
+"dps": 42.13,
+"swing": 1.2
+}
+]
+},
+{
+"label": "Bleak Worg",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Bleak Worg",
+"level": 19,
+"health": 1347.0,
+"armor": 817.0,
+"dps": 26.11,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Lupine Horror",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Lupine Horror",
+"level": 25,
+"health": 1953.0,
+"armor": 992.0,
+"dps": 33.15,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Haunted Servitor",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Haunted Servitor",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Shadowfang Darksoul",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowfang Darksoul",
+"level": 21,
+"health": 1392.0,
+"armor": 740.0,
+"dps": 27.35,
+"swing": 2.0
+},
+{
+"name": "Shadowfang Darksoul",
+"level": 21,
+"health": 1392.0,
+"armor": 740.0,
+"dps": 27.35,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Lupine Horror + Shadowfang Ragetooth",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowfang Ragetooth",
+"level": 24,
+"health": 1953.0,
+"armor": 992.0,
+"dps": 33.15,
+"swing": 2.0
+},
+{
+"name": "Lupine Horror",
+"level": 25,
+"health": 1953.0,
+"armor": 992.0,
+"dps": 33.15,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Tormented Officer",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Tormented Officer",
+"level": 24,
+"health": 1953.0,
+"armor": 992.0,
+"dps": 32.74,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Shadowfang Ragetooth + Son of Arugal",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Son of Arugal",
+"level": 25,
+"health": 2097.0,
+"armor": 1026.0,
+"dps": 33.98,
+"swing": 2.0
+},
+{
+"name": "Shadowfang Ragetooth",
+"level": 24,
+"health": 1953.0,
+"armor": 992.0,
+"dps": 33.15,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Lupine Horror + Son of Arugal",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Son of Arugal",
+"level": 25,
+"health": 2097.0,
+"armor": 1026.0,
+"dps": 33.98,
+"swing": 2.0
+},
+{
+"name": "Lupine Horror",
+"level": 25,
+"health": 1953.0,
+"armor": 992.0,
+"dps": 33.15,
+"swing": 2.0
+},
+{
+"name": "Lupine Horror",
+"level": 25,
+"health": 1953.0,
+"armor": 992.0,
+"dps": 33.15,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Shadowfang Whitescalp",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowfang Whitescalp",
+"level": 19,
+"health": 1212.0,
+"armor": 683.0,
+"dps": 24.03,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Shadowfang Whitescalp",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowfang Whitescalp",
+"level": 19,
+"health": 1212.0,
+"armor": 683.0,
+"dps": 24.03,
+"swing": 2.0
+},
+{
+"name": "Shadowfang Whitescalp",
+"level": 19,
+"health": 1212.0,
+"armor": 683.0,
+"dps": 24.03,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Bleak Worg + Rethilgore + Shadowfang Whitescalp",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowfang Whitescalp",
+"level": 19,
+"health": 1212.0,
+"armor": 683.0,
+"dps": 24.03,
+"swing": 2.0
+},
+{
+"name": "Bleak Worg",
+"level": 19,
+"health": 1347.0,
+"armor": 817.0,
+"dps": 26.11,
+"swing": 2.0
+},
+{
+"name": "Bleak Worg",
+"level": 19,
+"health": 1347.0,
+"armor": 817.0,
+"dps": 26.11,
+"swing": 2.0
+},
+{
+"name": "Rethilgore",
+"level": 20,
+"health": 1936.0,
+"armor": 852.0,
+"dps": 28.18,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Haunted Servitor + Shadowfang Moonwalker + Slavering Worg",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowfang Moonwalker",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 26.11,
+"swing": 2.0
+},
+{
+"name": "Slavering Worg",
+"level": 19,
+"health": 1251.0,
+"armor": 782.0,
+"dps": 42.13,
+"swing": 1.2
+},
+{
+"name": "Slavering Worg",
+"level": 19,
+"health": 1251.0,
+"armor": 782.0,
+"dps": 42.13,
+"swing": 1.2
+},
+{
+"name": "Slavering Worg",
+"level": 19,
+"health": 1251.0,
+"armor": 782.0,
+"dps": 42.13,
+"swing": 1.2
+},
+{
+"name": "Haunted Servitor",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Shadowfang Moonwalker",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowfang Moonwalker",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 26.11,
+"swing": 2.0
+},
+{
+"name": "Shadowfang Moonwalker",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 26.11,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Haunted Servitor + Shadowfang Moonwalker + Slavering Worg",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowfang Moonwalker",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 26.11,
+"swing": 2.0
+},
+{
+"name": "Slavering Worg",
+"level": 19,
+"health": 1251.0,
+"armor": 782.0,
+"dps": 42.13,
+"swing": 1.2
+},
+{
+"name": "Slavering Worg",
+"level": 19,
+"health": 1251.0,
+"armor": 782.0,
+"dps": 42.13,
+"swing": 1.2
+},
+{
+"name": "Haunted Servitor",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+},
+{
+"name": "Haunted Servitor",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Haunted Servitor + Shadowfang Moonwalker",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowfang Moonwalker",
+"level": 20,
+"health": 1299.0,
+"armor": 712.0,
+"dps": 26.11,
+"swing": 2.0
+},
+{
+"name": "Haunted Servitor",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+},
+{
+"name": "Haunted Servitor",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Shadowfang Wolfguard",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowfang Wolfguard",
+"level": 21,
+"health": 1452.0,
+"armor": 852.0,
+"dps": 28.18,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Haunted Servitor + Shadowfang Glutton",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowfang Glutton",
+"level": 22,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 29.42,
+"swing": 2.0
+},
+{
+"name": "Shadowfang Glutton",
+"level": 22,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 29.42,
+"swing": 2.0
+},
+{
+"name": "Haunted Servitor",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+},
+{
+"name": "Haunted Servitor",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Shadowfang Glutton",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowfang Glutton",
+"level": 22,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 29.42,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Haunted Servitor + Shadowfang Glutton",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowfang Glutton",
+"level": 22,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 29.42,
+"swing": 2.0
+},
+{
+"name": "Haunted Servitor",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+},
+{
+"name": "Haunted Servitor",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+},
+{
+"name": "Haunted Servitor",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Shadowfang Ragetooth + Tormented Officer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowfang Ragetooth",
+"level": 24,
+"health": 1953.0,
+"armor": 992.0,
+"dps": 33.15,
+"swing": 2.0
+},
+{
+"name": "Tormented Officer",
+"level": 24,
+"health": 1953.0,
+"armor": 992.0,
+"dps": 32.74,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Slavering Worg",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Slavering Worg",
+"level": 19,
+"health": 1251.0,
+"armor": 782.0,
+"dps": 42.13,
+"swing": 1.2
+}
+]
+},
+{
+"label": "Blood Seeker + Vile Bat",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Vile Bat",
+"level": 23,
+"health": 1815.0,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Blood Seeker",
+"level": 24,
+"health": 1953.0,
+"armor": 992.0,
+"dps": 32.74,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deathsworn Captain + Tormented Officer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Deathsworn Captain",
+"level": 25,
+"health": 2097.0,
+"armor": 1026.0,
+"dps": 34.81,
+"swing": 2.0
+},
+{
+"name": "Tormented Officer",
+"level": 24,
+"health": 1953.0,
+"armor": 992.0,
+"dps": 32.74,
+"swing": 2.0
+},
+{
+"name": "Tormented Officer",
+"level": 24,
+"health": 1953.0,
+"armor": 992.0,
+"dps": 32.74,
+"swing": 2.0
+},
+{
+"name": "Tormented Officer",
+"level": 24,
+"health": 1953.0,
+"armor": 992.0,
+"dps": 32.74,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Haunted Servitor + Razorclaw the Butcher",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Haunted Servitor",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+},
+{
+"name": "Haunted Servitor",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+},
+{
+"name": "Razorclaw the Butcher",
+"level": 22,
+"health": 2248.0,
+"armor": 922.0,
+"dps": 44.42,
+"swing": 3.2
+}
+]
+},
+{
+"label": "Haunted Servitor",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Haunted Servitor",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+},
+{
+"name": "Haunted Servitor",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Haunted Servitor + Wailing Guardsman",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Haunted Servitor",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+},
+{
+"name": "Haunted Servitor",
+"level": 21,
+"health": 1563.0,
+"armor": 888.0,
+"dps": 28.59,
+"swing": 2.0
+},
+{
+"name": "Wailing Guardsman",
+"level": 22,
+"health": 1686.0,
+"armor": 922.0,
+"dps": 30.25,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Wailing Guardsman",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Wailing Guardsman",
+"level": 22,
+"health": 1686.0,
+"armor": 922.0,
+"dps": 30.25,
+"swing": 2.0
+},
+{
+"name": "Wailing Guardsman",
+"level": 22,
+"health": 1686.0,
+"armor": 922.0,
+"dps": 30.25,
+"swing": 2.0
+},
+{
+"name": "Wailing Guardsman",
+"level": 22,
+"health": 1686.0,
+"armor": 922.0,
+"dps": 30.25,
+"swing": 2.0
+}
+]
+}
+]
+},
+"Blackfathom Deeps": {
+"lastBoss": 28,
+"pulls": [
+{
+"label": "Boss: Lady Sarevess",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Lady Sarevess",
+"level": 25,
+"health": 4880.0,
+"armor": 858.0,
+"dps": 31.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Ghamoo-ra",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Ghamoo-ra",
+"level": 25,
+"health": 4194.0,
+"armor": 991731600.0,
+"dps": 34.81,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Old Serra'kis",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Old Serra'kis",
+"level": 26,
+"health": 3750.0,
+"armor": 1061.0,
+"dps": 35.64,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Gelihast",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Gelihast",
+"level": 26,
+"health": 4500.0,
+"armor": 1061.0,
+"dps": 83.85,
+"swing": 1.2
+}
+]
+},
+{
+"label": "Boss: Twilight Lord Kelris",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Twilight Lord Kelris",
+"level": 27,
+"health": 5520.0,
+"armor": 916.0,
+"dps": 34.39,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Aku'mai",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Aku'mai",
+"level": 28,
+"health": 8530.0,
+"armor": 1130.0,
+"dps": 99.82,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blackfathom Sea Witch",
+"count": 19,
+"boss": false,
+"mobs": [
+{
+"name": "Blackfathom Sea Witch",
+"level": 24,
+"health": 1713.0,
+"armor": 1115.0049999999999,
+"dps": 30.66,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blackfathom Myrmidon",
+"count": 17,
+"boss": false,
+"mobs": [
+{
+"name": "Blackfathom Myrmidon",
+"level": 23,
+"health": 2723.0,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Snapping Crustacean",
+"count": 16,
+"boss": false,
+"mobs": [
+{
+"name": "Snapping Crustacean",
+"level": 24,
+"health": 1953.0,
+"armor": 992.0,
+"dps": 32.74,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deep Pool Threshfin",
+"count": 8,
+"boss": false,
+"mobs": [
+{
+"name": "Deep Pool Threshfin",
+"level": 25,
+"health": 2097.0,
+"armor": 1026.0,
+"dps": 33.98,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Aku'mai Snapjaw",
+"count": 7,
+"boss": false,
+"mobs": [
+{
+"name": "Aku'mai Snapjaw",
+"level": 27,
+"health": 2400.0,
+"armor": 4388.0,
+"dps": 16.09,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Fallenroot Shadowstalker",
+"count": 6,
+"boss": false,
+"mobs": [
+{
+"name": "Fallenroot Shadowstalker",
+"level": 24,
+"health": 1713.0,
+"armor": 829.0,
+"dps": 45.09,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Elementalist",
+"count": 6,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Elementalist",
+"level": 27,
+"health": 1899.0,
+"armor": 596.0,
+"dps": 26.52,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blindlight Murloc",
+"count": 6,
+"boss": false,
+"mobs": [
+{
+"name": "Blindlight Murloc",
+"level": 23,
+"health": 1815.0,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Skittering Crustacean",
+"count": 6,
+"boss": false,
+"mobs": [
+{
+"name": "Skittering Crustacean",
+"level": 23,
+"health": 1815.0,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Aku'mai Fisher",
+"count": 6,
+"boss": false,
+"mobs": [
+{
+"name": "Aku'mai Fisher",
+"level": 24,
+"health": 1953.0,
+"armor": 3968.0,
+"dps": 32.74,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Shadowmage",
+"count": 5,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Shadowmage",
+"level": 27,
+"health": 1899.0,
+"armor": 596.0,
+"dps": 26.52,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blackfathom Myrmidon",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Blackfathom Myrmidon",
+"level": 23,
+"health": 2723.0,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Blackfathom Myrmidon",
+"level": 23,
+"health": 2723.0,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Fallenroot Hellcaller + Fallenroot Shadowstalker",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Fallenroot Shadowstalker",
+"level": 24,
+"health": 1713.0,
+"armor": 829.0,
+"dps": 45.09,
+"swing": 2.0
+},
+{
+"name": "Fallenroot Hellcaller",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blackfathom Sea Witch + Fallenroot Hellcaller",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Fallenroot Hellcaller",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Blackfathom Sea Witch",
+"level": 24,
+"health": 1713.0,
+"armor": 1115.0049999999999,
+"dps": 30.66,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Barbed Crustacean",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Barbed Crustacean",
+"level": 26,
+"health": 1725.0,
+"armor": 1573.20836,
+"dps": 15.54,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blackfathom Sea Witch + Snapping Crustacean",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Blackfathom Sea Witch",
+"level": 24,
+"health": 1713.0,
+"armor": 1115.0049999999999,
+"dps": 30.66,
+"swing": 2.0
+},
+{
+"name": "Snapping Crustacean",
+"level": 24,
+"health": 1953.0,
+"armor": 992.0,
+"dps": 32.74,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blackfathom Sea Witch",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Blackfathom Sea Witch",
+"level": 24,
+"health": 1713.0,
+"armor": 1115.0049999999999,
+"dps": 30.66,
+"swing": 2.0
+},
+{
+"name": "Blackfathom Sea Witch",
+"level": 24,
+"health": 1713.0,
+"armor": 1115.0049999999999,
+"dps": 30.66,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Reaver",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Reaver",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+},
+{
+"name": "Twilight Reaver",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Murkshallow Snapclaw",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Murkshallow Snapclaw",
+"level": 23,
+"health": 1815.0,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blindlight Murloc + Murkshallow Snapclaw",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Murkshallow Snapclaw",
+"level": 23,
+"health": 1815.0,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Blindlight Murloc",
+"level": 23,
+"health": 1815.0,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blindlight Murloc + Skittering Crustacean",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Blindlight Murloc",
+"level": 23,
+"health": 1815.0,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Skittering Crustacean",
+"level": 23,
+"health": 1815.0,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blindlight Oracle",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Blindlight Oracle",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Lorgus Jett",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Lorgus Jett",
+"level": 26,
+"health": 1953.0,
+"armor": 887.0,
+"dps": 33.15,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Fallenroot Shadowstalker",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Fallenroot Shadowstalker",
+"level": 24,
+"health": 1713.0,
+"armor": 829.0,
+"dps": 45.09,
+"swing": 2.0
+},
+{
+"name": "Fallenroot Shadowstalker",
+"level": 24,
+"health": 1713.0,
+"armor": 829.0,
+"dps": 45.09,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blackfathom Sea Witch + Fallenroot Shadowstalker",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Fallenroot Shadowstalker",
+"level": 24,
+"health": 1713.0,
+"armor": 829.0,
+"dps": 45.09,
+"swing": 2.0
+},
+{
+"name": "Blackfathom Sea Witch",
+"level": 24,
+"health": 1713.0,
+"armor": 1115.0049999999999,
+"dps": 30.66,
+"swing": 2.0
+},
+{
+"name": "Blackfathom Sea Witch",
+"level": 24,
+"health": 1713.0,
+"armor": 1115.0049999999999,
+"dps": 30.66,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Fallenroot Hellcaller + Fallenroot Shadowstalker + Lorgus Jett",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Fallenroot Shadowstalker",
+"level": 24,
+"health": 1713.0,
+"armor": 829.0,
+"dps": 45.09,
+"swing": 2.0
+},
+{
+"name": "Fallenroot Hellcaller",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Lorgus Jett",
+"level": 26,
+"health": 1953.0,
+"armor": 887.0,
+"dps": 33.15,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blackfathom Myrmidon + Fallenroot Shadowstalker",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Fallenroot Shadowstalker",
+"level": 24,
+"health": 1713.0,
+"armor": 829.0,
+"dps": 45.09,
+"swing": 2.0
+},
+{
+"name": "Blackfathom Myrmidon",
+"level": 23,
+"health": 2723.0,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Fallenroot Hellcaller",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Fallenroot Hellcaller",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Fallenroot Hellcaller",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blackfathom Myrmidon + Fallenroot Hellcaller + Lorgus Jett",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Fallenroot Hellcaller",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Blackfathom Myrmidon",
+"level": 23,
+"health": 2723.0,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Lorgus Jett",
+"level": 26,
+"health": 1953.0,
+"armor": 887.0,
+"dps": 33.15,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Fallenroot Hellcaller",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Fallenroot Hellcaller",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Acolyte + Twilight Aquamancer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Acolyte",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 22.23,
+"swing": 2.0
+},
+{
+"name": "Twilight Aquamancer",
+"level": 26,
+"health": 1953.0,
+"armor": 887.0,
+"dps": 32.74,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Acolyte + Twilight Loreseeker",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Acolyte",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 22.23,
+"swing": 2.0
+},
+{
+"name": "Twilight Loreseeker",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Twilight Loreseeker",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Acolyte + Twilight Reaver",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Acolyte",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 22.23,
+"swing": 2.0
+},
+{
+"name": "Twilight Reaver",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Aquamancer + Twilight Reaver",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Reaver",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+},
+{
+"name": "Twilight Aquamancer",
+"level": 26,
+"health": 1953.0,
+"armor": 887.0,
+"dps": 32.74,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Loreseeker + Twilight Reaver",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Reaver",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+},
+{
+"name": "Twilight Loreseeker",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Aquamancer + Twilight Loreseeker + Twilight Reaver",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Reaver",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+},
+{
+"name": "Twilight Aquamancer",
+"level": 26,
+"health": 1953.0,
+"armor": 887.0,
+"dps": 32.74,
+"swing": 2.0
+},
+{
+"name": "Twilight Loreseeker",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Twilight Loreseeker",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Reaver",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Reaver",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Loreseeker + Twilight Reaver",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Reaver",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+},
+{
+"name": "Twilight Loreseeker",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Twilight Loreseeker",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Aquamancer + Twilight Reaver",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Reaver",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+},
+{
+"name": "Twilight Aquamancer",
+"level": 26,
+"health": 1953.0,
+"armor": 887.0,
+"dps": 32.74,
+"swing": 2.0
+},
+{
+"name": "Twilight Aquamancer",
+"level": 26,
+"health": 1953.0,
+"armor": 887.0,
+"dps": 32.74,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Aquamancer + Twilight Loreseeker",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Aquamancer",
+"level": 26,
+"health": 1953.0,
+"armor": 887.0,
+"dps": 32.74,
+"swing": 2.0
+},
+{
+"name": "Twilight Loreseeker",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Aquamancer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Aquamancer",
+"level": 26,
+"health": 1953.0,
+"armor": 887.0,
+"dps": 32.74,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Loreseeker",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Loreseeker",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Shadowmage",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Shadowmage",
+"level": 27,
+"health": 1899.0,
+"armor": 596.0,
+"dps": 26.52,
+"swing": 2.0
+},
+{
+"name": "Twilight Shadowmage",
+"level": 27,
+"health": 1899.0,
+"armor": 596.0,
+"dps": 26.52,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Murkshallow Snapclaw + Skittering Crustacean",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Murkshallow Snapclaw",
+"level": 23,
+"health": 1815.0,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Skittering Crustacean",
+"level": 23,
+"health": 1815.0,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Murkshallow Snapclaw",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Murkshallow Snapclaw",
+"level": 23,
+"health": 1815.0,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Murkshallow Snapclaw",
+"level": 23,
+"health": 1815.0,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blindlight Muckdweller + Blindlight Oracle",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Blindlight Muckdweller",
+"level": 25,
+"health": 2097.0,
+"armor": 1026.0,
+"dps": 34.81,
+"swing": 2.0
+},
+{
+"name": "Blindlight Muckdweller",
+"level": 25,
+"health": 2097.0,
+"armor": 1026.0,
+"dps": 34.81,
+"swing": 2.0
+},
+{
+"name": "Blindlight Oracle",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blindlight Muckdweller",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Blindlight Muckdweller",
+"level": 25,
+"health": 2097.0,
+"armor": 1026.0,
+"dps": 34.81,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blindlight Muckdweller",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Blindlight Muckdweller",
+"level": 25,
+"health": 2097.0,
+"armor": 1026.0,
+"dps": 34.81,
+"swing": 2.0
+},
+{
+"name": "Blindlight Muckdweller",
+"level": 25,
+"health": 2097.0,
+"armor": 1026.0,
+"dps": 34.81,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blindlight Oracle",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Blindlight Oracle",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.91,
+"swing": 2.0
+},
+{
+"name": "Blindlight Oracle",
+"level": 25,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Skittering Crustacean",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Skittering Crustacean",
+"level": 23,
+"health": 1815.0,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Skittering Crustacean",
+"level": 23,
+"health": 1815.0,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+}
+]
+},
+"Razorfen Kraul": {
+"lastBoss": 33,
+"pulls": [
+{
+"label": "Boss: Overlord Ramtusk",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Overlord Ramtusk",
+"level": 32,
+"health": 7399.0,
+"armor": 1270.0,
+"dps": 43.51,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Charlga Razorflank",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Charlga Razorflank",
+"level": 33,
+"health": 9280.0,
+"armor": 1091.0,
+"dps": 41.44,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Agathelos the Raging",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Agathelos the Raging",
+"level": 33,
+"health": 8880.0,
+"armor": 1304.0,
+"dps": 44.34,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Agam'ar",
+"count": 13,
+"boss": false,
+"mobs": [
+{
+"name": "Agam'ar",
+"level": 25,
+"health": 2097.0,
+"armor": 1026.0,
+"dps": 33.98,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Razorfen Defender",
+"count": 10,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Defender",
+"level": 28,
+"health": 2559.0,
+"armor": 1130.0,
+"dps": 37.29,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Kraul Bat",
+"count": 8,
+"boss": false,
+"mobs": [
+{
+"name": "Kraul Bat",
+"level": 31,
+"health": 3018.0,
+"armor": 1234.0,
+"dps": 41.44,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Raging Agam'ar",
+"count": 7,
+"boss": false,
+"mobs": [
+{
+"name": "Raging Agam'ar",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Quilguard Champion",
+"count": 7,
+"boss": false,
+"mobs": [
+{
+"name": "Quilguard Champion",
+"level": 31,
+"health": 3018.0,
+"armor": 1234.0,
+"dps": 41.44,
+"swing": 2.0
+},
+{
+"name": "Quilguard Champion",
+"level": 31,
+"health": 3018.0,
+"armor": 1234.0,
+"dps": 41.44,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Razorfen Groundshaker",
+"count": 6,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Groundshaker",
+"level": 28,
+"health": 2196.0,
+"armor": 946.0,
+"dps": 35.22,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Death's Head Adept",
+"count": 5,
+"boss": false,
+"mobs": [
+{
+"name": "Death's Head Adept",
+"level": 28,
+"health": 2676.0,
+"armor": 616.0,
+"dps": 27.35,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Razorfen Quilguard",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Quilguard",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Razorfen Handler",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Handler",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Greater Kraul Bat",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Greater Kraul Bat",
+"level": 32,
+"health": 3171.0,
+"armor": 1270.0,
+"dps": 43.51,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Razorfen Warden",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Warden",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Razorfen Totemic",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Totemic",
+"level": 29,
+"health": 2319.0,
+"armor": 975.0,
+"dps": 36.46,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Raging Agam'ar",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Raging Agam'ar",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+},
+{
+"name": "Raging Agam'ar",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Death's Head Sage",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Death's Head Sage",
+"level": 30,
+"health": 2433.0,
+"armor": 1004.0,
+"dps": 37.29,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Greater Kraul Bat + Kraul Bat",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Kraul Bat",
+"level": 31,
+"health": 3018.0,
+"armor": 1234.0,
+"dps": 41.44,
+"swing": 2.0
+},
+{
+"name": "Greater Kraul Bat",
+"level": 32,
+"health": 3171.0,
+"armor": 1270.0,
+"dps": 43.51,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Razorfen Warrior",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Warrior",
+"level": 25,
+"health": 2097.0,
+"armor": 1026.0,
+"dps": 33.98,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Razorfen Quilguard",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Quilguard",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+},
+{
+"name": "Razorfen Quilguard",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Death's Head Priest",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Death's Head Priest",
+"level": 27,
+"health": 2070.0,
+"armor": 916.0,
+"dps": 33.56,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Death's Head Sage + Razorfen Earthbreaker + Razorfen Stalker",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Death's Head Sage",
+"level": 30,
+"health": 2433.0,
+"armor": 1004.0,
+"dps": 37.29,
+"swing": 2.0
+},
+{
+"name": "Razorfen Earthbreaker",
+"level": 31,
+"health": 2550.0,
+"armor": 1033.0,
+"dps": 38.54,
+"swing": 2.0
+},
+{
+"name": "Razorfen Stalker",
+"level": 29,
+"health": 2715.0,
+"armor": 1165.0,
+"dps": 38.54,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Razorfen Geomancer",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Geomancer",
+"level": 26,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Razorfen Dustweaver",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Dustweaver",
+"level": 29,
+"health": 2319.0,
+"armor": 975.0,
+"dps": 36.05,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Razorfen Earthbreaker",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Earthbreaker",
+"level": 31,
+"health": 2550.0,
+"armor": 1033.0,
+"dps": 38.54,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Razorfen Beast Trainer",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Beast Trainer",
+"level": 29,
+"health": 2715.0,
+"armor": 1165.0,
+"dps": 38.54,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blood of Agamaggan",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Blood of Agamaggan",
+"level": 27,
+"health": 2400.0,
+"armor": 1097.0,
+"dps": 36.88,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Aggem Thorncurse",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Aggem Thorncurse",
+"level": 30,
+"health": 4055.0,
+"armor": 1004.0,
+"dps": 37.71,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Death's Head Seer + Ward Guardian",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Ward Guardian",
+"level": 31,
+"health": 2550.0,
+"armor": 1033.0,
+"dps": 38.95,
+"swing": 2.0
+},
+{
+"name": "Ward Guardian",
+"level": 31,
+"health": 2550.0,
+"armor": 1033.0,
+"dps": 38.95,
+"swing": 2.0
+},
+{
+"name": "Death's Head Seer",
+"level": 29,
+"health": 2319.0,
+"armor": 975.0,
+"dps": 36.05,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Death Speaker Jargba + Death's Head Acolyte + Razorfen Groundshaker",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Death Speaker Jargba",
+"level": 30,
+"health": 4055.0,
+"armor": 1004.0,
+"dps": 41.44,
+"swing": 2.0
+},
+{
+"name": "Death's Head Acolyte",
+"level": 29,
+"health": 2319.0,
+"armor": 975.0,
+"dps": 36.05,
+"swing": 2.0
+},
+{
+"name": "Razorfen Groundshaker",
+"level": 28,
+"health": 2196.0,
+"armor": 946.0,
+"dps": 35.22,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Razorfen Geomancer + Razorfen Quilguard",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Quilguard",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+},
+{
+"name": "Razorfen Quilguard",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+},
+{
+"name": "Razorfen Geomancer",
+"level": 26,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Razorfen Warden",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Warden",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+},
+{
+"name": "Razorfen Warden",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+},
+{
+"name": "Razorfen Warden",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Death's Head Priest + Razorfen Warden",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Warden",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+},
+{
+"name": "Death's Head Priest",
+"level": 27,
+"health": 2070.0,
+"armor": 916.0,
+"dps": 33.56,
+"swing": 2.0
+},
+{
+"name": "Death's Head Priest",
+"level": 27,
+"health": 2070.0,
+"armor": 916.0,
+"dps": 33.56,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Razorfen Spearhide",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Spearhide",
+"level": 30,
+"health": 1433.0,
+"armor": 1200.0,
+"dps": 40.19,
+"swing": 2.0
+},
+{
+"name": "Razorfen Spearhide",
+"level": 30,
+"health": 1433.0,
+"armor": 1200.0,
+"dps": 40.19,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Quilguard Champion + Razorfen Stalker + Razorfen Totemic",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Totemic",
+"level": 29,
+"health": 2319.0,
+"armor": 975.0,
+"dps": 36.46,
+"swing": 2.0
+},
+{
+"name": "Quilguard Champion",
+"level": 31,
+"health": 3018.0,
+"armor": 1234.0,
+"dps": 41.44,
+"swing": 2.0
+},
+{
+"name": "Razorfen Stalker",
+"level": 29,
+"health": 2715.0,
+"armor": 1165.0,
+"dps": 38.54,
+"swing": 2.0
+},
+{
+"name": "Razorfen Stalker",
+"level": 29,
+"health": 2715.0,
+"armor": 1165.0,
+"dps": 38.54,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Death's Head Seer + Razorfen Defender",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Defender",
+"level": 28,
+"health": 2559.0,
+"armor": 1130.0,
+"dps": 37.29,
+"swing": 2.0
+},
+{
+"name": "Death's Head Seer",
+"level": 29,
+"health": 2319.0,
+"armor": 975.0,
+"dps": 36.05,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Death's Head Adept + Death's Head Seer + Razorfen Defender",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Defender",
+"level": 28,
+"health": 2559.0,
+"armor": 1130.0,
+"dps": 37.29,
+"swing": 2.0
+},
+{
+"name": "Razorfen Defender",
+"level": 28,
+"health": 2559.0,
+"armor": 1130.0,
+"dps": 37.29,
+"swing": 2.0
+},
+{
+"name": "Death's Head Adept",
+"level": 28,
+"health": 2676.0,
+"armor": 616.0,
+"dps": 27.35,
+"swing": 2.0
+},
+{
+"name": "Death's Head Seer",
+"level": 29,
+"health": 2319.0,
+"armor": 975.0,
+"dps": 36.05,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Death's Head Adept + Razorfen Defender + Roogug",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Defender",
+"level": 28,
+"health": 2559.0,
+"armor": 1130.0,
+"dps": 37.29,
+"swing": 2.0
+},
+{
+"name": "Death's Head Adept",
+"level": 28,
+"health": 2676.0,
+"armor": 616.0,
+"dps": 27.35,
+"swing": 2.0
+},
+{
+"name": "Roogug",
+"level": 28,
+"health": 2196.0,
+"armor": 946.0,
+"dps": 35.64,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Death's Head Adept + Razorfen Beastmaster + Razorfen Defender",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Defender",
+"level": 28,
+"health": 2559.0,
+"armor": 1130.0,
+"dps": 37.29,
+"swing": 2.0
+},
+{
+"name": "Razorfen Defender",
+"level": 28,
+"health": 2559.0,
+"armor": 1130.0,
+"dps": 37.29,
+"swing": 2.0
+},
+{
+"name": "Death's Head Adept",
+"level": 28,
+"health": 2676.0,
+"armor": 616.0,
+"dps": 27.35,
+"swing": 2.0
+},
+{
+"name": "Razorfen Beastmaster",
+"level": 31,
+"health": 3018.0,
+"armor": 1234.0,
+"dps": 41.44,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Razorfen Defender",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Defender",
+"level": 28,
+"health": 2559.0,
+"armor": 1130.0,
+"dps": 37.29,
+"swing": 2.0
+},
+{
+"name": "Razorfen Defender",
+"level": 28,
+"health": 2559.0,
+"armor": 1130.0,
+"dps": 37.29,
+"swing": 2.0
+},
+{
+"name": "Razorfen Defender",
+"level": 28,
+"health": 2559.0,
+"armor": 1130.0,
+"dps": 37.29,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Agam'ar + Rotting Agam'ar",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Agam'ar",
+"level": 25,
+"health": 2097.0,
+"armor": 1026.0,
+"dps": 33.98,
+"swing": 2.0
+},
+{
+"name": "Rotting Agam'ar",
+"level": 28,
+"health": 2559.0,
+"armor": 1130.0,
+"dps": 37.71,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Agam'ar + Blood of Agamaggan",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Agam'ar",
+"level": 25,
+"health": 2097.0,
+"armor": 1026.0,
+"dps": 33.98,
+"swing": 2.0
+},
+{
+"name": "Blood of Agamaggan",
+"level": 27,
+"health": 2400.0,
+"armor": 1097.0,
+"dps": 36.88,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Rotting Agam'ar",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Rotting Agam'ar",
+"level": 28,
+"health": 2559.0,
+"armor": 1130.0,
+"dps": 37.71,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blood of Agamaggan + Raging Agam'ar + Rotting Agam'ar",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Rotting Agam'ar",
+"level": 28,
+"health": 2559.0,
+"armor": 1130.0,
+"dps": 37.71,
+"swing": 2.0
+},
+{
+"name": "Raging Agam'ar",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+},
+{
+"name": "Blood of Agamaggan",
+"level": 27,
+"health": 2400.0,
+"armor": 1097.0,
+"dps": 36.88,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blood of Agamaggan + Raging Agam'ar",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Raging Agam'ar",
+"level": 26,
+"health": 2250.0,
+"armor": 1061.0,
+"dps": 35.22,
+"swing": 2.0
+},
+{
+"name": "Blood of Agamaggan",
+"level": 27,
+"health": 2400.0,
+"armor": 1097.0,
+"dps": 36.88,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Death's Head Acolyte",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Death's Head Acolyte",
+"level": 29,
+"health": 2319.0,
+"armor": 975.0,
+"dps": 36.05,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Death's Head Adept + Death's Head Seer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Death's Head Adept",
+"level": 28,
+"health": 2676.0,
+"armor": 616.0,
+"dps": 27.35,
+"swing": 2.0
+},
+{
+"name": "Death's Head Seer",
+"level": 29,
+"health": 2319.0,
+"armor": 975.0,
+"dps": 36.05,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Death's Head Sage",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Death's Head Sage",
+"level": 30,
+"health": 2433.0,
+"armor": 1004.0,
+"dps": 37.29,
+"swing": 2.0
+},
+{
+"name": "Death's Head Sage",
+"level": 30,
+"health": 2433.0,
+"armor": 1004.0,
+"dps": 37.29,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Death's Head Seer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Death's Head Seer",
+"level": 29,
+"health": 2319.0,
+"armor": 975.0,
+"dps": 36.05,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Razorfen Dustweaver + Razorfen Geomancer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Geomancer",
+"level": 26,
+"health": 1830.0,
+"armor": 858.0,
+"dps": 31.91,
+"swing": 2.0
+},
+{
+"name": "Razorfen Dustweaver",
+"level": 29,
+"health": 2319.0,
+"armor": 975.0,
+"dps": 36.05,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Earthcaller Halmgar + Razorfen Earthbreaker",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Earthbreaker",
+"level": 31,
+"health": 2550.0,
+"armor": 1033.0,
+"dps": 38.54,
+"swing": 2.0
+},
+{
+"name": "Earthcaller Halmgar",
+"level": 32,
+"health": 3108.0,
+"armor": 1063.0,
+"dps": 40.19,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Razorfen Beastmaster",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Beastmaster",
+"level": 31,
+"health": 3018.0,
+"armor": 1234.0,
+"dps": 41.44,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Quilguard Champion + Razorfen Beastmaster",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Razorfen Beastmaster",
+"level": 31,
+"health": 3018.0,
+"armor": 1234.0,
+"dps": 41.44,
+"swing": 2.0
+},
+{
+"name": "Quilguard Champion",
+"level": 31,
+"health": 3018.0,
+"armor": 1234.0,
+"dps": 41.44,
+"swing": 2.0
+},
+{
+"name": "Quilguard Champion",
+"level": 31,
+"health": 3018.0,
+"armor": 1234.0,
+"dps": 41.44,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Kraul Bat",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Kraul Bat",
+"level": 31,
+"health": 3018.0,
+"armor": 1234.0,
+"dps": 41.44,
+"swing": 2.0
+},
+{
+"name": "Kraul Bat",
+"level": 31,
+"health": 3018.0,
+"armor": 1234.0,
+"dps": 41.44,
+"swing": 2.0
+}
+]
+}
+]
+},
+"Scarlet Monastery Library": {
+"lastBoss": 37,
+"pulls": [
+{
+"label": "Boss: Houndmaster Loksey",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Houndmaster Loksey",
+"level": 34,
+"health": 7736.0,
+"armor": 1121.0,
+"dps": 59.67,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Arcanist Doan",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Arcanist Doan",
+"level": 37,
+"health": 8730.0,
+"armor": 858.0,
+"dps": 42.41,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Gallant",
+"count": 9,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Gallant",
+"level": 34,
+"health": 2901.0,
+"armor": 1121.0,
+"dps": 41.85,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Gallant",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Gallant",
+"level": 34,
+"health": 2901.0,
+"armor": 1121.0,
+"dps": 41.85,
+"swing": 2.0
+},
+{
+"name": "Scarlet Gallant",
+"level": 34,
+"health": 2901.0,
+"armor": 1121.0,
+"dps": 41.85,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Beastmaster + Scarlet Tracking Hound",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Beastmaster",
+"level": 35,
+"health": 3660.0,
+"armor": 1373.0,
+"dps": 46.0,
+"swing": 2.0
+},
+{
+"name": "Scarlet Tracking Hound",
+"level": 34,
+"health": 3330.0,
+"armor": 1304.0,
+"dps": 44.2,
+"swing": 1.5
+}
+]
+},
+{
+"label": "Scarlet Diviner + Scarlet Monk",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Diviner",
+"level": 35,
+"health": 3027.0,
+"armor": 1149.0,
+"dps": 25.35,
+"swing": 2.0
+},
+{
+"name": "Scarlet Monk",
+"level": 36,
+"health": 3831.0,
+"armor": 92.5,
+"dps": 66.95,
+"swing": 1.8
+},
+{
+"name": "Scarlet Monk",
+"level": 36,
+"health": 3831.0,
+"armor": 92.5,
+"dps": 66.95,
+"swing": 1.8
+}
+]
+},
+{
+"label": "Scarlet Diviner + Scarlet Monk",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Diviner",
+"level": 35,
+"health": 3027.0,
+"armor": 1149.0,
+"dps": 25.35,
+"swing": 2.0
+},
+{
+"name": "Scarlet Monk",
+"level": 36,
+"health": 3831.0,
+"armor": 92.5,
+"dps": 66.95,
+"swing": 1.8
+}
+]
+},
+{
+"label": "Scarlet Chaplain + Scarlet Diviner",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Diviner",
+"level": 35,
+"health": 3027.0,
+"armor": 1149.0,
+"dps": 25.35,
+"swing": 2.0
+},
+{
+"name": "Scarlet Chaplain",
+"level": 36,
+"health": 3027.0,
+"armor": 1149.0,
+"dps": 43.09,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Diviner",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Diviner",
+"level": 35,
+"health": 3027.0,
+"armor": 1149.0,
+"dps": 25.35,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Diviner",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Diviner",
+"level": 35,
+"health": 3027.0,
+"armor": 1149.0,
+"dps": 25.35,
+"swing": 2.0
+},
+{
+"name": "Scarlet Diviner",
+"level": 35,
+"health": 3027.0,
+"armor": 1149.0,
+"dps": 25.35,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Chaplain + Scarlet Diviner + Scarlet Monk",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Diviner",
+"level": 35,
+"health": 3027.0,
+"armor": 1149.0,
+"dps": 25.35,
+"swing": 2.0
+},
+{
+"name": "Scarlet Chaplain",
+"level": 36,
+"health": 3027.0,
+"armor": 1149.0,
+"dps": 43.09,
+"swing": 2.0
+},
+{
+"name": "Scarlet Monk",
+"level": 36,
+"health": 3831.0,
+"armor": 92.5,
+"dps": 66.95,
+"swing": 1.8
+}
+]
+},
+{
+"label": "Scarlet Adept + Scarlet Gallant",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Gallant",
+"level": 34,
+"health": 2901.0,
+"armor": 1121.0,
+"dps": 41.85,
+"swing": 2.0
+},
+{
+"name": "Scarlet Gallant",
+"level": 34,
+"health": 2901.0,
+"armor": 1121.0,
+"dps": 41.85,
+"swing": 2.0
+},
+{
+"name": "Scarlet Adept",
+"level": 34,
+"health": 2901.0,
+"armor": 1121.0,
+"dps": 24.62,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Adept + Scarlet Gallant",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Gallant",
+"level": 34,
+"health": 2901.0,
+"armor": 1121.0,
+"dps": 41.85,
+"swing": 2.0
+},
+{
+"name": "Scarlet Adept",
+"level": 34,
+"health": 2901.0,
+"armor": 1121.0,
+"dps": 24.62,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Adept + Scarlet Beastmaster + Scarlet Gallant + Scarlet Tracking Hound",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Gallant",
+"level": 34,
+"health": 2901.0,
+"armor": 1121.0,
+"dps": 41.85,
+"swing": 2.0
+},
+{
+"name": "Scarlet Beastmaster",
+"level": 35,
+"health": 3660.0,
+"armor": 1373.0,
+"dps": 46.0,
+"swing": 2.0
+},
+{
+"name": "Scarlet Adept",
+"level": 34,
+"health": 2901.0,
+"armor": 1121.0,
+"dps": 24.62,
+"swing": 2.0
+},
+{
+"name": "Scarlet Adept",
+"level": 34,
+"health": 2901.0,
+"armor": 1121.0,
+"dps": 24.62,
+"swing": 2.0
+},
+{
+"name": "Scarlet Tracking Hound",
+"level": 34,
+"health": 3330.0,
+"armor": 1304.0,
+"dps": 44.2,
+"swing": 1.5
+}
+]
+},
+{
+"label": "Scarlet Chaplain + Scarlet Monk",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Chaplain",
+"level": 36,
+"health": 3027.0,
+"armor": 1149.0,
+"dps": 43.09,
+"swing": 2.0
+},
+{
+"name": "Scarlet Chaplain",
+"level": 36,
+"health": 3027.0,
+"armor": 1149.0,
+"dps": 43.09,
+"swing": 2.0
+},
+{
+"name": "Scarlet Monk",
+"level": 36,
+"health": 3831.0,
+"armor": 92.5,
+"dps": 66.95,
+"swing": 1.8
+}
+]
+},
+{
+"label": "Scarlet Chaplain + Scarlet Monk",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Chaplain",
+"level": 36,
+"health": 3027.0,
+"armor": 1149.0,
+"dps": 43.09,
+"swing": 2.0
+},
+{
+"name": "Scarlet Monk",
+"level": 36,
+"health": 3831.0,
+"armor": 92.5,
+"dps": 66.95,
+"swing": 1.8
+}
+]
+},
+{
+"label": "Scarlet Chaplain + Scarlet Monk",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Chaplain",
+"level": 36,
+"health": 3027.0,
+"armor": 1149.0,
+"dps": 43.09,
+"swing": 2.0
+},
+{
+"name": "Scarlet Monk",
+"level": 36,
+"health": 3831.0,
+"armor": 92.5,
+"dps": 66.95,
+"swing": 1.8
+},
+{
+"name": "Scarlet Monk",
+"level": 36,
+"health": 3831.0,
+"armor": 92.5,
+"dps": 66.95,
+"swing": 1.8
+}
+]
+},
+{
+"label": "Scarlet Tracking Hound",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Tracking Hound",
+"level": 34,
+"health": 3330.0,
+"armor": 1304.0,
+"dps": 44.2,
+"swing": 1.5
+},
+{
+"name": "Scarlet Tracking Hound",
+"level": 34,
+"health": 3330.0,
+"armor": 1304.0,
+"dps": 44.2,
+"swing": 1.5
+},
+{
+"name": "Scarlet Tracking Hound",
+"level": 34,
+"health": 3330.0,
+"armor": 1304.0,
+"dps": 44.2,
+"swing": 1.5
+}
+]
+},
+{
+"label": "Scarlet Monk",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Monk",
+"level": 36,
+"health": 3831.0,
+"armor": 92.5,
+"dps": 66.95,
+"swing": 1.8
+},
+{
+"name": "Scarlet Monk",
+"level": 36,
+"health": 3831.0,
+"armor": 92.5,
+"dps": 66.95,
+"swing": 1.8
+}
+]
+}
+]
+},
+"Scarlet Monastery Armory": {
+"lastBoss": 40,
+"pulls": [
+{
+"label": "Boss: Herod",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Herod",
+"level": 40,
+"health": 12192.0,
+"armor": 1964.0,
+"dps": 104.89,
+"swing": 2.5
+}
+]
+},
+{
+"label": "Scarlet Soldier",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Soldier",
+"level": 36,
+"health": 3831.0,
+"armor": 3330.0,
+"dps": 47.65,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Guardsman + Scarlet Protector",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Guardsman",
+"level": 37,
+"health": 4008.0,
+"armor": 1593.0,
+"dps": 68.95,
+"swing": 2.8
+},
+{
+"name": "Scarlet Protector",
+"level": 37,
+"health": 3279.0,
+"armor": 2982.0,
+"dps": 45.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Soldier",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Soldier",
+"level": 36,
+"health": 3831.0,
+"armor": 3330.0,
+"dps": 47.65,
+"swing": 2.0
+},
+{
+"name": "Scarlet Soldier",
+"level": 36,
+"health": 3831.0,
+"armor": 3330.0,
+"dps": 47.65,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Soldier",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Soldier",
+"level": 36,
+"health": 3831.0,
+"armor": 3330.0,
+"dps": 47.65,
+"swing": 2.0
+},
+{
+"name": "Scarlet Soldier",
+"level": 36,
+"health": 3831.0,
+"armor": 3330.0,
+"dps": 47.65,
+"swing": 2.0
+},
+{
+"name": "Scarlet Soldier",
+"level": 36,
+"health": 3831.0,
+"armor": 3330.0,
+"dps": 47.65,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Defender + Scarlet Myrmidon",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Myrmidon",
+"level": 38,
+"health": 4185.0,
+"armor": 1709.0,
+"dps": 69.4,
+"swing": 1.7
+},
+{
+"name": "Scarlet Myrmidon",
+"level": 38,
+"health": 4185.0,
+"armor": 1709.0,
+"dps": 69.4,
+"swing": 1.7
+},
+{
+"name": "Scarlet Defender",
+"level": 38,
+"health": 4185.0,
+"armor": 3846.0,
+"dps": 50.14,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Defender + Scarlet Myrmidon",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Myrmidon",
+"level": 38,
+"health": 4185.0,
+"armor": 1709.0,
+"dps": 69.4,
+"swing": 1.7
+},
+{
+"name": "Scarlet Defender",
+"level": 38,
+"health": 4185.0,
+"armor": 3846.0,
+"dps": 50.14,
+"swing": 2.0
+},
+{
+"name": "Scarlet Defender",
+"level": 38,
+"health": 4185.0,
+"armor": 3846.0,
+"dps": 50.14,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Conjuror + Scarlet Soldier",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Soldier",
+"level": 36,
+"health": 3831.0,
+"armor": 3330.0,
+"dps": 47.65,
+"swing": 2.0
+},
+{
+"name": "Scarlet Soldier",
+"level": 36,
+"health": 3831.0,
+"armor": 3330.0,
+"dps": 47.65,
+"swing": 2.0
+},
+{
+"name": "Scarlet Conjuror",
+"level": 36,
+"health": 2805.0,
+"armor": 803.0,
+"dps": 23.27,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Protector + Scarlet Soldier",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Soldier",
+"level": 36,
+"health": 3831.0,
+"armor": 3330.0,
+"dps": 47.65,
+"swing": 2.0
+},
+{
+"name": "Scarlet Soldier",
+"level": 36,
+"health": 3831.0,
+"armor": 3330.0,
+"dps": 47.65,
+"swing": 2.0
+},
+{
+"name": "Scarlet Protector",
+"level": 37,
+"health": 3279.0,
+"armor": 2982.0,
+"dps": 45.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Evoker",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Evoker",
+"level": 37,
+"health": 2910.0,
+"armor": 858.0,
+"dps": 24.11,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Evoker + Scarlet Guardsman + Scarlet Protector",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Evoker",
+"level": 37,
+"health": 2910.0,
+"armor": 858.0,
+"dps": 24.11,
+"swing": 2.0
+},
+{
+"name": "Scarlet Guardsman",
+"level": 37,
+"health": 4008.0,
+"armor": 1593.0,
+"dps": 68.95,
+"swing": 2.8
+},
+{
+"name": "Scarlet Protector",
+"level": 37,
+"health": 3279.0,
+"armor": 2982.0,
+"dps": 45.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Defender + Scarlet Evoker + Scarlet Guardsman",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Evoker",
+"level": 37,
+"health": 2910.0,
+"armor": 858.0,
+"dps": 24.11,
+"swing": 2.0
+},
+{
+"name": "Scarlet Guardsman",
+"level": 37,
+"health": 4008.0,
+"armor": 1593.0,
+"dps": 68.95,
+"swing": 2.8
+},
+{
+"name": "Scarlet Defender",
+"level": 38,
+"health": 4185.0,
+"armor": 3846.0,
+"dps": 50.14,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Defender + Scarlet Evoker",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Evoker",
+"level": 37,
+"health": 2910.0,
+"armor": 858.0,
+"dps": 24.11,
+"swing": 2.0
+},
+{
+"name": "Scarlet Defender",
+"level": 38,
+"health": 4185.0,
+"armor": 3846.0,
+"dps": 50.14,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Guardsman + Scarlet Protector",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Guardsman",
+"level": 37,
+"health": 4008.0,
+"armor": 1593.0,
+"dps": 68.95,
+"swing": 2.8
+},
+{
+"name": "Scarlet Protector",
+"level": 37,
+"health": 3279.0,
+"armor": 2982.0,
+"dps": 45.17,
+"swing": 2.0
+},
+{
+"name": "Scarlet Protector",
+"level": 37,
+"health": 3279.0,
+"armor": 2982.0,
+"dps": 45.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Defender + Scarlet Guardsman + Scarlet Myrmidon",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Guardsman",
+"level": 37,
+"health": 4008.0,
+"armor": 1593.0,
+"dps": 68.95,
+"swing": 2.8
+},
+{
+"name": "Scarlet Myrmidon",
+"level": 38,
+"health": 4185.0,
+"armor": 1709.0,
+"dps": 69.4,
+"swing": 1.7
+},
+{
+"name": "Scarlet Defender",
+"level": 38,
+"health": 4185.0,
+"armor": 3846.0,
+"dps": 50.14,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Protector",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Protector",
+"level": 37,
+"health": 3279.0,
+"armor": 2982.0,
+"dps": 45.17,
+"swing": 2.0
+},
+{
+"name": "Scarlet Protector",
+"level": 37,
+"health": 3279.0,
+"armor": 2982.0,
+"dps": 45.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Defender + Scarlet Protector",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Protector",
+"level": 37,
+"health": 3279.0,
+"armor": 2982.0,
+"dps": 45.17,
+"swing": 2.0
+},
+{
+"name": "Scarlet Defender",
+"level": 38,
+"health": 4185.0,
+"armor": 3846.0,
+"dps": 50.14,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Myrmidon + Scarlet Protector",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Protector",
+"level": 37,
+"health": 3279.0,
+"armor": 2982.0,
+"dps": 45.17,
+"swing": 2.0
+},
+{
+"name": "Scarlet Myrmidon",
+"level": 38,
+"health": 4185.0,
+"armor": 1709.0,
+"dps": 69.4,
+"swing": 1.7
+}
+]
+},
+{
+"label": "Scarlet Defender + Scarlet Myrmidon",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Myrmidon",
+"level": 38,
+"health": 4185.0,
+"armor": 1709.0,
+"dps": 69.4,
+"swing": 1.7
+},
+{
+"name": "Scarlet Defender",
+"level": 38,
+"health": 4185.0,
+"armor": 3846.0,
+"dps": 50.14,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Myrmidon",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Myrmidon",
+"level": 38,
+"health": 4185.0,
+"armor": 1709.0,
+"dps": 69.4,
+"swing": 1.7
+}
+]
+},
+{
+"label": "Scarlet Myrmidon",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Myrmidon",
+"level": 38,
+"health": 4185.0,
+"armor": 1709.0,
+"dps": 69.4,
+"swing": 1.7
+},
+{
+"name": "Scarlet Myrmidon",
+"level": 38,
+"health": 4185.0,
+"armor": 1709.0,
+"dps": 69.4,
+"swing": 1.7
+},
+{
+"name": "Scarlet Myrmidon",
+"level": 38,
+"health": 4185.0,
+"armor": 1709.0,
+"dps": 69.4,
+"swing": 1.7
+}
+]
+},
+{
+"label": "Scarlet Defender",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Defender",
+"level": 38,
+"health": 4185.0,
+"armor": 3846.0,
+"dps": 50.14,
+"swing": 2.0
+},
+{
+"name": "Scarlet Defender",
+"level": 38,
+"health": 4185.0,
+"armor": 3846.0,
+"dps": 50.14,
+"swing": 2.0
+}
+]
+}
+]
+},
+"Scarlet Monastery Cathedral": {
+"lastBoss": 42,
+"pulls": [
+{
+"label": "Boss: Scarlet Commander Mograine",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Scarlet Commander Mograine",
+"level": 42,
+"health": 5945.0,
+"armor": 1841.0,
+"dps": 79.24,
+"swing": 2.2
+}
+]
+},
+{
+"label": "Boss: High Inquisitor Whitemane",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "High Inquisitor Whitemane",
+"level": 42,
+"health": 5284.0,
+"armor": 1841.0,
+"dps": 65.81,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Myrmidon",
+"count": 8,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Myrmidon",
+"level": 38,
+"health": 4185.0,
+"armor": 1709.0,
+"dps": 69.4,
+"swing": 1.7
+}
+]
+},
+{
+"label": "Scarlet Defender",
+"count": 8,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Defender",
+"level": 38,
+"health": 4185.0,
+"armor": 3846.0,
+"dps": 50.14,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Centurion",
+"count": 8,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Centurion",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 83.79,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Myrmidon + Scarlet Sorcerer",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Sorcerer",
+"level": 38,
+"health": 3012.0,
+"armor": 915.0,
+"dps": 24.67,
+"swing": 2.0
+},
+{
+"name": "Scarlet Myrmidon",
+"level": 38,
+"health": 4185.0,
+"armor": 1709.0,
+"dps": 69.4,
+"swing": 1.7
+}
+]
+},
+{
+"label": "Scarlet Defender + Scarlet Myrmidon",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Myrmidon",
+"level": 38,
+"health": 4185.0,
+"armor": 1709.0,
+"dps": 69.4,
+"swing": 1.7
+},
+{
+"name": "Scarlet Defender",
+"level": 38,
+"health": 4185.0,
+"armor": 3846.0,
+"dps": 50.14,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Wizard",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Wizard",
+"level": 39,
+"health": 3640.0,
+"armor": 974.0,
+"dps": 48.8,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Centurion + Scarlet Wizard",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Wizard",
+"level": 39,
+"health": 3640.0,
+"armor": 974.0,
+"dps": 48.8,
+"swing": 2.0
+},
+{
+"name": "Scarlet Centurion",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 83.79,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Centurion",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Centurion",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 83.79,
+"swing": 2.0
+},
+{
+"name": "Scarlet Centurion",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 83.79,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Centurion + Scarlet Champion",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Centurion",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 83.79,
+"swing": 2.0
+},
+{
+"name": "Scarlet Champion",
+"level": 40,
+"health": 3678.0,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Champion + Scarlet Monk",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Champion",
+"level": 40,
+"health": 3678.0,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+},
+{
+"name": "Scarlet Monk",
+"level": 36,
+"health": 3831.0,
+"armor": 92.5,
+"dps": 66.95,
+"swing": 1.8
+}
+]
+},
+{
+"label": "Scarlet Abbot + Scarlet Monk",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Abbot",
+"level": 40,
+"health": 3678.0,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+},
+{
+"name": "Scarlet Monk",
+"level": 36,
+"health": 3831.0,
+"armor": 92.5,
+"dps": 66.95,
+"swing": 1.8
+}
+]
+},
+{
+"label": "Scarlet Sorcerer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Sorcerer",
+"level": 38,
+"health": 3012.0,
+"armor": 915.0,
+"dps": 24.67,
+"swing": 2.0
+},
+{
+"name": "Scarlet Sorcerer",
+"level": 38,
+"health": 3012.0,
+"armor": 915.0,
+"dps": 24.67,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Myrmidon + Scarlet Sorcerer + Scarlet Wizard",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Sorcerer",
+"level": 38,
+"health": 3012.0,
+"armor": 915.0,
+"dps": 24.67,
+"swing": 2.0
+},
+{
+"name": "Scarlet Myrmidon",
+"level": 38,
+"health": 4185.0,
+"armor": 1709.0,
+"dps": 69.4,
+"swing": 1.7
+},
+{
+"name": "Scarlet Wizard",
+"level": 39,
+"health": 3640.0,
+"armor": 974.0,
+"dps": 48.8,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Sorcerer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Sorcerer",
+"level": 38,
+"health": 3012.0,
+"armor": 915.0,
+"dps": 24.67,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Centurion + Scarlet Sorcerer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Sorcerer",
+"level": 38,
+"health": 3012.0,
+"armor": 915.0,
+"dps": 24.67,
+"swing": 2.0
+},
+{
+"name": "Scarlet Sorcerer",
+"level": 38,
+"health": 3012.0,
+"armor": 915.0,
+"dps": 24.67,
+"swing": 2.0
+},
+{
+"name": "Scarlet Centurion",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 83.79,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Myrmidon + Scarlet Wizard",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Myrmidon",
+"level": 38,
+"health": 4185.0,
+"armor": 1709.0,
+"dps": 69.4,
+"swing": 1.7
+},
+{
+"name": "Scarlet Wizard",
+"level": 39,
+"health": 3640.0,
+"armor": 974.0,
+"dps": 48.8,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Centurion + Scarlet Chaplain",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Chaplain",
+"level": 36,
+"health": 3027.0,
+"armor": 1149.0,
+"dps": 43.09,
+"swing": 2.0
+},
+{
+"name": "Scarlet Chaplain",
+"level": 36,
+"health": 3027.0,
+"armor": 1149.0,
+"dps": 43.09,
+"swing": 2.0
+},
+{
+"name": "Scarlet Centurion",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 83.79,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Centurion + Scarlet Chaplain + Scarlet Wizard",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Chaplain",
+"level": 36,
+"health": 3027.0,
+"armor": 1149.0,
+"dps": 43.09,
+"swing": 2.0
+},
+{
+"name": "Scarlet Wizard",
+"level": 39,
+"health": 3640.0,
+"armor": 974.0,
+"dps": 48.8,
+"swing": 2.0
+},
+{
+"name": "Scarlet Centurion",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 83.79,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Centurion + Scarlet Chaplain + Scarlet Wizard",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Chaplain",
+"level": 36,
+"health": 3027.0,
+"armor": 1149.0,
+"dps": 43.09,
+"swing": 2.0
+},
+{
+"name": "Scarlet Wizard",
+"level": 39,
+"health": 3640.0,
+"armor": 974.0,
+"dps": 48.8,
+"swing": 2.0
+},
+{
+"name": "Scarlet Wizard",
+"level": 39,
+"health": 3640.0,
+"armor": 974.0,
+"dps": 48.8,
+"swing": 2.0
+},
+{
+"name": "Scarlet Centurion",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 83.79,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Chaplain + Scarlet Monk",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Chaplain",
+"level": 36,
+"health": 3027.0,
+"armor": 1149.0,
+"dps": 43.09,
+"swing": 2.0
+},
+{
+"name": "Scarlet Monk",
+"level": 36,
+"health": 3831.0,
+"armor": 92.5,
+"dps": 66.95,
+"swing": 1.8
+}
+]
+},
+{
+"label": "Scarlet Centurion + Scarlet Champion + Scarlet Wizard",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Wizard",
+"level": 39,
+"health": 3640.0,
+"armor": 974.0,
+"dps": 48.8,
+"swing": 2.0
+},
+{
+"name": "Scarlet Centurion",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 83.79,
+"swing": 2.0
+},
+{
+"name": "Scarlet Champion",
+"level": 40,
+"health": 3678.0,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Centurion + Scarlet Champion + Scarlet Wizard",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Wizard",
+"level": 39,
+"health": 3640.0,
+"armor": 974.0,
+"dps": 48.8,
+"swing": 2.0
+},
+{
+"name": "Scarlet Centurion",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 83.79,
+"swing": 2.0
+},
+{
+"name": "Scarlet Champion",
+"level": 40,
+"health": 3678.0,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+},
+{
+"name": "Scarlet Champion",
+"level": 40,
+"health": 3678.0,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Abbot + Scarlet Champion + Scarlet Monk",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Champion",
+"level": 40,
+"health": 3678.0,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+},
+{
+"name": "Scarlet Abbot",
+"level": 40,
+"health": 3678.0,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+},
+{
+"name": "Scarlet Monk",
+"level": 36,
+"health": 3831.0,
+"armor": 92.5,
+"dps": 66.95,
+"swing": 1.8
+}
+]
+},
+{
+"label": "Scarlet Champion + Scarlet Monk",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Champion",
+"level": 40,
+"health": 3678.0,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+},
+{
+"name": "Scarlet Monk",
+"level": 36,
+"health": 3831.0,
+"armor": 92.5,
+"dps": 66.95,
+"swing": 1.8
+},
+{
+"name": "Scarlet Monk",
+"level": 36,
+"health": 3831.0,
+"armor": 92.5,
+"dps": 66.95,
+"swing": 1.8
+}
+]
+},
+{
+"label": "Scarlet Abbot",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Abbot",
+"level": 40,
+"health": 3678.0,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+},
+{
+"name": "Scarlet Abbot",
+"level": 40,
+"health": 3678.0,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Monk",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Monk",
+"level": 36,
+"health": 3831.0,
+"armor": 92.5,
+"dps": 66.95,
+"swing": 1.8
+}
+]
+}
+]
+},
+"Scarlet Monastery Graveyard": {
+"lastBoss": 34,
+"pulls": [
+{
+"label": "Boss: Interrogator Vishas",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Interrogator Vishas",
+"level": 32,
+"health": 5328.0,
+"armor": 1063.0,
+"dps": 47.29,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Bloodmage Thalnos",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Bloodmage Thalnos",
+"level": 34,
+"health": 7736.0,
+"armor": 1121.0,
+"dps": 42.27,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anguished Dead",
+"count": 13,
+"boss": false,
+"mobs": [
+{
+"name": "Anguished Dead",
+"level": 33,
+"health": 3330.0,
+"armor": 1304.0,
+"dps": 43.51,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Haunting Phantasm",
+"count": 6,
+"boss": false,
+"mobs": [
+{
+"name": "Haunting Phantasm",
+"level": 33,
+"health": 3330.0,
+"armor": 2565.73736,
+"dps": 43.92,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Sentry",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Sentry",
+"level": 31,
+"health": 3018.0,
+"armor": 1234.0,
+"dps": 24.38,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Scryer + Scarlet Torturer",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Scryer",
+"level": 31,
+"health": 2550.0,
+"armor": 1033.0,
+"dps": 160.68,
+"swing": 1.341
+},
+{
+"name": "Scarlet Torturer",
+"level": 31,
+"health": 3018.0,
+"armor": 111.0,
+"dps": 48.75,
+"swing": 2.0
+},
+{
+"name": "Scarlet Torturer",
+"level": 31,
+"health": 3018.0,
+"armor": 111.0,
+"dps": 48.75,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Torturer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Torturer",
+"level": 31,
+"health": 3018.0,
+"armor": 111.0,
+"dps": 48.75,
+"swing": 2.0
+},
+{
+"name": "Scarlet Torturer",
+"level": 31,
+"health": 3018.0,
+"armor": 111.0,
+"dps": 48.75,
+"swing": 2.0
+},
+{
+"name": "Scarlet Torturer",
+"level": 31,
+"health": 3018.0,
+"armor": 111.0,
+"dps": 48.75,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Scryer + Scarlet Torturer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Scryer",
+"level": 31,
+"health": 2550.0,
+"armor": 1033.0,
+"dps": 160.68,
+"swing": 1.341
+},
+{
+"name": "Scarlet Torturer",
+"level": 31,
+"health": 3018.0,
+"armor": 111.0,
+"dps": 48.75,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Scarlet Scryer + Scarlet Torturer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Scarlet Scryer",
+"level": 31,
+"health": 2550.0,
+"armor": 1033.0,
+"dps": 160.68,
+"swing": 1.341
+},
+{
+"name": "Scarlet Torturer",
+"level": 31,
+"health": 3018.0,
+"armor": 111.0,
+"dps": 48.75,
+"swing": 2.0
+},
+{
+"name": "Scarlet Torturer",
+"level": 31,
+"health": 3018.0,
+"armor": 111.0,
+"dps": 48.75,
+"swing": 2.0
+},
+{
+"name": "Scarlet Torturer",
+"level": 31,
+"health": 3018.0,
+"armor": 111.0,
+"dps": 48.75,
+"swing": 2.0
+},
+{
+"name": "Scarlet Torturer",
+"level": 31,
+"health": 3018.0,
+"armor": 111.0,
+"dps": 48.75,
+"swing": 2.0
+}
+]
+}
+]
+},
+"Razorfen Downs": {
+"lastBoss": 41,
+"pulls": [
+{
+"label": "Boss: Mordresh Fire Eye",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Mordresh Fire Eye",
+"level": 39,
+"health": 8320.0,
+"armor": 974.0,
+"dps": 53.82,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Ragglesnout",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Ragglesnout",
+"level": 40,
+"health": 8616.0,
+"armor": 1035.0,
+"dps": 46.31,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Glutton",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Glutton",
+"level": 40,
+"health": 12192.0,
+"armor": 1964.0,
+"dps": 95.06,
+"swing": 2.8
+}
+]
+},
+{
+"label": "Boss: Lady Falther'ess",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Lady Falther'ess",
+"level": 40,
+"health": 8744.0,
+"armor": 1325.0,
+"dps": 217.55,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Amnennar the Coldbringer",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Amnennar the Coldbringer",
+"level": 41,
+"health": 10144.0,
+"armor": 2305.7004300000003,
+"dps": 123.83,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boneflayer Ghoul",
+"count": 6,
+"boss": false,
+"mobs": [
+{
+"name": "Boneflayer Ghoul",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 57.89,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Death's Head Necromancer + Withered Quilguard + Withered Reaver",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Withered Reaver",
+"level": 36,
+"health": 3831.0,
+"armor": 1480.0,
+"dps": 36.21,
+"swing": 2.8
+},
+{
+"name": "Withered Quilguard",
+"level": 36,
+"health": 3831.0,
+"armor": 1480.0,
+"dps": 50.46,
+"swing": 2.0
+},
+{
+"name": "Withered Quilguard",
+"level": 36,
+"health": 3831.0,
+"armor": 1480.0,
+"dps": 50.46,
+"swing": 2.0
+},
+{
+"name": "Death's Head Necromancer",
+"level": 37,
+"health": 3279.0,
+"armor": 1325.0,
+"dps": 45.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Withered Spearhide",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Withered Spearhide",
+"level": 35,
+"health": 3660.0,
+"armor": 1373.0,
+"dps": 48.7,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Skeletal Frostweaver + Thorn Eater Ghoul",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Skeletal Frostweaver",
+"level": 38,
+"health": 3012.0,
+"armor": 915.0,
+"dps": 36.42,
+"swing": 2.0
+},
+{
+"name": "Thorn Eater Ghoul",
+"level": 38,
+"health": 4185.0,
+"armor": 1709.0,
+"dps": 53.09,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boneflayer Ghoul + Freezing Spirit",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Boneflayer Ghoul",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 57.89,
+"swing": 2.0
+},
+{
+"name": "Freezing Spirit",
+"level": 40,
+"health": 3678.0,
+"armor": 1619.0,
+"dps": 57.8,
+"swing": 2.8
+}
+]
+},
+{
+"label": "Death's Head Geomancer + Withered Spearhide + Withered Warrior",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Withered Warrior",
+"level": 35,
+"health": 3660.0,
+"armor": 1373.0,
+"dps": 48.7,
+"swing": 2.0
+},
+{
+"name": "Withered Spearhide",
+"level": 35,
+"health": 3660.0,
+"armor": 1373.0,
+"dps": 48.7,
+"swing": 2.0
+},
+{
+"name": "Death's Head Geomancer",
+"level": 36,
+"health": 2805.0,
+"armor": 803.0,
+"dps": 34.39,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Death's Head Necromancer + Withered Quilguard + Withered Reaver",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Withered Reaver",
+"level": 36,
+"health": 3831.0,
+"armor": 1480.0,
+"dps": 36.21,
+"swing": 2.8
+},
+{
+"name": "Withered Quilguard",
+"level": 36,
+"health": 3831.0,
+"armor": 1480.0,
+"dps": 50.46,
+"swing": 2.0
+},
+{
+"name": "Death's Head Necromancer",
+"level": 37,
+"health": 3279.0,
+"armor": 1325.0,
+"dps": 45.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Withered Quilguard",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Withered Quilguard",
+"level": 36,
+"health": 3831.0,
+"armor": 1480.0,
+"dps": 50.46,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Frozen Soul + Thorn Eater Ghoul",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Thorn Eater Ghoul",
+"level": 38,
+"health": 4185.0,
+"armor": 1709.0,
+"dps": 53.09,
+"swing": 2.0
+},
+{
+"name": "Frozen Soul",
+"level": 38,
+"health": 3405.0,
+"armor": 1418.0,
+"dps": 49.58,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Thorn Eater Ghoul",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Thorn Eater Ghoul",
+"level": 38,
+"health": 4185.0,
+"armor": 1709.0,
+"dps": 53.09,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Death's Head Geomancer + Withered Warrior",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Withered Warrior",
+"level": 35,
+"health": 3660.0,
+"armor": 1373.0,
+"dps": 48.7,
+"swing": 2.0
+},
+{
+"name": "Death's Head Geomancer",
+"level": 36,
+"health": 2805.0,
+"armor": 803.0,
+"dps": 34.39,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Withered Quilguard + Withered Reaver",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Withered Reaver",
+"level": 36,
+"health": 3831.0,
+"armor": 1480.0,
+"dps": 36.21,
+"swing": 2.8
+},
+{
+"name": "Withered Quilguard",
+"level": 36,
+"health": 3831.0,
+"armor": 1480.0,
+"dps": 50.46,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Death's Head Necromancer + Withered Quilguard",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Withered Quilguard",
+"level": 36,
+"health": 3831.0,
+"armor": 1480.0,
+"dps": 50.46,
+"swing": 2.0
+},
+{
+"name": "Death's Head Necromancer",
+"level": 37,
+"health": 3279.0,
+"armor": 1325.0,
+"dps": 45.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Skeletal Summoner",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Skeletal Summoner",
+"level": 40,
+"health": 3231.0,
+"armor": 1035.0,
+"dps": 45.34,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boneflayer Ghoul",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Boneflayer Ghoul",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 57.89,
+"swing": 2.0
+},
+{
+"name": "Boneflayer Ghoul",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 57.89,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Frozen Soul",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Frozen Soul",
+"level": 38,
+"health": 3405.0,
+"armor": 1418.0,
+"dps": 49.58,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Withered Reaver",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Withered Reaver",
+"level": 36,
+"health": 3831.0,
+"armor": 1480.0,
+"dps": 36.21,
+"swing": 2.8
+}
+]
+},
+{
+"label": "Death's Head Necromancer + Withered Reaver",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Withered Reaver",
+"level": 36,
+"health": 3831.0,
+"armor": 1480.0,
+"dps": 36.21,
+"swing": 2.8
+},
+{
+"name": "Death's Head Necromancer",
+"level": 37,
+"health": 3279.0,
+"armor": 1325.0,
+"dps": 45.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Frozen Soul + Skeletal Frostweaver",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Skeletal Frostweaver",
+"level": 38,
+"health": 3012.0,
+"armor": 915.0,
+"dps": 36.42,
+"swing": 2.0
+},
+{
+"name": "Frozen Soul",
+"level": 38,
+"health": 3405.0,
+"armor": 1418.0,
+"dps": 49.58,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Frozen Soul + Skeletal Frostweaver + Thorn Eater Ghoul",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Skeletal Frostweaver",
+"level": 38,
+"health": 3012.0,
+"armor": 915.0,
+"dps": 36.42,
+"swing": 2.0
+},
+{
+"name": "Thorn Eater Ghoul",
+"level": 38,
+"health": 4185.0,
+"armor": 1709.0,
+"dps": 53.09,
+"swing": 2.0
+},
+{
+"name": "Frozen Soul",
+"level": 38,
+"health": 3405.0,
+"armor": 1418.0,
+"dps": 49.58,
+"swing": 2.0
+},
+{
+"name": "Frozen Soul",
+"level": 38,
+"health": 3405.0,
+"armor": 1418.0,
+"dps": 49.58,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boneflayer Ghoul + Freezing Spirit + Skeletal Summoner",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Skeletal Summoner",
+"level": 40,
+"health": 3231.0,
+"armor": 1035.0,
+"dps": 45.34,
+"swing": 2.0
+},
+{
+"name": "Boneflayer Ghoul",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 57.89,
+"swing": 2.0
+},
+{
+"name": "Boneflayer Ghoul",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 57.89,
+"swing": 2.0
+},
+{
+"name": "Freezing Spirit",
+"level": 40,
+"health": 3678.0,
+"armor": 1619.0,
+"dps": 57.8,
+"swing": 2.8
+},
+{
+"name": "Freezing Spirit",
+"level": 40,
+"health": 3678.0,
+"armor": 1619.0,
+"dps": 57.8,
+"swing": 2.8
+}
+]
+},
+{
+"label": "Freezing Spirit + Skeletal Summoner + Splinterbone Captain",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Skeletal Summoner",
+"level": 40,
+"health": 3231.0,
+"armor": 1035.0,
+"dps": 45.34,
+"swing": 2.0
+},
+{
+"name": "Splinterbone Captain",
+"level": 40,
+"health": 4572.0,
+"armor": 1964.0,
+"dps": 62.68,
+"swing": 2.8
+},
+{
+"name": "Freezing Spirit",
+"level": 40,
+"health": 3678.0,
+"armor": 1619.0,
+"dps": 57.8,
+"swing": 2.8
+}
+]
+},
+{
+"label": "Skeletal Summoner + Splinterbone Captain",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Skeletal Summoner",
+"level": 40,
+"health": 3231.0,
+"armor": 1035.0,
+"dps": 45.34,
+"swing": 2.0
+},
+{
+"name": "Splinterbone Captain",
+"level": 40,
+"health": 4572.0,
+"armor": 1964.0,
+"dps": 62.68,
+"swing": 2.8
+}
+]
+},
+{
+"label": "Boneflayer Ghoul + Skeletal Summoner",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Skeletal Summoner",
+"level": 40,
+"health": 3231.0,
+"armor": 1035.0,
+"dps": 45.34,
+"swing": 2.0
+},
+{
+"name": "Boneflayer Ghoul",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 57.89,
+"swing": 2.0
+}
+]
+}
+]
+},
+"Uldaman": {
+"lastBoss": 47,
+"pulls": [
+{
+"label": "Boss: Obsidian Sentinel",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Obsidian Sentinel",
+"level": 42,
+"health": 8255.0,
+"armor": 2246.0,
+"dps": 123.79,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Ancient Stone Keeper",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Ancient Stone Keeper",
+"level": 44,
+"health": 8910.0,
+"armor": 10228.0,
+"dps": 122.55,
+"swing": 2.8
+}
+]
+},
+{
+"label": "Boss: Galgann Firehammer",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Galgann Firehammer",
+"level": 45,
+"health": 13302.0,
+"armor": 2211.0,
+"dps": 39.9,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Archaedas",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Archaedas",
+"level": 47,
+"health": 29850.0,
+"armor": 2835.0,
+"dps": 120.69,
+"swing": 2.6
+}
+]
+},
+{
+"label": "Stone Steward",
+"count": 11,
+"boss": false,
+"mobs": [
+{
+"name": "Stone Steward",
+"level": 44,
+"health": 5346.0,
+"armor": 10228.0,
+"dps": 118.61,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Stonevault Oracle",
+"count": 7,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Oracle",
+"level": 38,
+"health": 3405.0,
+"armor": 1418.0,
+"dps": 49.4,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Stonevault Oracle + Stonevault Rockchewer",
+"count": 6,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Rockchewer",
+"level": 37,
+"health": 4008.0,
+"armor": 1593.0,
+"dps": 48.83,
+"swing": 2.5
+},
+{
+"name": "Stonevault Oracle",
+"level": 38,
+"health": 3405.0,
+"armor": 1418.0,
+"dps": 49.4,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Shrike Bat",
+"count": 6,
+"boss": false,
+"mobs": [
+{
+"name": "Shrike Bat",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 57.75,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Stonevault Rockchewer",
+"count": 5,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Rockchewer",
+"level": 37,
+"health": 4008.0,
+"armor": 1593.0,
+"dps": 48.83,
+"swing": 2.5
+}
+]
+},
+{
+"label": "Stonevault Cave Lurker",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Cave Lurker",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 57.75,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Stonevault Oracle + Stonevault Rockchewer",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Rockchewer",
+"level": 37,
+"health": 4008.0,
+"armor": 1593.0,
+"dps": 48.83,
+"swing": 2.5
+},
+{
+"name": "Stonevault Rockchewer",
+"level": 37,
+"health": 4008.0,
+"armor": 1593.0,
+"dps": 48.83,
+"swing": 2.5
+},
+{
+"name": "Stonevault Oracle",
+"level": 38,
+"health": 3405.0,
+"armor": 1418.0,
+"dps": 49.4,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Stonevault Brawler + Stonevault Geomancer",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Geomancer",
+"level": 44,
+"health": 4278.0,
+"armor": 2082.0,
+"dps": 88.22,
+"swing": 2.0
+},
+{
+"name": "Stonevault Brawler",
+"level": 44,
+"health": 5346.0,
+"armor": 230.1,
+"dps": 94.89,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Stone Keeper",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Stone Keeper",
+"level": 46,
+"health": 5757.0,
+"armor": 11120.0,
+"dps": 131.31,
+"swing": 2.8
+}
+]
+},
+{
+"label": "Venomlash Scorpid",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Venomlash Scorpid",
+"level": 40,
+"health": 4572.0,
+"armor": 1964.0,
+"dps": 62.69,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Shadowforge Relic Hunter",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowforge Relic Hunter",
+"level": 40,
+"health": 3678.0,
+"armor": 1619.0,
+"dps": 58.3,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Stonevault Brawler + Stonevault Geomancer",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Geomancer",
+"level": 44,
+"health": 4278.0,
+"armor": 2082.0,
+"dps": 88.22,
+"swing": 2.0
+},
+{
+"name": "Stonevault Brawler",
+"level": 44,
+"health": 5346.0,
+"armor": 230.1,
+"dps": 94.89,
+"swing": 2.0
+},
+{
+"name": "Stonevault Brawler",
+"level": 44,
+"health": 5346.0,
+"armor": 230.1,
+"dps": 94.89,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Stonevault Brawler",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Brawler",
+"level": 44,
+"health": 5346.0,
+"armor": 230.1,
+"dps": 94.89,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Jadespine Basilisk",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Jadespine Basilisk",
+"level": 40,
+"health": 4572.0,
+"armor": 1964.0,
+"dps": 62.69,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Shadowforge Archaeologist + Shadowforge Darkcaster",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowforge Darkcaster",
+"level": 44,
+"health": 4278.0,
+"armor": 2082.0,
+"dps": 88.16,
+"swing": 2.0
+},
+{
+"name": "Shadowforge Archaeologist",
+"level": 44,
+"health": 5346.0,
+"armor": 2557.0,
+"dps": 94.89,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Stonevault Cave Lurker + Stonevault Oracle",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Cave Lurker",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 57.75,
+"swing": 2.0
+},
+{
+"name": "Stonevault Cave Lurker",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 57.75,
+"swing": 2.0
+},
+{
+"name": "Stonevault Oracle",
+"level": 38,
+"health": 3405.0,
+"armor": 1418.0,
+"dps": 49.4,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Stonevault Cave Lurker",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Cave Lurker",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 57.75,
+"swing": 2.0
+},
+{
+"name": "Stonevault Cave Lurker",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 57.75,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Stonevault Cave Lurker + Stonevault Oracle",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Cave Lurker",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 57.75,
+"swing": 2.0
+},
+{
+"name": "Stonevault Oracle",
+"level": 38,
+"health": 3405.0,
+"armor": 1418.0,
+"dps": 49.4,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Shadowforge Sharpshooter",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowforge Sharpshooter",
+"level": 44,
+"health": 5346.0,
+"armor": 2557.0,
+"dps": 94.89,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Vault Warder",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Vault Warder",
+"level": 45,
+"health": 7392.0,
+"armor": 272500.0,
+"dps": 128.7,
+"swing": 2.5
+}
+]
+},
+{
+"label": "Shadowforge Geologist + Shadowforge Relic Hunter",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowforge Relic Hunter",
+"level": 40,
+"health": 3678.0,
+"armor": 1619.0,
+"dps": 58.3,
+"swing": 2.0
+},
+{
+"name": "Shadowforge Relic Hunter",
+"level": 40,
+"health": 3678.0,
+"armor": 1619.0,
+"dps": 58.3,
+"swing": 2.0
+},
+{
+"name": "Shadowforge Geologist",
+"level": 41,
+"health": 3804.0,
+"armor": 1727.0,
+"dps": 63.73,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Stonevault Oracle",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Oracle",
+"level": 38,
+"health": 3405.0,
+"armor": 1418.0,
+"dps": 49.4,
+"swing": 2.0
+},
+{
+"name": "Stonevault Oracle",
+"level": 38,
+"health": 3405.0,
+"armor": 1418.0,
+"dps": 49.4,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Grimlok + Jadespine Basilisk + Stonevault Brawler + Stonevault Geomancer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Geomancer",
+"level": 44,
+"health": 4278.0,
+"armor": 2082.0,
+"dps": 88.22,
+"swing": 2.0
+},
+{
+"name": "Grimlok",
+"level": 45,
+"health": 7390.0,
+"armor": 2211.0,
+"dps": 99.75,
+"swing": 2.0
+},
+{
+"name": "Stonevault Brawler",
+"level": 44,
+"health": 5346.0,
+"armor": 230.1,
+"dps": 94.89,
+"swing": 2.0
+},
+{
+"name": "Jadespine Basilisk",
+"level": 40,
+"health": 4572.0,
+"armor": 1964.0,
+"dps": 62.69,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Stonevault Brawler + Stonevault Geomancer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Geomancer",
+"level": 44,
+"health": 4278.0,
+"armor": 2082.0,
+"dps": 88.22,
+"swing": 2.0
+},
+{
+"name": "Stonevault Brawler",
+"level": 44,
+"health": 5346.0,
+"armor": 230.1,
+"dps": 94.89,
+"swing": 2.0
+},
+{
+"name": "Stonevault Brawler",
+"level": 44,
+"health": 5346.0,
+"armor": 230.1,
+"dps": 94.89,
+"swing": 2.0
+},
+{
+"name": "Stonevault Brawler",
+"level": 44,
+"health": 5346.0,
+"armor": 230.1,
+"dps": 94.89,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Shrike Bat",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Shrike Bat",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 57.75,
+"swing": 2.0
+},
+{
+"name": "Shrike Bat",
+"level": 39,
+"health": 4377.0,
+"armor": 1834.0,
+"dps": 57.75,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Revelosh",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Revelosh",
+"level": 40,
+"health": 3678.0,
+"armor": 1619.0,
+"dps": 59.08,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Shadowforge Geologist",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Shadowforge Geologist",
+"level": 41,
+"health": 3804.0,
+"armor": 1727.0,
+"dps": 63.73,
+"swing": 2.0
+},
+{
+"name": "Shadowforge Geologist",
+"level": 41,
+"health": 3804.0,
+"armor": 1727.0,
+"dps": 63.73,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Stonevault Flameweaver + Stonevault Mauler",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Mauler",
+"level": 45,
+"health": 5544.0,
+"armor": 245.39999999999998,
+"dps": 105.0,
+"swing": 2.0
+},
+{
+"name": "Stonevault Flameweaver",
+"level": 45,
+"health": 3882.0,
+"armor": 1378.0,
+"dps": 92.14,
+"swing": 2.0
+},
+{
+"name": "Stonevault Flameweaver",
+"level": 45,
+"health": 3882.0,
+"armor": 1378.0,
+"dps": 92.14,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Stonevault Mauler",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Mauler",
+"level": 45,
+"health": 5544.0,
+"armor": 245.39999999999998,
+"dps": 105.0,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Stonevault Flameweaver + Stonevault Mauler",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Mauler",
+"level": 45,
+"health": 5544.0,
+"armor": 245.39999999999998,
+"dps": 105.0,
+"swing": 2.0
+},
+{
+"name": "Stonevault Mauler",
+"level": 45,
+"health": 5544.0,
+"armor": 245.39999999999998,
+"dps": 105.0,
+"swing": 2.0
+},
+{
+"name": "Stonevault Flameweaver",
+"level": 45,
+"health": 3882.0,
+"armor": 1378.0,
+"dps": 92.14,
+"swing": 2.0
+},
+{
+"name": "Stonevault Flameweaver",
+"level": 45,
+"health": 3882.0,
+"armor": 1378.0,
+"dps": 92.14,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Stonevault Flameweaver + Stonevault Mauler",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Mauler",
+"level": 45,
+"health": 5544.0,
+"armor": 245.39999999999998,
+"dps": 105.0,
+"swing": 2.0
+},
+{
+"name": "Stonevault Mauler",
+"level": 45,
+"health": 5544.0,
+"armor": 245.39999999999998,
+"dps": 105.0,
+"swing": 2.0
+},
+{
+"name": "Stonevault Flameweaver",
+"level": 45,
+"health": 3882.0,
+"armor": 1378.0,
+"dps": 92.14,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Stonevault Flameweaver + Stonevault Mauler",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Mauler",
+"level": 45,
+"health": 5544.0,
+"armor": 245.39999999999998,
+"dps": 105.0,
+"swing": 2.0
+},
+{
+"name": "Stonevault Flameweaver",
+"level": 45,
+"health": 3882.0,
+"armor": 1378.0,
+"dps": 92.14,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Stonevault Mauler",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Stonevault Mauler",
+"level": 45,
+"health": 5544.0,
+"armor": 245.39999999999998,
+"dps": 105.0,
+"swing": 2.0
+},
+{
+"name": "Stonevault Mauler",
+"level": 45,
+"health": 5544.0,
+"armor": 245.39999999999998,
+"dps": 105.0,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Vault Warder",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Vault Warder",
+"level": 45,
+"health": 7392.0,
+"armor": 272500.0,
+"dps": 128.7,
+"swing": 2.5
+},
+{
+"name": "Vault Warder",
+"level": 45,
+"health": 7392.0,
+"armor": 272500.0,
+"dps": 128.7,
+"swing": 2.5
+}
+]
+}
+]
+},
+"Zul'Farrak": {
+"lastBoss": 48,
+"pulls": [
+{
+"label": "Boss: Chief Ukorz Sandscalp",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Chief Ukorz Sandscalp",
+"level": 48,
+"health": 14434.0,
+"armor": 2888.0,
+"dps": 145.86,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Antu'sul",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Antu'sul",
+"level": 48,
+"health": 13200.0,
+"armor": 2344.0,
+"dps": 180.87,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Sul'lithuz Sandcrawler",
+"count": 19,
+"boss": false,
+"mobs": [
+{
+"name": "Sul'lithuz Sandcrawler",
+"level": 47,
+"health": 5970.0,
+"armor": 2835.0,
+"dps": 118.59,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Dustwraith",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Dustwraith",
+"level": 45,
+"health": 5544.0,
+"armor": 2725.0,
+"dps": 107.19,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Sandfury Shadowhunter + Sul'lithuz Sandcrawler",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Sandfury Shadowhunter",
+"level": 46,
+"health": 4605.0,
+"armor": 2255.0,
+"dps": 104.95,
+"swing": 2.0
+},
+{
+"name": "Sandfury Shadowhunter",
+"level": 46,
+"health": 4605.0,
+"armor": 2255.0,
+"dps": 104.95,
+"swing": 2.0
+},
+{
+"name": "Sul'lithuz Sandcrawler",
+"level": 47,
+"health": 5970.0,
+"armor": 2835.0,
+"dps": 118.59,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Sandfury Guardian",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Sandfury Guardian",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 112.81,
+"swing": 1.7
+},
+{
+"name": "Sandfury Guardian",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 112.81,
+"swing": 1.7
+}
+]
+},
+{
+"label": "Sul'lithuz Abomination",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Sul'lithuz Abomination",
+"level": 47,
+"health": 3980.0,
+"armor": 2835.0,
+"dps": 134.55,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Sandarr Dunereaver",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Sandarr Dunereaver",
+"level": 45,
+"health": 5544.0,
+"armor": 2725.0,
+"dps": 107.19,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Sandfury Shadowhunter",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Sandfury Shadowhunter",
+"level": 46,
+"health": 4605.0,
+"armor": 2255.0,
+"dps": 104.95,
+"swing": 2.0
+},
+{
+"name": "Sandfury Shadowhunter",
+"level": 46,
+"health": 4605.0,
+"armor": 2255.0,
+"dps": 104.95,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Theka the Martyr",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Theka the Martyr",
+"level": 46,
+"health": 9595.0,
+"armor": 2780.0,
+"dps": 113.82,
+"swing": 2.5
+}
+]
+},
+{
+"label": "Murta Grimgut + Oro Eyegouge + Raven + Sandfury Executioner",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Sandfury Executioner",
+"level": 46,
+"health": 9595.0,
+"armor": 2780.0,
+"dps": 140.1,
+"swing": 2.6
+},
+{
+"name": "Raven",
+"level": 44,
+"health": 6237.0,
+"armor": 1.02,
+"dps": 98.06,
+"swing": 1.6
+},
+{
+"name": "Oro Eyegouge",
+"level": 44,
+"health": 4364.0,
+"armor": 1304.0,
+"dps": 35.69,
+"swing": 2.0
+},
+{
+"name": "Murta Grimgut",
+"level": 44,
+"health": 4991.0,
+"armor": 2082.0,
+"dps": 45.6,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Hydromancer Velratha",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Hydromancer Velratha",
+"level": 46,
+"health": 4029.0,
+"armor": 1406.0,
+"dps": 95.79,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Ruuzlu",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Ruuzlu",
+"level": 46,
+"health": 9595.0,
+"armor": 2780.0,
+"dps": 157.61,
+"swing": 2.6
+}
+]
+},
+{
+"label": "Sandfury Shadowhunter + Zerillis",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Sandfury Shadowhunter",
+"level": 46,
+"health": 4605.0,
+"armor": 2255.0,
+"dps": 104.95,
+"swing": 2.0
+},
+{
+"name": "Sandfury Shadowhunter",
+"level": 46,
+"health": 4605.0,
+"armor": 2255.0,
+"dps": 104.95,
+"swing": 2.0
+},
+{
+"name": "Sandfury Shadowhunter",
+"level": 46,
+"health": 4605.0,
+"armor": 2255.0,
+"dps": 104.95,
+"swing": 2.0
+},
+{
+"name": "Zerillis",
+"level": 45,
+"health": 5544.0,
+"armor": 2725.0,
+"dps": 107.19,
+"swing": 2.0
+}
+]
+}
+]
+},
+"Maraudon": {
+"lastBoss": 51,
+"pulls": [
+{
+"label": "Boss: Lord Vyletongue",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Lord Vyletongue",
+"level": 47,
+"health": 14925.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Razorlash",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Razorlash",
+"level": 48,
+"health": 13403.0,
+"armor": 2888.0,
+"dps": 154.05,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Noxxion",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Noxxion",
+"level": 48,
+"health": 14434.0,
+"armor": 2888.0,
+"dps": 154.05,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Celebras the Cursed",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Celebras the Cursed",
+"level": 49,
+"health": 13680.0,
+"armor": 2389.0,
+"dps": 158.44,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Landslide",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Landslide",
+"level": 50,
+"health": 15505.0,
+"armor": 2999.0,
+"dps": 163.07,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Rotgrip",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Rotgrip",
+"level": 50,
+"health": 15505.0,
+"armor": 2999.0,
+"dps": 163.07,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Tinkerer Gizlock",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Tinkerer Gizlock",
+"level": 50,
+"health": 17720.0,
+"armor": 2999.0,
+"dps": 163.07,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Princess Theradras",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Princess Theradras",
+"level": 51,
+"health": 22920.0,
+"armor": 3052.0,
+"dps": 192.07,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Primordial Behemoth",
+"count": 16,
+"boss": false,
+"mobs": [
+{
+"name": "Primordial Behemoth",
+"level": 49,
+"health": 12828.0,
+"armor": 2944.0,
+"dps": 119.92,
+"swing": 2.5
+}
+]
+},
+{
+"label": "Constrictor Vine",
+"count": 13,
+"boss": false,
+"mobs": [
+{
+"name": "Constrictor Vine",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 131.87,
+"swing": 2.0
+},
+{
+"name": "Constrictor Vine",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 131.87,
+"swing": 2.0
+},
+{
+"name": "Constrictor Vine",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 131.87,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Thessala Hydra",
+"count": 11,
+"boss": false,
+"mobs": [
+{
+"name": "Thessala Hydra",
+"level": 47,
+"health": 10945.0,
+"armor": 2835.0,
+"dps": 135.53,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Subterranean Diemetradon",
+"count": 11,
+"boss": false,
+"mobs": [
+{
+"name": "Subterranean Diemetradon",
+"level": 48,
+"health": 6186.0,
+"armor": 2888.0,
+"dps": 140.4,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Barbed Lasher",
+"count": 10,
+"boss": false,
+"mobs": [
+{
+"name": "Barbed Lasher",
+"level": 45,
+"health": 8316.0,
+"armor": 2725.0,
+"dps": 127.72,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deeprot Stomper",
+"count": 9,
+"boss": false,
+"mobs": [
+{
+"name": "Deeprot Stomper",
+"level": 44,
+"health": 5346.0,
+"armor": 2557.0,
+"dps": 149.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deeprot Tangler",
+"count": 9,
+"boss": false,
+"mobs": [
+{
+"name": "Deeprot Tangler",
+"level": 45,
+"health": 5544.0,
+"armor": 2725.0,
+"dps": 149.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Putridus Satyr",
+"count": 8,
+"boss": false,
+"mobs": [
+{
+"name": "Putridus Satyr",
+"level": 44,
+"health": 5346.0,
+"armor": 2557.0,
+"dps": 199.88,
+"swing": 1.5
+}
+]
+},
+{
+"label": "Theradrim Guardian",
+"count": 7,
+"boss": false,
+"mobs": [
+{
+"name": "Theradrim Guardian",
+"level": 48,
+"health": 6186.0,
+"armor": 2888.0,
+"dps": 140.4,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Putridus Trickster",
+"count": 7,
+"boss": false,
+"mobs": [
+{
+"name": "Putridus Trickster",
+"level": 45,
+"health": 5544.0,
+"armor": 2725.0,
+"dps": 199.88,
+"swing": 1.5
+},
+{
+"name": "Putridus Trickster",
+"level": 45,
+"health": 5544.0,
+"armor": 2725.0,
+"dps": 199.88,
+"swing": 1.5
+}
+]
+},
+{
+"label": "Putridus Shadowstalker",
+"count": 7,
+"boss": false,
+"mobs": [
+{
+"name": "Putridus Shadowstalker",
+"level": 44,
+"health": 5148.0,
+"armor": 2397.0,
+"dps": 149.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Cavern Lurker",
+"count": 7,
+"boss": false,
+"mobs": [
+{
+"name": "Cavern Lurker",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 119.92,
+"swing": 2.5
+}
+]
+},
+{
+"label": "Cavern Shambler",
+"count": 5,
+"boss": false,
+"mobs": [
+{
+"name": "Cavern Shambler",
+"level": 47,
+"health": 4776.0,
+"armor": 2300.0,
+"dps": 119.92,
+"swing": 2.5
+}
+]
+},
+{
+"label": "Subterranean Diemetradon",
+"count": 5,
+"boss": false,
+"mobs": [
+{
+"name": "Subterranean Diemetradon",
+"level": 48,
+"health": 6186.0,
+"armor": 2888.0,
+"dps": 140.4,
+"swing": 2.0
+},
+{
+"name": "Subterranean Diemetradon",
+"level": 48,
+"health": 6186.0,
+"armor": 2888.0,
+"dps": 140.4,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Putridus Satyr + Putridus Trickster",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Putridus Satyr",
+"level": 44,
+"health": 5346.0,
+"armor": 2557.0,
+"dps": 199.88,
+"swing": 1.5
+},
+{
+"name": "Putridus Trickster",
+"level": 45,
+"health": 5544.0,
+"armor": 2725.0,
+"dps": 199.88,
+"swing": 1.5
+}
+]
+},
+{
+"label": "Putridus Trickster",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Putridus Trickster",
+"level": 45,
+"health": 5544.0,
+"armor": 2725.0,
+"dps": 199.88,
+"swing": 1.5
+}
+]
+},
+{
+"label": "Barbed Lasher + Constrictor Vine",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Barbed Lasher",
+"level": 45,
+"health": 8316.0,
+"armor": 2725.0,
+"dps": 127.72,
+"swing": 2.0
+},
+{
+"name": "Constrictor Vine",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 131.87,
+"swing": 2.0
+},
+{
+"name": "Constrictor Vine",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 131.87,
+"swing": 2.0
+},
+{
+"name": "Constrictor Vine",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 131.87,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Sister of Celebrian",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Sister of Celebrian",
+"level": 47,
+"health": 5970.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Sister of Celebrian",
+"level": 47,
+"health": 5970.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Noxious Slime",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Noxious Slime",
+"level": 47,
+"health": 4975.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Noxious Slime",
+"level": 47,
+"health": 4975.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Noxious Slime",
+"level": 47,
+"health": 4975.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Noxious Slime",
+"level": 47,
+"health": 4975.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Creeping Sludge",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Creeping Sludge",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Creeping Sludge",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Creeping Sludge",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Creeping Sludge",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 149.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Putridus Satyr",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Putridus Satyr",
+"level": 44,
+"health": 5346.0,
+"armor": 2557.0,
+"dps": 199.88,
+"swing": 1.5
+},
+{
+"name": "Putridus Satyr",
+"level": 44,
+"health": 5346.0,
+"armor": 2557.0,
+"dps": 199.88,
+"swing": 1.5
+}
+]
+},
+{
+"label": "Celebrian Dryad",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Celebrian Dryad",
+"level": 46,
+"health": 4605.0,
+"armor": 2255.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Celebrian Dryad",
+"level": 46,
+"health": 4605.0,
+"armor": 2255.0,
+"dps": 149.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Noxious Slime",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Noxious Slime",
+"level": 47,
+"health": 4975.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Noxious Slime",
+"level": 47,
+"health": 4975.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Noxious Slime",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Noxious Slime",
+"level": 47,
+"health": 4975.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Noxious Slime",
+"level": 47,
+"health": 4975.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Noxious Slime",
+"level": 47,
+"health": 4975.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Noxious Slime",
+"level": 47,
+"health": 4975.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Noxious Slime",
+"level": 47,
+"health": 4975.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Creeping Sludge",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Creeping Sludge",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Creeping Sludge",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 149.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Subterranean Diemetradon",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Subterranean Diemetradon",
+"level": 48,
+"health": 6186.0,
+"armor": 2888.0,
+"dps": 140.4,
+"swing": 2.0
+},
+{
+"name": "Subterranean Diemetradon",
+"level": 48,
+"health": 6186.0,
+"armor": 2888.0,
+"dps": 140.4,
+"swing": 2.0
+},
+{
+"name": "Subterranean Diemetradon",
+"level": 48,
+"health": 6186.0,
+"armor": 2888.0,
+"dps": 140.4,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Celebrian Dryad + Sister of Celebrian",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Celebrian Dryad",
+"level": 46,
+"health": 4605.0,
+"armor": 2255.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Celebrian Dryad",
+"level": 46,
+"health": 4605.0,
+"armor": 2255.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Sister of Celebrian",
+"level": 47,
+"health": 5970.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Sister of Celebrian",
+"level": 47,
+"health": 5970.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Sister of Celebrian",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Sister of Celebrian",
+"level": 47,
+"health": 5970.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Sister of Celebrian",
+"level": 47,
+"health": 5970.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Sister of Celebrian",
+"level": 47,
+"health": 5970.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Sister of Celebrian",
+"level": 47,
+"health": 5970.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Barbed Lasher + Spirit of Veng",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Barbed Lasher",
+"level": 45,
+"health": 8316.0,
+"armor": 2725.0,
+"dps": 127.72,
+"swing": 2.0
+},
+{
+"name": "Spirit of Veng",
+"level": 47,
+"health": 5970.0,
+"armor": 2835.0,
+"dps": 135.53,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Barbed Lasher + Constrictor Vine",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Barbed Lasher",
+"level": 45,
+"health": 8316.0,
+"armor": 2725.0,
+"dps": 127.72,
+"swing": 2.0
+},
+{
+"name": "Barbed Lasher",
+"level": 45,
+"health": 8316.0,
+"armor": 2725.0,
+"dps": 127.72,
+"swing": 2.0
+},
+{
+"name": "Constrictor Vine",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 131.87,
+"swing": 2.0
+},
+{
+"name": "Constrictor Vine",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 131.87,
+"swing": 2.0
+},
+{
+"name": "Constrictor Vine",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 131.87,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Noxious Slime",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Noxious Slime",
+"level": 47,
+"health": 4975.0,
+"armor": 2835.0,
+"dps": 149.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Creeping Sludge",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Creeping Sludge",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Creeping Sludge",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Creeping Sludge",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Creeping Sludge",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Creeping Sludge",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 149.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Creeping Sludge",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Creeping Sludge",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Creeping Sludge",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Creeping Sludge",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 149.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Cavern Shambler + Meshlok the Harvester",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Cavern Shambler",
+"level": 47,
+"health": 4776.0,
+"armor": 2300.0,
+"dps": 119.92,
+"swing": 2.5
+},
+{
+"name": "Meshlok the Harvester",
+"level": 48,
+"health": 6186.0,
+"armor": 2888.0,
+"dps": 578.6,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Spirit of Maraudos",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Spirit of Maraudos",
+"level": 46,
+"health": 5757.0,
+"armor": 2780.0,
+"dps": 131.87,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deeprot Stomper",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Deeprot Stomper",
+"level": 44,
+"health": 5346.0,
+"armor": 2557.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Deeprot Stomper",
+"level": 44,
+"health": 5346.0,
+"armor": 2557.0,
+"dps": 149.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Deeprot Stomper + Deeprot Tangler",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Deeprot Stomper",
+"level": 44,
+"health": 5346.0,
+"armor": 2557.0,
+"dps": 149.91,
+"swing": 2.0
+},
+{
+"name": "Deeprot Tangler",
+"level": 45,
+"health": 5544.0,
+"armor": 2725.0,
+"dps": 149.91,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Subterranean Diemetradon",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Subterranean Diemetradon",
+"level": 48,
+"health": 6186.0,
+"armor": 2888.0,
+"dps": 140.4,
+"swing": 2.0
+},
+{
+"name": "Subterranean Diemetradon",
+"level": 48,
+"health": 6186.0,
+"armor": 2888.0,
+"dps": 140.4,
+"swing": 2.0
+},
+{
+"name": "Subterranean Diemetradon",
+"level": 48,
+"health": 6186.0,
+"armor": 2888.0,
+"dps": 140.4,
+"swing": 2.0
+},
+{
+"name": "Subterranean Diemetradon",
+"level": 48,
+"health": 6186.0,
+"armor": 2888.0,
+"dps": 140.4,
+"swing": 2.0
+}
+]
+}
+]
+},
+"Sunken Temple": {
+"lastBoss": 53,
+"pulls": [
+{
+"label": "Boss: Morphaz",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Morphaz",
+"level": 52,
+"health": 11855.0,
+"armor": 3108.0,
+"dps": 284.64,
+"swing": 1.216
+}
+]
+},
+{
+"label": "Boss: Hazzas",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Hazzas",
+"level": 53,
+"health": 12265.0,
+"armor": 3163.0,
+"dps": 273.8,
+"swing": 1.225
+}
+]
+},
+{
+"label": "Atal'ai Witch Doctor",
+"count": 9,
+"boss": false,
+"mobs": [
+{
+"name": "Atal'ai Witch Doctor",
+"level": 50,
+"health": 5316.0,
+"armor": 2432.0,
+"dps": 264.51,
+"swing": 1.233
+}
+]
+},
+{
+"label": "Atal'ai Warrior",
+"count": 7,
+"boss": false,
+"mobs": [
+{
+"name": "Atal'ai Warrior",
+"level": 49,
+"health": 6414.0,
+"armor": 2944.0,
+"dps": 238.32,
+"swing": 1.258
+}
+]
+},
+{
+"label": "Atal'ai Witch Doctor",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Atal'ai Witch Doctor",
+"level": 50,
+"health": 5316.0,
+"armor": 2432.0,
+"dps": 264.51,
+"swing": 1.233
+},
+{
+"name": "Atal'ai Witch Doctor",
+"level": 50,
+"health": 5316.0,
+"armor": 2432.0,
+"dps": 264.51,
+"swing": 1.233
+}
+]
+},
+{
+"label": "Atal'ai Deathwalker",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Atal'ai Deathwalker",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 324.73,
+"swing": 1.183
+},
+{
+"name": "Atal'ai Deathwalker",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 324.73,
+"swing": 1.183
+},
+{
+"name": "Atal'ai Deathwalker",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 324.73,
+"swing": 1.183
+}
+]
+},
+{
+"label": "Atal'ai Witch Doctor + Unliving Atal'ai",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Atal'ai Witch Doctor",
+"level": 50,
+"health": 5316.0,
+"armor": 2432.0,
+"dps": 264.51,
+"swing": 1.233
+},
+{
+"name": "Unliving Atal'ai",
+"level": 49,
+"health": 6414.0,
+"armor": 2944.0,
+"dps": 238.32,
+"swing": 1.258
+}
+]
+},
+{
+"label": "Atal'ai Corpse Eater + Atal'ai Deathwalker + Atal'ai High Priest",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Atal'ai Corpse Eater",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 238.32,
+"swing": 1.258
+},
+{
+"name": "Atal'ai Deathwalker",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 324.73,
+"swing": 1.183
+},
+{
+"name": "Atal'ai High Priest",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 313.95,
+"swing": 1.191
+}
+]
+},
+{
+"label": "Spawn of Hakkar",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Spawn of Hakkar",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 273.8,
+"swing": 1.225
+}
+]
+},
+{
+"label": "Atal'ai Deathwalker",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Atal'ai Deathwalker",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 324.73,
+"swing": 1.183
+},
+{
+"name": "Atal'ai Deathwalker",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 324.73,
+"swing": 1.183
+}
+]
+},
+{
+"label": "Atal'ai Corpse Eater + Atal'ai Deathwalker + Atal'ai High Priest",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Atal'ai Corpse Eater",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 238.32,
+"swing": 1.258
+},
+{
+"name": "Atal'ai Corpse Eater",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 238.32,
+"swing": 1.258
+},
+{
+"name": "Atal'ai Deathwalker",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 324.73,
+"swing": 1.183
+},
+{
+"name": "Atal'ai High Priest",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 313.95,
+"swing": 1.191
+}
+]
+}
+]
+},
+"Blackrock Depths": {
+"lastBoss": 59,
+"pulls": [
+{
+"label": "Boss: Bael'Gar",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Bael'Gar",
+"level": 54,
+"health": 25330.0,
+"armor": 3216.0,
+"dps": 313.34,
+"swing": 2.4
+}
+]
+},
+{
+"label": "Boss: Fineous Darkvire",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Fineous Darkvire",
+"level": 54,
+"health": 14182.0,
+"armor": 2610.0,
+"dps": 324.73,
+"swing": 1.183
+}
+]
+},
+{
+"label": "Boss: Lord Incendius",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Lord Incendius",
+"level": 55,
+"health": 16991.0,
+"armor": 3271.0,
+"dps": 266.54,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Ograbisi",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Ograbisi",
+"level": 55,
+"health": 15684.0,
+"armor": 3271.0,
+"dps": 324.73,
+"swing": 1.183
+}
+]
+},
+{
+"label": "Boss: Golem Lord Argelmach",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Golem Lord Argelmach",
+"level": 57,
+"health": 13362.0,
+"armor": 2744.0,
+"dps": 322.66,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: General Angerforge",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "General Angerforge",
+"level": 57,
+"health": 22272.0,
+"armor": 3380.0,
+"dps": 360.89,
+"swing": 1.8
+}
+]
+},
+{
+"label": "Boss: Ambassador Flamelash",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Ambassador Flamelash",
+"level": 57,
+"health": 27840.0,
+"armor": 3380.0,
+"dps": 277.51,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Magmus",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Magmus",
+"level": 57,
+"health": 25056.0,
+"armor": 3380.0,
+"dps": 388.6,
+"swing": 2.4
+}
+]
+},
+{
+"label": "Boss: Emperor Dagran Thaurissan",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Emperor Dagran Thaurissan",
+"level": 59,
+"health": 26649.0,
+"armor": 3489.0,
+"dps": 418.47,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Fireguard Destroyer",
+"count": 22,
+"boss": false,
+"mobs": [
+{
+"name": "Fireguard Destroyer",
+"level": 56,
+"health": 8097.0,
+"armor": 3327.0,
+"dps": 192.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Blazing Fireguard",
+"count": 18,
+"boss": false,
+"mobs": [
+{
+"name": "Blazing Fireguard",
+"level": 54,
+"health": 6078.0,
+"armor": 2610.0,
+"dps": 162.44,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Doomforge Dragoon",
+"count": 9,
+"boss": false,
+"mobs": [
+{
+"name": "Doomforge Dragoon",
+"level": 55,
+"health": 7842.0,
+"armor": 3271.0,
+"dps": 185.13,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Warbringer Construct",
+"count": 8,
+"boss": false,
+"mobs": [
+{
+"name": "Warbringer Construct",
+"level": 54,
+"health": 7599.0,
+"armor": 3216.0,
+"dps": 186.03,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Ragereaver Golem + Wrath Hammer Construct",
+"count": 8,
+"boss": false,
+"mobs": [
+{
+"name": "Ragereaver Golem",
+"level": 55,
+"health": 7842.0,
+"armor": 3271.0,
+"dps": 190.42,
+"swing": 2.0
+},
+{
+"name": "Wrath Hammer Construct",
+"level": 56,
+"health": 8097.0,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Warden",
+"count": 6,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Warden",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 142.59,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Footman + Anvilrage Medic + Anvilrage Officer + Anvilrage Soldier",
+"count": 6,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Soldier",
+"level": 53,
+"health": 7359.0,
+"armor": 3163.0,
+"dps": 166.51,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Soldier",
+"level": 53,
+"health": 7359.0,
+"armor": 3163.0,
+"dps": 166.51,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Medic",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 148.2,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Officer",
+"level": 54,
+"health": 6078.0,
+"armor": 2610.0,
+"dps": 164.09,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Ironhand Guardian",
+"count": 6,
+"boss": false,
+"mobs": [
+{
+"name": "Ironhand Guardian",
+"level": 56,
+"health": 8352.0,
+"armor": 5978.35,
+"dps": 55.5,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Warden",
+"count": 5,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Warden",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 142.59,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Warden",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 142.59,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Footman",
+"count": 5,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Medic + Anvilrage Officer + Anvilrage Soldier",
+"count": 5,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Soldier",
+"level": 53,
+"health": 7359.0,
+"armor": 3163.0,
+"dps": 166.51,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Soldier",
+"level": 53,
+"health": 7359.0,
+"armor": 3163.0,
+"dps": 166.51,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Medic",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 148.2,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Medic",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 148.2,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Officer",
+"level": 54,
+"health": 6078.0,
+"armor": 2610.0,
+"dps": 164.09,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Footman",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Molten War Golem",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Molten War Golem",
+"level": 56,
+"health": 11874.0,
+"armor": 2699.0,
+"dps": 274.83,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Fireguard Destroyer",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Fireguard Destroyer",
+"level": 56,
+"health": 8097.0,
+"armor": 3327.0,
+"dps": 192.17,
+"swing": 2.0
+},
+{
+"name": "Fireguard Destroyer",
+"level": 56,
+"health": 8097.0,
+"armor": 3327.0,
+"dps": 192.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Emissary",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Emissary",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 122.26,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Warden + Twilight's Hammer Torturer",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Warden",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 142.59,
+"swing": 2.0
+},
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Guardsman",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Footman + Anvilrage Guardsman",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Guardsman",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Footman + Anvilrage Guardsman",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Guardsman + Twilight's Hammer Torturer",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Medic + Anvilrage Officer + Anvilrage Soldier",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Soldier",
+"level": 53,
+"health": 7359.0,
+"armor": 3163.0,
+"dps": 166.51,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Soldier",
+"level": 53,
+"health": 7359.0,
+"armor": 3163.0,
+"dps": 166.51,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Soldier",
+"level": 53,
+"health": 7359.0,
+"armor": 3163.0,
+"dps": 166.51,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Medic",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 148.2,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Officer",
+"level": 54,
+"health": 6078.0,
+"armor": 2610.0,
+"dps": 164.09,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Soldier",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Soldier",
+"level": 53,
+"health": 7359.0,
+"armor": 3163.0,
+"dps": 166.51,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Overseer + Anvilrage Warden",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Overseer",
+"level": 49,
+"health": 6414.0,
+"armor": 2944.0,
+"dps": 167.88,
+"swing": 1.6
+},
+{
+"name": "Anvilrage Warden",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 142.59,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Guardsman + Anvilrage Warden",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Warden",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 142.59,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Warden",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 142.59,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Guardsman + Fireguard",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Fireguard",
+"level": 52,
+"health": 5691.0,
+"armor": 2522.0,
+"dps": 146.64,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Footman + Anvilrage Guardsman",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Footman + Anvilrage Guardsman",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Footman + Fireguard",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+},
+{
+"name": "Fireguard",
+"level": 52,
+"health": 5691.0,
+"armor": 2522.0,
+"dps": 146.64,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Medic",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Medic",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 148.2,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Medic",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 148.2,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Medic + Twilight Emissary",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Medic",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 148.2,
+"swing": 2.0
+},
+{
+"name": "Twilight Emissary",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 122.26,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Captain",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Captain",
+"level": 56,
+"health": 8097.0,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Fireguard Destroyer",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Fireguard Destroyer",
+"level": 56,
+"health": 8097.0,
+"armor": 3327.0,
+"dps": 192.17,
+"swing": 2.0
+},
+{
+"name": "Fireguard Destroyer",
+"level": 56,
+"health": 8097.0,
+"armor": 3327.0,
+"dps": 192.17,
+"swing": 2.0
+},
+{
+"name": "Fireguard Destroyer",
+"level": 56,
+"health": 8097.0,
+"armor": 3327.0,
+"dps": 192.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Bodyguard + Twilight Emissary",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Emissary",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 122.26,
+"swing": 2.0
+},
+{
+"name": "Twilight Emissary",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 122.26,
+"swing": 2.0
+},
+{
+"name": "Twilight Bodyguard",
+"level": 54,
+"health": 6078.0,
+"armor": 2610.0,
+"dps": 164.09,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Overseer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Overseer",
+"level": 49,
+"health": 6414.0,
+"armor": 2944.0,
+"dps": 167.88,
+"swing": 1.6
+},
+{
+"name": "Anvilrage Overseer",
+"level": 49,
+"health": 6414.0,
+"armor": 2944.0,
+"dps": 167.88,
+"swing": 1.6
+}
+]
+},
+{
+"label": "Anvilrage Guardsman + Anvilrage Warden + Twilight's Hammer Torturer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Warden",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 142.59,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Warden + Twilight's Hammer Torturer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Warden",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 142.59,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Warden",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 142.59,
+"swing": 2.0
+},
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Guardsman + Anvilrage Warden",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Warden",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 142.59,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Warden",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 142.59,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Warden + Twilight's Hammer Torturer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Warden",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 142.59,
+"swing": 2.0
+},
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+},
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Guardsman + Anvilrage Warden + Twilight's Hammer Torturer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Warden",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 142.59,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+},
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Warden + Twilight's Hammer Torturer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Warden",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 142.59,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Warden",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 142.59,
+"swing": 2.0
+},
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+},
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Guardsman + Anvilrage Warden + Twilight's Hammer Torturer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Warden",
+"level": 50,
+"health": 6645.0,
+"armor": 2999.0,
+"dps": 142.59,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+},
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Guardsman + Twilight's Hammer Torturer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+},
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Footman + Anvilrage Guardsman",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Footman + Anvilrage Guardsman + Fireguard",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+},
+{
+"name": "Fireguard",
+"level": 52,
+"health": 5691.0,
+"armor": 2522.0,
+"dps": 146.64,
+"swing": 2.0
+},
+{
+"name": "Fireguard",
+"level": 52,
+"health": 5691.0,
+"armor": 2522.0,
+"dps": 146.64,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Guardsman + Fireguard",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Fireguard",
+"level": 52,
+"health": 5691.0,
+"armor": 2522.0,
+"dps": 146.64,
+"swing": 2.0
+},
+{
+"name": "Fireguard",
+"level": 52,
+"health": 5691.0,
+"armor": 2522.0,
+"dps": 146.64,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Footman + Anvilrage Guardsman",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Footman + Anvilrage Guardsman + Fireguard",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+},
+{
+"name": "Fireguard",
+"level": 52,
+"health": 5691.0,
+"armor": 2522.0,
+"dps": 146.64,
+"swing": 2.0
+},
+{
+"name": "Fireguard",
+"level": 52,
+"health": 5691.0,
+"armor": 2522.0,
+"dps": 146.64,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Guardsman",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Guardsman + Twilight's Hammer Torturer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+},
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+},
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Guardsman + Twilight's Hammer Torturer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Guardsman",
+"level": 51,
+"health": 6876.0,
+"armor": 3052.0,
+"dps": 150.37,
+"swing": 2.0
+},
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+},
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Footman + Anvilrage Medic + Anvilrage Officer + Anvilrage Soldier",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Soldier",
+"level": 53,
+"health": 7359.0,
+"armor": 3163.0,
+"dps": 166.51,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Medic",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 148.2,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Officer",
+"level": 54,
+"health": 6078.0,
+"armor": 2610.0,
+"dps": 164.09,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Footman",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Footman + Anvilrage Medic + Anvilrage Officer + Anvilrage Soldier",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Soldier",
+"level": 53,
+"health": 7359.0,
+"armor": 3163.0,
+"dps": 166.51,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Medic",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 148.2,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Officer",
+"level": 54,
+"health": 6078.0,
+"armor": 2610.0,
+"dps": 164.09,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Footman",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Footman",
+"level": 52,
+"health": 7113.0,
+"armor": 3108.0,
+"dps": 178.13,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Officer + Anvilrage Soldier",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Soldier",
+"level": 53,
+"health": 7359.0,
+"armor": 3163.0,
+"dps": 166.51,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Officer",
+"level": 54,
+"health": 6078.0,
+"armor": 2610.0,
+"dps": 164.09,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Medic + Anvilrage Soldier",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Soldier",
+"level": 53,
+"health": 7359.0,
+"armor": 3163.0,
+"dps": 166.51,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Medic",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 148.2,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Medic",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Medic",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 148.2,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Medic + Twilight Bodyguard + Twilight Emissary",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Medic",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 148.2,
+"swing": 2.0
+},
+{
+"name": "Twilight Emissary",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 122.26,
+"swing": 2.0
+},
+{
+"name": "Twilight Bodyguard",
+"level": 54,
+"health": 6078.0,
+"armor": 2610.0,
+"dps": 164.09,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Medic + Fireguard Destroyer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Medic",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 148.2,
+"swing": 2.0
+},
+{
+"name": "Fireguard Destroyer",
+"level": 56,
+"health": 8097.0,
+"armor": 3327.0,
+"dps": 192.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Officer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Officer",
+"level": 54,
+"health": 6078.0,
+"armor": 2610.0,
+"dps": 164.09,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Officer + Twilight Emissary",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Officer",
+"level": 54,
+"health": 6078.0,
+"armor": 2610.0,
+"dps": 164.09,
+"swing": 2.0
+},
+{
+"name": "Twilight Emissary",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 122.26,
+"swing": 2.0
+},
+{
+"name": "Twilight Emissary",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 122.26,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Officer + Blazing Fireguard + Twilight Emissary",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Officer",
+"level": 54,
+"health": 6078.0,
+"armor": 2610.0,
+"dps": 164.09,
+"swing": 2.0
+},
+{
+"name": "Blazing Fireguard",
+"level": 54,
+"health": 6078.0,
+"armor": 2610.0,
+"dps": 162.44,
+"swing": 2.0
+},
+{
+"name": "Twilight Emissary",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 122.26,
+"swing": 2.0
+},
+{
+"name": "Twilight Emissary",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 122.26,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Marshal + Fireguard Destroyer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Marshal",
+"level": 55,
+"health": 6273.0,
+"armor": 2654.0,
+"dps": 168.92,
+"swing": 2.0
+},
+{
+"name": "Fireguard Destroyer",
+"level": 56,
+"health": 8097.0,
+"armor": 3327.0,
+"dps": 192.17,
+"swing": 2.0
+},
+{
+"name": "Fireguard Destroyer",
+"level": 56,
+"health": 8097.0,
+"armor": 3327.0,
+"dps": 192.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Marshal + Fireguard Destroyer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Marshal",
+"level": 55,
+"health": 6273.0,
+"armor": 2654.0,
+"dps": 168.92,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Marshal",
+"level": 55,
+"health": 6273.0,
+"armor": 2654.0,
+"dps": 168.92,
+"swing": 2.0
+},
+{
+"name": "Fireguard Destroyer",
+"level": 56,
+"health": 8097.0,
+"armor": 3327.0,
+"dps": 192.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Marshal + Doomforge Dragoon",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Marshal",
+"level": 55,
+"health": 6273.0,
+"armor": 2654.0,
+"dps": 168.92,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Marshal",
+"level": 55,
+"health": 6273.0,
+"armor": 2654.0,
+"dps": 168.92,
+"swing": 2.0
+},
+{
+"name": "Doomforge Dragoon",
+"level": 55,
+"health": 7842.0,
+"armor": 3271.0,
+"dps": 185.13,
+"swing": 2.0
+},
+{
+"name": "Doomforge Dragoon",
+"level": 55,
+"health": 7842.0,
+"armor": 3271.0,
+"dps": 185.13,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Marshal + Doomforge Dragoon",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Marshal",
+"level": 55,
+"health": 6273.0,
+"armor": 2654.0,
+"dps": 168.92,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Marshal",
+"level": 55,
+"health": 6273.0,
+"armor": 2654.0,
+"dps": 168.92,
+"swing": 2.0
+},
+{
+"name": "Doomforge Dragoon",
+"level": 55,
+"health": 7842.0,
+"armor": 3271.0,
+"dps": 185.13,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Marshal + Fireguard Destroyer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Marshal",
+"level": 55,
+"health": 6273.0,
+"armor": 2654.0,
+"dps": 168.92,
+"swing": 2.0
+},
+{
+"name": "Fireguard Destroyer",
+"level": 56,
+"health": 8097.0,
+"armor": 3327.0,
+"dps": 192.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Marshal + Doomforge Dragoon + Fireguard Destroyer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Marshal",
+"level": 55,
+"health": 6273.0,
+"armor": 2654.0,
+"dps": 168.92,
+"swing": 2.0
+},
+{
+"name": "Doomforge Dragoon",
+"level": 55,
+"health": 7842.0,
+"armor": 3271.0,
+"dps": 185.13,
+"swing": 2.0
+},
+{
+"name": "Fireguard Destroyer",
+"level": 56,
+"health": 8097.0,
+"armor": 3327.0,
+"dps": 192.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Marshal + Doomforge Dragoon + Fireguard Destroyer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Marshal",
+"level": 55,
+"health": 6273.0,
+"armor": 2654.0,
+"dps": 168.92,
+"swing": 2.0
+},
+{
+"name": "Doomforge Dragoon",
+"level": 55,
+"health": 7842.0,
+"armor": 3271.0,
+"dps": 185.13,
+"swing": 2.0
+},
+{
+"name": "Fireguard Destroyer",
+"level": 56,
+"health": 8097.0,
+"armor": 3327.0,
+"dps": 192.17,
+"swing": 2.0
+},
+{
+"name": "Fireguard Destroyer",
+"level": 56,
+"health": 8097.0,
+"armor": 3327.0,
+"dps": 192.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Anvilrage Marshal",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Anvilrage Marshal",
+"level": 55,
+"health": 6273.0,
+"armor": 2654.0,
+"dps": 168.92,
+"swing": 2.0
+},
+{
+"name": "Anvilrage Marshal",
+"level": 55,
+"health": 6273.0,
+"armor": 2654.0,
+"dps": 168.92,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Doomforge Dragoon + Fireguard Destroyer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Doomforge Dragoon",
+"level": 55,
+"health": 7842.0,
+"armor": 3271.0,
+"dps": 185.13,
+"swing": 2.0
+},
+{
+"name": "Doomforge Dragoon",
+"level": 55,
+"health": 7842.0,
+"armor": 3271.0,
+"dps": 185.13,
+"swing": 2.0
+},
+{
+"name": "Fireguard Destroyer",
+"level": 56,
+"health": 8097.0,
+"armor": 3327.0,
+"dps": 192.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Verek + Warbringer Construct",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Warbringer Construct",
+"level": 54,
+"health": 7599.0,
+"armor": 3216.0,
+"dps": 186.03,
+"swing": 2.0
+},
+{
+"name": "Warbringer Construct",
+"level": 54,
+"health": 7599.0,
+"armor": 3216.0,
+"dps": 186.03,
+"swing": 2.0
+},
+{
+"name": "Verek",
+"level": 55,
+"health": 10456.0,
+"armor": 3271.0,
+"dps": 239.89,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Warbringer Construct + Warder Stilgiss",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Warbringer Construct",
+"level": 54,
+"health": 7599.0,
+"armor": 3216.0,
+"dps": 186.03,
+"swing": 2.0
+},
+{
+"name": "Warbringer Construct",
+"level": 54,
+"health": 7599.0,
+"armor": 3216.0,
+"dps": 186.03,
+"swing": 2.0
+},
+{
+"name": "Warder Stilgiss",
+"level": 56,
+"health": 8636.0,
+"armor": 2699.0,
+"dps": 177.02,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Molten War Golem",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Molten War Golem",
+"level": 56,
+"health": 11874.0,
+"armor": 2699.0,
+"dps": 274.83,
+"swing": 2.0
+},
+{
+"name": "Molten War Golem",
+"level": 56,
+"health": 11874.0,
+"armor": 2699.0,
+"dps": 274.83,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Fireguard",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Fireguard",
+"level": 52,
+"health": 5691.0,
+"armor": 2522.0,
+"dps": 146.64,
+"swing": 2.0
+}
+]
+},
+{
+"label": "High Interrogator Gerstahn + Twilight's Hammer Torturer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight's Hammer Torturer",
+"level": 51,
+"health": 5502.0,
+"armor": 2477.0,
+"dps": 138.28,
+"swing": 2.0
+},
+{
+"name": "High Interrogator Gerstahn",
+"level": 52,
+"health": 9485.0,
+"armor": 2522.0,
+"dps": 153.72,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Bodyguard + Twilight Emissary",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Emissary",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 122.26,
+"swing": 2.0
+},
+{
+"name": "Twilight Bodyguard",
+"level": 54,
+"health": 6078.0,
+"armor": 2610.0,
+"dps": 164.09,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Emissary",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Emissary",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 122.26,
+"swing": 2.0
+},
+{
+"name": "Twilight Emissary",
+"level": 53,
+"health": 5151.0,
+"armor": 1602.0,
+"dps": 122.26,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Twilight Bodyguard",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Twilight Bodyguard",
+"level": 54,
+"health": 6078.0,
+"armor": 2610.0,
+"dps": 164.09,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Lord Roccor",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Lord Roccor",
+"level": 51,
+"health": 11460.0,
+"armor": 6867.0,
+"dps": 176.11,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Houndmaster Grebmar",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Houndmaster Grebmar",
+"level": 52,
+"health": 10670.0,
+"armor": 3108.0,
+"dps": 185.34,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Crest Killer",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Crest Killer",
+"level": 54,
+"health": 10132.0,
+"armor": 3216.0,
+"dps": 324.73,
+"swing": 1.183
+}
+]
+},
+{
+"label": "Jaz",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Jaz",
+"level": 53,
+"health": 7848.0,
+"armor": 2566.0,
+"dps": 324.73,
+"swing": 1.183
+}
+]
+}
+]
+}
+}
