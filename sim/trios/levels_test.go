@@ -12,6 +12,7 @@ import (
 	"github.com/wowsims/forever/sim"
 	"github.com/wowsims/forever/sim/core"
 	"github.com/wowsims/forever/sim/core/proto"
+	"github.com/wowsims/forever/sim/core/spelldata"
 	"google.golang.org/protobuf/encoding/protojson"
 )
 
@@ -41,6 +42,7 @@ var (
 	talentsAt  map[string]map[string]string
 	keysAt     map[string]charKeys
 	gearItems  *proto.SimDatabase
+	keyIDs     = map[int32]bool{} // every spell id a key names at any level
 	levelsList = []int32{6, 12, 18, 24, 30, 36, 42, 48, 54, 60}
 )
 
@@ -59,6 +61,19 @@ func init() {
 	load("quest_gear.json", &questGear)
 	load("talents.json", &talentsAt)
 	load("keys.json", &keysAt)
+	for _, ck := range keysAt {
+		for _, lv := range ck.Levels {
+			for _, items := range lv.Keys {
+				for _, it := range items {
+					for _, step := range it.Spells {
+						for _, id := range step {
+							keyIDs[id] = true
+						}
+					}
+				}
+			}
+		}
+	}
 	data, err := os.ReadFile("testdata/quest_gear_items.json")
 	if err != nil {
 		panic(err)
@@ -145,6 +160,9 @@ type trio struct {
 	tankRef string // the tank as an APL unit
 	petRef  string // Hawke's pet, "" without one
 }
+
+// The 6-level bracket a level's keys come from: the last one reached. Gear and talents are per level.
+func bracket(lvl int32) string { return strconv.Itoa(int(max(6, lvl/6*6))) }
 
 func baseConsumes() *proto.ConsumesSpec { return &proto.ConsumesSpec{} }
 
@@ -357,20 +375,36 @@ func targetJSON(raw json.RawMessage) string {
 	return string(raw)
 }
 
-// The highest known rank the character has registered.
+// The highest known rank the character has registered. A macro names the spell, not the rank, so between
+// brackets a rank learned after the key's level is the one pressed: the highest registered rank of the same
+// name that a key names at some level or that costs mana, which leaves out a spell's triggered rows of the same
+// name.
 func pick(ids []int32, have map[int32]bool) int32 {
 	for _, id := range ids {
 		if have[id] {
 			return id
 		}
 	}
-	return 0
+	if len(ids) == 0 {
+		return 0
+	}
+	var best *spelldata.Spell
+	name := spelldata.Find(ids[0]).Name
+	for id := range have {
+		if s := spelldata.Find(id); (keyIDs[id] || s.Cost() > 0) && s.Name == name && (best == nil || s.SpellLevel > best.SpellLevel) {
+			best = s
+		}
+	}
+	if best == nil {
+		return 0
+	}
+	return best.ID
 }
 
 // The APL for a character from its presses; unknown spells go to dropped.
 func buildAPL(name string, t trio, lvl int32, f fight, have map[int32]bool, dropped map[string]bool) string {
 	ck := keysAt[name]
-	keys := ck.Levels[strconv.Itoa(int(lvl))].Keys
+	keys := ck.Levels[bracket(lvl)].Keys
 	var prepull, prio []string
 	seq := 0
 	for _, p := range presses(name, t) {
