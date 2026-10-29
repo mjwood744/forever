@@ -48,10 +48,15 @@ func pullEncounter(p dungeonPull) *proto.Encounter {
 }
 
 // Each trio through each dungeon's pulls at the last boss's level, 2 over and 4 over. Each line gives the
-// pull's kill time, each character's chance of dying and the mana the pull costs.
+// pull's kill time, each character's chance of dying and the mana the pull costs. DUNGEONS=forever_dungeons.json
+// runs the stand-ins for Forever's new dungeons instead.
 func TestTrioDungeons(t *testing.T) {
 	var dungeons map[string]dungeon
-	load("dungeons.json", &dungeons)
+	file := "dungeons.json"
+	if s := os.Getenv("DUNGEONS"); s != "" {
+		file = s
+	}
+	load(file, &dungeons)
 	trios := []int{1, 2, 3}
 	if s := os.Getenv("TRIO"); s != "" {
 		n, _ := strconv.Atoi(s)

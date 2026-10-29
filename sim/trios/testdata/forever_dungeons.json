@@ -1,0 +1,4130 @@
+{
+"Hall of Thanes": {
+"lastBoss": 16,
+"pulls": [
+{
+"label": "Boss: Faldrim Anvilmar",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Faldrim Anvilmar",
+"level": 13,
+"health": 1704,
+"armor": 621.5,
+"dps": 21.34,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Magmatus",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Magmatus",
+"level": 14,
+"health": 1630,
+"armor": 642.0,
+"dps": 20.63,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Plunder",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Plunder",
+"level": 15,
+"health": 1704,
+"armor": 621.5,
+"dps": 21.34,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Dirgen Dirgehammer",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Dirgen Dirgehammer",
+"level": 16,
+"health": 2665,
+"armor": 677.0,
+"dps": 22.04,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 12",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 12,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 12,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 13",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 13,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 13,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 14",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 14,
+"health": 903,
+"armor": 642.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 14,
+"health": 903,
+"armor": 642.0,
+"dps": 18.23,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 15",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 15,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 15,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 12",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 12,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 12,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 12,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 13",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 13,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 13,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 13,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 14",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 14,
+"health": 903,
+"armor": 642.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 14,
+"health": 903,
+"armor": 642.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 14,
+"health": 903,
+"armor": 642.0,
+"dps": 18.23,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 15",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 15,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 15,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 15,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 12",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 12,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 12,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 12,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 12,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 13",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 13,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 13,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 13,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 13,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 14",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 14,
+"health": 903,
+"armor": 642.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 14,
+"health": 903,
+"armor": 642.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 14,
+"health": 903,
+"armor": 642.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 14,
+"health": 903,
+"armor": 642.0,
+"dps": 18.23,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 15",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 15,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 15,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 15,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 15,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+}
+]
+}
+]
+},
+"Ruins of Lordaeron": {
+"lastBoss": 18,
+"pulls": [
+{
+"label": "Boss: Witherfang",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Witherfang",
+"level": 15,
+"health": 1704,
+"armor": 621.5,
+"dps": 21.34,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: The Baron",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "The Baron",
+"level": 16,
+"health": 1777,
+"armor": 677.0,
+"dps": 22.04,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Viktor the Vile",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Viktor the Vile",
+"level": 16,
+"health": 1777,
+"armor": 677.0,
+"dps": 22.04,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: The Abandoned",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "The Abandoned",
+"level": 17,
+"health": 2259,
+"armor": 817.0,
+"dps": 29.55,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Bjork",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Bjork",
+"level": 17,
+"health": 2259,
+"armor": 817.0,
+"dps": 29.55,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Rath'mael",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Rath'mael",
+"level": 18,
+"health": 3648,
+"armor": 817.0,
+"dps": 29.55,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 14",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 14,
+"health": 903,
+"armor": 642.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 14,
+"health": 903,
+"armor": 642.0,
+"dps": 18.23,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 15",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 15,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 15,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 16",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 16,
+"health": 984,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 16,
+"health": 984,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 17",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 17,
+"health": 1251,
+"armor": 817.0,
+"dps": 26.11,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 17,
+"health": 1251,
+"armor": 817.0,
+"dps": 26.11,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 14",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 14,
+"health": 903,
+"armor": 642.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 14,
+"health": 903,
+"armor": 642.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 14,
+"health": 903,
+"armor": 642.0,
+"dps": 18.23,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 15",
+"count": 5,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 15,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 15,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 15,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 16",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 16,
+"health": 984,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 16,
+"health": 984,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 16,
+"health": 984,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 17",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 17,
+"health": 1251,
+"armor": 817.0,
+"dps": 26.11,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 17,
+"health": 1251,
+"armor": 817.0,
+"dps": 26.11,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 17,
+"health": 1251,
+"armor": 817.0,
+"dps": 26.11,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 14",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 14,
+"health": 903,
+"armor": 642.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 14,
+"health": 903,
+"armor": 642.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 14,
+"health": 903,
+"armor": 642.0,
+"dps": 18.23,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 14,
+"health": 903,
+"armor": 642.0,
+"dps": 18.23,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 15",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 15,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 15,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 15,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 15,
+"health": 944,
+"armor": 621.5,
+"dps": 18.86,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 16",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 16,
+"health": 984,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 16,
+"health": 984,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 16,
+"health": 984,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 16,
+"health": 984,
+"armor": 677.0,
+"dps": 19.48,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 17",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 17,
+"health": 1251,
+"armor": 817.0,
+"dps": 26.11,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 17,
+"health": 1251,
+"armor": 817.0,
+"dps": 26.11,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 17,
+"health": 1251,
+"armor": 817.0,
+"dps": 26.11,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 17,
+"health": 1251,
+"armor": 817.0,
+"dps": 26.11,
+"swing": 2.0
+}
+]
+}
+]
+},
+"Excavation Site: Wetlands": {
+"lastBoss": 27,
+"pulls": [
+{
+"label": "Boss: Saltspine",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Saltspine",
+"level": 24,
+"health": 3526,
+"armor": 992.0,
+"dps": 37.05,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Shadetooth",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Shadetooth",
+"level": 25,
+"health": 3656,
+"armor": 1009.0,
+"dps": 37.98,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Highland Horror",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Highland Horror",
+"level": 26,
+"health": 3794,
+"armor": 1061.0,
+"dps": 38.69,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Relic Guardian",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Relic Guardian",
+"level": 27,
+"health": 5606,
+"armor": 916.0,
+"dps": 30.01,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 23",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 23,
+"health": 1815,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 23,
+"health": 1815,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 24",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 24,
+"health": 1953,
+"armor": 992.0,
+"dps": 32.74,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 24,
+"health": 1953,
+"armor": 992.0,
+"dps": 32.74,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 25",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 25,
+"health": 2025,
+"armor": 1009.0,
+"dps": 33.56,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 25,
+"health": 2025,
+"armor": 1009.0,
+"dps": 33.56,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 26",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 26,
+"health": 2102,
+"armor": 1061.0,
+"dps": 34.19,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 26,
+"health": 2102,
+"armor": 1061.0,
+"dps": 34.19,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 23",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 23,
+"health": 1815,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 23,
+"health": 1815,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 23,
+"health": 1815,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 24",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 24,
+"health": 1953,
+"armor": 992.0,
+"dps": 32.74,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 24,
+"health": 1953,
+"armor": 992.0,
+"dps": 32.74,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 24,
+"health": 1953,
+"armor": 992.0,
+"dps": 32.74,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 25",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 25,
+"health": 2025,
+"armor": 1009.0,
+"dps": 33.56,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 25,
+"health": 2025,
+"armor": 1009.0,
+"dps": 33.56,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 25,
+"health": 2025,
+"armor": 1009.0,
+"dps": 33.56,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 26",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 26,
+"health": 2102,
+"armor": 1061.0,
+"dps": 34.19,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 26,
+"health": 2102,
+"armor": 1061.0,
+"dps": 34.19,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 26,
+"health": 2102,
+"armor": 1061.0,
+"dps": 34.19,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 23",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 23,
+"health": 1815,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 23,
+"health": 1815,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 23,
+"health": 1815,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 23,
+"health": 1815,
+"armor": 957.0,
+"dps": 31.49,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 24",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 24,
+"health": 1953,
+"armor": 992.0,
+"dps": 32.74,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 24,
+"health": 1953,
+"armor": 992.0,
+"dps": 32.74,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 24,
+"health": 1953,
+"armor": 992.0,
+"dps": 32.74,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 24,
+"health": 1953,
+"armor": 992.0,
+"dps": 32.74,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 25",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 25,
+"health": 2025,
+"armor": 1009.0,
+"dps": 33.56,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 25,
+"health": 2025,
+"armor": 1009.0,
+"dps": 33.56,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 25,
+"health": 2025,
+"armor": 1009.0,
+"dps": 33.56,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 25,
+"health": 2025,
+"armor": 1009.0,
+"dps": 33.56,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 26",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 26,
+"health": 2102,
+"armor": 1061.0,
+"dps": 34.19,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 26,
+"health": 2102,
+"armor": 1061.0,
+"dps": 34.19,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 26,
+"health": 2102,
+"armor": 1061.0,
+"dps": 34.19,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 26,
+"health": 2102,
+"armor": 1061.0,
+"dps": 34.19,
+"swing": 2.0
+}
+]
+}
+]
+},
+"City of Dalaran": {
+"lastBoss": 31,
+"pulls": [
+{
+"label": "Boss: Atrexis the Grave Knight",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Atrexis the Grave Knight",
+"level": 28,
+"health": 4333,
+"armor": 975.0,
+"dps": 40.8,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Arcane Anomaly",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Arcane Anomaly",
+"level": 28,
+"health": 4333,
+"armor": 975.0,
+"dps": 40.8,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Arcanic Enigma",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Arcanic Enigma",
+"level": 29,
+"health": 4545,
+"armor": 1070.0,
+"dps": 42.44,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Unstable Sentinel",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Unstable Sentinel",
+"level": 30,
+"health": 4902,
+"armor": 1165.0,
+"dps": 43.9,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Fel Ancient",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Fel Ancient",
+"level": 30,
+"health": 4902,
+"armor": 1165.0,
+"dps": 43.9,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Mana Devourer",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Mana Devourer",
+"level": 30,
+"health": 4902,
+"armor": 1165.0,
+"dps": 43.9,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Shade of the Archmage",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Shade of the Archmage",
+"level": 31,
+"health": 8174,
+"armor": 1200.0,
+"dps": 46.9,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 27",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 27,
+"health": 2070,
+"armor": 916.0,
+"dps": 26.52,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 27,
+"health": 2070,
+"armor": 916.0,
+"dps": 26.52,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 28",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 28,
+"health": 2400,
+"armor": 975.0,
+"dps": 36.05,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 28,
+"health": 2400,
+"armor": 975.0,
+"dps": 36.05,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 29",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 29,
+"health": 2517,
+"armor": 1070.0,
+"dps": 37.5,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 29,
+"health": 2517,
+"armor": 1070.0,
+"dps": 37.5,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 30",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 30,
+"health": 2715,
+"armor": 1165.0,
+"dps": 38.79,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 30,
+"health": 2715,
+"armor": 1165.0,
+"dps": 38.79,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 27",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 27,
+"health": 2070,
+"armor": 916.0,
+"dps": 26.52,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 27,
+"health": 2070,
+"armor": 916.0,
+"dps": 26.52,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 27,
+"health": 2070,
+"armor": 916.0,
+"dps": 26.52,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 28",
+"count": 5,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 28,
+"health": 2400,
+"armor": 975.0,
+"dps": 36.05,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 28,
+"health": 2400,
+"armor": 975.0,
+"dps": 36.05,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 28,
+"health": 2400,
+"armor": 975.0,
+"dps": 36.05,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 29",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 29,
+"health": 2517,
+"armor": 1070.0,
+"dps": 37.5,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 29,
+"health": 2517,
+"armor": 1070.0,
+"dps": 37.5,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 29,
+"health": 2517,
+"armor": 1070.0,
+"dps": 37.5,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 30",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 30,
+"health": 2715,
+"armor": 1165.0,
+"dps": 38.79,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 30,
+"health": 2715,
+"armor": 1165.0,
+"dps": 38.79,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 30,
+"health": 2715,
+"armor": 1165.0,
+"dps": 38.79,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 27",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 27,
+"health": 2070,
+"armor": 916.0,
+"dps": 26.52,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 27,
+"health": 2070,
+"armor": 916.0,
+"dps": 26.52,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 27,
+"health": 2070,
+"armor": 916.0,
+"dps": 26.52,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 27,
+"health": 2070,
+"armor": 916.0,
+"dps": 26.52,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 28",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 28,
+"health": 2400,
+"armor": 975.0,
+"dps": 36.05,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 28,
+"health": 2400,
+"armor": 975.0,
+"dps": 36.05,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 28,
+"health": 2400,
+"armor": 975.0,
+"dps": 36.05,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 28,
+"health": 2400,
+"armor": 975.0,
+"dps": 36.05,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 29",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 29,
+"health": 2517,
+"armor": 1070.0,
+"dps": 37.5,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 29,
+"health": 2517,
+"armor": 1070.0,
+"dps": 37.5,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 29,
+"health": 2517,
+"armor": 1070.0,
+"dps": 37.5,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 29,
+"health": 2517,
+"armor": 1070.0,
+"dps": 37.5,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 30",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 30,
+"health": 2715,
+"armor": 1165.0,
+"dps": 38.79,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 30,
+"health": 2715,
+"armor": 1165.0,
+"dps": 38.79,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 30,
+"health": 2715,
+"armor": 1165.0,
+"dps": 38.79,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 30,
+"health": 2715,
+"armor": 1165.0,
+"dps": 38.79,
+"swing": 2.0
+}
+]
+}
+]
+},
+"The Drowned City": {
+"lastBoss": 38,
+"pulls": [
+{
+"label": "Boss: Boss 1",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 1",
+"level": 35,
+"health": 6608,
+"armor": 1304.0,
+"dps": 50.02,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 2",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 2",
+"level": 36,
+"health": 6917,
+"armor": 1314.5,
+"dps": 51.34,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 3",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 3",
+"level": 36,
+"health": 6917,
+"armor": 1314.5,
+"dps": 51.34,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 4",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 4",
+"level": 37,
+"health": 5920,
+"armor": 1593.0,
+"dps": 51.12,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 5",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 5",
+"level": 38,
+"health": 9222,
+"armor": 1418.0,
+"dps": 56.11,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 34",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 34,
+"health": 3330,
+"armor": 1304.0,
+"dps": 43.88,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 34,
+"health": 3330,
+"armor": 1304.0,
+"dps": 43.88,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 35",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 35,
+"health": 3660,
+"armor": 1304.0,
+"dps": 44.2,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 35,
+"health": 3660,
+"armor": 1304.0,
+"dps": 44.2,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 36",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 36,
+"health": 3831,
+"armor": 1314.5,
+"dps": 45.37,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 36,
+"health": 3831,
+"armor": 1314.5,
+"dps": 45.37,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 37",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 37,
+"health": 3279,
+"armor": 1593.0,
+"dps": 45.17,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 37,
+"health": 3279,
+"armor": 1593.0,
+"dps": 45.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 34",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 34,
+"health": 3330,
+"armor": 1304.0,
+"dps": 43.88,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 34,
+"health": 3330,
+"armor": 1304.0,
+"dps": 43.88,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 34,
+"health": 3330,
+"armor": 1304.0,
+"dps": 43.88,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 35",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 35,
+"health": 3660,
+"armor": 1304.0,
+"dps": 44.2,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 35,
+"health": 3660,
+"armor": 1304.0,
+"dps": 44.2,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 35,
+"health": 3660,
+"armor": 1304.0,
+"dps": 44.2,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 36",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 36,
+"health": 3831,
+"armor": 1314.5,
+"dps": 45.37,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 36,
+"health": 3831,
+"armor": 1314.5,
+"dps": 45.37,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 36,
+"health": 3831,
+"armor": 1314.5,
+"dps": 45.37,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 37",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 37,
+"health": 3279,
+"armor": 1593.0,
+"dps": 45.17,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 37,
+"health": 3279,
+"armor": 1593.0,
+"dps": 45.17,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 37,
+"health": 3279,
+"armor": 1593.0,
+"dps": 45.17,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 34",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 34,
+"health": 3330,
+"armor": 1304.0,
+"dps": 43.88,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 34,
+"health": 3330,
+"armor": 1304.0,
+"dps": 43.88,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 34,
+"health": 3330,
+"armor": 1304.0,
+"dps": 43.88,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 34,
+"health": 3330,
+"armor": 1304.0,
+"dps": 43.88,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 35",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 35,
+"health": 3660,
+"armor": 1304.0,
+"dps": 44.2,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 35,
+"health": 3660,
+"armor": 1304.0,
+"dps": 44.2,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 35,
+"health": 3660,
+"armor": 1304.0,
+"dps": 44.2,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 35,
+"health": 3660,
+"armor": 1304.0,
+"dps": 44.2,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 36",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 36,
+"health": 3831,
+"armor": 1314.5,
+"dps": 45.37,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 36,
+"health": 3831,
+"armor": 1314.5,
+"dps": 45.37,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 36,
+"health": 3831,
+"armor": 1314.5,
+"dps": 45.37,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 36,
+"health": 3831,
+"armor": 1314.5,
+"dps": 45.37,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 37",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 37,
+"health": 3279,
+"armor": 1593.0,
+"dps": 45.17,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 37,
+"health": 3279,
+"armor": 1593.0,
+"dps": 45.17,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 37,
+"health": 3279,
+"armor": 1593.0,
+"dps": 45.17,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 37,
+"health": 3279,
+"armor": 1593.0,
+"dps": 45.17,
+"swing": 2.0
+}
+]
+}
+]
+},
+"Krol'dok Stronghold": {
+"lastBoss": 43,
+"pulls": [
+{
+"label": "Boss: Boss 1",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 1",
+"level": 40,
+"health": 6641,
+"armor": 1619.0,
+"dps": 66.2,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 2",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 2",
+"level": 41,
+"health": 6641,
+"armor": 1619.0,
+"dps": 66.2,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 3",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 3",
+"level": 42,
+"health": 8255,
+"armor": 1964.0,
+"dps": 99.77,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 4",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 4",
+"level": 42,
+"health": 8255,
+"armor": 1964.0,
+"dps": 99.77,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 5",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 5",
+"level": 43,
+"health": 14479,
+"armor": 2557.0,
+"dps": 107.38,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 39",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 39,
+"health": 4377,
+"armor": 1834.0,
+"dps": 57.75,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 39,
+"health": 4377,
+"armor": 1834.0,
+"dps": 57.75,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 40",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 40,
+"health": 3678,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 40,
+"health": 3678,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 41",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 41,
+"health": 3678,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 41,
+"health": 3678,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 42",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 42,
+"health": 4572,
+"armor": 1964.0,
+"dps": 88.16,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 42,
+"health": 4572,
+"armor": 1964.0,
+"dps": 88.16,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 39",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 39,
+"health": 4377,
+"armor": 1834.0,
+"dps": 57.75,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 39,
+"health": 4377,
+"armor": 1834.0,
+"dps": 57.75,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 39,
+"health": 4377,
+"armor": 1834.0,
+"dps": 57.75,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 40",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 40,
+"health": 3678,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 40,
+"health": 3678,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 40,
+"health": 3678,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 41",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 41,
+"health": 3678,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 41,
+"health": 3678,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 41,
+"health": 3678,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 42",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 42,
+"health": 4572,
+"armor": 1964.0,
+"dps": 88.16,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 42,
+"health": 4572,
+"armor": 1964.0,
+"dps": 88.16,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 42,
+"health": 4572,
+"armor": 1964.0,
+"dps": 88.16,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 39",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 39,
+"health": 4377,
+"armor": 1834.0,
+"dps": 57.75,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 39,
+"health": 4377,
+"armor": 1834.0,
+"dps": 57.75,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 39,
+"health": 4377,
+"armor": 1834.0,
+"dps": 57.75,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 39,
+"health": 4377,
+"armor": 1834.0,
+"dps": 57.75,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 40",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 40,
+"health": 3678,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 40,
+"health": 3678,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 40,
+"health": 3678,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 40,
+"health": 3678,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 41",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 41,
+"health": 3678,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 41,
+"health": 3678,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 41,
+"health": 3678,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 41,
+"health": 3678,
+"armor": 1619.0,
+"dps": 58.5,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 42",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 42,
+"health": 4572,
+"armor": 1964.0,
+"dps": 88.16,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 42,
+"health": 4572,
+"armor": 1964.0,
+"dps": 88.16,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 42,
+"health": 4572,
+"armor": 1964.0,
+"dps": 88.16,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 42,
+"health": 4572,
+"armor": 1964.0,
+"dps": 88.16,
+"swing": 2.0
+}
+]
+}
+]
+},
+"Alcaz Prison": {
+"lastBoss": 51,
+"pulls": [
+{
+"label": "Boss: Boss 1",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 1",
+"level": 48,
+"health": 11169,
+"armor": 2861.5,
+"dps": 158.88,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 2",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 2",
+"level": 49,
+"health": 11581,
+"armor": 2944.0,
+"dps": 189.98,
+"swing": 1.6
+}
+]
+},
+{
+"label": "Boss: Boss 3",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 3",
+"level": 50,
+"health": 11581,
+"armor": 2944.0,
+"dps": 269.69,
+"swing": 1.258
+}
+]
+},
+{
+"label": "Boss: Boss 4",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 4",
+"level": 50,
+"health": 11581,
+"armor": 2944.0,
+"dps": 269.69,
+"swing": 1.258
+}
+]
+},
+{
+"label": "Boss: Boss 5",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 5",
+"level": 51,
+"health": 15413,
+"armor": 2522.0,
+"dps": 201.58,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 47",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 47,
+"health": 5472,
+"armor": 2835.0,
+"dps": 135.04,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 47,
+"health": 5472,
+"armor": 2835.0,
+"dps": 135.04,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 48",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 48,
+"health": 6186,
+"armor": 2861.5,
+"dps": 140.4,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 48,
+"health": 6186,
+"armor": 2861.5,
+"dps": 140.4,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 49",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 49,
+"health": 6414,
+"armor": 2944.0,
+"dps": 167.88,
+"swing": 1.6
+},
+{
+"name": "Elite",
+"level": 49,
+"health": 6414,
+"armor": 2944.0,
+"dps": 167.88,
+"swing": 1.6
+}
+]
+},
+{
+"label": "2 elites level 50",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 50,
+"health": 6414,
+"armor": 2944.0,
+"dps": 238.32,
+"swing": 1.258
+},
+{
+"name": "Elite",
+"level": 50,
+"health": 6414,
+"armor": 2944.0,
+"dps": 238.32,
+"swing": 1.258
+}
+]
+},
+{
+"label": "3 elites level 47",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 47,
+"health": 5472,
+"armor": 2835.0,
+"dps": 135.04,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 47,
+"health": 5472,
+"armor": 2835.0,
+"dps": 135.04,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 47,
+"health": 5472,
+"armor": 2835.0,
+"dps": 135.04,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 48",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 48,
+"health": 6186,
+"armor": 2861.5,
+"dps": 140.4,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 48,
+"health": 6186,
+"armor": 2861.5,
+"dps": 140.4,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 48,
+"health": 6186,
+"armor": 2861.5,
+"dps": 140.4,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 49",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 49,
+"health": 6414,
+"armor": 2944.0,
+"dps": 167.88,
+"swing": 1.6
+},
+{
+"name": "Elite",
+"level": 49,
+"health": 6414,
+"armor": 2944.0,
+"dps": 167.88,
+"swing": 1.6
+},
+{
+"name": "Elite",
+"level": 49,
+"health": 6414,
+"armor": 2944.0,
+"dps": 167.88,
+"swing": 1.6
+}
+]
+},
+{
+"label": "3 elites level 50",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 50,
+"health": 6414,
+"armor": 2944.0,
+"dps": 238.32,
+"swing": 1.258
+},
+{
+"name": "Elite",
+"level": 50,
+"health": 6414,
+"armor": 2944.0,
+"dps": 238.32,
+"swing": 1.258
+},
+{
+"name": "Elite",
+"level": 50,
+"health": 6414,
+"armor": 2944.0,
+"dps": 238.32,
+"swing": 1.258
+}
+]
+},
+{
+"label": "4 elites level 47",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 47,
+"health": 5472,
+"armor": 2835.0,
+"dps": 135.04,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 47,
+"health": 5472,
+"armor": 2835.0,
+"dps": 135.04,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 47,
+"health": 5472,
+"armor": 2835.0,
+"dps": 135.04,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 47,
+"health": 5472,
+"armor": 2835.0,
+"dps": 135.04,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 48",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 48,
+"health": 6186,
+"armor": 2861.5,
+"dps": 140.4,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 48,
+"health": 6186,
+"armor": 2861.5,
+"dps": 140.4,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 48,
+"health": 6186,
+"armor": 2861.5,
+"dps": 140.4,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 48,
+"health": 6186,
+"armor": 2861.5,
+"dps": 140.4,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 49",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 49,
+"health": 6414,
+"armor": 2944.0,
+"dps": 167.88,
+"swing": 1.6
+},
+{
+"name": "Elite",
+"level": 49,
+"health": 6414,
+"armor": 2944.0,
+"dps": 167.88,
+"swing": 1.6
+},
+{
+"name": "Elite",
+"level": 49,
+"health": 6414,
+"armor": 2944.0,
+"dps": 167.88,
+"swing": 1.6
+},
+{
+"name": "Elite",
+"level": 49,
+"health": 6414,
+"armor": 2944.0,
+"dps": 167.88,
+"swing": 1.6
+}
+]
+},
+{
+"label": "4 elites level 50",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 50,
+"health": 6414,
+"armor": 2944.0,
+"dps": 238.32,
+"swing": 1.258
+},
+{
+"name": "Elite",
+"level": 50,
+"health": 6414,
+"armor": 2944.0,
+"dps": 238.32,
+"swing": 1.258
+},
+{
+"name": "Elite",
+"level": 50,
+"health": 6414,
+"armor": 2944.0,
+"dps": 238.32,
+"swing": 1.258
+},
+{
+"name": "Elite",
+"level": 50,
+"health": 6414,
+"armor": 2944.0,
+"dps": 238.32,
+"swing": 1.258
+}
+]
+}
+]
+},
+"Blackmaw Hold": {
+"lastBoss": 60,
+"pulls": [
+{
+"label": "Boss: Boss 1",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 1",
+"level": 57,
+"health": 14620,
+"armor": 3327.0,
+"dps": 219.46,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 2",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 2",
+"level": 57,
+"health": 14620,
+"armor": 3327.0,
+"dps": 219.46,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 3",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 3",
+"level": 58,
+"health": 14620,
+"armor": 3327.0,
+"dps": 219.46,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 4",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 4",
+"level": 58,
+"health": 14620,
+"armor": 3327.0,
+"dps": 219.46,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 5",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 5",
+"level": 59,
+"health": 14620,
+"armor": 3327.0,
+"dps": 219.46,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 6",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 6",
+"level": 59,
+"health": 14620,
+"armor": 3327.0,
+"dps": 219.46,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 7",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 7",
+"level": 60,
+"health": 14620,
+"armor": 3327.0,
+"dps": 219.46,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 8",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 8",
+"level": 60,
+"health": 21929,
+"armor": 3327.0,
+"dps": 219.46,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 56",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 56,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 56,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 57",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 57,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 57,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 58",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 58,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 58,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 59",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 59,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 59,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 56",
+"count": 7,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 56,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 56,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 56,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 57",
+"count": 8,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 57,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 57,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 57,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 58",
+"count": 7,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 58,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 58,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 58,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 59",
+"count": 7,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 59,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 59,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 59,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 56",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 56,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 56,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 56,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 56,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 57",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 57,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 57,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 57,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 57,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 58",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 58,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 58,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 58,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 58,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 59",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 59,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 59,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 59,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 59,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+}
+]
+},
+"Shaper's Terrace": {
+"lastBoss": 61,
+"pulls": [
+{
+"label": "Boss: Boss 1",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 1",
+"level": 58,
+"health": 14620,
+"armor": 3327.0,
+"dps": 219.46,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 2",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 2",
+"level": 59,
+"health": 14620,
+"armor": 3327.0,
+"dps": 219.46,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 3",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 3",
+"level": 60,
+"health": 14620,
+"armor": 3327.0,
+"dps": 219.46,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 4",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 4",
+"level": 60,
+"health": 14620,
+"armor": 3327.0,
+"dps": 219.46,
+"swing": 2.0
+}
+]
+},
+{
+"label": "Boss: Boss 5",
+"count": 1,
+"boss": true,
+"mobs": [
+{
+"name": "Boss 5",
+"level": 61,
+"health": 21929,
+"armor": 3327.0,
+"dps": 219.46,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 57",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 57,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 57,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 58",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 58,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 58,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 59",
+"count": 2,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 59,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 59,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "2 elites level 60",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 60,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 60,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 57",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 57,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 57,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 57,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 58",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 58,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 58,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 58,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 59",
+"count": 3,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 59,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 59,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 59,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "3 elites level 60",
+"count": 4,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 60,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 60,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 60,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 57",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 57,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 57,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 57,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 57,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 58",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 58,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 58,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 58,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 58,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 59",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 59,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 59,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 59,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 59,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+},
+{
+"label": "4 elites level 60",
+"count": 1,
+"boss": false,
+"mobs": [
+{
+"name": "Elite",
+"level": 60,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 60,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 60,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+},
+{
+"name": "Elite",
+"level": 60,
+"health": 8097,
+"armor": 3327.0,
+"dps": 193.93,
+"swing": 2.0
+}
+]
+}
+]
+}
+}
