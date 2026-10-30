@@ -63,6 +63,16 @@ func TestTrioDungeons(t *testing.T) {
 		trios = []int{n}
 	}
 	only := os.Getenv("DUNGEON")
+	// FROM and TO keep only the runs at those trio levels.
+	from, to := int32(0), int32(60)
+	if s := os.Getenv("FROM"); s != "" {
+		n, _ := strconv.Atoi(s)
+		from = int32(n)
+	}
+	if s := os.Getenv("TO"); s != "" {
+		n, _ := strconv.Atoi(s)
+		to = int32(n)
+	}
 	iters := iterations()
 	for name, d := range dungeons {
 		if only != "" && !strings.Contains(name, only) {
@@ -72,7 +82,7 @@ func TestTrioDungeons(t *testing.T) {
 			seen := map[int32]bool{}
 			for _, over := range []int32{0, 2, 4} {
 				lvl := min(d.LastBoss+over, 60)
-				if seen[lvl] {
+				if seen[lvl] || lvl < from || lvl > to {
 					continue
 				}
 				seen[lvl] = true

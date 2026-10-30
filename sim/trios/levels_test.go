@@ -69,6 +69,14 @@ func init() {
 		}
 	}
 	load("keys.json", &keysAt)
+	// KEYS=other.json swaps in other keys for the characters that file lists.
+	if f := os.Getenv("KEYS"); f != "" {
+		var other map[string]charKeys
+		load(f, &other)
+		for name, ck := range other {
+			keysAt[name] = ck
+		}
+	}
 	for _, ck := range keysAt {
 		for _, lv := range ck.Levels {
 			for _, items := range lv.Keys {
