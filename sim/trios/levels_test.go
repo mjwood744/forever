@@ -178,7 +178,17 @@ type trio struct {
 }
 
 // The 6-level bracket a level's keys come from: the last one reached. Gear and talents are per level.
-func bracket(lvl int32) string { return strconv.Itoa(int(max(6, lvl/6*6))) }
+// The highest level at or below lvl that the character's keys are written for: every 6 levels, plus
+// any level a respec adds keys at.
+func bracket(ck charKeys, lvl int32) string {
+	best := int32(6)
+	for l := range ck.Levels {
+		if n, err := strconv.Atoi(l); err == nil && int32(n) <= lvl && int32(n) > best {
+			best = int32(n)
+		}
+	}
+	return strconv.Itoa(int(best))
+}
 
 func baseConsumes() *proto.ConsumesSpec { return &proto.ConsumesSpec{} }
 
@@ -420,7 +430,7 @@ func pick(ids []int32, have map[int32]bool) int32 {
 // The APL for a character from its presses; unknown spells go to dropped.
 func buildAPL(name string, t trio, lvl int32, f fight, have map[int32]bool, dropped map[string]bool) string {
 	ck := keysAt[name]
-	keys := ck.Levels[bracket(lvl)].Keys
+	keys := ck.Levels[bracket(ck, lvl)].Keys
 	var prepull, prio []string
 	seq := 0
 	for _, p := range presses(name, t) {

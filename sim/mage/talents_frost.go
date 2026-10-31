@@ -9,7 +9,7 @@ func (mage *Mage) registerFrostTalents() {
 	// Tier 1
 	mage.registerFrostWarding()
 	mage.registerImprovedFrostbolt()
-	mage.registerElementalPrecision()
+	mage.registerPrecision()
 
 	// Tier 2
 	mage.registerIceShards()
@@ -68,15 +68,13 @@ func (mage *Mage) registerImprovedFrostbolt() {
 	spelldata.ParseStatic(&mage.Character, spellData.ImprovedFrostbolt.Rank(mage.Talents.ImprovedFrostbolt))
 }
 
-// "Improves your chance to hit with Frost and Fire spells by $s1%." The row's mask names the Fire and
-// Frost spells, Frostfire Bolt included.
-func (mage *Mage) registerElementalPrecision() {
-	if mage.Talents.ElementalPrecision == 0 {
+// "Improves your chance to hit with all spells by $s1%." The row is the plain spell hit stat.
+func (mage *Mage) registerPrecision() {
+	if mage.Talents.Precision == 0 {
 		return
 	}
 
-	spelldata.ParseStatic(&mage.Character, spellData.ElementalPrecision.Rank(mage.Talents.ElementalPrecision),
-		spelldata.ShowAsSchoolHit(core.SpellSchoolFire|core.SpellSchoolFrost))
+	spelldata.ParseStatic(&mage.Character, spellData.Precision.Rank(mage.Talents.Precision))
 }
 
 func (mage *Mage) registerIceShards() {
@@ -349,7 +347,7 @@ func (mage *Mage) registerWinterChill() {
 	trigger.Callback = core.CallbackOnSpellHitDealt
 	trigger.Outcome = core.OutcomeLanded
 	trigger.ExtraCondition = func(_ *core.Simulation, spell *core.Spell, _ *core.SpellResult) bool {
-		return spellData.Frostbolt.Contains(spell) || spellData.FrostBlast.Contains(spell)
+		return spellData.Frostbolt.Contains(spell)
 	}
 	mage.MakeProcTriggerAura(trigger)
 
@@ -385,8 +383,7 @@ func (mage *Mage) registerIceBarrier() {
 	mage.registerIceBarrierSpell()
 }
 
-// The Chill effects Permafrost's mask names (family 3, mask 0x100000): Frostbolt, Frost Blast, Cone
-// of Cold, Frostfire Bolt and the armors' Chilled.
+// The Chill effects Permafrost's mask names (family 3, mask 0x100000): Frostbolt, Cone of Cold, Frostfire Bolt and the armors' Chilled.
 var chillFlags = spellData.Permafrost.Highest().EffectN(1).ClassFlags
 
 // Whether the spell applies a Chill effect: one the Chill mask names, or Blizzard with Improved
