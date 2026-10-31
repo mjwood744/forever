@@ -175,6 +175,7 @@ type trio struct {
 	tank    *proto.UnitReference
 	tankRef string // the tank as an APL unit
 	petRef  string // Hawke's pet, "" without one
+	otherRef string // the healer's second heal target; "" means player 2
 }
 
 // The 6-level bracket a level's keys come from: the last one reached. Gear and talents are per level.
@@ -230,7 +231,7 @@ func makeTrio(n int, lvl int32) trio {
 		ash := newPlayer("Ashyn", lvl, proto.Class_ClassMage, proto.Race_RaceUndead,
 			&proto.Player_Mage{Mage: &proto.Mage{Options: &proto.Mage_Options{ClassOptions: &proto.MageOptions{DefaultMageArmor: proto.MageArmor(1)}}}})
 		return trio{1, []member{{"Nyxx", nyxx}, {"Rellyk", rel}, {"Ashyn", ash}},
-			&proto.UnitReference{Type: proto.UnitReference_Player, Index: 1}, unitPlayer(1), ""}
+			&proto.UnitReference{Type: proto.UnitReference_Player, Index: 1}, unitPlayer(1), "", ""}
 	case 2:
 		wy := newPlayer("Wyther", lvl, proto.Class_ClassShaman, proto.Race_RaceTroll,
 			&proto.Player_RestorationShaman{RestorationShaman: &proto.RestorationShaman{Options: &proto.RestorationShaman_Options{ClassOptions: &proto.ShamanOptions{}}}})
@@ -249,7 +250,7 @@ func makeTrio(n int, lvl int32) trio {
 		ma := newPlayer("Malyce", lvl, proto.Class_ClassWarlock, proto.Race_RaceTroll,
 			&proto.Player_Warlock{Warlock: &proto.Warlock{Options: &proto.Warlock_Options{ClassOptions: &proto.WarlockOptions{Summon: summon, Armor: armor}}}})
 		return trio{2, []member{{"Wyther", wy}, {"Skarr", sk}, {"Malyce", ma}},
-			&proto.UnitReference{Type: proto.UnitReference_Player, Index: 1}, unitPlayer(1), ""}
+			&proto.UnitReference{Type: proto.UnitReference_Player, Index: 1}, unitPlayer(1), "", ""}
 	}
 	pet := proto.HunterOptions_PetNone
 	if lvl >= 10 {
@@ -267,7 +268,7 @@ func makeTrio(n int, lvl int32) trio {
 	sh := newPlayer("Shryke", lvl, proto.Class_ClassRogue, proto.Race_RaceWindshaperSkyborne,
 		&proto.Player_Rogue{Rogue: &proto.Rogue{Options: &proto.Rogue_Options{ClassOptions: &proto.RogueOptions{}}}})
 	sh.DistanceFromTarget = 5
-	t := trio{3, []member{{"Hawke", hk}, {"Wyldd", wd}, {"Shryke", sh}}, nil, "", ""}
+	t := trio{3, []member{{"Hawke", hk}, {"Wyldd", wd}, {"Shryke", sh}}, nil, "", "", ""}
 	if lvl >= 10 {
 		t.tank = &proto.UnitReference{Type: proto.UnitReference_Pet, Index: 0, Owner: &proto.UnitReference{Type: proto.UnitReference_Player, Index: 0}}
 		t.tankRef, t.petRef = unitPet(0), unitPet(0)
@@ -360,6 +361,9 @@ func presses(name string, t trio) []press {
 		return []press{{key: "3", bossOnly: true}, {key: "5", cond: targetsAtLeast(2)}, {key: "2", cond: comboAtLeast(4)}, {key: "1"}}
 	case "Nyxx", "Wyther", "Wyldd":
 		other := unitPlayer(2) // Ashyn, Malyce and Shryke all sit third
+		if t.otherRef != "" {
+			other = t.otherRef
+		}
 		mana := 50
 		if name == "Wyldd" {
 			mana = 60
