@@ -27,7 +27,7 @@ message DruidTalents {
     bool moonkin_form = 16;
     // Feral Combat
     int32 ferocity = 17;
-    int32 heart_of_the_wild = 18;
+    int32 furor = 18;
     int32 feral_swiftness = 19;
     int32 feral_instinct = 20;
     int32 brutal_impact = 21;
@@ -36,25 +36,25 @@ message DruidTalents {
     int32 savage_fury = 24;
     bool feral_charge = 25;
     int32 sharpened_claws = 26;
-    bool shifting_power = 27;
-    bool primal_bite = 28;
-    int32 predatory_strikes = 29;
+    int32 predatory_strikes = 27;
+    bool lacerate = 28;
+    bool predatory_discipline = 29;
     int32 blood_frenzy = 30;
-    int32 improved_shifting_power = 31;
-    bool leader_of_the_pack = 32;
-    int32 natural_instinct = 33;
+    bool leader_of_the_pack = 31;
+    int32 natural_instinct = 32;
+    int32 rend_and_tear = 33;
     int32 natural_reaction = 34;
-    int32 rend_and_tear = 35;
-    bool berserk = 36;
+    bool primal_bite = 35;
+    bool shifting_power = 36;
     // Restoration
     int32 natures_focus = 37;
-    int32 furor = 38;
+    int32 heart_of_the_wild = 38;
     int32 naturalist = 39;
-    int32 subtlety = 40;
+    int32 reflection = 40;
     int32 natural_shapeshifter = 41;
-    int32 reflection = 42;
+    int32 subtlety = 42;
     int32 gift_of_nature = 43;
-    bool gift_of_the_earthmother = 44;
+    bool bloom = 44;
     int32 tranquil_spirit = 45;
     int32 improved_rejuvenation = 46;
     bool swiftmend = 47;

@@ -18,7 +18,7 @@ func (druid *Druid) registerPrimalBiteSpell() {
 		hit := func(target *core.Unit) *core.SpellResult {
 			return spell.CalcDamage(sim, target, druid.weaponSpecialDamage(sim, spell, target, rank), spell.OutcomeMeleeWeaponSpecialHitAndCrit)
 		}
-		result := cleave(sim, target, spell, max(1, druid.berserkTargets()), &results, hit)
+		result := cleave(sim, target, spell, 1, &results, hit)
 		druid.refundOnMiss(sim, spell, result)
 	}
 	druid.PrimalBite = druid.RegisterSpell(config)

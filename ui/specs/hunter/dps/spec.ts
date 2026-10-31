@@ -110,7 +110,6 @@ export default defineSpec<Spec.SpecHunter>({
 		BuffDebuffInputs.ConcentrationAura,
 		BuffDebuffInputs.DemoralizingRoar,
 		BuffDebuffInputs.DemoralizingScreech,
-		BuffDebuffInputs.GreaterBlessingOfSalvation,
 		BuffDebuffInputs.HexOfWeakness,
 		BuffDebuffInputs.JudgementOfTheCrusader,
 		BuffDebuffInputs.MoonkinAura,

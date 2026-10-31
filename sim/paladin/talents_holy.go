@@ -9,29 +9,29 @@ import (
 
 func (paladin *Paladin) registerHolyTalents() {
 	// Tier 1
+	paladin.applySpiritualFocus()
 	paladin.applyDivineStrength()
-	paladin.applyDivineIntellect()
 
 	// Tier 2
 	paladin.applyHealingLight()
-	paladin.applySpiritualFocus()
-	paladin.applyImprovedSeals()
-	// Unyielding Faith shortens Fear and Disorient effects, which the sim never suffers.
-
-	// Tier 3
-	// Voice of Truth grants immunity to Silence and Interrupt effects, which the sim never suffers.
 	paladin.applyReverence()
+	paladin.applyImprovedSeals()
 	paladin.applyPurifyingPower()
 
-	// Tier 4
-	paladin.applyInfusionOfLight()
-	paladin.applyIllumination()
+	// Tier 3
 	// Divine Favor registered in registerTalentSpells
+	paladin.applyIllumination()
+	// Holy Conduit is in the Retribution file, where it sat before the 31 October hotfixes.
+
+	// Tier 4
+	paladin.applyDivinePrecision()
+	paladin.applyInfusionOfLight()
+	// Oath of Light is not modelled: no character in the trios takes it.
 
 	// Tier 5
-	paladin.applyDivinePrecision()
-	// Holy Shock registered in registerTalentSpells
 	paladin.applyConsecratedGround()
+	// Holy Shock registered in registerTalentSpells
+	// Boundless Light is not modelled: no character in the trios takes it.
 
 	// Tier 6
 	paladin.applyHolyPower()

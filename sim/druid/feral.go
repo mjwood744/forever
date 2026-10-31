@@ -132,20 +132,6 @@ func itemOnUseRow(itemID int32) *spelldata.Spell {
 	return spelldata.Nil
 }
 
-// The number of targets Primal Bite strikes under Berserk, the primary included:
-// the tooltip's "strike up to $s3 targets" is effect 3, a SPELLMOD_JUMP_TARGETS the parser does not
-// apply. 0 outside Berserk.
-func (druid *Druid) berserkTargets() int32 {
-	if druid.BerserkAura == nil || !druid.BerserkAura.IsActive() {
-		return 0
-	}
-	e := spellData.Berserk.Highest().FindEffect(dbcenums.E_APPLY_AURA, dbcenums.A_ADD_FLAT_MODIFIER, int32(dbcenums.SPELLMOD_JUMP_TARGETS))
-	if e == spelldata.NilEffect {
-		return 0
-	}
-	return int32(e.BaseValue())
-}
-
 // Hits up to count active targets starting from target, prices each hit on its own target, and deals
 // them together once all are rolled. It returns the primary target's result. results is the
 // caller's own buffer, reused across casts.

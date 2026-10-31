@@ -19,14 +19,10 @@ casts_results: {
   }
   casts: {
    key: "other_id:OtherActionRageGain"
-   value: 2
-  }
-  casts: {
-   key: "spell_id:1235827 rank:3"
    value: 0
   }
   casts: {
-   key: "spell_id:1238073 rank:4"
+   key: "spell_id:1235827 rank:5"
    value: 0
   }
   casts: {
@@ -39,7 +35,7 @@ casts_results: {
   }
   casts: {
    key: "spell_id:1322605"
-   value: 6
+   value: 7
   }
   casts: {
    key: "spell_id:20580"
@@ -50,8 +46,8 @@ casts_results: {
    value: 0
   }
   casts: {
-   key: "spell_id:22829 rank:4"
-   value: 4
+   key: "spell_id:22829 rank:5"
+   value: 5
   }
   casts: {
    key: "spell_id:22842"
@@ -60,10 +56,6 @@ casts_results: {
   casts: {
    key: "spell_id:29166"
    value: 0
-  }
-  casts: {
-   key: "spell_id:417141"
-   value: 1
   }
   casts: {
    key: "spell_id:5209"
@@ -111,7 +103,7 @@ casts_results: {
   }
   casts: {
    key: "spell_id:9850 rank:5"
-   value: 18
+   value: 19
   }
   casts: {
    key: "spell_id:9867 rank:4"
@@ -127,7 +119,7 @@ casts_results: {
   }
   casts: {
    key: "spell_id:9896 rank:6"
-   value: 6
+   value: 7
   }
   casts: {
    key: "spell_id:9898 rank:5"
@@ -135,11 +127,11 @@ casts_results: {
   }
   casts: {
    key: "spell_id:9904 rank:4"
-   value: 13
+   value: 9
   }
   casts: {
    key: "spell_id:9907 rank:4"
-   value: 7
+   value: 5
   }
   casts: {
    key: "spell_id:9908 rank:5"
@@ -180,14 +172,10 @@ casts_results: {
   }
   casts: {
    key: "other_id:OtherActionRageGain"
-   value: 2
-  }
-  casts: {
-   key: "spell_id:1235827 rank:3"
    value: 0
   }
   casts: {
-   key: "spell_id:1238073 rank:4"
+   key: "spell_id:1235827 rank:5"
    value: 0
   }
   casts: {
@@ -200,7 +188,7 @@ casts_results: {
   }
   casts: {
    key: "spell_id:1322605"
-   value: 6
+   value: 7
   }
   casts: {
    key: "spell_id:20580"
@@ -211,8 +199,8 @@ casts_results: {
    value: 0
   }
   casts: {
-   key: "spell_id:22829 rank:4"
-   value: 5
+   key: "spell_id:22829 rank:5"
+   value: 6
   }
   casts: {
    key: "spell_id:22842"
@@ -221,10 +209,6 @@ casts_results: {
   casts: {
    key: "spell_id:29166"
    value: 0
-  }
-  casts: {
-   key: "spell_id:417141"
-   value: 1
   }
   casts: {
    key: "spell_id:5209"
@@ -268,11 +252,11 @@ casts_results: {
   }
   casts: {
    key: "spell_id:9830 rank:5"
-   value: 9
+   value: 7
   }
   casts: {
    key: "spell_id:9850 rank:5"
-   value: 16
+   value: 17
   }
   casts: {
    key: "spell_id:9867 rank:4"
@@ -288,7 +272,7 @@ casts_results: {
   }
   casts: {
    key: "spell_id:9896 rank:6"
-   value: 7
+   value: 4
   }
   casts: {
    key: "spell_id:9898 rank:5"
@@ -296,11 +280,11 @@ casts_results: {
   }
   casts: {
    key: "spell_id:9904 rank:4"
-   value: 10
+   value: 9
   }
   casts: {
    key: "spell_id:9907 rank:4"
-   value: 5
+   value: 6
   }
   casts: {
    key: "spell_id:9908 rank:5"

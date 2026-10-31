@@ -748,41 +748,6 @@ func NewSpellDataGreaterBlessingOfWisdomAura(unit *core.Unit, isPlayer bool, tal
 	return newBuff(unit, greaterBlessingOfWisdomMeta, isPlayer, talentPoints)
 }
 
-// Mass Salvation
-var greaterBlessingOfSalvationSpell = spelldata.MustFind(25895)
-var greaterBlessingOfSalvationMeta = &Meta{
-	Label: "Mass Salvation",
-	Spell: greaterBlessingOfSalvationSpell,
-}
-
-func GreaterBlessingOfSalvationValue(talentPoints int32) float64 {
-	return greaterBlessingOfSalvationMeta.Value(talentPoints)
-}
-func GreaterBlessingOfSalvationDuration(talentPoints int32) time.Duration {
-	return greaterBlessingOfSalvationMeta.Duration(talentPoints)
-}
-func NewSpellDataGreaterBlessingOfSalvationAura(unit *core.Unit, isPlayer bool, talentPoints int32) *core.Aura {
-	return newBuff(unit, greaterBlessingOfSalvationMeta, isPlayer, talentPoints)
-}
-
-// Greater Blessing of Light
-// Left out: effect 1 A_DUMMY(4) misc 0
-// Left out: effect 2 A_DUMMY(4) misc 0
-var GreaterBlessingOfLightCategory = "BlessingOfLight"
-var greaterBlessingOfLightSpell = spelldata.MustFind(25890)
-var greaterBlessingOfLightMeta = &Meta{
-	Label:    "Greater Blessing of Light",
-	Spell:    greaterBlessingOfLightSpell,
-	Category: GreaterBlessingOfLightCategory,
-}
-
-func GreaterBlessingOfLightDuration(talentPoints int32) time.Duration {
-	return greaterBlessingOfLightMeta.Duration(talentPoints)
-}
-func NewSpellDataGreaterBlessingOfLightAura(unit *core.Unit, isPlayer bool, talentPoints int32) *core.Aura {
-	return newBuff(unit, greaterBlessingOfLightMeta, isPlayer, talentPoints)
-}
-
 // Innervates
 var InnervatesCategory = "Innervate"
 var innervatesSpell = spelldata.MustFind(29166)
@@ -961,12 +926,6 @@ func applyGeneratedBuffs(char *core.Character, raid *proto.RaidBuffs, party *pro
 	}
 	if individual.GreaterBlessingOfWisdom {
 		core.MakePermanent(NewSpellDataGreaterBlessingOfWisdomAura(&char.Unit, false, 0))
-	}
-	if individual.GreaterBlessingOfSalvation {
-		core.MakePermanent(NewSpellDataGreaterBlessingOfSalvationAura(&char.Unit, false, 0))
-	}
-	if individual.GreaterBlessingOfLight {
-		driveGreaterBlessingOfLight(char, individual)
 	}
 	if individual.Innervates > 0 {
 		driveInnervates(char, individual)

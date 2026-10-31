@@ -359,10 +359,10 @@ func TestGeneratedManaSpringTotemTakesTheTalentedValue(t *testing.T) {
 	}
 }
 
-// The two rows whose stats the manifest names. Leader of the Pack is worth its
-// game files' amount on melee and ranged crit and Moonkin Aura on spell crit.
-// Neither touches RangedCritPercent, which the sim adds on top of the physical
-// one, so a ranged attack gains Leader of the Pack's amount once.
+// The two rows whose stats the manifest names. Since the 31 October hotfixes both state an
+// A_MOD_CRIT_PCT, so each is worth its game files' amount on physical and spell crit alike.
+// Neither touches RangedCritPercent, which the sim adds on top of the physical one, so a
+// ranged attack gains the amount once.
 func TestGeneratedCritAurasApplyToTheirKindOfCrit(t *testing.T) {
 	for _, row := range []struct {
 		name     string
@@ -370,9 +370,9 @@ func TestGeneratedCritAurasApplyToTheirKindOfCrit(t *testing.T) {
 		physical float64
 		spell    float64
 	}{
-		{"Leader of the Pack", &proto.RaidBuffs{LeaderOfThePack: true}, leaderOfThePack(t), 0},
-		{"Moonkin Aura", &proto.RaidBuffs{MoonkinAura: true}, 0, moonkinAura(t)},
-		{"both", &proto.RaidBuffs{LeaderOfThePack: true, MoonkinAura: true}, leaderOfThePack(t), moonkinAura(t)},
+		{"Leader of the Pack", &proto.RaidBuffs{LeaderOfThePack: true}, leaderOfThePack(t), leaderOfThePack(t)},
+		{"Moonkin Aura", &proto.RaidBuffs{MoonkinAura: true}, moonkinAura(t), moonkinAura(t)},
+		{"both", &proto.RaidBuffs{LeaderOfThePack: true, MoonkinAura: true}, leaderOfThePack(t) + moonkinAura(t), leaderOfThePack(t) + moonkinAura(t)},
 	} {
 		t.Run(row.name, func(t *testing.T) {
 			char := core.NewGeneratedBuffTestCharacter()
@@ -395,12 +395,12 @@ func TestGeneratedCritAurasApplyToTheirKindOfCrit(t *testing.T) {
 
 func leaderOfThePack(t *testing.T) float64 {
 	t.Helper()
-	return rowAmount(t, 24932, dbcenums.A_MOD_WEAPON_CRIT_PERCENT)
+	return rowAmount(t, 24932, dbcenums.A_MOD_CRIT_PCT)
 }
 
 func moonkinAura(t *testing.T) float64 {
 	t.Helper()
-	return rowAmount(t, 24907, dbcenums.A_MOD_SPELL_CRIT_CHANCE)
+	return rowAmount(t, 24907, dbcenums.A_MOD_CRIT_PCT)
 }
 
 // Each aura holds its own single-aura category, so a raid with both ticked has

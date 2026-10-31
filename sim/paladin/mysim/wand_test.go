@@ -58,7 +58,7 @@ func TestWands(t *testing.T) {
 			apl := aoeAE
 			if mm.wand { apl = addShoot(apl) }
 			m.Rotation = core.APLRotationFromJsonString(apl)
-			m.Buffs = &proto.IndividualBuffs{GreaterBlessingOfSalvation: true}
+			m.Buffs = &proto.IndividualBuffs{}
 			res := core.RunRaidSim(&proto.RaidSimRequest{Raid: trioRaid(pr, m), Encounter: encs[sc](), SimOptions: &proto.SimOptions{Iterations: 2000, RandomSeed: 9}})
 			if res.Error != nil { t.Fatal(res.Error.Message) }
 			ps := res.RaidMetrics.Parties[0].Players

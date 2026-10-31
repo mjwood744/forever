@@ -39,7 +39,7 @@ message PriestTalents {
     int32 holy_reach = 27;
     int32 improved_healing = 28;
     int32 searing_light = 29;
-    bool binding_heal = 30;
+    bool holy_binding = 30;
     int32 litany_of_light = 31;
     bool spirit_of_redemption = 32;
     int32 spiritual_guidance = 33;

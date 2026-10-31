@@ -21,10 +21,8 @@ func (druid *Druid) registerFeralCombatTalents() {
 	druid.applySharpenedClaws()
 	druid.applyPredatoryStrikes()
 	druid.applyBloodFrenzy()
-	druid.applyImprovedShiftingPower()
 	druid.applyNaturalInstinct()
 	druid.applyNaturalReaction()
-	druid.applyBerserk()
 }
 
 func (druid *Druid) parseTalent(rank int32, ladder spelldata.Ladder) {
@@ -100,10 +98,6 @@ func (druid *Druid) applySharpenedClaws() {
 
 func (druid *Druid) applyShreddingAttacks() {
 	druid.parseTalent(druid.Talents.ShreddingAttacks, spellData.ShreddingAttacks)
-}
-
-func (druid *Druid) applyImprovedShiftingPower() {
-	druid.parseTalent(druid.Talents.ImprovedShiftingPower, spellData.ImprovedShiftingPower)
 }
 
 func (druid *Druid) applyPredatoryStrikes() {
@@ -193,31 +187,4 @@ func (druid *Druid) applyNaturalReaction() {
 	})
 	trigger.Outcome = core.OutcomeDodge
 	druid.MakeProcTriggerAura(trigger)
-}
-
-func (druid *Druid) applyBerserk() {
-	if !druid.Talents.Berserk {
-		return
-	}
-	row := spellData.Berserk.Highest()
-	druid.BerserkAura = druid.RegisterAura(spelldata.AuraConfig(row))
-	// Crit on the builder mask and Primal Bite's cooldown. Jump targets and fear immunity are not parsed.
-	spelldata.ParseEffects(&druid.Character, druid.BerserkAura, row)
-	// TODO: Ingame confirmation needed -- whether Berserk clears a running Primal Bite cooldown
-	druid.BerserkAura.ApplyOnGain(func(_ *core.Aura, _ *core.Simulation) {
-		if druid.PrimalBite != nil {
-			druid.PrimalBite.CD.Reset()
-		}
-	})
-	config := spelldata.SpellConfig(&druid.Unit, row)
-	config.Flags |= core.SpellFlagAPL
-	config.ApplyEffects = func(sim *core.Simulation, _ *core.Unit, _ *core.Spell) {
-		druid.BerserkAura.Activate(sim)
-	}
-	config.RelatedSelfBuff = druid.BerserkAura
-	druid.Berserk = druid.RegisterSpell(config)
-	druid.AddMajorCooldown(core.MajorCooldown{
-		Spell: druid.Berserk.Spell,
-		Type:  core.CooldownTypeDPS,
-	})
 }

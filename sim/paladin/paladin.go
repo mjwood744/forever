@@ -9,7 +9,7 @@ import (
 	"github.com/wowsims/forever/sim/core/stats"
 )
 
-var TalentTreeSizes = [3]int{17, 16, 17}
+var TalentTreeSizes = [3]int{17, 17, 17}
 
 type Paladin struct {
 	core.Character
@@ -19,10 +19,11 @@ type Paladin struct {
 	Forbearance       *core.Aura
 	RighteousFuryAura *core.Aura
 
-	// Swift Judgement's free next Judgement, which Judgement spends.
-	swiftJudgementAura *core.Aura
-
 	Judgement *core.Spell
+
+	// Holy Shield: each rank's aura and per-block damage, so Shieldsworn's Holy Strike can find the
+	// shield that is up.
+	holyShields []holyShield
 
 	// The seal the paladin is under, and the ranks it has cast so far this iteration.
 	currentSeal *sealConfig
@@ -30,7 +31,8 @@ type Paladin struct {
 	// The judgement effects this paladin can put on enemies; its melee strikes refresh them.
 	JudgementAuras []core.AuraArray
 
-	// Twist of Light: one Echo per seal that leaves one, keyed by the Echo's spell id.
+	// Echoes of the seals, keyed by the Echo's spell id. Nothing fills it since Twist of Light became
+	// Unsealed Wrath.
 	echoes map[int32]*sealEcho
 
 	// The mark Consecration lays on its bonus targets, one aura per enemy, which carries Consecrated Ground.

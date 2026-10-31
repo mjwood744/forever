@@ -52,16 +52,14 @@ message PartyBuffs {
 }
 
 // These are usually individual actions taken by other Characters.
-// Next index: 9
+// Next index: 7
 message IndividualBuffs {
 	bool greater_blessing_of_kings = 1;
 	bool greater_blessing_of_might = 2;
 	bool greater_blessing_of_wisdom = 3;
-	bool greater_blessing_of_salvation = 4;
-	bool greater_blessing_of_light = 5;
-	int32 innervates = 6;
-	int32 power_infusions = 7;
-	bool thorns = 8;
+	int32 innervates = 4;
+	int32 power_infusions = 5;
+	bool thorns = 6;
 }
 
 // Next index: 23

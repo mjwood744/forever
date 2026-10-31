@@ -14,6 +14,10 @@ var TalentTreeSizes = [3]int{16, 20, 16}
 type Druid struct {
 	core.Character
 	rejuvs, regrowths []*core.Spell
+	// Bloom's heal when a Rejuvenation or Regrowth runs out; nil without the talent.
+	bloom *core.Spell
+	// Set while Swiftmend ends the HoT it consumes, so that HoT does not bloom.
+	consumingHot bool
 	SelfBuffs
 
 	Talents *proto.DruidTalents
@@ -74,7 +78,6 @@ type Druid struct {
 	MoonkinForm  *DruidSpell
 
 	BearFormAura             *core.Aura
-	BerserkAura              *core.Aura
 	CatFormAura              *core.Aura
 	ClearcastingAura         *core.Aura
 	OmenOfClarityAura        *core.Aura // The proc trigger, whose ICD says when Omen of Clarity can proc again.

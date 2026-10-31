@@ -37,10 +37,6 @@ func (paladin *Paladin) registerHolyShockRank(_ int32, rank *spelldata.Spell) {
 	damageConfig := paladin.holyShockConfig(rank, rank.ID, damageRow, damage, core.ProcMaskSpellDamage)
 	damageConfig.ClassSpellMask = SpellMaskHolyShock
 	damageConfig.ApplyEffects = func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
-		if vigil := paladin.activeLightsVigil(target); vigil != nil {
-			vigil.consume(sim, target)
-			spell.CD.Reset()
-		}
 		spell.CalcAndDealDamage(sim, target, damage.Average(), spell.OutcomeMagicHitAndCrit)
 	}
 	paladin.RegisterSpell(damageConfig)
@@ -52,6 +48,10 @@ func (paladin *Paladin) registerHolyShockRank(_ int32, rank *spelldata.Spell) {
 	healConfig.ThreatMultiplier = 0.5
 	healConfig.ApplyEffects = func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
 		spell.CalcAndDealHealing(sim, target, heal.Average(), spell.OutcomeHealingCrit)
+		if vigil := paladin.activeLightsVigil(target); vigil != nil {
+			vigil.consume(sim, target)
+			spell.CD.Reset()
+		}
 	}
 	paladin.RegisterSpell(healConfig)
 }

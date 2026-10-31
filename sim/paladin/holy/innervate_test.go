@@ -11,7 +11,7 @@ import (
 )
 
 // The standard talents with 3/3 Reverence.
-const reverenceTalents = "55320033025131051-503050002"
+const reverenceTalents = "25320015022001051-503020005005"
 
 func innervatedPaladin(t *testing.T, talents string) (*core.Simulation, *core.Character) {
 	t.Helper()

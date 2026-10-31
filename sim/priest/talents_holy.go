@@ -26,7 +26,7 @@ func (priest *Priest) registerHolyTalents() {
 	priest.applyHolyReach()
 	priest.applyImprovedHealing()
 	priest.applySearingLight()
-	priest.applyBindingHeal()
+	priest.applyHolyBinding()
 
 	// Tier 5
 	priest.applyLitanyOfLight()
@@ -178,13 +178,9 @@ func (priest *Priest) applySearingLight() {
 	})
 }
 
-// Grants Binding Heal.
-func (priest *Priest) applyBindingHeal() {
-	if !priest.Talents.BindingHeal {
-		return
-	}
-
-	spellData.BindingHeal.Each(priest.registerBindingHeal)
+// Holy Binding - Each time you heal a target other than yourself with Flash Heal, you are healed
+// for 50% as much. Not modelled: no character in the trios takes it.
+func (priest *Priest) applyHolyBinding() {
 }
 
 // When you cast a healing spell, gain Mana equal to 20% of the base cost of the spell if your previous heal was a different spell.

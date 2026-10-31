@@ -45,7 +45,7 @@ func TestHolyPaladin(t *testing.T) {
 
 // 36/15: Illumination, Divine Favor, Holy Shock, Holy Power and Light's Vigil, with Toughness,
 // Precision, Anticipation and Sacred Duty behind them.
-var StandardTalents = "55320030025131051-503050002"
+var StandardTalents = "25300015022001051-503020005005"
 
 var FullConsumes = &proto.ConsumesSpec{
 	FlaskId:        13512,  // Flask of Supreme Power

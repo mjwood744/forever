@@ -7,32 +7,29 @@ import (
 
 var LightsVigilRankMap = spellData.LightsVigil
 
-// The vigil aura, party heal and enemy strike each rank triggers. They sit in LightsVigilTriggered
-// in the order the game files list them, not by rank, so the pairing is by hand.
-var lightsVigilTriggered = map[int32]struct{ aura, heal, strike int32 }{
-	1: {aura: 1310909, heal: 1310912, strike: 1310914},
-	2: {aura: 1311593, heal: 1311591, strike: 1311592},
-	3: {aura: 1311597, heal: 1311596, strike: 1311598},
+// The vigil aura and party heal each rank triggers. They sit in LightsVigilTriggered in the order
+// the game files list them, not by rank, so the pairing is by hand.
+var lightsVigilTriggered = map[int32]struct{ aura, heal int32 }{
+	1: {aura: 1310909, heal: 1310912},
+	2: {aura: 1311593, heal: 1311591},
+	3: {aura: 1311597, heal: 1311596},
 }
 
-// One rank's vigils on enemies, the strike that consumes one, and the refund it gives.
+// One rank's vigils on allies and the party heal that consumes one.
 type lightsVigil struct {
-	auras  core.AuraArray
-	strike *core.Spell
-	refund float64
-	cost   float64
+	auras core.AuraArray
+	heal  *core.Spell
 
-	// Ends the vigil on the target: the strike lands and the refund comes back.
+	// Ends the vigil on the ally: their party is healed.
 	consume func(sim *core.Simulation, target *core.Unit)
 }
 
 // Light's Vigil (talent)
 // https://www.wowhead.com/forever/spell=1311595
 //
-// Applies Light's Vigil to the target for 30 sec. Your next Holy Shock cast on them triggers no
-// cooldown and causes enemy targets to suffer 380 to 410 Holy damage and refund 75% of Light's
-// Vigil's Mana cost, or allied targets to heal their party for 700 to 740. You may only have one
-// Light's Vigil active per party.
+// Applies Light's Vigil to a friendly target for 30 sec. Your next Holy Shock cast on them triggers
+// no cooldown and heals their party. Since the 31 October hotfixes it cannot be put on an enemy.
+// You may only have one Light's Vigil active per party.
 func (paladin *Paladin) registerLightsVigil() {
 	LightsVigilRankMap.Each(paladin.registerLightsVigilRank)
 }
@@ -40,16 +37,13 @@ func (paladin *Paladin) registerLightsVigil() {
 func (paladin *Paladin) registerLightsVigilRank(_ int32, rank *spelldata.Spell) {
 	triggered := lightsVigilTriggered[rank.RankNumber()]
 	auraRank := spellData.LightsVigilTriggered.ByID(triggered.aura)
-	strikeRank := spellData.LightsVigilTriggered.ByID(triggered.strike)
-	strikeDamage := strikeRank.DamageEffect()
+	healRank := spellData.LightsVigilTriggered.ByID(triggered.heal)
+	healEffect := healRank.HealEffect()
 
-	vigil := &lightsVigil{
-		// The refund share is the rank's second effect.
-		refund: rank.EffectN(2).Percent(),
-	}
+	vigil := &lightsVigil{}
 	paladin.lightsVigils = append(paladin.lightsVigils, vigil)
 
-	vigil.auras = paladin.NewEnemyAuraArray(func(target *core.Unit) *core.Aura {
+	vigil.auras = paladin.NewAllyAuraArray(func(target *core.Unit) *core.Aura {
 		return target.GetOrRegisterAura(core.Aura{
 			Label:    rank.RankedLabel(&paladin.Unit),
 			ActionID: core.ActionID{SpellID: auraRank.ID},
@@ -57,21 +51,18 @@ func (paladin *Paladin) registerLightsVigilRank(_ int32, rank *spelldata.Spell) 
 		})
 	})
 
-	strikeConfig := spelldata.SpellConfig(&paladin.Unit, strikeRank, spelldata.Magic(core.ProcMaskSpellDamage), spelldata.Proc())
-	strikeConfig.ClassSpellMask = SpellMaskLightsVigilStrike
-	strikeConfig.ApplyEffects = func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
-		spell.CalcAndDealDamage(sim, target, strikeDamage.Average(), spell.OutcomeMagicHitAndCrit)
+	healConfig := spelldata.SpellConfig(&paladin.Unit, healRank, spelldata.Magic(core.ProcMaskSpellHealing), spelldata.Proc())
+	healConfig.Flags |= core.SpellFlagHelpful
+	healConfig.ClassSpellMask = SpellMaskLightsVigilHeal
+	healConfig.ApplyEffects = func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
+		spell.CalcAndDealHealing(sim, target, healEffect.Average(), spell.OutcomeHealingCrit)
 	}
-	vigil.strike = paladin.RegisterSpell(strikeConfig)
+	vigil.heal = paladin.RegisterSpell(healConfig)
 
-	manaMetrics := paladin.NewManaMetrics(core.ActionID{SpellID: rank.ID})
-	vigil.strike.RelatedAuraArrays = vigil.auras.ToMap()
-
-	config := spelldata.SpellConfig(&paladin.Unit, rank, spelldata.Flags(core.SpellFlagAPL))
+	config := spelldata.SpellConfig(&paladin.Unit, rank, spelldata.Flags(core.SpellFlagAPL|core.SpellFlagHelpful))
 	config.ProcMask = core.ProcMaskEmpty
 	config.ClassSpellMask = SpellMaskLightsVigil
-	config.ApplyEffects = func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
-		vigil.cost = spell.CurCast.Cost
+	config.ApplyEffects = func(sim *core.Simulation, target *core.Unit, _ *core.Spell) {
 		// One vigil per paladin: a new one replaces whatever was up.
 		for _, other := range paladin.lightsVigils {
 			for _, aura := range other.auras {
@@ -85,17 +76,23 @@ func (paladin *Paladin) registerLightsVigilRank(_ int32, rank *spelldata.Spell) 
 	config.RelatedAuraArrays = vigil.auras.ToMap()
 	paladin.RegisterSpell(config)
 
+	// The heal reaches the ally's party, which in the sim is the paladin's own.
 	vigil.consume = func(sim *core.Simulation, target *core.Unit) {
 		vigil.auras.Get(target).Deactivate(sim)
-		vigil.strike.Cast(sim, target)
-		paladin.AddMana(sim, vigil.cost*vigil.refund, manaMetrics)
+		if paladin.Party == nil {
+			vigil.heal.Cast(sim, target)
+			return
+		}
+		for _, member := range paladin.Party.Players {
+			vigil.heal.Cast(sim, &member.GetCharacter().Unit)
+		}
 	}
 }
 
-// The vigil this paladin has on the target, if any.
+// The vigil this paladin has on the ally, if any.
 func (paladin *Paladin) activeLightsVigil(target *core.Unit) *lightsVigil {
 	for _, vigil := range paladin.lightsVigils {
-		if vigil.auras.Get(target).IsActive() {
+		if aura := vigil.auras.Get(target); aura != nil && aura.IsActive() {
 			return vigil
 		}
 	}

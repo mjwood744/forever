@@ -252,10 +252,6 @@ export const GreaterBlessingOfWisdom = makeBooleanIndividualBuffInput({
 	label: 'Greater Blessing of Wisdom',
 });
 
-// greater_blessing_of_salvation: the hand-written input hides itself for tank and healing specs, a role gate no manifest row carries.
-
-// greater_blessing_of_light: the hand-written input shows itself for tank and healing specs only, a role gate no manifest row carries.
-
 export const Innervates = makeMultistateIndividualBuffInput({
 	actionId: ActionId.fromSpellId(29166),
 	numStates: 11,

@@ -9,12 +9,23 @@ import (
 
 var HolyShieldRankMap = spellData.HolyShield
 
+// One rank's shield and the damage it deals for each block.
+type holyShield struct {
+	aura   *core.Aura
+	damage *core.Spell
+}
+
 // Holy Shield (talent)
 // https://www.wowhead.com/forever/spell=20928
 //
 // Increases chance to block by 30% for 10 sec, and deals 221 Holy damage for each attack blocked
 // while active. Damage caused by Holy Shield causes 20% additional threat.
 func (paladin *Paladin) registerHolyShield(_ int32, rank *spelldata.Spell) {
+	// Rank 4 (1239570) came with the 31 October hotfixes without its level, cost or cooldown, so it
+	// stays out until the game files state them.
+	if rank.CategoryCooldown() == 0 && rank.Cooldown() == 0 {
+		return
+	}
 	actionID := core.ActionID{SpellID: rank.ID}
 	damageEffect := rank.Effect(dbcenums.A_PROC_TRIGGER_DAMAGE, 0)
 	damage := damageEffect.Mean()
@@ -48,6 +59,8 @@ func (paladin *Paladin) registerHolyShield(_ int32, rank *spelldata.Spell) {
 			holyShieldAura.RemoveStack(sim)
 		},
 	}).AttachStatBuff(stats.BlockPercent, blockPercent)
+
+	paladin.holyShields = append(paladin.holyShields, holyShield{aura: holyShieldAura, damage: procSpell})
 
 	// Steadfast Libram: more block value while the shield is up.
 	if paladin.holyShieldBlockValueMultiplier != 1 {

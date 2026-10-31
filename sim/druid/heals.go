@@ -5,17 +5,23 @@ import (
 
 	"github.com/wowsims/forever/sim/core"
 	"github.com/wowsims/forever/sim/core/spelldata"
+	"github.com/wowsims/forever/sim/core/stats"
 )
 
 // Druid healing, added locally for trio planning. Talent mods (Gift of Nature, Improved
-// Rejuvenation, Improved Regrowth, Tranquil Spirit, Naturalist, Gift of the Earthmother) reach these
-// spells through their class flags via parseTalent. Tranquility is not modelled.
+// Rejuvenation, Improved Regrowth, Tranquil Spirit, Naturalist) reach these spells through their
+// class flags via parseTalent. Tranquility is not modelled.
 
 // RegisterHealingSpells is called by the restoration spec's Initialize.
 func (druid *Druid) RegisterHealingSpells() {
 	spellData.HealingTouch.Each(func(_ int32, r *spelldata.Spell) { druid.registerDirectHeal(r) })
 	spellData.Rejuvenation.Each(func(_ int32, r *spelldata.Spell) { druid.rejuvs = append(druid.rejuvs, druid.registerHot(r)) })
-	spellData.Regrowth.Each(func(_ int32, r *spelldata.Spell) { druid.regrowths = append(druid.regrowths, druid.registerRegrowth(r)) })
+	spellData.Regrowth.Each(func(_ int32, r *spelldata.Spell) {
+		druid.regrowths = append(druid.regrowths, druid.registerRegrowth(r))
+	})
+	if druid.Talents.Bloom {
+		druid.registerBloom()
+	}
 	if druid.Talents.Swiftmend {
 		druid.registerSwiftmend()
 	}
@@ -51,6 +57,7 @@ func (druid *Druid) hotConfig(rank *spelldata.Spell, tick *spelldata.Effect) cor
 
 func (druid *Druid) registerHot(rank *spelldata.Spell) *core.Spell {
 	config := druid.hotConfig(rank, rank.PeriodicEffect())
+	druid.attachBloom(&config)
 	config.ApplyEffects = func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
 		spell.Hot(druid.healTarget(target)).Apply(sim)
 	}
@@ -61,6 +68,7 @@ func (druid *Druid) registerHot(rank *spelldata.Spell) *core.Spell {
 func (druid *Druid) registerRegrowth(rank *spelldata.Spell) *core.Spell {
 	heal := rank.HealEffect()
 	config := druid.hotConfig(rank, rank.PeriodicEffect())
+	druid.attachBloom(&config)
 	config.ApplyEffects = func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
 		target = druid.healTarget(target)
 		spell.CalcAndDealHealing(sim, target, heal.Average(), spell.OutcomeHealingCrit)
@@ -69,9 +77,43 @@ func (druid *Druid) registerRegrowth(rank *spelldata.Spell) *core.Spell {
 	return druid.RegisterSpell(config).Spell
 }
 
+// Bloom - When your Rejuvenation or Regrowth spell expires due to its duration, the target is
+// instantly healed for an amount equal to 100% of your Spirit. If either spell expires due to being
+// dispelled, the target is healed for 50% of your Spirit instead. Nothing dispels the druid's HoTs in
+// the sim, so only the first half applies.
+func (druid *Druid) registerBloom() {
+	rank := spellData.Bloom.Rank(1)
+	share := rank.EffectN(1).Percent()
+	druid.bloom = druid.RegisterSpell(core.SpellConfig{
+		ActionID:         core.ActionID{SpellID: rank.ID},
+		SpellSchool:      core.SpellSchoolNature,
+		ProcMask:         core.ProcMaskSpellHealing,
+		Flags:            core.SpellFlagHelpful | core.SpellFlagPassiveSpell,
+		DamageMultiplier: 1,
+		ThreatMultiplier: 1,
+		ApplyEffects: func(sim *core.Simulation, target *core.Unit, spell *core.Spell) {
+			spell.CalcAndDealHealing(sim, target, druid.GetStat(stats.Spirit)*share, spell.OutcomeHealing)
+		},
+	}).Spell
+}
+
+// Ends the HoT with a Bloom heal when it runs out. A HoT that a Swiftmend consumes ends early and
+// blooms nothing; one a different rank replaces still blooms, which the trios' one-rank keys never do.
+func (druid *Druid) attachBloom(config *core.SpellConfig) {
+	if !druid.Talents.Bloom {
+		return
+	}
+	config.Hot.Aura.OnExpire = func(aura *core.Aura, sim *core.Simulation) {
+		if druid.bloom != nil && !druid.consumingHot {
+			druid.bloom.Cast(sim, aura.Unit)
+		}
+	}
+}
+
 // Swiftmend: heals a target that has Rejuvenation or Regrowth for 12 sec of Rejuvenation or 18 sec of
-// Regrowth (the Classic amounts; the Forever row states a placeholder of 1). In Forever it does NOT
-// consume the HoT (confirmed in game by the user).
+// Regrowth (the Classic amounts; the Forever row states a placeholder of 1). Since the 31 October
+// hotfixes it consumes the HoT it heals from, as its tooltip says; before them it did not (confirmed
+// in game by the user).
 func (druid *Druid) registerSwiftmend() {
 	rank := spellData.Swiftmend.Highest()
 	config := spelldata.SpellConfig(&druid.Unit, rank, spelldata.Magic(core.ProcMaskSpellHealing))
@@ -88,6 +130,9 @@ func (druid *Druid) registerSwiftmend() {
 		ticks := float64(src.seconds) / tick.Period().Seconds()
 		spell.BonusCoefficient = tick.Coeff() * ticks
 		spell.CalcAndDealHealing(sim, target, tick.Average()*ticks, spell.OutcomeHealingCrit)
+		druid.consumingHot = true
+		src.hot.Deactivate(sim)
+		druid.consumingHot = false
 	}
 	druid.RegisterSpell(config)
 }
@@ -95,17 +140,18 @@ func (druid *Druid) registerSwiftmend() {
 type swiftmendSrc struct {
 	rank    *spelldata.Spell
 	seconds int
+	hot     *core.Dot
 }
 
 func (druid *Druid) swiftmendSource(target *core.Unit) *swiftmendSrc {
 	for i, s := range druid.rejuvs {
-		if s.Hot(target).IsActive() {
-			return &swiftmendSrc{spellData.Rejuvenation.Rank(int32(i + 1)), 12}
+		if hot := s.Hot(target); hot.IsActive() {
+			return &swiftmendSrc{spellData.Rejuvenation.Rank(int32(i + 1)), 12, hot}
 		}
 	}
 	for i, s := range druid.regrowths {
-		if s.Hot(target).IsActive() {
-			return &swiftmendSrc{spellData.Regrowth.Rank(int32(i + 1)), 18}
+		if hot := s.Hot(target); hot.IsActive() {
+			return &swiftmendSrc{spellData.Regrowth.Rank(int32(i + 1)), 18, hot}
 		}
 	}
 	return nil
@@ -146,9 +192,6 @@ func (druid *Druid) registerWildGrowth(_ int32, rank *spelldata.Spell) {
 // Forever restoration talents that only modify the spells above through class flags.
 func (druid *Druid) applyHealingTalentMods() {
 	druid.parseTalent(druid.Talents.GiftOfNature, spellData.GiftOfNature)
-	if druid.Talents.GiftOfTheEarthmother {
-		druid.parseTalent(1, spellData.GiftOfTheEarthmother)
-	}
 	druid.parseTalent(druid.Talents.TranquilSpirit, spellData.TranquilSpirit)
 	druid.parseTalent(druid.Talents.ImprovedRejuvenation, spellData.ImprovedRejuvenation)
 	druid.parseTalent(druid.Talents.ImprovedRegrowth, spellData.ImprovedRegrowth)

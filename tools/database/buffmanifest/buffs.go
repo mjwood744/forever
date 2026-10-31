@@ -396,22 +396,6 @@ var Individual = []BuffSpec{
 		},
 	},
 	{
-		Field:   "greater_blessing_of_salvation",
-		SpellID: 25895,
-	},
-	// Raises the healing Holy Light and Flash of Light do through flat modifiers on those families.
-	// The paladin's heals read the bonus off their own rows and only look for the aura, which the
-	// category tags.
-	{
-		Field:    "greater_blessing_of_light",
-		SpellID:  25890,
-		Kind:     KindManual,
-		Category: "BlessingOfLight",
-		Stats: []proto.Stat{
-			proto.Stat_StatHealingPower,
-		},
-	},
-	{
 		Field:    "innervates",
 		SpellID:  29166,
 		Kind:     KindExternalCD,

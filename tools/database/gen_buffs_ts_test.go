@@ -105,10 +105,10 @@ func TestRenderBuffsDebuffsTSSkips(t *testing.T) {
 			Reason: "no SpellName row for Misery.",
 		},
 		{
-			BuffSpec: buffmanifest.BuffSpec{Field: "greater_blessing_of_salvation"},
-			Scope:    buffmanifest.ScopeIndividual, Proto: buffmanifest.ProtoBool,
-			Go: "GreaterBlessingOfSalvation", Owner: proto.Class_ClassPaladin,
-			SpellID: 25895, DBName: "Greater Blessing of Salvation",
+			BuffSpec: buffmanifest.BuffSpec{Field: "retribution_aura"},
+			Scope:    buffmanifest.ScopeParty, Proto: buffmanifest.ProtoBool,
+			Go: "RetributionAura", Owner: proto.Class_ClassPaladin,
+			SpellID: 10301, DBName: "Retribution Aura",
 		},
 	}
 
@@ -118,14 +118,14 @@ func TestRenderBuffsDebuffsTSSkips(t *testing.T) {
 	}
 	out := string(rendered)
 
-	for _, name := range []string{"Misery", "GreaterBlessingOfSalvation"} {
+	for _, name := range []string{"Misery", "RetributionAura"} {
 		if strings.Contains(out, "export const "+name+" ") {
 			t.Errorf("%s has no settings input but rendered one:\n%s", name, out)
 		}
 	}
 	for _, comment := range []string{
 		"// misery: no SpellName row for Misery.",
-		"// greater_blessing_of_salvation: " + manualBuffInputs["greater_blessing_of_salvation"],
+		"// retribution_aura: " + manualBuffInputs["retribution_aura"],
 	} {
 		if !strings.Contains(out, comment) {
 			t.Errorf("the rendered file is missing %q:\n%s", comment, out)

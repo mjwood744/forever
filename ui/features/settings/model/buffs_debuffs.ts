@@ -1,4 +1,4 @@
-import { makeBooleanIndividualBuffInput, makeBooleanPartyBuffInput } from '@features/inputs/icon_inputs';
+import { makeBooleanPartyBuffInput } from '@features/inputs/icon_inputs';
 import { Class, Stat } from '@generated/proto/common';
 import i18n from '@i18n/config';
 import { ActionId } from '@sim/proto/action_id';
@@ -17,20 +17,6 @@ export * from './buffs_debuffs_auto_gen';
 export const Innervate = Generated.Innervates;
 export const PowerInfusion = Generated.PowerInfusions;
 export const ManaTideTotem = Generated.ManaTideTotems;
-
-// Individual Buffs
-export const GreaterBlessingOfSalvation = makeBooleanIndividualBuffInput({
-	actionId: ActionId.fromSpellId(25895),
-	fieldName: 'greaterBlessingOfSalvation',
-	label: 'Mass Salvation',
-	showWhen: player => !player.getPlayerSpec().isTankSpec && !player.getPlayerSpec().isHealingSpec,
-});
-export const GreaterBlessingOfLight = makeBooleanIndividualBuffInput({
-	actionId: ActionId.fromSpellId(25890),
-	fieldName: 'greaterBlessingOfLight',
-	label: 'Greater Blessing of Light',
-	showWhen: player => player.getPlayerSpec().isHealingSpec || player.getPlayerSpec().isTankSpec,
-});
 
 // Party Buffs
 export const RetributionAura = makeBooleanPartyBuffInput({
@@ -74,8 +60,6 @@ export const BUFFS_CONFIG = inDisplayOrder(
 		Generated.PrayerOfFortitude,
 		Generated.GreaterBlessingOfMight,
 		Generated.GreaterBlessingOfWisdom,
-		{ config: GreaterBlessingOfSalvation, stats: [] },
-		{ config: GreaterBlessingOfLight, stats: [Stat.StatHealingPower], ownerClass: Class.ClassPaladin },
 		statOptionGroup(i18n.t('settings_tab.raid_buffs.shadow_resistance'), [Generated.PrayerOfShadowProtection, Generated.ShadowResistanceAura]),
 		statOptionGroup(i18n.t('settings_tab.raid_buffs.fire_resistance'), [Generated.FireResistanceAura, Generated.FireResistanceTotem]),
 		statOptionGroup(i18n.t('settings_tab.raid_buffs.frost_resistance'), [Generated.FrostResistanceAura, Generated.FrostResistanceTotem]),

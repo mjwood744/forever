@@ -19,7 +19,7 @@ func ashyn() *proto.Player {
 	m.TalentsString = "0552205003100311531-03-0533"
 	data, _ := os.ReadFile("../../../ui/specs/mage/dps/apls/arcaneFrostFill.apl.json")
 	m.Rotation = core.APLRotationFromJsonString(addShoot(string(data)))
-	m.Buffs = &proto.IndividualBuffs{GreaterBlessingOfSalvation: true}
+	m.Buffs = &proto.IndividualBuffs{}
 	return m
 }
 

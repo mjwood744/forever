@@ -99,10 +99,6 @@ describe('the buff registries', () => {
 		expect(groupWith(BuffDebuffInputs.DEBUFFS_CONFIG, BuffDebuffInputs.SunderArmor)?.stats).toEqual([Stat.StatAttackPower]);
 	});
 
-	it('puts the hand-written inputs themselves at those positions, not lookalikes', () => {
-		expect(BuffDebuffInputs.BUFFS_CONFIG[8].config).toBe(BuffDebuffInputs.GreaterBlessingOfSalvation);
-	});
-
 	// Off, the shout, and the shout from a warrior wearing three pieces of Battlegear of Wrath, whose
 	// set spell 23563 is the improved corner's icon: one picker rather than a second boolean next to it.
 	it('offers Battle Shout as a single three-state icon', () => {

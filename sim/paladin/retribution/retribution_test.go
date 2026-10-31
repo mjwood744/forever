@@ -74,8 +74,8 @@ func retributionSuite() core.CharacterSuiteConfig {
 	}
 }
 
-var HolyShockTalents = "550030032101012--052252300012303"
-var TwistOfLightTalents = "55003003--05225331101330321"
+var HolyShockTalents = "05023210201021-5-0523320000120033"
+var TwistOfLightTalents = "050230002-5-05233301101300331"
 
 var DefaultConsumables = &proto.ConsumesSpec{
 	ConjuredId: 12662, // Demonic Rune

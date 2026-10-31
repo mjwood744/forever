@@ -13,7 +13,6 @@ func (druid *Druid) registerRestorationTalents() {
 	// Tier 3
 	druid.applyReflection()
 	druid.applyGiftOfNature()
-	druid.applyGiftOfTheEarthmother()
 
 	// Tier 4
 	druid.applyTranquilSpirit()
@@ -69,16 +68,6 @@ func (druid *Druid) applyReflection() {
 // the effect can be modelled; there is no TBC equivalent to port.
 func (druid *Druid) applyGiftOfNature() {
 	if druid.Talents.GiftOfNature == 0 {
-		return
-	}
-}
-
-// applyGiftOfTheEarthmother implements Gift of the Earthmother, new in Forever.
-//
-// TODO: To be implemented. Needs the Forever tooltip and a spellData ladder before
-// the effect can be modelled; there is no TBC equivalent to port.
-func (druid *Druid) applyGiftOfTheEarthmother() {
-	if !druid.Talents.GiftOfTheEarthmother {
 		return
 	}
 }
