@@ -89,6 +89,7 @@ func TestTrioDungeons(t *testing.T) {
 				for _, p := range d.Pulls {
 					tr := makeTrio(n, lvl)
 					e := pullEncounter(p)
+					applyHex(e, lvl)
 					f := fight{name: p.Label, count: len(p.Mobs), boss: p.Boss}
 					stats := core.ComputeStats(&proto.ComputeStatsRequest{Raid: tr.raid(), Encounter: e, SkipRotation: true}).RaidStats.Parties[0].Players
 					have := registered(tr.raid(), e)

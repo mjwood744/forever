@@ -290,7 +290,11 @@ func makeDuoNyxxMalyce(lvl int32) trio {
 	if lvl >= 12 {
 		armor = proto.PriestOptions_InnerFire
 	}
-	nyxx := newPlayer("Nyxx", lvl, proto.Class_ClassPriest, proto.Race_RaceUndead,
+	race := proto.Race_RaceUndead
+	if os.Getenv("DUO_TROLL") != "" {
+		race = proto.Race_RaceTroll // DUO_TROLL=1: a Troll Nyxx, who has Hex of Weakness from 10
+	}
+	nyxx := newPlayer("Nyxx", lvl, proto.Class_ClassPriest, race,
 		&proto.Player_HealerPriest{HealerPriest: &proto.HealerPriest{Options: &proto.HealerPriest_Options{ClassOptions: &proto.PriestOptions{Armor: armor}}}})
 	summon, warlockArmor := proto.WarlockOptions_Imp, proto.WarlockOptions_NoArmor
 	if lvl >= 10 {
@@ -441,6 +445,10 @@ func presses(name string, t trio) []press {
 			if os.Getenv("DUO_SMITE") == "" {
 				ps = ps[:len(ps)-1]
 			}
+			if os.Getenv("DUO_TROLL") != "" {
+				// Hex of Weakness kept on the Voidwalker's target, after the heals
+				ps = append(ps[:5:5], append([]press{{key: "HEX", cond: manaAbove(20)}}, ps[5:]...)...)
+			}
 			ps = append(ps, press{key: "2"})
 		} else if name == "Nyxx" {
 			ps = append(ps, press{key: "2"})
@@ -509,6 +517,19 @@ func buildAPL(name string, t trio, lvl int32, f fight, have map[int32]bool, drop
 	var prepull, prio []string
 	seq := 0
 	for _, p := range presses(name, t) {
+		if p.key == "HEX" {
+			// no key on the macro sheets yet: the best rank of Hex of Weakness she knows, when the target has none
+			var best int32
+			for _, id := range []int32{9035, 19281, 19282, 19283, 19284, 19285} {
+				if have[id] {
+					best = id
+				}
+			}
+			if best != 0 {
+				prio = append(prio, listItem(castJSON(best, unitTarget()), and(p.cond, not(aura(unitTarget(), best)))))
+			}
+			continue
+		}
 		items, ok := keys[p.key]
 		if !ok || (p.bossOnly && !f.boss) {
 			continue
@@ -646,8 +667,26 @@ func registered(r *proto.Raid, e *proto.Encounter) []map[int32]bool {
 	return out
 }
 
+// Hex of Weakness lowers the mob's attack power, but the sim's mobs hit for a set amount and carry none, so a
+// hexed mob would hit as hard as before. DUO_TROLL instead takes the lost attack power off the first mob's
+// melee, at the classic 14 attack power per point of damage per second; Nyxx keeps Hex on that mob.
+func applyHex(e *proto.Encounter, lvl int32) {
+	if os.Getenv("DUO_TROLL") == "" || lvl < 10 || len(e.Targets) == 0 {
+		return
+	}
+	ap := map[int32]float64{1: 43, 2: 57, 3: 85, 4: 106, 5: 155, 6: 204}[lvl/10]
+	m := e.Targets[0]
+	dps := m.MinBaseDamage * 1.2 / m.SwingSpeed
+	if pct, err := strconv.ParseFloat(os.Getenv("HEX_PCT"), 64); err == nil {
+		// HEX_PCT=20: what if Hex cut the mob's damage by that share instead
+		dps, ap = dps*(1-pct/100), 0
+	}
+	m.MinBaseDamage = max(dps-ap/14, 0.3*dps) * m.SwingSpeed / 1.2
+}
+
 func runLevel(t trio, lvl int32, f fight, iters int32) (*proto.RaidSimResult, map[string]bool) {
 	e := encounter(f, lvl)
+	applyHex(e, lvl)
 	have := registered(t.raid(), e)
 	dropped := map[string]bool{}
 	for i, m := range t.members {
