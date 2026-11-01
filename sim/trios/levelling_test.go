@@ -48,10 +48,16 @@ func TestTrioLevelling(t *testing.T) {
 							net += r.ActualGain
 						}
 					}
+					death := ps[i].ChanceOfDeath
+					for _, pet := range ps[i].Pets {
+						if pet.Name == "Voidwalker" {
+							death = max(death, pet.ChanceOfDeath)
+						}
+					}
 					st := stats[i].FinalStats.Stats
 					line += fmt.Sprintf("|%s class=%d mana=%.0f pool=%.0f spirit=%.0f mp5=%.0f death=%.3f oom=%.1f",
 						m.name, m.player.Class, net/float64(iters), st[proto.Stat_StatMana], st[proto.Stat_StatSpirit],
-						st[proto.Stat_StatMP5], ps[i].ChanceOfDeath, ps[i].SecondsOomAvg)
+						st[proto.Stat_StatMP5], death, ps[i].SecondsOomAvg)
 				}
 				fmt.Println(line)
 			}

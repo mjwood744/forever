@@ -170,11 +170,11 @@ type member struct {
 }
 
 type trio struct {
-	n       int
-	members []member // party order
-	tank    *proto.UnitReference
-	tankRef string // the tank as an APL unit
-	petRef  string // Hawke's pet, "" without one
+	n        int
+	members  []member // party order
+	tank     *proto.UnitReference
+	tankRef  string // the tank as an APL unit
+	petRef   string // Hawke's pet, "" without one
 	otherRef string // the healer's second heal target; "" means player 2
 }
 
@@ -252,6 +252,9 @@ func makeTrio(n int, lvl int32) trio {
 		return trio{2, []member{{"Wyther", wy}, {"Skarr", sk}, {"Malyce", ma}},
 			&proto.UnitReference{Type: proto.UnitReference_Player, Index: 1}, unitPlayer(1), "", ""}
 	}
+	if n == 4 {
+		return makeDuoNyxxMalyce(lvl)
+	}
 	pet := proto.HunterOptions_PetNone
 	if lvl >= 10 {
 		pet = proto.HunterOptions_Turtle
@@ -278,6 +281,60 @@ func makeTrio(n int, lvl int32) trio {
 		t.tankRef = unitPlayer(2)
 	}
 	return t
+}
+
+// Duo 1: Nyxx on the main screen healing and wanding, Malyce following with her Voidwalker tanking from 10.
+// Below 10 the mobs go for Nyxx.
+func makeDuoNyxxMalyce(lvl int32) trio {
+	var armor proto.PriestOptions_Armor
+	if lvl >= 12 {
+		armor = proto.PriestOptions_InnerFire
+	}
+	nyxx := newPlayer("Nyxx", lvl, proto.Class_ClassPriest, proto.Race_RaceUndead,
+		&proto.Player_HealerPriest{HealerPriest: &proto.HealerPriest{Options: &proto.HealerPriest_Options{ClassOptions: &proto.PriestOptions{Armor: armor}}}})
+	summon, warlockArmor := proto.WarlockOptions_Imp, proto.WarlockOptions_NoArmor
+	if lvl >= 10 {
+		summon = proto.WarlockOptions_Voidwalker
+	}
+	if lvl >= 20 {
+		warlockArmor = proto.WarlockOptions_DemonArmor
+	}
+	ma := newPlayer("Malyce", lvl, proto.Class_ClassWarlock, proto.Race_RaceTroll,
+		&proto.Player_Warlock{Warlock: &proto.Warlock{Options: &proto.Warlock_Options{ClassOptions: &proto.WarlockOptions{Summon: summon, Armor: warlockArmor}}}})
+	t := trio{4, []member{{"Nyxx", nyxx}, {"Malyce", ma}}, nil, "", "", ""}
+	if lvl >= 10 {
+		// The warlock registers the Imp, Voidwalker, Succubus and Felhunter in that order, so the Voidwalker is pet 1.
+		t.tank = &proto.UnitReference{Type: proto.UnitReference_Pet, Index: 1, Owner: &proto.UnitReference{Type: proto.UnitReference_Player, Index: 1}}
+		t.tankRef = `{"type":"Pet","index":1,"owner":{"type":"Player","index":1}}`
+		t.petRef = t.tankRef
+	} else {
+		nyxx.InFrontOfTarget = true
+		t.tank = &proto.UnitReference{Type: proto.UnitReference_Player, Index: 0}
+		t.tankRef = unitPlayer(0)
+	}
+	return t
+}
+
+// The other healer's keys name the trio's tank ({main}, party slot 1) and the damage dealer ({other}, slot 2).
+// In the duo the tank is the Voidwalker (or Nyxx herself below 10) and the damage dealer Malyce in slot 1.
+func duoTarget(raw string, t trio) string {
+	var u struct {
+		Type  string `json:"type"`
+		Index int    `json:"index"`
+	}
+	if raw == "" || json.Unmarshal([]byte(raw), &u) != nil || u.Type != "Player" {
+		return raw
+	}
+	switch u.Index {
+	case 1:
+		if t.tankRef == unitPlayer(0) {
+			return unitSelf()
+		}
+		return t.tankRef
+	case 2:
+		return unitPlayer(1)
+	}
+	return raw
 }
 
 func (t trio) raid() *proto.Raid {
@@ -364,6 +421,9 @@ func presses(name string, t trio) []press {
 		if t.otherRef != "" {
 			other = t.otherRef
 		}
+		if t.n == 4 {
+			other = unitPlayer(1) // Malyce, second in the duo
+		}
 		mana := 50
 		if name == "Wyldd" {
 			mana = 60
@@ -376,7 +436,13 @@ func presses(name string, t trio) []press {
 			{key: "Shift+4", cond: hpBelow(self, 50)},
 			{key: "1", cond: manaAbove(mana)},
 		}
-		if name == "Nyxx" {
+		if name == "Nyxx" && t.n == 4 {
+			// In the duo Nyxx only heals and wands; DUO_SMITE=1 lets her Smite above half mana as well.
+			if os.Getenv("DUO_SMITE") == "" {
+				ps = ps[:len(ps)-1]
+			}
+			ps = append(ps, press{key: "2"})
+		} else if name == "Nyxx" {
 			ps = append(ps, press{key: "2"})
 		}
 		if name == "Wyther" {
@@ -386,6 +452,11 @@ func presses(name string, t trio) []press {
 	case "Ashyn":
 		return []press{{key: "Shift+6", cond: manaBelow(15)}, {key: "2", cond: targetsAtLeast(3)}, {key: "1", cond: manaAbove(8)}, {key: "5"}}
 	case "Malyce":
+		if t.n == 4 {
+			// One visit to her window a pull: the curse and the damage over time spells of her attack key, once
+			// each on the pull's first target, then the wand.
+			return []press{{key: "4", cond: "CURSE"}, {key: "1", cond: "ONCE"}, {key: "5"}}
+		}
 		return []press{{key: "Shift+6", cond: and(manaBelow(35), hpAbove(self, 60))}, {key: "4", cond: "CURSE"},
 			{key: "2", cond: targetsAtLeast(3)}, {key: "3", bossOnly: true}, {key: "1", cond: manaAbove(8)}, {key: "5"}}
 	case "Hawke":
@@ -444,6 +515,9 @@ func buildAPL(name string, t trio, lvl int32, f fight, have map[int32]bool, drop
 		}
 		for _, it := range items {
 			target := targetJSON(it.Target)
+			if t.n == 4 && name == "Nyxx" {
+				target = duoTarget(target, t)
+			}
 			cond := p.cond
 			// Conditions that read the key's own spells.
 			var ids []int32
@@ -453,6 +527,24 @@ func buildAPL(name string, t trio, lvl int32, f fight, have map[int32]bool, drop
 				} else if len(step) > 0 {
 					dropped[fmt.Sprintf("%s %s: spell %d", name, p.key, step[0])] = true
 				}
+			}
+			if cond == "ONCE" {
+				// the attack key's steps that put a damage over time spell up, cast once as a sequence that never resets
+				var dots []int32
+				for _, id := range ids {
+					if s := spelldata.Find(id); s != nil && s.PeriodicEffect() != nil {
+						dots = append(dots, id)
+					}
+				}
+				seq++
+				steps := make([]string, len(dots))
+				for i, id := range dots {
+					steps[i] = castJSON(id, target)
+				}
+				if len(steps) > 0 {
+					prio = append(prio, listItem(fmt.Sprintf(`{"sequence":{"name":"s%d","actions":[%s]}}`, seq, strings.Join(steps, ",")), ""))
+				}
+				continue
 			}
 			if len(ids) == 0 {
 				continue
