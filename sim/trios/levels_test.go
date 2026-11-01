@@ -467,7 +467,9 @@ func presses(name string, t trio) []press {
 		if t.n == 4 {
 			// One visit to her window a pull: the curse and the damage over time spells of her attack key, once
 			// each on the pull's first target, then the wand.
-			return []press{{key: "4", cond: "CURSE"}, {key: "1", cond: "ONCE"}, {key: "5"}}
+			// On 4 or more mobs she channels Rain of Fire (from 20) while she has the mana.
+			return []press{{key: "4", cond: "CURSE"}, {key: "1", cond: "ONCE"},
+				{key: "ROF", cond: and(targetsAtLeast(4), manaAbove(15))}, {key: "5"}}
 		}
 		return []press{{key: "Shift+6", cond: and(manaBelow(35), hpAbove(self, 60))}, {key: "4", cond: "CURSE"},
 			{key: "2", cond: targetsAtLeast(3)}, {key: "3", bossOnly: true}, {key: "1", cond: manaAbove(8)}, {key: "5"}}
@@ -521,6 +523,19 @@ func buildAPL(name string, t trio, lvl int32, f fight, have map[int32]bool, drop
 	var prepull, prio []string
 	seq := 0
 	for _, p := range presses(name, t) {
+		if p.key == "ROF" {
+			// Rain of Fire, which the duo sheet has on her key 2 from 20; the trio brackets only add it at 24
+			var best int32
+			for _, id := range []int32{5740, 6219, 11677, 11678} {
+				if have[id] {
+					best = id
+				}
+			}
+			if best != 0 && lvl >= 20 {
+				prio = append(prio, listItem(castJSON(best, unitTarget()), p.cond))
+			}
+			continue
+		}
 		if p.key == "HEX" {
 			// no key on the macro sheets yet: the best rank of Hex of Weakness she knows, when the target has none
 			var best int32

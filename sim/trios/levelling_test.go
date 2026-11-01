@@ -31,7 +31,12 @@ func TestTrioLevelling(t *testing.T) {
 	iters := iterations()
 	for _, n := range trios {
 		for lvl := from; lvl <= to; lvl++ {
-			for _, f := range fights[:2] {
+			pulls := fights[:2]
+			// BIG=1: 4- and 5-mob pulls instead
+			if os.Getenv("BIG") != "" {
+				pulls = []fight{{"4 mobs", 4, 0, 1, 0, false}, {"5 mobs", 5, 0, 1, 0, false}}
+			}
+			for _, f := range pulls {
 				tr := makeTrio(n, lvl)
 				e := encounter(f, lvl)
 				stats := core.ComputeStats(&proto.ComputeStatsRequest{Raid: tr.raid(), Encounter: e, SkipRotation: true}).RaidStats.Parties[0].Players
@@ -48,16 +53,16 @@ func TestTrioLevelling(t *testing.T) {
 							net += r.ActualGain
 						}
 					}
-					death := ps[i].ChanceOfDeath
+					death, own, vw := ps[i].ChanceOfDeath, ps[i].ChanceOfDeath, 0.0
 					for _, pet := range ps[i].Pets {
 						if pet.Name == "Voidwalker" {
-							death = max(death, pet.ChanceOfDeath)
+							death, vw = max(death, pet.ChanceOfDeath), pet.ChanceOfDeath
 						}
 					}
 					st := stats[i].FinalStats.Stats
-					line += fmt.Sprintf("|%s class=%d mana=%.0f pool=%.0f spirit=%.0f mp5=%.0f death=%.3f oom=%.1f",
+					line += fmt.Sprintf("|%s class=%d mana=%.0f pool=%.0f spirit=%.0f mp5=%.0f death=%.3f own=%.3f vw=%.3f oom=%.1f",
 						m.name, m.player.Class, net/float64(iters), st[proto.Stat_StatMana], st[proto.Stat_StatSpirit],
-						st[proto.Stat_StatMP5], death, ps[i].SecondsOomAvg)
+						st[proto.Stat_StatMP5], death, own, vw, ps[i].SecondsOomAvg)
 				}
 				fmt.Println(line)
 			}
