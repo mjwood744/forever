@@ -303,7 +303,11 @@ func makeDuoNyxxMalyce(lvl int32) trio {
 	if lvl >= 20 {
 		warlockArmor = proto.WarlockOptions_DemonArmor
 	}
-	ma := newPlayer("Malyce", lvl, proto.Class_ClassWarlock, proto.Race_RaceTroll,
+	malyceRace := proto.Race_RaceTroll
+	if os.Getenv("DUO_UNDEAD") != "" {
+		malyceRace = proto.Race_RaceUndead // DUO_UNDEAD=1: an Undead Malyce, with Touch of the Grave
+	}
+	ma := newPlayer("Malyce", lvl, proto.Class_ClassWarlock, malyceRace,
 		&proto.Player_Warlock{Warlock: &proto.Warlock{Options: &proto.Warlock_Options{ClassOptions: &proto.WarlockOptions{Summon: summon, Armor: warlockArmor}}}})
 	t := trio{4, []member{{"Nyxx", nyxx}, {"Malyce", ma}}, nil, "", "", ""}
 	if lvl >= 10 {
