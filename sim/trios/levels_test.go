@@ -455,6 +455,10 @@ func presses(name string, t trio) []press {
 			if os.Getenv("DUO_SMITE") == "" {
 				ps = ps[:len(ps)-1]
 			}
+			if os.Getenv("DUO_KEYS") != "" {
+				// the duo sheet's Tab DoT key: Shadow Word: Pain on her target while she has mana to spare
+				ps = append(ps[:5:5], append([]press{{key: "3", cond: "DOT50"}}, ps[5:]...)...)
+			}
 			if os.Getenv("DUO_TROLL") != "" {
 				// Hex of Weakness kept on the Voidwalker's target, after the heals
 				ps = append(ps[:5:5], append([]press{{key: "HEX", cond: manaAbove(20)}}, ps[5:]...)...)
@@ -473,6 +477,14 @@ func presses(name string, t trio) []press {
 		if t.n == 4 {
 			// One visit to her window a pull: the curse and the damage over time spells of her attack key, once
 			// each on the pull's first target, then the wand.
+			if os.Getenv("DUO_KEYS") != "" {
+				// DUO_KEYS=1, the duo sheet of 1 Nov: Malyce is the main, one spell a key. Curse, Immolate and
+				// Corruption on the target, Rain of Fire on 4 or more, Life Tap when low, Shadow Bolt above half
+				// mana and the wand below.
+				return []press{{key: "Shift+6", cond: and(manaBelow(35), hpAbove(self, 60))}, {key: "4", cond: "CURSE"},
+					{key: "2", cond: "CURSE"}, {key: "3", cond: "CURSE"},
+					{key: "5", cond: and(targetsAtLeast(4), manaAbove(15))}, {key: "1", cond: manaAbove(50)}, {key: "6"}}
+			}
 			// On 4 or more mobs she channels Rain of Fire (from 20) while she has the mana.
 			return []press{{key: "4", cond: "CURSE"}, {key: "1", cond: "ONCE"},
 				{key: "ROF", cond: and(targetsAtLeast(4), manaAbove(15))}, {key: "5"}}
@@ -596,7 +608,7 @@ func buildAPL(name string, t trio, lvl int32, f fight, have map[int32]bool, drop
 				continue
 			}
 			switch cond {
-			case "SEAL", "CURSE", "SHIFT6":
+			case "SEAL", "CURSE", "SHIFT6", "DOT50":
 				unit := self(cond, t)
 				var none []string
 				for _, id := range ids {
@@ -605,6 +617,9 @@ func buildAPL(name string, t trio, lvl int32, f fight, have map[int32]bool, drop
 				cond = and(none...)
 				if p.cond == "SHIFT6" {
 					cond = shift6(name, t, ids, cond)
+				}
+				if p.cond == "DOT50" {
+					cond = and(cond, manaAbove(50))
 				}
 				if p.cond == "SEAL" {
 					// the steady seal, once Judgement has used the opening one
@@ -653,7 +668,7 @@ func buildAPL(name string, t trio, lvl int32, f fight, have map[int32]bool, drop
 // a shield on the tank.
 func self(cond string, t trio) string {
 	switch cond {
-	case "CURSE":
+	case "CURSE", "DOT50":
 		return unitTarget()
 	}
 	return unitSelf()
