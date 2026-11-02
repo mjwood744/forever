@@ -294,6 +294,9 @@ func makeDuoNyxxMalyce(lvl int32) trio {
 	if os.Getenv("DUO_TROLL") != "" {
 		race = proto.Race_RaceTroll // DUO_TROLL=1: a Troll Nyxx, who has Hex of Weakness from 10
 	}
+	if v, ok := proto.Race_value["Race"+os.Getenv("DUO_PRIEST_RACE")]; ok && os.Getenv("DUO_PRIEST_RACE") != "" {
+		race = proto.Race(v) // DUO_PRIEST_RACE=Dwarf etc.
+	}
 	nyxx := newPlayer("Nyxx", lvl, proto.Class_ClassPriest, race,
 		&proto.Player_HealerPriest{HealerPriest: &proto.HealerPriest{Options: &proto.HealerPriest_Options{ClassOptions: &proto.PriestOptions{Armor: armor}}}})
 	summon, warlockArmor := proto.WarlockOptions_Imp, proto.WarlockOptions_NoArmor
@@ -306,6 +309,9 @@ func makeDuoNyxxMalyce(lvl int32) trio {
 	malyceRace := proto.Race_RaceTroll
 	if os.Getenv("DUO_UNDEAD") != "" {
 		malyceRace = proto.Race_RaceUndead // DUO_UNDEAD=1: an Undead Malyce, with Touch of the Grave
+	}
+	if v, ok := proto.Race_value["Race"+os.Getenv("DUO_LOCK_RACE")]; ok && os.Getenv("DUO_LOCK_RACE") != "" {
+		malyceRace = proto.Race(v) // DUO_LOCK_RACE=Gnome etc.
 	}
 	ma := newPlayer("Malyce", lvl, proto.Class_ClassWarlock, malyceRace,
 		&proto.Player_Warlock{Warlock: &proto.Warlock{Options: &proto.Warlock_Options{ClassOptions: &proto.WarlockOptions{Summon: summon, Armor: warlockArmor}}}})
