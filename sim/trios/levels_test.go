@@ -252,8 +252,25 @@ func makeTrio(n int, lvl int32) trio {
 		return trio{2, []member{{"Wyther", wy}, {"Skarr", sk}, {"Malyce", ma}},
 			&proto.UnitReference{Type: proto.UnitReference_Player, Index: 1}, unitPlayer(1), "", ""}
 	}
-	if n == 4 {
+	switch n {
+	case 4:
 		return makeDuoNyxxMalyce(lvl)
+	case 5:
+		// Duo 2: Hawke on the main screen with the Turtle tanking from 10, Wyldd following and healing it.
+		// Below 10 the mobs go for Hawke.
+		t := makeTrio(3, lvl)
+		t.n, t.members, t.otherRef = 5, t.members[:2], unitPlayer(0)
+		if lvl < 10 {
+			t.members[0].player.InFrontOfTarget, t.members[0].player.DistanceFromTarget = true, 5
+			t.tank = &proto.UnitReference{Type: proto.UnitReference_Player, Index: 0}
+			t.tankRef = unitPlayer(0)
+		}
+		return t
+	case 6:
+		// Duo 3: Rellyk tanking on the main screen, Wyther following and healing him.
+		wy := makeTrio(2, lvl).members[0]
+		rel := makeTrio(1, lvl).members[1]
+		return trio{6, []member{wy, rel}, &proto.UnitReference{Type: proto.UnitReference_Player, Index: 1}, unitPlayer(1), "", unitPlayer(1)}
 	}
 	pet := proto.HunterOptions_PetNone
 	if lvl >= 10 {

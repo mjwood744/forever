@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"strconv"
+	"strings"
 	"testing"
 
 	"github.com/wowsims/forever/sim/core"
@@ -55,7 +56,7 @@ func TestTrioLevelling(t *testing.T) {
 					}
 					death, own, vw := ps[i].ChanceOfDeath, ps[i].ChanceOfDeath, 0.0
 					for _, pet := range ps[i].Pets {
-						if pet.Name == "Voidwalker" {
+						if pet.Name == "Turtle" || pet.Name == "Voidwalker" || strings.Contains(pet.Name, "Pet") {
 							death, vw = max(death, pet.ChanceOfDeath), pet.ChanceOfDeath
 						}
 					}
