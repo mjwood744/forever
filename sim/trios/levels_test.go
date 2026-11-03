@@ -298,6 +298,12 @@ func makeTrio(n int, lvl int32) trio {
 			return trio{6, []member{wy, rel}, &proto.UnitReference{Type: proto.UnitReference_Player, Index: 0}, unitPlayer(0), "", unitPlayer(0)}
 		case "ret":
 			core.WithSpec(rel.player, &proto.Player_RetributionPaladin{RetributionPaladin: &proto.RetributionPaladin{Options: &proto.RetributionPaladin_Options{ClassOptions: &proto.PaladinOptions{}}}})
+		case "ele":
+			// =ele and =enh: Rellyk tanks and heals himself, Wyther does damage and heals him only when he is low.
+			core.WithSpec(wy.player, &proto.Player_ElementalShaman{ElementalShaman: &proto.ElementalShaman{Options: &proto.ElementalShaman_Options{ClassOptions: &proto.ShamanOptions{}}}})
+		case "enh":
+			core.WithSpec(wy.player, &proto.Player_EnhancementShaman{EnhancementShaman: &proto.EnhancementShaman{Options: &proto.EnhancementShaman_Options{ClassOptions: &proto.ShamanOptions{}}}})
+			wy.player.DistanceFromTarget = 5
 		}
 		return trio{6, []member{wy, rel}, &proto.UnitReference{Type: proto.UnitReference_Player, Index: 1}, unitPlayer(1), "", unitPlayer(1)}
 	}
@@ -479,6 +485,10 @@ func presses(name string, t trio) []press {
 	// ROLE_<name>=healer or =tank plays a character in a role its own keys don't cover, with keys that
 	// KEYS defines for it in that role.
 	switch os.Getenv("ROLE_" + name) {
+	case "dps":
+		// a damage dealer who saves the tank when it is low: the emergency heal, then the damage keys
+		return []press{{key: "Shift+2", cond: hpBelow(t.tankRef, 35)}, {key: "Shift+6", prepull: true},
+			{key: "3", cond: "DOT50"}, {key: "2", cond: and(targetsAtLeast(2), manaAbove(20))}, {key: "1", cond: manaAbove(10)}, {key: "Shift+6", cond: "SHIFT6"}}
 	case "healer":
 		name = "Wyther"
 	case "tank":
