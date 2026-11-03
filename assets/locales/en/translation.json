@@ -3377,6 +3377,7 @@
 			"run": "Rank every build",
 			"running": "Simming {{done}} of {{total}}",
 			"details": "Show details",
+			"build": "Build",
 			"no_gear": "No gear preset",
 			"gear_incomplete": "Gear incomplete",
 			"failed": "Builds that did not sim ({{count}}):",

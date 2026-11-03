@@ -11385,6 +11385,9 @@
 						"details": {
 							"type": "string"
 						},
+						"build": {
+							"type": "string"
+						},
 						"no_gear": {
 							"type": "string"
 						},
@@ -11422,6 +11425,7 @@
 						"run",
 						"running",
 						"details",
+						"build",
 						"no_gear",
 						"gear_incomplete",
 						"failed",

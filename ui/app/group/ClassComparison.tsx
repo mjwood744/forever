@@ -126,6 +126,14 @@ export const ClassComparison = () => {
 	const valueOf = (role: GroupRole, r?: ActivityPlayerSummary) =>
 		!r ? 0 : role === 'healer' ? r.hps : role === 'tank' ? (tankRank === 'tps' ? r.tps : r.dps) : r.dps;
 
+	// A row is named by the talent tree its build leads with (Shadow, Balance); a build with no talents
+	// spent takes its spec page's name less the class (Restoration).
+	const specLabel = (e: BoardEntry) => {
+		if (talentSplit(e.talents) !== '0/0/0') return mainTree(e.spec, e.talents);
+		const ps = PlayerSpecs.fromProto(e.spec);
+		return PlayerSpecs.getFullSpecName(ps).replace(` ${PlayerClasses.fromProto(ps.classID).friendlyName}`, '');
+	};
+
 	const rowsFor = (role: GroupRole): TierRow[] => {
 		// The damage board shows each class's best build per talent tree it leads with; the healer and
 		// tank boards show each class's best build.
@@ -148,10 +156,10 @@ export const ClassComparison = () => {
 			return {
 				key: e.key,
 				tier: tierOf(share),
-				label: e.label,
+				label: specLabel(e),
 				tags,
 				classColor: cls.friendlyName.toLowerCase(),
-				subtitle: `${role === 'dps' ? `${mainTree(e.spec, e.talents)} ${cls.friendlyName}` : PlayerSpecs.getFullSpecName(ps)} · ${talentSplit(e.talents)}`,
+				subtitle: `${cls.friendlyName} · ${talentSplit(e.talents)}`,
 				icon: ps.getIcon('medium'),
 				value,
 				unit: role === 'healer' ? 'HPS' : role === 'tank' && tankRank === 'tps' ? 'TPS' : 'DPS',
@@ -160,6 +168,8 @@ export const ClassComparison = () => {
 				change: last && last > 0 ? value / last - 1 : undefined,
 				details: (
 					<dl className="mb-0 grid grid-cols-2 gap-x-4">
+						<dt>{i18n.t('group.boards.build')}</dt>
+						<dd className="mb-0">{e.label}</dd>
 						<dt>{i18n.t('group.boards.talents')}</dt>
 						<dd className="mb-0 font-mono">{e.talents || '-'}</dd>
 						<dt>DPS / HPS / TPS</dt>
