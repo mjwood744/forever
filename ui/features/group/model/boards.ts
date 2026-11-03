@@ -5,6 +5,7 @@ import { getClassRaces } from '@sim/player/classes/capabilities';
 import { PlayerSpecs } from '@sim/player/specs';
 import { withSpec } from '@sim/proto/spec_functions';
 import type { SpecDefinition } from '@sim/spec_config';
+import { classTalentsConfig } from '@sim/talents/factory';
 
 import type { GroupRole } from './roles';
 
@@ -34,6 +35,13 @@ export const talentSplit = (talents: string): string =>
 		.slice(0, 3)
 		.map(tree => [...tree].reduce((sum, c) => sum + (Number(c) || 0), 0))
 		.join('/');
+
+/** The talent tree a build spends most points in, by its name in the class's trees ("Fire"). */
+export const mainTree = (spec: Spec, talents: string): string => {
+	const points = talentSplit(talents).split('/').map(Number);
+	const top = points.indexOf(Math.max(...points));
+	return classTalentsConfig[PlayerSpecs.fromProto(spec).classID][top]?.name ?? '';
+};
 
 // A player in the spec's defaults with the build's gear, talents and rotation laid over them.
 function presetPlayer(def: SpecDefinition<any>, gear?: EquipmentSpec, talents?: string, rotation?: APLRotation): PlayerProto {

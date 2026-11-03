@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 import mage from '../../../specs/mage/dps/spec';
 import warlock from '../../../specs/warlock/dps/spec';
 import warrior from '../../../specs/warrior/dps/spec';
-import { boardEntries, talentSplit, tierOf } from './boards';
+import { boardEntries, mainTree, talentSplit, tierOf } from './boards';
 
 describe('tier boards', () => {
 	it('counts the points in each tree', () => {
@@ -43,5 +43,10 @@ describe('tier boards', () => {
 		expect(fury?.priorityList.length).toBeGreaterThan(0);
 		expect(arms?.priorityList.length).toBeGreaterThan(0);
 		expect(fury).not.toEqual(arms);
+	});
+
+	it('names the tree a build spends most in', () => {
+		expect(mainTree(Spec.SpecMage, '0002052001001-35500001230135031-003')).toBe('Fire');
+		expect(mainTree(Spec.SpecMage, '0002052011003--053500030100331251')).toBe('Frost');
 	});
 });

@@ -1,4 +1,4 @@
-import { boardEntries, type BoardEntry, talentSplit, tierOf } from '@features/group/model/boards';
+import { boardEntries, type BoardEntry, mainTree, talentSplit, tierOf } from '@features/group/model/boards';
 import type { GroupRole } from '@features/group/model/roles';
 import { Activity, type ActivityDungeonInfo, type ActivityPlayerSummary } from '@generated/proto/api';
 import { Spec } from '@generated/proto/common';
@@ -127,14 +127,15 @@ export const ClassComparison = () => {
 		!r ? 0 : role === 'healer' ? r.hps : role === 'tank' ? (tankRank === 'tps' ? r.tps : r.dps) : r.dps;
 
 	const rowsFor = (role: GroupRole): TierRow[] => {
-		// Each class shows only its highest-simming build for the role.
-		const topByClass = new Map<number, BoardEntry>();
+		// The damage board shows each class's best build per talent tree it leads with; the healer and
+		// tank boards show each class's best build.
+		const groupOf = (e: BoardEntry) => `${PlayerSpecs.fromProto(e.spec).classID}:${role === 'dps' ? mainTree(e.spec, e.talents) : ''}`;
+		const top = new Map<string, BoardEntry>();
 		for (const e of entries.filter(e => e.role === role && results[e.key])) {
-			const cls = PlayerSpecs.fromProto(e.spec).classID;
-			const held = topByClass.get(cls);
-			if (!held || valueOf(role, results[e.key]) > valueOf(role, results[held.key])) topByClass.set(cls, e);
+			const held = top.get(groupOf(e));
+			if (!held || valueOf(role, results[e.key]) > valueOf(role, results[held.key])) top.set(groupOf(e), e);
 		}
-		const done = [...topByClass.values()];
+		const done = [...top.values()];
 		const best = Math.max(0, ...done.map(e => valueOf(role, results[e.key])));
 		return done.map(e => {
 			const r = results[e.key];
@@ -150,7 +151,7 @@ export const ClassComparison = () => {
 				label: e.label,
 				tags,
 				classColor: cls.friendlyName.toLowerCase(),
-				subtitle: `${PlayerSpecs.getFullSpecName(ps)} · ${talentSplit(e.talents)}`,
+				subtitle: `${role === 'dps' ? `${mainTree(e.spec, e.talents)} ${cls.friendlyName}` : PlayerSpecs.getFullSpecName(ps)} · ${talentSplit(e.talents)}`,
 				icon: ps.getIcon('medium'),
 				value,
 				unit: role === 'healer' ? 'HPS' : role === 'tank' && tankRank === 'tps' ? 'TPS' : 'DPS',

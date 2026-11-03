@@ -3373,7 +3373,7 @@
 			"compare": "Class comparison"
 		},
 		"boards": {
-			"intro": "Every build that a spec page offers as a preset ({{dps}} damage, {{healer}} healer and {{tank}} tank builds), simmed alone through the activity. Each board shows only the highest-simming build of each class.",
+			"intro": "Every build that a spec page offers as a preset ({{dps}} damage, {{healer}} healer and {{tank}} tank builds), simmed alone through the activity. The damage board shows each class's best build for each talent tree it leads with; the healer and tank boards show each class's best build.",
 			"run": "Rank every build",
 			"running": "Simming {{done}} of {{total}}",
 			"details": "Show details",
