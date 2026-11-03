@@ -127,7 +127,14 @@ export const ClassComparison = () => {
 		!r ? 0 : role === 'healer' ? r.hps : role === 'tank' ? (tankRank === 'tps' ? r.tps : r.dps) : r.dps;
 
 	const rowsFor = (role: GroupRole): TierRow[] => {
-		const done = entries.filter(e => e.role === role && results[e.key]);
+		// Each class shows only its highest-simming build for the role.
+		const topByClass = new Map<number, BoardEntry>();
+		for (const e of entries.filter(e => e.role === role && results[e.key])) {
+			const cls = PlayerSpecs.fromProto(e.spec).classID;
+			const held = topByClass.get(cls);
+			if (!held || valueOf(role, results[e.key]) > valueOf(role, results[held.key])) topByClass.set(cls, e);
+		}
+		const done = [...topByClass.values()];
 		const best = Math.max(0, ...done.map(e => valueOf(role, results[e.key])));
 		return done.map(e => {
 			const r = results[e.key];
