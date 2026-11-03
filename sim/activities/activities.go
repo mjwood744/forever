@@ -230,6 +230,9 @@ func RunActivitySim(req *proto.ActivitySimRequest) *proto.ActivitySimResult {
 	if len(raid.Tanks) == 0 {
 		raid.Tanks = []*proto.UnitReference{defaultTank(players)}
 	}
+	if err := addHealerRotations(raid, fights[0].encounter); err != nil {
+		return errorResult(err)
+	}
 	opts := req.SimOptions
 	if opts == nil {
 		opts = &proto.SimOptions{}
@@ -279,4 +282,24 @@ func RunActivitySim(req *proto.ActivitySimRequest) *proto.ActivitySimResult {
 	}
 	res.Players = totals
 	return res
+}
+
+// Gives each healer without a rotation one that heals the tank first, then whoever drops below half.
+func addHealerRotations(raid *proto.Raid, e *proto.Encounter) error {
+	players := raid.Parties[0].Players
+	tank := int(raid.Tanks[0].GetIndex())
+	res := core.ComputeStats(&proto.ComputeStatsRequest{Raid: raid, Encounter: e, SkipRotation: true})
+	if res.ErrorResult != "" {
+		return fmt.Errorf("%s", res.ErrorResult)
+	}
+	for i, ps := range res.RaidStats.Parties[0].Players[:len(players)] {
+		have := map[int32]bool{}
+		for _, sp := range ps.GetMetadata().GetSpells() {
+			have[sp.Id.GetSpellId()] = true
+		}
+		if rot := healerRotation(players[i], i, tank, len(players), have); rot != nil {
+			players[i].Rotation = rot
+		}
+	}
+	return nil
 }

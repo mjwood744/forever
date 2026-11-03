@@ -108,3 +108,24 @@ func TestRejectsBadRequests(t *testing.T) {
 		}
 	}
 }
+
+// Each healer spec, which saves no rotation, heals the Protection Warrior through open world.
+func TestHealersHeal(t *testing.T) {
+	healers := map[string]*proto.Player{
+		"Holy Paladin": core.WithSpec(&proto.Player{Name: "Healer", Class: proto.Class_ClassPaladin, Race: proto.Race_RaceHuman, Equipment: &proto.EquipmentSpec{}},
+			&proto.Player_HolyPaladin{HolyPaladin: &proto.HolyPaladin{Options: &proto.HolyPaladin_Options{ClassOptions: &proto.PaladinOptions{}}}}),
+		"Restoration Druid": core.WithSpec(&proto.Player{Name: "Healer", Class: proto.Class_ClassDruid, Race: proto.Race_RaceTauren, Equipment: &proto.EquipmentSpec{}},
+			&proto.Player_RestorationDruid{RestorationDruid: &proto.RestorationDruid{Options: &proto.RestorationDruid_Options{ClassOptions: &proto.DruidOptions{}}}}),
+		"Restoration Shaman": core.WithSpec(&proto.Player{Name: "Healer", Class: proto.Class_ClassShaman, Race: proto.Race_RaceTauren, Equipment: &proto.EquipmentSpec{}},
+			&proto.Player_RestorationShaman{RestorationShaman: &proto.RestorationShaman{Options: &proto.RestorationShaman_Options{ClassOptions: &proto.ShamanOptions{}}}}),
+		"Healer Priest": group().Parties[0].Players[2],
+	}
+	for name, healer := range healers {
+		raid := group()
+		raid.Parties[0].Players = []*proto.Player{raid.Parties[0].Players[0], healer}
+		res := run(t, &proto.ActivitySimRequest{Raid: raid, Activity: proto.Activity_ActivityOpenWorld, Level: 60})
+		if hps := res.Players[1].Hps; hps <= 0 {
+			t.Errorf("%s heals %.1f per second, want above 0", name, hps)
+		}
+	}
+}
