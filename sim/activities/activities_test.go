@@ -161,3 +161,13 @@ func TestKeepsCarriedItems(t *testing.T) {
 		t.Errorf("warnings %v and head item %d, want none and the carried item kept", warnings, priest.Equipment.Items[0].Id)
 	}
 }
+
+// Level-60 characters against level-10 mobs kill some at the pull; every figure stays finite.
+func TestFiguresStayFinite(t *testing.T) {
+	res := run(t, &proto.ActivitySimRequest{Raid: group(), Activity: proto.Activity_ActivityOpenWorld, Level: 10})
+	for _, p := range res.Players {
+		if !finite(p.Dps, p.Hps, p.Tps, p.Dtps) {
+			t.Errorf("%s: dps %v, hps %v, tps %v, dtps %v, want all finite", p.Name, p.Dps, p.Hps, p.Tps, p.Dtps)
+		}
+	}
+}

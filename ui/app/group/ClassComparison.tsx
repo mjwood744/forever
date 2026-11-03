@@ -19,6 +19,11 @@ import { TierBoard, type TierRow } from './TierBoard';
 
 const specModules = import.meta.glob<{ default: SpecDefinition<any> }>('../../specs/*/*/spec.{ts,tsx}');
 
+// Every preset is a level-60 build, so the boards sim at 60.
+const LEVEL = 60;
+// Talent trees that heal: a damage build that leads with one is left off the damage board.
+const HEALING_TREES = new Set(['Discipline', 'Holy', 'Restoration']);
+
 // The tank every healer heals on the healer board.
 const REFERENCE_TANK = Spec.SpecProtectionWarrior;
 const CONCURRENCY = 4;
@@ -46,7 +51,6 @@ async function inPool<T>(items: ReadonlyArray<T>, run: (item: T) => Promise<void
 export const ClassComparison = () => {
 	const [entries, setEntries] = useState<BoardEntry[]>([]);
 	const [activity, setActivity] = useState(Activity.ActivityRaid);
-	const [level, setLevel] = useState(60);
 	const [dungeons, setDungeons] = useState<ActivityDungeonInfo[]>([]);
 	const [dungeon, setDungeon] = useState('');
 	const [iterations, setIterations] = useState(200);
@@ -65,15 +69,15 @@ export const ClassComparison = () => {
 	}, []);
 
 	useEffect(() => {
-		fetchDungeons(level)
+		fetchDungeons(LEVEL)
 			.then(ds => {
 				setDungeons(ds);
 				setDungeon(current => (ds.some(d => d.name === current) ? current : (ds[0]?.name ?? '')));
 			})
 			.catch(e => setError(String(e)));
-	}, [level]);
+	}, []);
 
-	const runKey = `${activity}:${level}:${activity === Activity.ActivityDungeon ? dungeon : ''}`;
+	const runKey = `${activity}:${LEVEL}:${activity === Activity.ActivityDungeon ? dungeon : ''}`;
 
 	const run = async () => {
 		const tank = entries.find(e => e.spec === REFERENCE_TANK);
@@ -96,7 +100,7 @@ export const ClassComparison = () => {
 						tank: 0,
 						untanked: entry.role === 'dps',
 						activity,
-						level,
+						level: LEVEL,
 						dungeon,
 						iterations,
 					});
@@ -139,7 +143,7 @@ export const ClassComparison = () => {
 		// tank boards show each class's best build.
 		const groupOf = (e: BoardEntry) => `${PlayerSpecs.fromProto(e.spec).classID}:${role === 'dps' ? mainTree(e.spec, e.talents) : ''}`;
 		const top = new Map<string, BoardEntry>();
-		for (const e of entries.filter(e => e.role === role && results[e.key])) {
+		for (const e of entries.filter(e => e.role === role && results[e.key] && !(role === 'dps' && HEALING_TREES.has(mainTree(e.spec, e.talents))))) {
 			const held = top.get(groupOf(e));
 			if (!held || valueOf(role, results[e.key]) > valueOf(role, results[held.key])) top.set(groupOf(e), e);
 		}
@@ -212,7 +216,6 @@ export const ClassComparison = () => {
 					options={ACTIVITIES.map(a => ({ value: a, label: i18n.t(`group.activities.${ACTIVITY_KEYS[a]}`) }))}
 					onChange={setActivity}
 				/>
-				<NumberField label={i18n.t('group.settings.level')} value={level} positive onChange={v => setLevel(Math.min(60, Math.max(1, v)))} />
 				{activity === Activity.ActivityDungeon && (
 					<ChoiceField
 						className="min-w-72"
