@@ -69,7 +69,10 @@ export const ClassComparison = () => {
 	}, []);
 
 	useEffect(() => {
+		// Only dungeons built for level-60 characters: a level-60 build kills a low dungeon's mobs at the
+		// pull, which leaves its per-second figures to a second of opening burst.
 		fetchDungeons(LEVEL)
+			.then(all => all.filter(d => d.lastBossLevel >= LEVEL - 5))
 			.then(ds => {
 				setDungeons(ds);
 				setDungeon(current => (ds.some(d => d.name === current) ? current : (ds[0]?.name ?? '')));
@@ -156,7 +159,8 @@ export const ClassComparison = () => {
 			const cls = PlayerClasses.fromProto(ps.classID);
 			const share = best > 0 ? value / best : 0;
 			const last = lastRun[e.key];
-			const tags = [...(e.gearless ? [i18n.t('group.boards.no_gear')] : []), ...(warnings[e.key] ? [i18n.t('group.boards.gear_incomplete')] : [])];
+			const gearMissing = warnings[e.key]?.some(w => w.includes(': no item '));
+			const tags = [...(e.gearless ? [i18n.t('group.boards.no_gear')] : []), ...(gearMissing ? [i18n.t('group.boards.gear_incomplete')] : [])];
 			return {
 				key: e.key,
 				tier: tierOf(share),
