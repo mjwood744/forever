@@ -189,6 +189,7 @@ export default defineConfig(({ command, mode }) => {
 				// The per-spec pages are added by the specPages plugin.
 				input: {
 					'ui/index.html': path.resolve(BASE_PATH, 'index.html'),
+					'ui/group/index.html': path.resolve(BASE_PATH, 'group/index.html'),
 					// The single spec page. `specPages` copies the processed result to
 					// `<class>/<spec>/index.html` and drops this path from the bundle; the key only
 					// names the page's js/css ([name] in the *FileNames below), not its html output.

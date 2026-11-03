@@ -3,6 +3,7 @@ import { initBulk } from '@features/bulk/model/init';
 import { watchTargetDummies } from '@features/encounter/model/target_dummies';
 import { repairTargetInputs } from '@features/encounter/model/target_inputs';
 import { registerAreaStatsNotices, registerSetBonusNotices } from '@features/gear/item_notices';
+import { AddToGroupAction } from '@features/group/components/AddToGroupAction';
 import { createLink } from '@features/import-export';
 import { ReforgeSidebarGroup } from '@features/reforge/components/ReforgePanel';
 import { createReforgeOptimizer, type ReforgeOptimizerModel, type ReforgeOptimizerOptions } from '@features/reforge/model/reforge_optimizer';
@@ -19,7 +20,7 @@ import { type ErrorOutcome, ErrorOutcomeType } from '@generated/proto/api';
 import { Spec } from '@generated/proto/common';
 import { IndividualSimSettings } from '@generated/proto/ui';
 import i18n from '@i18n/config';
-import { LaunchStatus } from '@sim/constants/other';
+import { GROUP_SITE_PATH, LaunchStatus } from '@sim/constants/other';
 import { SimSettingCategories } from '@sim/constants/sim_settings';
 import { Player } from '@sim/player/player';
 import { Gear } from '@sim/proto/gear';
@@ -176,6 +177,11 @@ export class SimHostObject<SpecType extends Spec> implements IndividualSimHost<S
 			});
 		}
 		this.sidebar.add({ id: 'stat-sweep', render: () => createElement(StatSweepAction, { settings: this.statSweepSettings }) });
+		// One named tab for the group page, so each added character reuses it.
+		this.sidebar.add({
+			id: 'add-to-group',
+			render: () => createElement(AddToGroupAction, { onAdded: () => window.open(GROUP_SITE_PATH, 'wowsims-group') }),
+		});
 		for (const derived of config.derivedSettings || []) {
 			derived.apply(this.player, this.sim);
 			derived.subscribe(this.player, this.sim)(() => derived.apply(this.player, this.sim));

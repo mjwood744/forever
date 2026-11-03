@@ -2961,6 +2961,7 @@
 		},
 		"buttons": {
 			"simulate": "Simulate",
+			"add_to_group": "Add to group",
 			"stat_weights": {
 				"title": "Stat Weights",
 				"modal": {
@@ -3319,5 +3320,74 @@
 		"kept_tooltip": "This item is showing because you have it selected. Use the stat filters to permanently show it.",
 		"rating_label": "{{stat}} Rating",
 		"percent_label": "{{stat}} %"
+	},
+	"group": {
+		"title": "Group Sim",
+		"intro": "Save characters from their spec pages with Add to group, pick 1 to 5 of them, and run them through an activity together.",
+		"roster": {
+			"title": "Characters ({{picked}} of {{max}} in the group)",
+			"empty": "No saved characters yet. Open a spec page, set up the character and press Add to group in the sidebar.",
+			"name": "Name",
+			"join": "Add to group",
+			"leave": "Take out",
+			"remove": "Delete"
+		},
+		"settings": {
+			"activity": "Activity",
+			"level": "Group level",
+			"dungeon": "Dungeon",
+			"no_dungeon": "No dungeon near this level",
+			"dungeon_option": "{{name}} (last boss {{level}}, {{pulls}} pulls)",
+			"tank": "Tank",
+			"iterations": "Iterations",
+			"run": "Simulate group"
+		},
+		"activities": {
+			"open_world": "Open World",
+			"dungeon": "Dungeon",
+			"raid": "Raid"
+		},
+		"roles": {
+			"tank": "Tank",
+			"healer": "Healer",
+			"dps": "Damage"
+		},
+		"results": {
+			"group_dps": "Group DPS: {{value}}",
+			"total_time": "Time fighting: {{value}} s",
+			"threat_warning": "Out-threatening the tank: {{names}}.",
+			"fight_cell": "{{dps}} DPS, {{hps}} HPS, {{death}} chance of death",
+			"columns": {
+				"name": "Character",
+				"role": "Role",
+				"death": "Death chance",
+				"oom": "Seconds OOM",
+				"mana": "Mana spent",
+				"fight": "Fight",
+				"targets": "Mobs",
+				"seconds": "Seconds"
+			}
+		},
+		"views": {
+			"group": "Group sim",
+			"compare": "Class comparison"
+		},
+		"boards": {
+			"intro": "Every build that a spec page offers as a preset ({{dps}} damage, {{healer}} healer and {{tank}} tank builds), simmed alone through the activity. The damage board shows each class's best build for each talent tree it leads with; the healer and tank boards show each class's best build.",
+			"run": "Rank every build",
+			"running": "Simming {{done}} of {{total}}",
+			"details": "Show details",
+			"build": "Build",
+			"no_gear": "No gear preset",
+			"gear_incomplete": "Gear incomplete",
+			"failed": "Builds that did not sim ({{count}}):",
+			"talents": "Talents",
+			"dps_title": "Damage builds: {{activity}}",
+			"dps_note": "DPS on the spec page's preset gear, talents and rotation, pets included. The mobs attack no one, so this is damage alone. Builds marked No gear preset sim without gear, because their spec page ships none; Gear incomplete means some preset items are missing from the item database and those slots sim empty.",
+			"healer_title": "Healer builds: {{activity}}",
+			"healer_note": "HPS healing the Protection Warrior preset through the activity, with each spec's built-in healing rotation (its spec page saves none). Healing is capped by the damage the tank takes, so only the Raid boss tests throughput and mana.",
+			"tank_title": "Tank builds: {{activity}}",
+			"tank_note": "Threat per second with DPS beside it, tanking alone with no healer. Open a build for its damage taken and chance of death."
+		}
 	}
 }
