@@ -229,7 +229,7 @@ func (shaman *Shaman) applyImprovedStormstrike() {
 
 var maelstromWeaponBuff = spellData.MaelstromWeaponTriggered.Highest()
 
-const maelstromWeaponPPM = 10.0
+const maelstromWeaponPPM = 20.0 // doubled by the 2 Nov beta notes (was 10)
 
 func (shaman *Shaman) applyMaelstromWeapon() {
 	if shaman.Talents.MaelstromWeapon == 0 {

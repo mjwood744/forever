@@ -12,16 +12,8 @@ func applyRaceEffects(agent Agent) {
 
 	switch character.Race {
 	case proto.Race_RaceDwarf:
-		// Earth Fury 1259719 holds while any weapon slot holds a mace, one- or two-handed, and follows
-		// item swaps.
-		earthFuryActive := false
-		character.NewEquipGate(EquipRequirement{SubclassMask: WeaponSubclassMask(proto.WeaponType_WeaponTypeMace)}, func(_ *Simulation, level float64) {
-			if (level > 0) == earthFuryActive {
-				return
-			}
-			earthFuryActive = level > 0
-			character.PseudoStats.CritDamageMultiplier *= Ternary(earthFuryActive, 1.02, 1/1.02)
-		}).SetLevel(nil, 1)
+		// Artisan's Precision, which replaced Earth Fury in the 2 Nov beta notes: 1% more hit with spells and attacks.
+		character.AddStats(stats.Stats{stats.PhysicalHitPercent: 1, stats.SpellHitPercent: 1})
 		applyDamageVersus(character, proto.MobType_MobTypeBeast)
 
 		actionID := ActionID{SpellID: 20594}
@@ -59,8 +51,8 @@ func applyRaceEffects(agent Agent) {
 		applyExpansiveMind(character)
 		applyEureka(character)
 	case proto.Race_RaceHuman:
-		character.MultiplyStat(stats.Spirit, 1.05)
-		character.AddStats(stats.Stats{stats.PhysicalCritPercent: 2, stats.SpellCritPercent: 2}) // Ruthless 20597
+		character.MultiplyStat(stats.Spirit, 1.10)                                               // Human Spirit, 10% since the 2 Nov beta notes
+		character.AddStats(stats.Stats{stats.PhysicalCritPercent: 1, stats.SpellCritPercent: 1}) // Ruthless 20597, 1% since the 2 Nov beta notes
 	case proto.Race_RaceNightElf:
 		character.PseudoStats.BaseDodgeChance += 0.01
 		character.PseudoStats.MovementSpeedMultiplier *= 1.02
@@ -82,7 +74,7 @@ func applyRaceEffects(agent Agent) {
 				},
 			})
 	case proto.Race_RaceOrc:
-		character.AddStats(stats.Stats{stats.PhysicalCritPercent: 1, stats.SpellCritPercent: 1}) // Savage 20574
+		// Savage left the game in the 2 Nov beta notes.
 
 		bloodFuryID := ActionID{SpellID: 20572}
 
@@ -99,7 +91,7 @@ func applyRaceEffects(agent Agent) {
 
 		bloodFuryCD := Cooldown{
 			Timer:    character.NewTimer(),
-			Duration: time.Minute * 3,
+			Duration: time.Minute * 2,
 		}
 		bloodFuryAura.Icd = &bloodFuryCD
 
@@ -174,7 +166,7 @@ func applyRaceEffects(agent Agent) {
 		berserkingAura := character.RegisterAura(Aura{
 			Label:    "Berserking",
 			ActionID: actionID,
-			Duration: time.Second * 10,
+			Duration: time.Second * 15,
 		}).
 			AttachMultiplyAttackSpeed(1.1).
 			AttachMultiplyCastSpeed(1.1)
@@ -438,7 +430,7 @@ func applyTouchOfTheGrave(character *Character) {
 		ProcMask:   ProcMaskMelee | ProcMaskRanged | ProcMaskSpellDamage,
 		Outcome:    OutcomeLanded,
 		ProcChance: procChance,
-		ICD:        time.Second * 25,
+		ICD:        time.Second * 15,
 
 		RequireDamageComponent: true,
 
