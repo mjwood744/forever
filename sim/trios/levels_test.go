@@ -617,6 +617,13 @@ func pick(ids []int32, have map[int32]bool) int32 {
 
 // The APL for a character from its presses; unknown spells go to dropped.
 func buildAPL(name string, t trio, lvl int32, f fight, have map[int32]bool, dropped map[string]bool) string {
+	// The sim registers some spells and ranks before their trainer level (Bane of Doom at 60, Death Coil at 42,
+	// every rank of Mind Blast), so a spell above the level counts as not known.
+	for id := range have {
+		if s := spelldata.Find(id); s != nil && int32(s.SpellLevel) > lvl {
+			delete(have, id)
+		}
+	}
 	// APL_<name>=file: a spec's own rotation (a ui/specs/.../apls file) in place of the keys, for a role the
 	// macro sheets have no keys for.
 	if file := os.Getenv("APL_" + name); file != "" {
@@ -625,14 +632,7 @@ func buildAPL(name string, t trio, lvl int32, f fight, have map[int32]bool, drop
 			panic(err)
 		}
 		// The spec files name level 60 ranks: each spell becomes the best rank of the same name known at this level.
-		// The sim registers some spells before their trainer level (Bane of Doom at 60, Death Coil at 42, Soul
-		// Fire at 48), so a spell above her level counts as not known here.
 		best := map[string]int32{}
-		for id := range have {
-			if s := spelldata.Find(id); s != nil && int32(s.SpellLevel) > lvl {
-				delete(have, id)
-			}
-		}
 		for id := range have {
 			if s := spelldata.Find(id); s != nil {
 				if b, ok := best[s.Name]; !ok || spelldata.Find(b).SpellLevel < s.SpellLevel {
