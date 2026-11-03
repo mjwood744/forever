@@ -6,6 +6,7 @@ import (
 	"embed"
 	"encoding/json"
 	"fmt"
+	"math"
 	"slices"
 	"sort"
 
@@ -192,6 +193,15 @@ func summarize(u *proto.UnitMetrics, iterations int32) *proto.ActivityPlayerSumm
 	return s
 }
 
+func finite(vs ...float64) bool {
+	for _, v := range vs {
+		if math.IsInf(v, 0) || math.IsNaN(v) {
+			return false
+		}
+	}
+	return true
+}
+
 func errorResult(err error) *proto.ActivitySimResult {
 	return &proto.ActivitySimResult{Error: &proto.ErrorOutcome{Message: err.Error()}}
 }
@@ -271,6 +281,12 @@ func RunActivitySim(req *proto.ActivitySimRequest) (result *proto.ActivitySimRes
 		out := &proto.ActivityFight{Label: f.label, TargetCount: int32(len(f.encounter.Targets)), Boss: f.boss, Seconds: secs}
 		for i, u := range r.RaidMetrics.Parties[0].Players {
 			s := summarize(u, opts.Iterations)
+			// An iteration the mobs die in before it starts, such as to a pull spell, has no length,
+			// so its per-second figures are infinite; the fight then counts for nothing per second.
+			if !finite(s.Dps, s.Hps, s.Tps, s.Dtps) {
+				res.Warnings = append(res.Warnings, fmt.Sprintf("%s: %s ends at the pull in some iterations, so it is left out of the per-second figures", s.Name, f.label))
+				s.Dps, s.Hps, s.Tps, s.Dtps = 0, 0, 0, 0
+			}
 			out.Players = append(out.Players, s)
 			t := totals[i]
 			t.Name = s.Name
