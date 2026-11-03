@@ -491,7 +491,7 @@ func presses(name string, t trio) []press {
 	switch os.Getenv("ROLE_" + name) {
 	case "dps":
 		// a damage dealer who saves the tank when it is low: the emergency heal, then the damage keys
-		return []press{{key: "Shift+2", cond: hpBelow(t.tankRef, 35)}, {key: "Shift+6", prepull: true},
+		return []press{{key: "Shift+2", cond: hpBelow(t.tankRef, 35)}, {key: "Shift+3", prepull: true}, {key: "Shift+6", prepull: true},
 			{key: "3", cond: "DOT50"}, {key: "2", cond: and(targetsAtLeast(2), manaAbove(20))}, {key: "1", cond: manaAbove(10)}, {key: "Shift+6", cond: "SHIFT6"}}
 	case "healer":
 		name = "Wyther"
@@ -557,9 +557,14 @@ func presses(name string, t trio) []press {
 				// DUO_KEYS=1, the duo sheet of 1 Nov: Malyce is the main, one spell a key. Curse, Immolate and
 				// Corruption on the target, Rain of Fire on 4 or more, Life Tap when low, Shadow Bolt above half
 				// mana and the wand below.
-				return []press{{key: "Shift+6", cond: and(manaBelow(35), hpAbove(self, 60))}, {key: "4", cond: "CURSE"},
+				ps := []press{{key: "Shift+6", cond: and(manaBelow(35), hpAbove(self, 60))}, {key: "4", cond: "CURSE"},
 					{key: "2", cond: "CURSE"}, {key: "3", cond: "CURSE"},
 					{key: "5", cond: and(targetsAtLeast(4), manaAbove(15))}, {key: "1", cond: manaAbove(50)}, {key: "6"}}
+				// DUO_BURST=1 also presses the Burst key on bosses, after the curse and damage over time keys.
+				if os.Getenv("DUO_BURST") != "" {
+					ps = append(ps[:4], append([]press{{key: "Shift+4", bossOnly: true}}, ps[4:]...)...)
+				}
+				return ps
 			}
 			// On 4 or more mobs she channels Rain of Fire (from 20) while she has the mana.
 			return []press{{key: "4", cond: "CURSE"}, {key: "1", cond: "ONCE"},
