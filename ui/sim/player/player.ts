@@ -43,7 +43,15 @@ import { canEquipEnchant, canEquipItem, enchantAppliesToItem, isPVPItem } from '
 import { simpleSpecRotationFromJson, specTypeFunctions, withSpec } from '../proto/spec_functions';
 import type { ClassOptions, ClassSpecs, SpecClasses, SpecOptions, SpecRotation, SpecTalents, SpecTypeFunctions } from '../proto/spec_types';
 import { Stats, UnitStat } from '../proto/stats';
-import { AL_CATEGORY_HARD_MODE, emptyUnitReference, getTalentTreePoints, newUnitReference, raceToFaction } from '../proto/utils';
+import {
+	AL_CATEGORY_HARD_MODE,
+	emptyUnitReference,
+	getTalentPoints,
+	getTalentTreePoints,
+	levelForTalentPoints,
+	newUnitReference,
+	raceToFaction,
+} from '../proto/utils';
 import { MAX_PARTY_SIZE, Party } from '../raid/party';
 import { Raid } from '../raid/raid';
 import { ConsumableSlot, isEnchantRelevantFor, relevantConsumableIds } from '../settings/consumables';
@@ -1452,6 +1460,7 @@ export class Player<SpecType extends Spec> {
 		if (exportCategory(SimSettingCategories.Talents)) {
 			PlayerProto.mergePartial(player, {
 				talentsString: this.getTalentsString(),
+				level: levelForTalentPoints(getTalentPoints(this.getTalentsString())),
 			});
 		}
 		if (exportCategory(SimSettingCategories.Rotation)) {

@@ -7,6 +7,7 @@ import (
 
 	"github.com/wowsims/forever/sim/core/proto"
 	"github.com/wowsims/forever/sim/core/stats"
+	googleProto "google.golang.org/protobuf/proto"
 )
 
 type Encounter struct {
@@ -55,7 +56,8 @@ func NewEncounter(options *proto.Encounter) Encounter {
 // NewEncounterAt builds the encounter for players of the given level.
 func NewEncounterAt(options *proto.Encounter, playerLevel int32) Encounter {
 	options.ExecuteProportion_35 = max(options.ExecuteProportion_35, options.ExecuteProportion_20)
-	totalTargetCount := max(len(options.Targets), 1)
+	targets := targetsForLevel(options.Targets, playerLevel)
+	totalTargetCount := max(len(targets), 1)
 
 	encounter := Encounter{
 		Duration:             DurationFromSeconds(options.Duration),
@@ -69,7 +71,7 @@ func NewEncounterAt(options *proto.Encounter, playerLevel int32) Encounter {
 		ActiveTargetUnits:    make([]*Unit, 0, totalTargetCount),
 	}
 
-	for targetIndex, targetOptions := range options.Targets {
+	for targetIndex, targetOptions := range targets {
 		target := NewTargetAt(targetOptions, int32(targetIndex), playerLevel)
 		encounter.AllTargets = append(encounter.AllTargets, target)
 		encounter.AllTargetUnits = append(encounter.AllTargetUnits, &target.Unit)
@@ -96,7 +98,7 @@ func NewEncounterAt(options *proto.Encounter, playerLevel int32) Encounter {
 
 	// If UseHealth is set, we use the sum of targets health. After creating the targets to make sure stat modifications are done
 	if options.UseHealth {
-		for _, t := range options.Targets {
+		for _, t := range targets {
 			encounter.EndFightAtHealth += t.Stats[stats.Health]
 		}
 		if encounter.EndFightAtHealth == 0 {
@@ -174,6 +176,40 @@ type Target struct {
 	Unit
 
 	AI TargetAI
+}
+
+// Targets set up for level-60 players, at level 60 or above, keep the same level gap to players below
+// 60: a level-63 boss faces level-20 players as a level-23 one. Their health, armor and auto-attack
+// damage move by the ratio of the game files' creature rows at the two levels. Boss scripts keep their
+// own spell damage. Targets below 60 are already set for their players and stay as they are.
+func targetsForLevel(targets []*proto.Target, playerLevel int32) []*proto.Target {
+	if playerLevel >= CharacterLevel {
+		return targets
+	}
+	out := make([]*proto.Target, len(targets))
+	for i, t := range targets {
+		level := t.Level
+		if level == 0 {
+			level = CharacterLevel + 3
+		}
+		if level < CharacterLevel {
+			out[i] = t
+			continue
+		}
+		scaled := googleProto.Clone(t).(*proto.Target)
+		scaled.Level = max(1, level-(CharacterLevel-playerLevel))
+		fromHealth, fromArmor, fromDps := CreatureStatsAt(level)
+		toHealth, toArmor, toDps := CreatureStatsAt(scaled.Level)
+		if len(scaled.Stats) > int(stats.Health) {
+			scaled.Stats[stats.Health] *= toHealth / fromHealth
+		}
+		if len(scaled.Stats) > int(stats.Armor) {
+			scaled.Stats[stats.Armor] *= toArmor / fromArmor
+		}
+		scaled.MinBaseDamage *= toDps / fromDps
+		out[i] = scaled
+	}
+	return out
 }
 
 func NewTarget(options *proto.Target, targetIndex int32) *Target {
