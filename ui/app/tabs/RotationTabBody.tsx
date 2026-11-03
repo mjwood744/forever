@@ -2,6 +2,7 @@ import { Tabs } from '@base-ui/react/tabs';
 import { AplNavbar } from '@features/apl/components/AplNavbar';
 import { GroupList } from '@features/apl/components/GroupList';
 import { PriorityPane } from '@features/apl/components/PriorityPane';
+import { RotationSearch } from '@features/apl/components/RotationSearch';
 import { RotationTypePicker } from '@features/apl/components/RotationTypePicker';
 import { SavedRotation } from '@features/apl/components/SavedRotation';
 import { SimpleRotationInputs } from '@features/apl/components/SimpleRotationInputs';
@@ -29,9 +30,10 @@ const PANE_BODIES: Record<AplPaneId, ComponentType> = {
 	'apl-variables': VariablesList,
 };
 
-/** Preset picker and saved rotations, repeated in all three sub-tabs. */
+/** The rotation search, preset picker and saved rotations, repeated in all three sub-tabs. */
 const RotationSidebar = () => (
 	<>
+		<RotationSearch />
 		<PresetConfigurationPicker categories={ROTATION_PRESETS} />
 		<SavedRotation />
 	</>

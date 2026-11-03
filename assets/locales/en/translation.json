@@ -2230,6 +2230,13 @@
 			"delete_tooltip": "Delete Cooldown",
 			"timings_placeholder": "20, 40, ..."
 		},
+		"search": {
+			"title": "Find the best rotation",
+			"description": "Sims changes to this rotation one at a time, moving, removing and adding the abilities the character has at its level, and keeps each change that raises {{unit}}. The result fits this build's talents, gear and level. It takes up to a minute.",
+			"run": "Find best rotation",
+			"improved": "{{unit}} went from {{from}} to {{to}} over {{count}} rotations simmed. The rotation is now the one found:",
+			"unchanged": "No change raised {{unit}} above {{from}} ({{count}} rotations simmed), so the rotation stays as it was."
+		},
 		"saved_rotations": {
 			"title": "Saved Rotations",
 			"label": "Rotation",
