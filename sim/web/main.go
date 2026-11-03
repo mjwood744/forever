@@ -27,6 +27,7 @@ import (
 	proto "github.com/wowsims/forever/sim/core/proto"
 	reforgeoptimizer "github.com/wowsims/forever/sim/core/reforge_optimizer"
 	"github.com/wowsims/forever/sim/core/simsignals"
+	"github.com/wowsims/forever/sim/rotations"
 
 	googleProto "google.golang.org/protobuf/proto"
 )
@@ -106,6 +107,9 @@ var handlers = map[string]apiHandler{
 	}},
 	"/activitySim": {msg: func() googleProto.Message { return &proto.ActivitySimRequest{} }, handle: func(msg googleProto.Message) googleProto.Message {
 		return activities.RunActivitySim(msg.(*proto.ActivitySimRequest))
+	}},
+	"/rotationSearch": {msg: func() googleProto.Message { return &proto.RotationSearchRequest{} }, handle: func(msg googleProto.Message) googleProto.Message {
+		return rotations.Search(msg.(*proto.RotationSearchRequest))
 	}},
 	"/activityDungeons": {msg: func() googleProto.Message { return &proto.ActivityDungeonsRequest{} }, handle: func(msg googleProto.Message) googleProto.Message {
 		return activities.Dungeons(msg.(*proto.ActivityDungeonsRequest))

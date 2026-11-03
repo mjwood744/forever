@@ -7968,6 +7968,28 @@
 					"additionalProperties": false,
 					"required": ["title", "tooltip", "delete_tooltip", "timings_placeholder"]
 				},
+				"search": {
+					"type": "object",
+					"properties": {
+						"title": {
+							"type": "string"
+						},
+						"description": {
+							"type": "string"
+						},
+						"run": {
+							"type": "string"
+						},
+						"improved": {
+							"type": "string"
+						},
+						"unchanged": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false,
+					"required": ["title", "description", "run", "improved", "unchanged"]
+				},
 				"saved_rotations": {
 					"type": "object",
 					"properties": {
@@ -8327,7 +8349,7 @@
 				}
 			},
 			"additionalProperties": false,
-			"required": ["title", "common", "apl", "auto", "simple", "cooldowns", "saved_rotations", "options"]
+			"required": ["title", "common", "apl", "auto", "simple", "cooldowns", "search", "saved_rotations", "options"]
 		},
 		"results_tab": {
 			"type": "object",
