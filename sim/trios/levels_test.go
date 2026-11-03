@@ -625,7 +625,14 @@ func buildAPL(name string, t trio, lvl int32, f fight, have map[int32]bool, drop
 			panic(err)
 		}
 		// The spec files name level 60 ranks: each spell becomes the best rank of the same name known at this level.
+		// The sim registers some spells before their trainer level (Bane of Doom at 60, Death Coil at 42, Soul
+		// Fire at 48), so a spell above her level counts as not known here.
 		best := map[string]int32{}
+		for id := range have {
+			if s := spelldata.Find(id); s != nil && int32(s.SpellLevel) > lvl {
+				delete(have, id)
+			}
+		}
 		for id := range have {
 			if s := spelldata.Find(id); s != nil {
 				if b, ok := best[s.Name]; !ok || spelldata.Find(b).SpellLevel < s.SpellLevel {
@@ -640,6 +647,8 @@ func buildAPL(name string, t trio, lvl int32, f fight, have map[int32]bool, drop
 					return fmt.Sprintf(`"spellId":%d`, b)
 				}
 				dropped[fmt.Sprintf("%s %s: spell %d", name, file[strings.LastIndex(file, "/")+1:], id)] = true
+				// An id she has no spell for, so the rotation skips the line.
+				return `"spellId":1`
 			}
 			return m
 		})
