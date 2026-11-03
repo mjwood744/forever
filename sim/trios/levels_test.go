@@ -289,22 +289,26 @@ func makeTrio(n int, lvl int32) trio {
 		rel := makeTrio(1, lvl).members[1]
 		// DUO_SETUP=holy: Rellyk heals as Holy and Wyther tanks as Enhancement with a shield;
 		// =ret: Rellyk tanks as Retribution, Wyther heals.
-		switch os.Getenv("DUO_SETUP") {
-		case "holy":
-			core.WithSpec(rel.player, &proto.Player_HolyPaladin{HolyPaladin: &proto.HolyPaladin{Options: &proto.HolyPaladin_Options{ClassOptions: &proto.PaladinOptions{}}}})
-			rel.player.InFrontOfTarget, rel.player.DistanceFromTarget = false, 20
-			core.WithSpec(wy.player, &proto.Player_EnhancementShaman{EnhancementShaman: &proto.EnhancementShaman{Options: &proto.EnhancementShaman_Options{ClassOptions: &proto.ShamanOptions{}}}})
-			wy.player.InFrontOfTarget, wy.player.DistanceFromTarget = true, 5
-			return trio{6, []member{wy, rel}, &proto.UnitReference{Type: proto.UnitReference_Player, Index: 0}, unitPlayer(0), "", unitPlayer(0)}
-		case "ret":
-			core.WithSpec(rel.player, &proto.Player_RetributionPaladin{RetributionPaladin: &proto.RetributionPaladin{Options: &proto.RetributionPaladin_Options{ClassOptions: &proto.PaladinOptions{}}}})
-		case "ele":
-			// =ele and =enh: Rellyk tanks and heals himself, Wyther does damage and heals him only when he is low.
-			core.WithSpec(wy.player, &proto.Player_ElementalShaman{ElementalShaman: &proto.ElementalShaman{Options: &proto.ElementalShaman_Options{ClassOptions: &proto.ShamanOptions{}}}})
-		case "enh":
-			core.WithSpec(wy.player, &proto.Player_EnhancementShaman{EnhancementShaman: &proto.EnhancementShaman{Options: &proto.EnhancementShaman_Options{ClassOptions: &proto.ShamanOptions{}}}})
-			wy.player.DistanceFromTarget = 5
+		// DUO_SETUP may name one set-up for each, such as "ret,enh".
+		for _, setup := range strings.Split(os.Getenv("DUO_SETUP"), ",") {
+			switch setup {
+			case "holy":
+				core.WithSpec(rel.player, &proto.Player_HolyPaladin{HolyPaladin: &proto.HolyPaladin{Options: &proto.HolyPaladin_Options{ClassOptions: &proto.PaladinOptions{}}}})
+				rel.player.InFrontOfTarget, rel.player.DistanceFromTarget = false, 20
+				core.WithSpec(wy.player, &proto.Player_EnhancementShaman{EnhancementShaman: &proto.EnhancementShaman{Options: &proto.EnhancementShaman_Options{ClassOptions: &proto.ShamanOptions{}}}})
+				wy.player.InFrontOfTarget, wy.player.DistanceFromTarget = true, 5
+				return trio{6, []member{wy, rel}, &proto.UnitReference{Type: proto.UnitReference_Player, Index: 0}, unitPlayer(0), "", unitPlayer(0)}
+			case "ret":
+				core.WithSpec(rel.player, &proto.Player_RetributionPaladin{RetributionPaladin: &proto.RetributionPaladin{Options: &proto.RetributionPaladin_Options{ClassOptions: &proto.PaladinOptions{}}}})
+			case "ele":
+				// =ele and =enh: Rellyk tanks and heals himself, Wyther does damage and heals him only when he is low.
+				core.WithSpec(wy.player, &proto.Player_ElementalShaman{ElementalShaman: &proto.ElementalShaman{Options: &proto.ElementalShaman_Options{ClassOptions: &proto.ShamanOptions{}}}})
+			case "enh":
+				core.WithSpec(wy.player, &proto.Player_EnhancementShaman{EnhancementShaman: &proto.EnhancementShaman{Options: &proto.EnhancementShaman_Options{ClassOptions: &proto.ShamanOptions{}}}})
+				wy.player.DistanceFromTarget = 5
+			}
 		}
+
 		return trio{6, []member{wy, rel}, &proto.UnitReference{Type: proto.UnitReference_Player, Index: 1}, unitPlayer(1), "", unitPlayer(1)}
 	}
 	pet := proto.HunterOptions_PetNone
