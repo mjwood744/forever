@@ -461,6 +461,8 @@ message ActivitySimRequest {
 	// The dungeon's name, as ActivityDungeons lists it. Only for ActivityDungeon.
 	string dungeon = 5;
 	SimOptions sim_options = 6;
+	// The mobs attack no one, so damage dealers are ranked on their damage alone. Raid.tanks is ignored.
+	bool untanked = 7;
 }
 
 // One player's results over the whole activity: each fight weighted by its length.
@@ -489,6 +491,8 @@ message ActivitySimResult {
 	double group_dps = 3;
 	double total_seconds = 4; // All fights back to back.
 	ErrorOutcome error = 5;
+	// What the sim changed to run the request, e.g. gear the item database does not hold.
+	repeated string warnings = 6;
 }
 
 message ActivityDungeonsRequest {

@@ -120,6 +120,8 @@ func TestHealersHeal(t *testing.T) {
 			&proto.Player_RestorationShaman{RestorationShaman: &proto.RestorationShaman{Options: &proto.RestorationShaman_Options{ClassOptions: &proto.ShamanOptions{}}}}),
 		"Healer Priest": group().Parties[0].Players[2],
 	}
+	// A healer that brings no rotation at all heals the same way.
+	healers["Holy Paladin"].Rotation = nil
 	for name, healer := range healers {
 		raid := group()
 		raid.Parties[0].Players = []*proto.Player{raid.Parties[0].Players[0], healer}
@@ -127,5 +129,35 @@ func TestHealersHeal(t *testing.T) {
 		if hps := res.Players[1].Hps; hps <= 0 {
 			t.Errorf("%s heals %.1f per second, want above 0", name, hps)
 		}
+	}
+}
+
+// Untanked, the mobs hit no one, so the Mage's damage is all that counts.
+func TestUntanked(t *testing.T) {
+	raid := group()
+	raid.Parties[0].Players = raid.Parties[0].Players[1:2]
+	res := run(t, &proto.ActivitySimRequest{Raid: raid, Activity: proto.Activity_ActivityRaid, Untanked: true})
+	if p := res.Players[0]; p.Dtps != 0 || p.Dps <= 0 {
+		t.Errorf("untanked mage: %.1f damage taken and %.1f dps per second, want none taken and some dealt", p.Dtps, p.Dps)
+	}
+}
+
+// A slot holding an item the database lacks is emptied, with a warning, and the rest still sims.
+func TestDropsUnknownItems(t *testing.T) {
+	raid := group()
+	raid.Parties[0].Players[1].Equipment.Items[0] = &proto.ItemSpec{Id: 999999999}
+	res := run(t, &proto.ActivitySimRequest{Raid: raid, Activity: proto.Activity_ActivityRaid})
+	if len(res.Warnings) != 1 {
+		t.Fatalf("warnings %v, want one for the unknown item", res.Warnings)
+	}
+}
+
+// An item the player carries its own row for counts as known, since the sim loads those rows first.
+func TestKeepsCarriedItems(t *testing.T) {
+	priest := group().Parties[0].Players[2]
+	priest.Equipment.Items[0] = &proto.ItemSpec{Id: 999999998}
+	priest.Database = &proto.SimDatabase{Items: []*proto.SimItem{{Id: 999999998}}}
+	if warnings := dropUnknownItems([]*proto.Player{priest}); len(warnings) != 0 || priest.Equipment.Items[0].Id != 999999998 {
+		t.Errorf("warnings %v and head item %d, want none and the carried item kept", warnings, priest.Equipment.Items[0].Id)
 	}
 }

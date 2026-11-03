@@ -11356,10 +11356,87 @@
 					},
 					"additionalProperties": false,
 					"required": ["group_dps", "total_time", "threat_warning", "fight_cell", "columns"]
+				},
+				"views": {
+					"type": "object",
+					"properties": {
+						"group": {
+							"type": "string"
+						},
+						"compare": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false,
+					"required": ["group", "compare"]
+				},
+				"boards": {
+					"type": "object",
+					"properties": {
+						"intro": {
+							"type": "string"
+						},
+						"run": {
+							"type": "string"
+						},
+						"running": {
+							"type": "string"
+						},
+						"details": {
+							"type": "string"
+						},
+						"no_gear": {
+							"type": "string"
+						},
+						"gear_incomplete": {
+							"type": "string"
+						},
+						"failed": {
+							"type": "string"
+						},
+						"talents": {
+							"type": "string"
+						},
+						"dps_title": {
+							"type": "string"
+						},
+						"dps_note": {
+							"type": "string"
+						},
+						"healer_title": {
+							"type": "string"
+						},
+						"healer_note": {
+							"type": "string"
+						},
+						"tank_title": {
+							"type": "string"
+						},
+						"tank_note": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"intro",
+						"run",
+						"running",
+						"details",
+						"no_gear",
+						"gear_incomplete",
+						"failed",
+						"talents",
+						"dps_title",
+						"dps_note",
+						"healer_title",
+						"healer_note",
+						"tank_title",
+						"tank_note"
+					]
 				}
 			},
 			"additionalProperties": false,
-			"required": ["title", "intro", "roster", "settings", "activities", "roles", "results"]
+			"required": ["title", "intro", "roster", "settings", "activities", "roles", "results", "views", "boards"]
 		},
 		"stat_filters": {
 			"type": "object",

@@ -1,9 +1,8 @@
+import type { GroupRole } from '@features/group/model/roles';
 import type { ActivitySimResult } from '@generated/proto/api';
 import i18n from '@i18n/config';
 import { Notice } from '@ui-kit/Notice';
 import { Table, TableCell, TableHeaderCell, TableRow } from '@ui-kit/Table';
-
-export type GroupRole = 'tank' | 'healer' | 'dps';
 
 export interface GroupResultsProps {
 	result: ActivitySimResult;

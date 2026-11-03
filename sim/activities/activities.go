@@ -198,7 +198,12 @@ func errorResult(err error) *proto.ActivitySimResult {
 
 // Each of the activity's fights as its own raid sim, then each player's results over all of them, each
 // fight weighted by how long it lasts.
-func RunActivitySim(req *proto.ActivitySimRequest) *proto.ActivitySimResult {
+func RunActivitySim(req *proto.ActivitySimRequest) (result *proto.ActivitySimResult) {
+	defer func() {
+		if r := recover(); r != nil {
+			result = errorResult(fmt.Errorf("%v", r))
+		}
+	}()
 	if req.Raid == nil || len(req.Raid.Parties) == 0 {
 		return errorResult(fmt.Errorf("the request has no group"))
 	}
@@ -227,8 +232,17 @@ func RunActivitySim(req *proto.ActivitySimRequest) *proto.ActivitySimResult {
 
 	raid := googleProto.Clone(req.Raid).(*proto.Raid)
 	raid.Parties = raid.Parties[:1]
-	if len(raid.Tanks) == 0 {
+	warnings := dropUnknownItems(raid.Parties[0].Players)
+	if req.Untanked {
+		raid.Tanks = nil
+	} else if len(raid.Tanks) == 0 {
 		raid.Tanks = []*proto.UnitReference{defaultTank(players)}
+	}
+	// A player with no rotation at all stands idle rather than leaving the engine without one.
+	for _, p := range raid.Parties[0].Players {
+		if p.Rotation == nil {
+			p.Rotation = &proto.APLRotation{Type: proto.APLRotation_TypeAPL}
+		}
 	}
 	if err := addHealerRotations(raid, fights[0].encounter); err != nil {
 		return errorResult(err)
@@ -242,7 +256,7 @@ func RunActivitySim(req *proto.ActivitySimRequest) *proto.ActivitySimResult {
 		opts.Iterations = 1000
 	}
 
-	res := &proto.ActivitySimResult{}
+	res := &proto.ActivitySimResult{Warnings: warnings}
 	totals := make([]*proto.ActivityPlayerSummary, len(players))
 	for i := range totals {
 		totals[i] = &proto.ActivityPlayerSummary{}
@@ -287,7 +301,10 @@ func RunActivitySim(req *proto.ActivitySimRequest) *proto.ActivitySimResult {
 // Gives each healer without a rotation one that heals the tank first, then whoever drops below half.
 func addHealerRotations(raid *proto.Raid, e *proto.Encounter) error {
 	players := raid.Parties[0].Players
-	tank := int(raid.Tanks[0].GetIndex())
+	tank := 0
+	if len(raid.Tanks) > 0 {
+		tank = int(raid.Tanks[0].GetIndex())
+	}
 	res := core.ComputeStats(&proto.ComputeStatsRequest{Raid: raid, Encounter: e, SkipRotation: true})
 	if res.ErrorResult != "" {
 		return fmt.Errorf("%s", res.ErrorResult)
@@ -302,4 +319,23 @@ func addHealerRotations(raid *proto.Raid, e *proto.Encounter) error {
 		}
 	}
 	return nil
+}
+
+// Empties the slots whose item neither the database nor the rows the player carries hold, so a preset
+// that names an item the game files dropped still sims. Each emptied slot is a warning.
+func dropUnknownItems(players []*proto.Player) []string {
+	var warnings []string
+	for _, p := range players {
+		carried := map[int32]bool{}
+		for _, item := range p.GetDatabase().GetItems() {
+			carried[item.GetId()] = true
+		}
+		for i, item := range p.GetEquipment().GetItems() {
+			if id := item.GetId(); id != 0 && !carried[id] && core.GetItemByID(id) == nil {
+				warnings = append(warnings, fmt.Sprintf("%s: no item %d in the database, slot left empty", p.Name, id))
+				p.Equipment.Items[i] = &proto.ItemSpec{}
+			}
+		}
+	}
+	return warnings
 }

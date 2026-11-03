@@ -1,3 +1,5 @@
+import { roleOfSpec } from '@features/group/model/boards';
+import type { GroupRole } from '@features/group/model/roles';
 import { MAX_GROUP_SIZE, readRoster, removeFromRoster, renameInRoster, type RosterEntry, rosterPlayer } from '@features/group/model/roster';
 import { Activity, type ActivityDungeonInfo, type ActivitySimResult } from '@generated/proto/api';
 import i18n from '@i18n/config';
@@ -6,24 +8,17 @@ import { Button } from '@ui-kit/Button';
 import { ChoiceField } from '@ui-kit/ChoiceField';
 import { Notice } from '@ui-kit/Notice';
 import { NumberField, StringField } from '@ui-kit/TextField';
+import { ToggleGroup } from '@ui-kit/ToggleGroup';
 import { useEffect, useMemo, useState } from 'react';
 
+import { ACTIVITIES, ACTIVITY_KEYS } from './activities';
 import { fetchDungeons, runActivity } from './activity_api';
-import { GroupResults, type GroupRole } from './GroupResults';
+import { ClassComparison } from './ClassComparison';
+import { GroupResults } from './GroupResults';
 
-const roleOf = (entry: RosterEntry): GroupRole => {
-	const spec = PlayerSpecs.fromProto(entry.spec);
-	return spec.isTankSpec ? 'tank' : spec.isHealingSpec ? 'healer' : 'dps';
-};
+const roleOf = (entry: RosterEntry): GroupRole => roleOfSpec(entry.spec);
 
-const ACTIVITIES = [Activity.ActivityOpenWorld, Activity.ActivityDungeon, Activity.ActivityRaid];
-const ACTIVITY_KEYS: Record<Activity, string> = {
-	[Activity.ActivityOpenWorld]: 'open_world',
-	[Activity.ActivityDungeon]: 'dungeon',
-	[Activity.ActivityRaid]: 'raid',
-};
-
-export const GroupPage = () => {
+const GroupSim = () => {
 	const [roster, setRoster] = useState(() => readRoster(window.localStorage));
 	const [picked, setPicked] = useState<string[]>([]);
 	const [tankId, setTankId] = useState<string>('');
@@ -85,11 +80,8 @@ export const GroupPage = () => {
 	};
 
 	return (
-		<div className="mx-auto flex max-w-6xl flex-col gap-8 p-6 text-gray-200">
-			<header className="flex flex-col gap-2">
-				<h1 className="mb-0 text-3xl font-bold">{i18n.t('group.title')}</h1>
-				<p className="mb-0 text-gray-400">{i18n.t('group.intro')}</p>
-			</header>
+		<div className="flex flex-col gap-8">
+			<p className="mb-0 text-gray-400">{i18n.t('group.intro')}</p>
 
 			<section className="flex flex-col gap-2" data-testid="group-roster">
 				<h2 className="mb-0 text-xl">{i18n.t('group.roster.title', { picked: group.length, max: MAX_GROUP_SIZE })}</h2>
@@ -173,7 +165,34 @@ export const GroupPage = () => {
 			</section>
 
 			{error && <Notice level="error">{error}</Notice>}
+			{ran?.result.warnings.map(w => (
+				<Notice key={w} level="warning">
+					{w}
+				</Notice>
+			))}
 			{ran && <GroupResults result={ran.result} roles={ran.roles} tank={ran.tank} />}
+		</div>
+	);
+};
+
+type View = 'group' | 'compare';
+
+export const GroupPage = () => {
+	const [view, setView] = useState<View>('group');
+	return (
+		<div className="mx-auto flex max-w-7xl flex-col gap-6 p-6 text-gray-200">
+			<header className="flex flex-wrap items-center justify-between gap-4">
+				<h1 className="mb-0 text-3xl font-bold">{i18n.t('group.title')}</h1>
+				<ToggleGroup
+					value={view}
+					onChange={setView}
+					options={[
+						{ value: 'group', label: i18n.t('group.views.group') },
+						{ value: 'compare', label: i18n.t('group.views.compare') },
+					]}
+				/>
+			</header>
+			{view === 'group' ? <GroupSim /> : <ClassComparison />}
 		</div>
 	);
 };
