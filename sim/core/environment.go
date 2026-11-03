@@ -191,7 +191,7 @@ func (env *Environment) finalize(raidProto *proto.Raid, _ *proto.Encounter, raid
 					rotationTransformation(raidProto, playerProto.Rotation)
 				}
 
-				char.Rotation = char.newAPLRotation(playerProto.Rotation)
+				char.Rotation = char.newAPLRotation(char.rerankRotation(playerProto.Rotation))
 			}
 		}
 	}

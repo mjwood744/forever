@@ -171,3 +171,16 @@ func TestFiguresStayFinite(t *testing.T) {
 		}
 	}
 }
+
+// A level-60 rotation names the top ranks; a level-20 mage has none of them and casts its own ranks.
+func TestLowLevelRotationCasts(t *testing.T) {
+	raid := group()
+	mage := raid.Parties[0].Players[1]
+	mage.Level = 20
+	mage.TalentsString = ""
+	raid.Parties[0].Players = []*proto.Player{mage}
+	res := run(t, &proto.ActivitySimRequest{Raid: raid, Activity: proto.Activity_ActivityRaid, Level: 20, Untanked: true})
+	if res.Players[0].Dps < 10 {
+		t.Errorf("level 20 mage dps %.1f, want its rotation to cast its own ranks", res.Players[0].Dps)
+	}
+}

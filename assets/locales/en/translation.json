@@ -2954,7 +2954,7 @@
 		"warnings": {
 			"label": "Warnings",
 			"profession_requirement": "{{itemName}} requires {{professionName}}, but it is not selected.",
-			"unspent_talent_points": "You have {{count}} unspent talent point(s).",
+			"talent_level": "{{points}} talent points spent, so the sim runs this build at level {{level}}. Spend all 51 for level 60.",
 			"broken_talents": "These talents are missing their tier or prerequisite points, so the build is not possible in game. The sim still applies them: {{talents}}.",
 			"windfury_over_flametongue": "Windfury Totem and Flametongue Totem do not stack: only Windfury Totem applies.",
 			"elemental_stormstrike": "Stormstrike is selected, which points to a hybrid Enhancement build. Use the Enhancement sim to sim it."

@@ -4,6 +4,7 @@ import { Class, ConsumesSpec, Faction, Race, Spec, TristateEffect, UnitReference
 import { ResourceType } from '@generated/proto/spell';
 import { UIItem as Item } from '@generated/proto/ui';
 
+import { CHARACTER_LEVEL } from '../constants/mechanics';
 import { PlayerClasses } from '../player/classes';
 import { PlayerClass } from '../player/player_class';
 import { PlayerSpec } from '../player/player_spec';
@@ -27,6 +28,15 @@ export function getTalentTreePoints(talentsString: string): Array<number> {
 
 export function getTalentPoints(talentsString: string): number {
 	return sum(getTalentTreePoints(talentsString));
+}
+
+// A character earns one talent point per level from 10 onwards, so a build with fewer points than a
+// level-60 character has sims at the level that gives it those points. No points at all is level 60,
+// which the sim reads from 0.
+export function levelForTalentPoints(points: number): number {
+	const max = CHARACTER_LEVEL - 9;
+	if (points <= 0 || points >= max) return 0;
+	return points + 9;
 }
 
 const CLASS_TEXT: Record<string, string> = {

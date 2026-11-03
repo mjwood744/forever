@@ -10039,7 +10039,7 @@
 						"profession_requirement": {
 							"type": "string"
 						},
-						"unspent_talent_points": {
+						"talent_level": {
 							"type": "string"
 						},
 						"broken_talents": {
@@ -10056,14 +10056,7 @@
 						}
 					},
 					"additionalProperties": false,
-					"required": [
-						"profession_requirement",
-						"unspent_talent_points",
-						"broken_talents",
-						"windfury_over_flametongue",
-						"elemental_stormstrike",
-						"label"
-					]
+					"required": ["profession_requirement", "talent_level", "broken_talents", "windfury_over_flametongue", "elemental_stormstrike", "label"]
 				},
 				"buttons": {
 					"type": "object",

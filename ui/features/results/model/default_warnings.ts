@@ -2,7 +2,7 @@ import i18n from '@i18n/config';
 import { CHARACTER_LEVEL } from '@sim/constants/mechanics';
 import type { Player } from '@sim/player/player';
 import { professionNames } from '@sim/proto/names';
-import { getTalentPoints } from '@sim/proto/utils';
+import { getTalentPoints, levelForTalentPoints } from '@sim/proto/utils';
 import type { SimWarning } from '@sim/sim_host';
 import { subscribeAll, subscribePlayerField, subscribeRaidField } from '@sim/state/subscriptions';
 
@@ -40,8 +40,9 @@ export function defaultSimWarnings<SpecType extends number>(player: Player<SpecT
 					return '';
 				}
 
-				return i18n.t('sidebar.warnings.unspent_talent_points', {
-					count: MAX_TALENT_POINTS - talentPoints,
+				return i18n.t('sidebar.warnings.talent_level', {
+					points: talentPoints,
+					level: levelForTalentPoints(talentPoints),
 				});
 			},
 		},
