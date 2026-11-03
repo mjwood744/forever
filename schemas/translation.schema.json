@@ -10071,6 +10071,9 @@
 						"simulate": {
 							"type": "string"
 						},
+						"add_to_group": {
+							"type": "string"
+						},
 						"stat_weights": {
 							"type": "object",
 							"properties": {
@@ -10695,7 +10698,7 @@
 						}
 					},
 					"additionalProperties": false,
-					"required": ["simulate", "stat_weights", "stat_sweep", "suggest_reforges"]
+					"required": ["simulate", "add_to_group", "stat_weights", "stat_sweep", "suggest_reforges"]
 				},
 				"header": {
 					"type": "object",
@@ -11207,6 +11210,157 @@
 			"additionalProperties": false,
 			"required": ["iterations", "warnings", "buttons", "header", "results", "character_stats"]
 		},
+		"group": {
+			"type": "object",
+			"properties": {
+				"title": {
+					"type": "string"
+				},
+				"intro": {
+					"type": "string"
+				},
+				"roster": {
+					"type": "object",
+					"properties": {
+						"title": {
+							"type": "string"
+						},
+						"empty": {
+							"type": "string"
+						},
+						"name": {
+							"type": "string"
+						},
+						"join": {
+							"type": "string"
+						},
+						"leave": {
+							"type": "string"
+						},
+						"remove": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false,
+					"required": ["title", "empty", "name", "join", "leave", "remove"]
+				},
+				"settings": {
+					"type": "object",
+					"properties": {
+						"activity": {
+							"type": "string"
+						},
+						"level": {
+							"type": "string"
+						},
+						"dungeon": {
+							"type": "string"
+						},
+						"no_dungeon": {
+							"type": "string"
+						},
+						"dungeon_option": {
+							"type": "string"
+						},
+						"tank": {
+							"type": "string"
+						},
+						"iterations": {
+							"type": "string"
+						},
+						"run": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false,
+					"required": ["activity", "level", "dungeon", "no_dungeon", "dungeon_option", "tank", "iterations", "run"]
+				},
+				"activities": {
+					"type": "object",
+					"properties": {
+						"open_world": {
+							"type": "string"
+						},
+						"dungeon": {
+							"type": "string"
+						},
+						"raid": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false,
+					"required": ["open_world", "dungeon", "raid"]
+				},
+				"roles": {
+					"type": "object",
+					"properties": {
+						"tank": {
+							"type": "string"
+						},
+						"healer": {
+							"type": "string"
+						},
+						"dps": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false,
+					"required": ["tank", "healer", "dps"]
+				},
+				"results": {
+					"type": "object",
+					"properties": {
+						"group_dps": {
+							"type": "string"
+						},
+						"total_time": {
+							"type": "string"
+						},
+						"threat_warning": {
+							"type": "string"
+						},
+						"fight_cell": {
+							"type": "string"
+						},
+						"columns": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"role": {
+									"type": "string"
+								},
+								"death": {
+									"type": "string"
+								},
+								"oom": {
+									"type": "string"
+								},
+								"mana": {
+									"type": "string"
+								},
+								"fight": {
+									"type": "string"
+								},
+								"targets": {
+									"type": "string"
+								},
+								"seconds": {
+									"type": "string"
+								}
+							},
+							"additionalProperties": false,
+							"required": ["name", "role", "death", "oom", "mana", "fight", "targets", "seconds"]
+						}
+					},
+					"additionalProperties": false,
+					"required": ["group_dps", "total_time", "threat_warning", "fight_cell", "columns"]
+				}
+			},
+			"additionalProperties": false,
+			"required": ["title", "intro", "roster", "settings", "activities", "roles", "results"]
+		},
 		"stat_filters": {
 			"type": "object",
 			"properties": {
@@ -11286,7 +11440,8 @@
 		"export",
 		"info",
 		"sidebar",
-		"stat_filters"
+		"stat_filters",
+		"group"
 	],
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Generated Schema",

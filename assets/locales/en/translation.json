@@ -2961,6 +2961,7 @@
 		},
 		"buttons": {
 			"simulate": "Simulate",
+			"add_to_group": "Add to group",
 			"stat_weights": {
 				"title": "Stat Weights",
 				"modal": {
@@ -3319,5 +3320,53 @@
 		"kept_tooltip": "This item is showing because you have it selected. Use the stat filters to permanently show it.",
 		"rating_label": "{{stat}} Rating",
 		"percent_label": "{{stat}} %"
+	},
+	"group": {
+		"title": "Group Sim",
+		"intro": "Save characters from their spec pages with Add to group, pick 1 to 5 of them, and run them through an activity together.",
+		"roster": {
+			"title": "Characters ({{picked}} of {{max}} in the group)",
+			"empty": "No saved characters yet. Open a spec page, set up the character and press Add to group in the sidebar.",
+			"name": "Name",
+			"join": "Add to group",
+			"leave": "Take out",
+			"remove": "Delete"
+		},
+		"settings": {
+			"activity": "Activity",
+			"level": "Group level",
+			"dungeon": "Dungeon",
+			"no_dungeon": "No dungeon near this level",
+			"dungeon_option": "{{name}} (last boss {{level}}, {{pulls}} pulls)",
+			"tank": "Tank",
+			"iterations": "Iterations",
+			"run": "Simulate group"
+		},
+		"activities": {
+			"open_world": "Open World",
+			"dungeon": "Dungeon",
+			"raid": "Raid"
+		},
+		"roles": {
+			"tank": "Tank",
+			"healer": "Healer",
+			"dps": "Damage"
+		},
+		"results": {
+			"group_dps": "Group DPS: {{value}}",
+			"total_time": "Time fighting: {{value}} s",
+			"threat_warning": "Out-threatening the tank: {{names}}.",
+			"fight_cell": "{{dps}} DPS, {{hps}} HPS, {{death}} chance of death",
+			"columns": {
+				"name": "Character",
+				"role": "Role",
+				"death": "Death chance",
+				"oom": "Seconds OOM",
+				"mana": "Mana spent",
+				"fight": "Fight",
+				"targets": "Mobs",
+				"seconds": "Seconds"
+			}
+		}
 	}
 }

@@ -48,7 +48,7 @@ in `ui/STYLING.md`; there is no SCSS or Bootstrap.
 
 A few facts that shape the code: several classes have one spec page (`mage/dps`, `hunter/dps`), there are no glyphs,
 `en` is the only locale, talents are three trees with tier and prerequisite rules (the picker lets a point be taken back
-anyway and marks what that breaks, see `references/talents.md`), and there is no raid sim UI.
+anyway and marks what that breaks, see `references/talents.md`), and there is no raid sim UI. The group page (`ui/app/group/`, served at `/forever/group/`) sims 1 to 5 characters that the spec pages' Add to group button saved (`ui/features/group/model/roster.ts`); it calls the Go server's `/activitySim` directly, so it has no wasm fallback.
 
 ## Which file to open
 

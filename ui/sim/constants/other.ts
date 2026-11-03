@@ -59,6 +59,9 @@ export type Social = (typeof SOCIALS)[number];
 // player/specs/<class>.ts (which calls it at module scope) does not import the
 // proto <-> player/specs cycle; the evaluation order of that cycle decides
 // whether PlayerSpecs' lookup table is populated.
+// The group page, which sims characters saved from the spec pages together.
+export const GROUP_SITE_PATH = `/${REPO_NAME}/group/`;
+
 export function getSpecSitePath(classString: string, specString: string): string {
 	return `/${REPO_NAME}/${classString}/${specString}/`;
 }
