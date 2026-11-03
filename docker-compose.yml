@@ -1,4 +1,5 @@
-# Production deployment for the Forever sim.
+# Production deployment for the Forever sim. In Portainer: Stacks > Add stack > Repository, point it
+# at this repo (reference refs/heads/trio-planning) with compose path docker-compose.yml.
 #
 #   docker compose pull && docker compose up -d   # start the image GitHub built
 #   ./upgrade.sh                                  # pull the newest image, restart
@@ -8,10 +9,8 @@
 # branch. SIM_TAG in a .env file next to this one picks the branch; it defaults to trio-planning.
 # A private repository's image needs `docker login ghcr.io` once, with a token that can read packages.
 #
-# TLS/HTTPS is handled by the host's existing systemd Caddy, which reverse
-# proxies https://0.0.0.0:9347 -> 127.0.0.1:18790 (see the site
-# block in /etc/caddy/Caddyfile). This container is bound to localhost only, so
-# nothing reaches the sim except Caddy on the same host.
+# The sim answers on every interface at host port 18790 unless SIM_PORT is set, so
+# http://<server>:18790/forever/ works from the LAN. The host's Caddy can still proxy to it.
 #
 # The sim is stateless: no volume needed, runs fully read-only.
 
@@ -38,7 +37,6 @@ services:
             - no-new-privileges:true
         # -----------------------------------------------------------------------
 
-        # Published on the loopback interface only — reachable by the host's Caddy,
-        # never on the LAN/VPN/internet directly.
         ports:
-            - '127.0.0.1:18790:8080'
+            # Host port: 18790 unless SIM_PORT is set.
+            - '${SIM_PORT:-18790}:8080'
