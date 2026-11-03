@@ -113,7 +113,7 @@ func TestTrioDungeons(t *testing.T) {
 						}
 						death := ps[i].ChanceOfDeath
 						for _, pet := range ps[i].Pets {
-							if pet.Name == "Turtle" || pet.Name == "Voidwalker" || strings.Contains(pet.Name, "Pet") {
+							if pet.Name == "Turtle" || pet.Name == "Voidwalker" || pet.Name == "Succubus" || pet.Name == "Felhunter" || strings.Contains(pet.Name, "Pet") {
 								death = max(death, pet.ChanceOfDeath)
 							}
 						}

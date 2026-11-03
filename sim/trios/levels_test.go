@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"regexp"
 	"sort"
 	"strconv"
 	"strings"
@@ -260,6 +261,22 @@ func makeTrio(n int, lvl int32) trio {
 		// Below 10 the mobs go for Hawke.
 		t := makeTrio(3, lvl)
 		t.n, t.members, t.otherRef = 5, t.members[:2], unitPlayer(0)
+		wd := t.members[1].player
+		// DUO_SETUP=bear: Wyldd tanks in Bear form and Hawke's pet joins the damage; =balance or =cat: the
+		// Turtle still tanks and Wyldd does damage, so only Mend Pet heals.
+		switch os.Getenv("DUO_SETUP") {
+		case "bear":
+			core.WithSpec(wd, &proto.Player_FeralBearDruid{FeralBearDruid: &proto.FeralBearDruid{Options: &proto.FeralBearDruid_Options{ClassOptions: &proto.DruidOptions{}}}})
+			wd.InFrontOfTarget, wd.DistanceFromTarget = true, 5
+			t.tank = &proto.UnitReference{Type: proto.UnitReference_Player, Index: 1}
+			t.tankRef = unitPlayer(1)
+			return t
+		case "balance":
+			core.WithSpec(wd, &proto.Player_BalanceDruid{BalanceDruid: &proto.BalanceDruid{Options: &proto.BalanceDruid_Options{ClassOptions: &proto.DruidOptions{}}}})
+		case "cat":
+			core.WithSpec(wd, &proto.Player_FeralCatDruid{FeralCatDruid: &proto.FeralCatDruid{Options: &proto.FeralCatDruid_Options{ClassOptions: &proto.DruidOptions{}}}})
+			wd.DistanceFromTarget = 5
+		}
 		if lvl < 10 {
 			t.members[0].player.InFrontOfTarget, t.members[0].player.DistanceFromTarget = true, 5
 			t.tank = &proto.UnitReference{Type: proto.UnitReference_Player, Index: 0}
@@ -270,6 +287,18 @@ func makeTrio(n int, lvl int32) trio {
 		// Duo 3: Rellyk tanking on the main screen, Wyther following and healing him.
 		wy := makeTrio(2, lvl).members[0]
 		rel := makeTrio(1, lvl).members[1]
+		// DUO_SETUP=holy: Rellyk heals as Holy and Wyther tanks as Enhancement with a shield;
+		// =ret: Rellyk tanks as Retribution, Wyther heals.
+		switch os.Getenv("DUO_SETUP") {
+		case "holy":
+			core.WithSpec(rel.player, &proto.Player_HolyPaladin{HolyPaladin: &proto.HolyPaladin{Options: &proto.HolyPaladin_Options{ClassOptions: &proto.PaladinOptions{}}}})
+			rel.player.InFrontOfTarget, rel.player.DistanceFromTarget = false, 20
+			core.WithSpec(wy.player, &proto.Player_EnhancementShaman{EnhancementShaman: &proto.EnhancementShaman{Options: &proto.EnhancementShaman_Options{ClassOptions: &proto.ShamanOptions{}}}})
+			wy.player.InFrontOfTarget, wy.player.DistanceFromTarget = true, 5
+			return trio{6, []member{wy, rel}, &proto.UnitReference{Type: proto.UnitReference_Player, Index: 0}, unitPlayer(0), "", unitPlayer(0)}
+		case "ret":
+			core.WithSpec(rel.player, &proto.Player_RetributionPaladin{RetributionPaladin: &proto.RetributionPaladin{Options: &proto.RetributionPaladin_Options{ClassOptions: &proto.PaladinOptions{}}}})
+		}
 		return trio{6, []member{wy, rel}, &proto.UnitReference{Type: proto.UnitReference_Player, Index: 1}, unitPlayer(1), "", unitPlayer(1)}
 	}
 	pet := proto.HunterOptions_PetNone
@@ -317,8 +346,16 @@ func makeDuoNyxxMalyce(lvl int32) trio {
 	nyxx := newPlayer("Nyxx", lvl, proto.Class_ClassPriest, race,
 		&proto.Player_HealerPriest{HealerPriest: &proto.HealerPriest{Options: &proto.HealerPriest_Options{ClassOptions: &proto.PriestOptions{Armor: armor}}}})
 	summon, warlockArmor := proto.WarlockOptions_Imp, proto.WarlockOptions_NoArmor
+	pet := 1
 	if lvl >= 10 {
 		summon = proto.WarlockOptions_Voidwalker
+	}
+	// DUO_PET=succubus (from 20) or felhunter (from 30): that pet tanks in place of the Voidwalker.
+	switch {
+	case os.Getenv("DUO_PET") == "succubus" && lvl >= 20:
+		summon, pet = proto.WarlockOptions_Succubus, 2
+	case os.Getenv("DUO_PET") == "felhunter" && lvl >= 30:
+		summon, pet = proto.WarlockOptions_Felhunter, 3
 	}
 	if lvl >= 20 {
 		warlockArmor = proto.WarlockOptions_DemonArmor
@@ -335,8 +372,8 @@ func makeDuoNyxxMalyce(lvl int32) trio {
 	t := trio{4, []member{{"Nyxx", nyxx}, {"Malyce", ma}}, nil, "", "", ""}
 	if lvl >= 10 {
 		// The warlock registers the Imp, Voidwalker, Succubus and Felhunter in that order, so the Voidwalker is pet 1.
-		t.tank = &proto.UnitReference{Type: proto.UnitReference_Pet, Index: 1, Owner: &proto.UnitReference{Type: proto.UnitReference_Player, Index: 1}}
-		t.tankRef = `{"type":"Pet","index":1,"owner":{"type":"Player","index":1}}`
+		t.tank = &proto.UnitReference{Type: proto.UnitReference_Pet, Index: int32(pet), Owner: &proto.UnitReference{Type: proto.UnitReference_Player, Index: 1}}
+		t.tankRef = fmt.Sprintf(`{"type":"Pet","index":%d,"owner":{"type":"Player","index":1}}`, pet)
 		t.petRef = t.tankRef
 	} else {
 		nyxx.InFrontOfTarget = true
@@ -439,6 +476,14 @@ type press struct {
 // for them. Keys left out are situational (interrupts, stuns, taunts, crowd control).
 func presses(name string, t trio) []press {
 	self := unitSelf()
+	// ROLE_<name>=healer or =tank plays a character in a role its own keys don't cover, with keys that
+	// KEYS defines for it in that role.
+	switch os.Getenv("ROLE_" + name) {
+	case "healer":
+		name = "Wyther"
+	case "tank":
+		name = "Skarr"
+	}
 	switch name {
 	case "Rellyk":
 		return []press{{key: "Shift+3", prepull: true}, {key: "Shift+3", cond: "SEAL"}, {key: "Shift+2", cond: hpBelow(self, 30)},
@@ -553,6 +598,33 @@ func pick(ids []int32, have map[int32]bool) int32 {
 
 // The APL for a character from its presses; unknown spells go to dropped.
 func buildAPL(name string, t trio, lvl int32, f fight, have map[int32]bool, dropped map[string]bool) string {
+	// APL_<name>=file: a spec's own rotation (a ui/specs/.../apls file) in place of the keys, for a role the
+	// macro sheets have no keys for.
+	if file := os.Getenv("APL_" + name); file != "" {
+		raw, err := os.ReadFile(file)
+		if err != nil {
+			panic(err)
+		}
+		// The spec files name level 60 ranks: each spell becomes the best rank of the same name known at this level.
+		best := map[string]int32{}
+		for id := range have {
+			if s := spelldata.Find(id); s != nil {
+				if b, ok := best[s.Name]; !ok || spelldata.Find(b).SpellLevel < s.SpellLevel {
+					best[s.Name] = id
+				}
+			}
+		}
+		return regexp.MustCompile(`"spellId":\s*(\d+)`).ReplaceAllStringFunc(string(raw), func(m string) string {
+			id, _ := strconv.Atoi(regexp.MustCompile(`\d+`).FindString(m))
+			if s := spelldata.Find(int32(id)); s != nil && !have[int32(id)] {
+				if b, ok := best[s.Name]; ok {
+					return fmt.Sprintf(`"spellId":%d`, b)
+				}
+				dropped[fmt.Sprintf("%s %s: spell %d", name, file[strings.LastIndex(file, "/")+1:], id)] = true
+			}
+			return m
+		})
+	}
 	ck := keysAt[name]
 	keys := ck.Levels[bracket(ck, lvl)].Keys
 	var prepull, prio []string
