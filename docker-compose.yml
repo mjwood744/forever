@@ -1,7 +1,12 @@
 # Production deployment for the Forever sim.
 #
-#   docker compose up -d        # build + start
-#   ./upgrade.sh                # pull, rebuild, restart
+#   docker compose pull && docker compose up -d   # start the image GitHub built
+#   ./upgrade.sh                                  # pull the newest image, restart
+#   docker compose up -d --build                  # build here instead, from this checkout
+#
+# GitHub publishes the image on every push (.github/workflows/docker_image.yml), one tag per
+# branch. SIM_TAG in a .env file next to this one picks the branch; it defaults to trio-planning.
+# A private repository's image needs `docker login ghcr.io` once, with a token that can read packages.
 #
 # TLS/HTTPS is handled by the host's existing systemd Caddy, which reverse
 # proxies https://0.0.0.0:9347 -> 127.0.0.1:18790 (see the site
@@ -16,7 +21,8 @@ services:
             context: .
             dockerfile: Dockerfile
             target: prod
-        image: wowsimforever:local
+        image: ghcr.io/mjwood744/forever:${SIM_TAG:-trio-planning}
+        pull_policy: missing
         restart: unless-stopped
         # The server exits cleanly on SIGINT (its only handled signal).
         stop_signal: SIGINT

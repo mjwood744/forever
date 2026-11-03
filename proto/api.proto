@@ -444,6 +444,66 @@ message RaidSimResult {
 	int32 iterations_done = 7;
 }
 
+// RPC ActivitySim: a group of 1 to 5 players through an activity's fights.
+enum Activity {
+	ActivityOpenWorld = 0;
+	ActivityDungeon = 1;
+	ActivityRaid = 2;
+}
+
+message ActivitySimRequest {
+	string request_id = 1;
+	// One party of 1 to 5 players. Raid.tanks names who holds the mobs; empty picks the first tank spec, or player 1.
+	Raid raid = 2;
+	Activity activity = 3;
+	// The group's level; open world and raid mobs are built around it. Dungeons use their own mobs.
+	int32 level = 4;
+	// The dungeon's name, as ActivityDungeons lists it. Only for ActivityDungeon.
+	string dungeon = 5;
+	SimOptions sim_options = 6;
+}
+
+// One player's results over the whole activity: each fight weighted by its length.
+message ActivityPlayerSummary {
+	string name = 1;
+	double dps = 2;
+	double hps = 3;
+	double tps = 4; // Threat per second.
+	double dtps = 5; // Damage taken per second.
+	double chance_of_death = 6; // The highest chance of death over the fights.
+	double seconds_oom = 7; // Seconds out of mana, summed over the fights.
+	double mana_spent = 8; // Mana spent minus mana gained, summed over the fights.
+}
+
+message ActivityFight {
+	string label = 1;
+	int32 target_count = 2;
+	bool boss = 3;
+	double seconds = 4; // Average fight length.
+	repeated ActivityPlayerSummary players = 5;
+}
+
+message ActivitySimResult {
+	repeated ActivityFight fights = 1;
+	repeated ActivityPlayerSummary players = 2;
+	double group_dps = 3;
+	double total_seconds = 4; // All fights back to back.
+	ErrorOutcome error = 5;
+}
+
+message ActivityDungeonsRequest {
+	// Only dungeons whose last boss is within 5 levels of this one; 60 lists every dungeon.
+	int32 level = 1;
+}
+message ActivityDungeonInfo {
+	string name = 1;
+	int32 last_boss_level = 2;
+	int32 pulls = 3;
+}
+message ActivityDungeonsResult {
+	repeated ActivityDungeonInfo dungeons = 1;
+}
+
 message RaidSimRequestSplitRequest {
 	int32 split_count = 1;
 	RaidSimRequest request = 2;

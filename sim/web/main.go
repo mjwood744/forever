@@ -21,6 +21,7 @@ import (
 	"github.com/pkg/browser"
 	dist "github.com/wowsims/forever/binary_dist"
 	"github.com/wowsims/forever/sim"
+	"github.com/wowsims/forever/sim/activities"
 	"github.com/wowsims/forever/sim/core"
 	"github.com/wowsims/forever/sim/core/bulk"
 	proto "github.com/wowsims/forever/sim/core/proto"
@@ -102,6 +103,12 @@ func main() {
 var handlers = map[string]apiHandler{
 	"/raidSim": {msg: func() googleProto.Message { return &proto.RaidSimRequest{} }, handle: func(msg googleProto.Message) googleProto.Message {
 		return core.RunRaidSim(msg.(*proto.RaidSimRequest))
+	}},
+	"/activitySim": {msg: func() googleProto.Message { return &proto.ActivitySimRequest{} }, handle: func(msg googleProto.Message) googleProto.Message {
+		return activities.RunActivitySim(msg.(*proto.ActivitySimRequest))
+	}},
+	"/activityDungeons": {msg: func() googleProto.Message { return &proto.ActivityDungeonsRequest{} }, handle: func(msg googleProto.Message) googleProto.Message {
+		return activities.Dungeons(msg.(*proto.ActivityDungeonsRequest))
 	}},
 	"/statWeights": {msg: func() googleProto.Message { return &proto.StatWeightsRequest{} }, handle: func(msg googleProto.Message) googleProto.Message {
 		return core.StatWeights(msg.(*proto.StatWeightsRequest))

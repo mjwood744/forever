@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 #
-# Upgrade the Forever sim in place: pull latest source, rebuild the sim image, and
-# restart the stack. The app is stateless, so there is nothing to back up — the
+# Upgrade the Forever sim in place: pull the latest source and the image GitHub built from it, and
+# restart the stack. --build builds the image here instead.
+#
+# The app is stateless, so there is nothing to back up — the
 # only persistent data is Caddy's certs in the caddy_data volume, which are left
 # untouched.
 #
-# The old container keeps serving while the new image builds; downtime is just
+# The old container keeps serving while the new image downloads; downtime is just
 # the few seconds of the container swap.
 
 set -euo pipefail
@@ -19,8 +21,13 @@ HEALTH_URL="http://127.0.0.1:18790/version"
 echo "==> Pulling latest source..."
 git pull --ff-only
 
-echo "==> Building sim image..."
-docker compose build sim
+if [[ "${1:-}" == "--build" ]]; then
+	echo "==> Building sim image..."
+	docker compose build sim
+else
+	echo "==> Pulling sim image..."
+	docker compose pull sim
+fi
 
 echo "==> Restarting stack..."
 docker compose up -d
