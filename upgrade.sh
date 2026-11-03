@@ -14,9 +14,9 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
-# Check the sim directly on its loopback port (TLS is terminated upstream by
-# the host's Caddy, which we don't touch during an app upgrade).
-HEALTH_URL="http://127.0.0.1:18790/version"
+# Check the sim directly on its host port, SIM_PORT from the environment or .env, else 18790.
+SIM_PORT="${SIM_PORT:-$(sed -n 's/^SIM_PORT=//p' .env 2>/dev/null)}"
+HEALTH_URL="http://127.0.0.1:${SIM_PORT:-18790}/version"
 
 echo "==> Pulling latest source..."
 git pull --ff-only
