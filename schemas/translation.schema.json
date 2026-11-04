@@ -11271,6 +11271,132 @@
 			"additionalProperties": false,
 			"required": ["iterations", "warnings", "buttons", "header", "results", "character_stats"]
 		},
+		"me": {
+			"type": "object",
+			"properties": {
+				"title": {
+					"type": "string"
+				},
+				"paste": {
+					"type": "string"
+				},
+				"empty": {
+					"type": "string"
+				},
+				"card": {
+					"type": "string"
+				},
+				"roles": {
+					"type": "object",
+					"properties": {
+						"main": {
+							"type": "string"
+						},
+						"follower": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false,
+					"required": ["main", "follower"]
+				},
+				"job": {
+					"type": "string"
+				},
+				"needs_group": {
+					"type": "string"
+				},
+				"ran_with": {
+					"type": "string"
+				},
+				"ran_alone": {
+					"type": "string"
+				},
+				"activity": {
+					"type": "string"
+				},
+				"run": {
+					"type": "string"
+				},
+				"remove": {
+					"type": "string"
+				},
+				"unknown_talents": {
+					"type": "string"
+				},
+				"preset_gear": {
+					"type": "string"
+				},
+				"stats": {
+					"type": "object",
+					"properties": {
+						"tps": {
+							"type": "string"
+						},
+						"hps": {
+							"type": "string"
+						},
+						"dps": {
+							"type": "string"
+						},
+						"dtps": {
+							"type": "string"
+						},
+						"oom": {
+							"type": "string"
+						},
+						"death": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false,
+					"required": ["tps", "hps", "dps", "dtps", "oom", "death"]
+				},
+				"rotation": {
+					"type": "object",
+					"properties": {
+						"title": {
+							"type": "string"
+						},
+						"healer": {
+							"type": "string"
+						},
+						"gain": {
+							"type": "string"
+						},
+						"same": {
+							"type": "string"
+						},
+						"prepull": {
+							"type": "string"
+						},
+						"when": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false,
+					"required": ["title", "healer", "gain", "same", "prepull", "when"]
+				}
+			},
+			"additionalProperties": false,
+			"required": [
+				"title",
+				"paste",
+				"empty",
+				"card",
+				"roles",
+				"job",
+				"needs_group",
+				"ran_with",
+				"ran_alone",
+				"activity",
+				"run",
+				"remove",
+				"unknown_talents",
+				"preset_gear",
+				"stats",
+				"rotation"
+			]
+		},
 		"group": {
 			"type": "object",
 			"properties": {
@@ -11583,7 +11709,8 @@
 		"info",
 		"sidebar",
 		"stat_filters",
-		"group"
+		"group",
+		"me"
 	],
 	"$schema": "http://json-schema.org/draft-07/schema#",
 	"title": "Generated Schema",

@@ -96,7 +96,7 @@ func Search(req *proto.RotationSearchRequest) (result *proto.RotationSearchResul
 	out := googleProto.Clone(start).(*proto.APLRotation)
 	out.Type = proto.APLRotation_TypeAPL
 	out.PriorityList = append(append([]*proto.APLListItem{}, best...), hidden...)
-	words := newDescriber(out)
+	words := newDescriber(out).withStats(rotationStats(base, out))
 	return &proto.RotationSearchResult{
 		Rotation:   out,
 		Score:      bestScore,
@@ -236,6 +236,17 @@ func neighbours(items []*proto.APLListItem, adds []*proto.APLListItem) []candida
 		})
 	}
 	return out
+}
+
+// The sim's checks of the rotation for the player, or nil when the stats can't be worked out.
+func rotationStats(base *proto.RaidSimRequest, rot *proto.APLRotation) *proto.APLStats {
+	raid := googleProto.Clone(base.Raid).(*proto.Raid)
+	raid.Parties[0].Players[0].Rotation = rot
+	stats := core.ComputeStats(&proto.ComputeStatsRequest{Raid: raid, Encounter: base.Encounter})
+	if stats.ErrorResult != "" {
+		return nil
+	}
+	return stats.GetRaidStats().GetParties()[0].GetPlayers()[0].GetRotationStats()
 }
 
 // The actions the search may add: one per spell the player has at its level and may cast on an enemy

@@ -52,3 +52,22 @@ func TestDescribeSaysWhenEachActionRuns(t *testing.T) {
 		}
 	}
 }
+
+// An action the sim's checks say the character can't run, and a group left empty by them, are left out.
+func TestDescribeLeavesOutWhatTheCharacterCannotRun(t *testing.T) {
+	group := &proto.APLListItem{Action: &proto.APLAction{Action: &proto.APLAction_GroupReference{GroupReference: &proto.APLActionGroupReference{GroupName: "Trinkets"}}}}
+	rot := &proto.APLRotation{
+		PriorityList: []*proto.APLListItem{cast(fireBlast), group, cast(frostbolt)},
+		Groups:       []*proto.APLGroup{{Name: "Trinkets", Actions: []*proto.APLListItem{cast(frostbolt)}}},
+	}
+	unknown := []*proto.APLValidation{{LogLevel: proto.LogLevel_Warning, Validation: "Player does not know spell {SpellID: 1}"}}
+	resolved := []*proto.APLValidation{{LogLevel: proto.LogLevel_Warning, Validation: "Condition could not be resolved and will be treated as always true."}}
+	stats := &proto.APLStats{
+		PriorityList: []*proto.APLActionStats{{Validations: unknown}, {}, {Validations: resolved}},
+		Groups:       []*proto.APLGroupStats{{Actions: []*proto.APLActionStats{{Validations: unknown}}}},
+	}
+	got := newDescriber(rot).withStats(stats).steps(rot.PriorityList, 0)
+	if len(got) != 1 || got[0].Ability != "Frostbolt" {
+		t.Fatalf("steps %v, want only Frostbolt", got)
+	}
+}

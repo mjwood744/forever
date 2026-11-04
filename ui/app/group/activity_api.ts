@@ -41,7 +41,7 @@ export interface GroupRun {
 
 // The server holds no item or consumable data of its own, so each player carries the rows its gear and
 // consumables need, as the spec pages' sims send them.
-async function withDatabase(players: Player[]): Promise<Player[]> {
+export async function withDatabase(players: Player[]): Promise<Player[]> {
 	return Promise.all(
 		players.map(async p => {
 			const equipment = p.equipment ?? EquipmentSpec.create();

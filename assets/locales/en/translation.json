@@ -3338,6 +3338,41 @@
 		"rating_label": "{{stat}} Rating",
 		"percent_label": "{{stat}} %"
 	},
+	"me": {
+		"title": "My characters",
+		"paste": "Paste the string from /fms export here, then press Enter",
+		"empty": "In game, type /fms export, copy the string, and paste it above. Each character you paste stays here.",
+		"card": "{{cls}} {{level}} · {{split}} {{role}}",
+		"roles": {
+			"main": "· Main",
+			"follower": "· Follower"
+		},
+		"job": "Job",
+		"needs_group": "A healer needs someone to heal. Paste your main as well, then sim again.",
+		"ran_with": "Simmed together with {{names}}, as you play them.",
+		"ran_alone": "Simmed on its own. Paste your other characters to sim them together.",
+		"activity": "Sim for",
+		"run": "Sim this character",
+		"remove": "Remove {{name}}",
+		"unknown_talents": "These talents aren't in the sims yet, so they were left out: {{names}}.",
+		"preset_gear": "The string had no gear the sims know, so this uses the sims' preset gear for the class.",
+		"stats": {
+			"tps": "Threat per second",
+			"hps": "Healing per second",
+			"dps": "Damage per second",
+			"dtps": "Damage taken per second",
+			"oom": "Seconds out of mana",
+			"death": "Death chance"
+		},
+		"rotation": {
+			"title": "Rotation, in order",
+			"healer": "The rotation finder doesn't cover healers yet. The sims heal with their built-in plan for the class: the biggest heal when health is low, a heal over time kept up, and smaller heals when health is near full.",
+			"gain": "This order gives {{gain}}% more {{unit}} than the sims' starting rotation for this build.",
+			"same": "The sims' starting rotation for this build was already the best they found.",
+			"prepull": "Before the pull",
+			"when": "when {{when}}"
+		}
+	},
 	"group": {
 		"title": "Group Sim",
 		"intro": "Save characters from their spec pages with Add to group, pick 1 to 5 of them, and run them through an activity together.",

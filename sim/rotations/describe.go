@@ -13,6 +13,10 @@ import (
 type describer struct {
 	rot  *proto.APLRotation
 	vars map[string]*proto.APLValue
+	// Actions this character can never run, by group (-1 for the priority list) and place; nil lists all.
+	dead map[[2]int]bool
+	// The prepull actions this character can never run, by place.
+	deadPrepull map[int]bool
 }
 
 func newDescriber(rot *proto.APLRotation) *describer {
@@ -24,13 +28,19 @@ func newDescriber(rot *proto.APLRotation) *describer {
 }
 
 func (d *describer) steps(items []*proto.APLListItem, depth int) []*proto.RotationStep {
+	return d.stepsIn(items, depth, -1)
+}
+
+func (d *describer) stepsIn(items []*proto.APLListItem, depth, group int) []*proto.RotationStep {
 	var out []*proto.RotationStep
-	for _, it := range items {
-		if it.GetHide() {
+	for i, it := range items {
+		if it.GetHide() || d.dead[[2]int{group, i}] {
 			continue
 		}
 		// An action whose condition is always false, one the rotation switches off, never runs.
-		if st := d.step(it.GetAction(), depth); st.When != "false" {
+		st := d.step(it.GetAction(), depth)
+		// A group left with nothing this character can run is left out with them.
+		if st.When != "false" && (it.GetAction().GetGroupReference() == nil || depth > 0 || len(st.Steps) > 0 || d.dead == nil) {
 			out = append(out, st)
 		}
 	}
@@ -46,14 +56,14 @@ func (d *describer) step(a *proto.APLAction, depth int) *proto.RotationStep {
 	}
 	// A group runs its own list in place; its actions are listed under it, one level deep.
 	if g := a.GetGroupReference(); g != nil && depth == 0 {
-		for _, grp := range d.rot.GetGroups() {
+		for gi, grp := range d.rot.GetGroups() {
 			if grp.GetName() == g.GetGroupName() {
 				for _, v := range grp.GetVariables() {
 					if _, ok := d.vars[v.GetName()]; !ok {
 						d.vars[v.GetName()] = v.GetValue()
 					}
 				}
-				st.Steps = d.steps(grp.GetActions(), depth+1)
+				st.Steps = d.stepsIn(grp.GetActions(), depth+1, gi)
 			}
 		}
 	}
@@ -62,8 +72,8 @@ func (d *describer) step(a *proto.APLAction, depth int) *proto.RotationStep {
 
 func (d *describer) prepull() []*proto.RotationStep {
 	var out []*proto.RotationStep
-	for _, p := range d.rot.GetPrepullActions() {
-		if p.GetHide() {
+	for i, p := range d.rot.GetPrepullActions() {
+		if p.GetHide() || d.deadPrepull[i] {
 			continue
 		}
 		st := &proto.RotationStep{Ability: d.action(p.GetAction())}
@@ -73,6 +83,44 @@ func (d *describer) prepull() []*proto.RotationStep {
 		out = append(out, st)
 	}
 	return out
+}
+
+// What the sim said about an action that means this character never runs it: a spell or item it doesn't
+// have, a cooldown group with nothing in it, a pet or swap set it lacks.
+var neverRuns = []string{"does not know", "will not cast any spells", "never cast", "picks no potion", "No swap set", "Unknown item swap", "No pet", "No melee"}
+
+func cannotRun(vs []*proto.APLValidation) bool {
+	for _, v := range vs {
+		if v.GetLogLevel() == proto.LogLevel_Error {
+			return true
+		}
+		for _, w := range neverRuns {
+			if v.GetLogLevel() == proto.LogLevel_Warning && strings.Contains(v.GetValidation(), w) {
+				return true
+			}
+		}
+	}
+	return false
+}
+
+// Leaves out of the words every action the sim's checks of the rotation say this character can't run.
+func (d *describer) withStats(stats *proto.APLStats) *describer {
+	if stats == nil {
+		return d
+	}
+	d.dead, d.deadPrepull = map[[2]int]bool{}, map[int]bool{}
+	for i, a := range stats.GetPriorityList() {
+		d.dead[[2]int{-1, i}] = cannotRun(a.GetValidations())
+	}
+	for g, grp := range stats.GetGroups() {
+		for i, a := range grp.GetActions() {
+			d.dead[[2]int{g, i}] = cannotRun(a.GetValidations())
+		}
+	}
+	for i, a := range stats.GetPrepullActions() {
+		d.deadPrepull[i] = cannotRun(a.GetValidations())
+	}
+	return d
 }
 
 func (d *describer) action(a *proto.APLAction) string {
