@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"runtime"
 	"sort"
+	"strings"
 	"sync"
 	"time"
 
@@ -99,7 +100,16 @@ func Search(req *proto.RotationSearchRequest) (result *proto.RotationSearchResul
 		StartScore: startScore,
 		Candidates: s.simmed,
 		Changes:    changes,
+		Steps:      steps(best),
 	}
+}
+
+func steps(items []*proto.APLListItem) []*proto.RotationStep {
+	out := make([]*proto.RotationStep, len(items))
+	for i, it := range items {
+		out[i] = &proto.RotationStep{Ability: label(it), Conditional: it.GetAction().GetCondition() != nil}
+	}
+	return out
 }
 
 func errorResult(msg string) *proto.RotationSearchResult {
@@ -322,8 +332,11 @@ func walk(m protoreflect.Message, visit func(int32)) {
 	})
 }
 
-// A short name for an action: the spell it casts, or its kind.
+// A short name for an action: the spell it casts, the group it runs, or its kind.
 func label(it *proto.APLListItem) string {
+	if g := it.GetAction().GetGroupReference(); g != nil && g.GroupName != "" {
+		return g.GroupName
+	}
 	a := it.GetAction().ProtoReflect()
 	fd := a.WhichOneof(a.Descriptor().Oneofs().ByName("action"))
 	if fd == nil {
@@ -336,7 +349,7 @@ func label(it *proto.APLListItem) string {
 		}
 	})
 	if name == "" {
-		return string(fd.Name())
+		return strings.ReplaceAll(string(fd.Name()), "_", " ")
 	}
 	return name
 }

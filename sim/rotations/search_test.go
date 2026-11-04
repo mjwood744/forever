@@ -75,6 +75,19 @@ func TestSearchMovesACooldownAboveTheFiller(t *testing.T) {
 	}
 }
 
+// The steps name the rotation found's actions in its order, for the page to list.
+func TestSearchStepsFollowTheRotation(t *testing.T) {
+	res := search(t, mageRequest(cast(frostbolt), cast(fireBlast)))
+	if len(res.Steps) != len(res.Rotation.PriorityList) {
+		t.Fatalf("%d steps for %d actions, want one each", len(res.Steps), len(res.Rotation.PriorityList))
+	}
+	for i, it := range res.Rotation.PriorityList {
+		if want := familyName(castSpellID(it)); res.Steps[i].Ability != want {
+			t.Errorf("step %d is %q, want %q", i+1, res.Steps[i].Ability, want)
+		}
+	}
+}
+
 func TestSearchNeedsAList(t *testing.T) {
 	res := Search(&proto.RotationSearchRequest{Request: mageRequest()})
 	if res.Error == nil {
