@@ -3365,10 +3365,10 @@
 			"death": "Death chance"
 		},
 		"rotation": {
-			"title": "Rotation, in order",
-			"healer": "The rotation finder doesn't cover healers yet. The sims heal with their built-in plan for the class: the biggest heal when health is low, a heal over time kept up, and smaller heals when health is near full.",
-			"gain": "This order gives {{gain}}% more {{unit}} than the sims' starting rotation for this build.",
-			"same": "The sims' starting rotation for this build was already the best they found.",
+			"title": "Priority list, top first",
+			"healer": "The priority finder doesn't cover healers yet. The sims heal with their built-in plan for the class: the biggest heal when health is low, a heal over time kept up, and smaller heals when health is near full.",
+			"gain": "Each press, use the first ability whose condition holds. This order gives {{gain}}% more {{unit}} than the sims' starting list for this build.",
+			"same": "Each press, use the first ability whose condition holds. The sims' starting list for this build was already the best they found.",
 			"prepull": "Before the pull",
 			"when": "when {{when}}"
 		}
