@@ -22,8 +22,31 @@ export const Improved: Story = {
 			score: 199.4,
 			candidates: 255,
 			changes: ['Added Fire Blast at the top', 'Added Fireball at the top', 'Moved Fire Blast above Fireball', 'Added Shoot at the bottom'],
+			steps: [
+				{ ability: 'Fire Blast', conditional: false },
+				{ ability: 'Fireball', conditional: false },
+				{ ability: 'Evocation', conditional: true },
+				{ ability: 'Shoot', conditional: false },
+			],
+		},
+		onUndo: fn(),
+	},
+};
+export const Unchanged: Story = {
+	args: {
+		unit: 'TPS',
+		result: {
+			startScore: 812.5,
+			score: 812.5,
+			candidates: 64,
+			changes: [],
+			steps: [
+				{ ability: 'Sunder Armor', conditional: false },
+				{ ability: 'Heroic Strike', conditional: true },
+			],
 		},
 	},
 };
-export const Unchanged: Story = { args: { unit: 'TPS', result: { startScore: 812.5, score: 812.5, candidates: 64, changes: [] } } };
-export const Failed: Story = { args: { error: 'HTTP 404 from /rotationSearch' } };
+export const Failed: Story = {
+	args: { error: 'HTTP 404 from /rotationSearch' },
+};

@@ -7980,15 +7980,61 @@
 						"run": {
 							"type": "string"
 						},
-						"improved": {
+						"headline_gain": {
 							"type": "string"
 						},
-						"unchanged": {
+						"headline_better": {
+							"type": "string"
+						},
+						"headline_same": {
+							"type": "string"
+						},
+						"score_improved": {
+							"type": "string"
+						},
+						"score_same": {
+							"type": "string"
+						},
+						"steps_intro": {
+							"type": "string"
+						},
+						"conditional": {
+							"type": "string"
+						},
+						"applied": {
+							"type": "string"
+						},
+						"undo": {
+							"type": "string"
+						},
+						"details": {
+							"type": "string"
+						},
+						"details_count": {
+							"type": "string"
+						},
+						"details_changes": {
 							"type": "string"
 						}
 					},
 					"additionalProperties": false,
-					"required": ["title", "description", "run", "improved", "unchanged"]
+					"required": [
+						"title",
+						"description",
+						"run",
+						"headline_gain",
+						"headline_better",
+						"headline_same",
+						"score_improved",
+						"score_same",
+						"steps_intro",
+						"conditional",
+						"applied",
+						"undo",
+						"details",
+						"details_count",
+						"details_changes"
+					]
 				},
 				"saved_rotations": {
 					"type": "object",

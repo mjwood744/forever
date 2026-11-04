@@ -2232,10 +2232,20 @@
 		},
 		"search": {
 			"title": "Find the best rotation",
-			"description": "Sims changes to this rotation one at a time, moving, removing and adding the abilities the character has at its level, and keeps each change that raises {{unit}}. The result fits this build's talents, gear and level. It takes up to a minute.",
+			"description": "Tries changes to this rotation and keeps the ones that raise {{unit}} for this build's talents, gear and level. It takes up to a minute.",
 			"run": "Find best rotation",
-			"improved": "{{unit}} went from {{from}} to {{to}} over {{count}} rotations simmed. The rotation is now the one found:",
-			"unchanged": "No change raised {{unit}} above {{from}} ({{count}} rotations simmed), so the rotation stays as it was."
+			"headline_gain": "{{gain}}% more {{unit}}",
+			"headline_better": "Found a better rotation",
+			"headline_same": "Your rotation is already the best found",
+			"score_improved": "{{to}} {{unit}}, up from {{from}}",
+			"score_same": "{{from}} {{unit}}, nothing tried beat it",
+			"steps_intro": "Use the first ability on this list that is ready:",
+			"conditional": "(only when its conditions are met)",
+			"applied": "This rotation has replaced yours in the editor.",
+			"undo": "Undo, put my old rotation back",
+			"details": "Details",
+			"details_count": "{{count}} rotations were simmed to find this one.",
+			"details_changes": "Changes made, in order:"
 		},
 		"saved_rotations": {
 			"title": "Saved Rotations",

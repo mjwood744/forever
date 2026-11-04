@@ -531,6 +531,13 @@ message RotationSearchResult {
 	int32 candidates = 4; // Lists simmed.
 	repeated string changes = 5; // Each change kept, in order, e.g. "Moved Frostbolt above Fire Blast".
 	ErrorOutcome error = 6;
+	// The rotation found as the page shows it: its shown actions, top priority first.
+	repeated RotationStep steps = 7;
+}
+
+message RotationStep {
+	string ability = 1; // The spell the action casts, or the group it runs.
+	bool conditional = 2; // The action runs only when its condition holds.
 }
 
 message RaidSimRequestSplitRequest {
