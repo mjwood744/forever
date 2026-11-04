@@ -1,8 +1,7 @@
-import type { RotationSearchResult } from '@generated/proto/api';
+import type { RotationSearchResult, RotationStep } from '@generated/proto/api';
 import { APLRotation } from '@generated/proto/apl';
 import i18n from '@i18n/config';
 import { useSimHost } from '@sim/context/SimHostContext';
-import { Accordion, AccordionItem } from '@ui-kit/Accordion';
 import { Button } from '@ui-kit/Button';
 import { ContentBlock } from '@ui-kit/ContentBlock';
 import { Notice } from '@ui-kit/Notice';
@@ -14,15 +13,28 @@ export interface RotationSearchViewProps {
 	unit: string;
 	running: boolean;
 	disabled?: boolean;
-	result?: Pick<RotationSearchResult, 'score' | 'startScore' | 'candidates' | 'changes' | 'steps'>;
+	result?: Pick<RotationSearchResult, 'score' | 'startScore' | 'candidates' | 'changes' | 'steps' | 'prepull'>;
 	error?: string;
 	// Shown once a better rotation replaced the player's; puts the old one back.
 	onUndo?: () => void;
 	onRun: () => void;
 }
 
+// One ability a line, with when it is used under it; a group's own abilities are listed inside it.
+// A pre-pull step's line is its timing as it stands, e.g. "1s before the pull".
+const StepList = ({ steps, timing, testId }: { steps: RotationStep[]; timing?: boolean; testId?: string }) => (
+	<ol className="mb-0 flex flex-col gap-1 pl-8" data-testid={testId}>
+		{steps.map((step, i) => (
+			<li key={i}>
+				<span className="font-bold">{step.ability}</span>
+				{step.when && <span className="block text-sm text-muted">{timing ? step.when : i18n.t('rotation_tab.search.when', { when: step.when })}</span>}
+				{step.steps.length > 0 && <StepList steps={step.steps} />}
+			</li>
+		))}
+	</ol>
+);
+
 export const RotationSearchView = ({ unit, running, disabled, result, error, onUndo, onRun }: RotationSearchViewProps) => {
-	const [open, setOpen] = useState<string[]>([]);
 	const improved = !!result && result.changes.length > 0;
 	const gain = result && result.startScore > 0 ? ((result.score / result.startScore - 1) * 100).toFixed(1) : undefined;
 	const figures = result && {
@@ -54,15 +66,24 @@ export const RotationSearchView = ({ unit, running, disabled, result, error, onU
 								{improved ? i18n.t('rotation_tab.search.score_improved', figures) : i18n.t('rotation_tab.search.score_same', figures)}
 							</span>
 						</div>
+						{result.prepull.length > 0 && (
+							<div>
+								<p className="mb-1 font-bold">{i18n.t('rotation_tab.search.prepull_intro')}</p>
+								<StepList steps={result.prepull} timing testId="rotation-search-prepull" />
+							</div>
+						)}
 						{result.steps.length > 0 && (
 							<div>
-								<p className="mb-1">{i18n.t('rotation_tab.search.steps_intro')}</p>
-								<ol className="mb-0 pl-6" data-testid="rotation-search-steps">
-									{result.steps.map((step, i) => (
-										<li key={i}>
-											<span className="font-bold">{step.ability}</span>
-											{step.conditional && <span className="text-muted"> {i18n.t('rotation_tab.search.conditional')}</span>}
-										</li>
+								<p className="mb-1 font-bold">{i18n.t('rotation_tab.search.steps_intro')}</p>
+								<StepList steps={result.steps} testId="rotation-search-steps" />
+							</div>
+						)}
+						{improved && (
+							<div>
+								<p className="mb-1 font-bold">{i18n.t('rotation_tab.search.details_changes')}</p>
+								<ol className="mb-0 pl-8">
+									{result.changes.map((c, i) => (
+										<li key={i}>{c}</li>
 									))}
 								</ol>
 							</div>
@@ -73,23 +94,7 @@ export const RotationSearchView = ({ unit, running, disabled, result, error, onU
 								{i18n.t('rotation_tab.search.undo')}
 							</Button>
 						)}
-						<Accordion value={open} onValueChange={setOpen} testId="rotation-search-details">
-							<AccordionItem value="details" title={i18n.t('rotation_tab.search.details')}>
-								<div className="flex flex-col gap-2">
-									<p className="mb-0">{i18n.t('rotation_tab.search.details_count', figures)}</p>
-									{improved && (
-										<div>
-											<p className="mb-1">{i18n.t('rotation_tab.search.details_changes')}</p>
-											<ol className="mb-0 pl-6">
-												{result.changes.map((c, i) => (
-													<li key={i}>{c}</li>
-												))}
-											</ol>
-										</div>
-									)}
-								</div>
-							</AccordionItem>
-						</Accordion>
+						<p className="mb-0 text-sm text-muted">{i18n.t('rotation_tab.search.details_count', figures)}</p>
 					</div>
 				)}
 			</div>

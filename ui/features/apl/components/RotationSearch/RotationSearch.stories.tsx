@@ -15,18 +15,34 @@ type Story = StoryObj<typeof meta>;
 
 export const Idle: Story = {};
 export const Running: Story = { args: { running: true } };
+// A Destruction warlock's search, from the destro build in its preset gear.
 export const Improved: Story = {
 	args: {
 		result: {
-			startScore: 184.2,
-			score: 199.4,
-			candidates: 255,
-			changes: ['Added Fire Blast at the top', 'Added Fireball at the top', 'Moved Fire Blast above Fireball', 'Added Shoot at the bottom'],
+			startScore: 731.6,
+			score: 746.3,
+			candidates: 112,
+			changes: ['Added Shoot at the bottom', 'Moved Bane of Doom above Your assigned curse', 'Moved Immolate to the top'],
+			prepull: [
+				{ ability: 'Incinerate', conditional: false, when: '', steps: [] },
+				{ ability: 'Send your pet in', conditional: true, when: '1s before the pull', steps: [] },
+				{ ability: 'Immolate', conditional: true, when: '0.5s before the pull', steps: [] },
+			],
 			steps: [
-				{ ability: 'Fire Blast', conditional: false },
-				{ ability: 'Fireball', conditional: false },
-				{ ability: 'Evocation', conditional: true },
-				{ ability: 'Shoot', conditional: false },
+				{ ability: 'Immolate', conditional: false, when: '', steps: [] },
+				{ ability: 'Any other cooldown that is ready', conditional: false, when: '', steps: [] },
+				{ ability: 'Bane of Doom', conditional: true, when: 'the time left in the fight is above 60s', steps: [] },
+				{ ability: 'Your assigned curse', conditional: true, when: 'your assigned curse is not on the target', steps: [] },
+				{ ability: 'Bane of Havoc', conditional: true, when: 'the number of enemies is above 1 and Bane of Havoc is not active', steps: [] },
+				{ ability: 'Amplify Curse', conditional: true, when: 'Bane of Doom is not on the target and Bane of Agony is not on the target', steps: [] },
+				{ ability: 'Bane of Agony', conditional: true, when: 'Bane of Doom is not on the target and Bane of Agony is not on the target', steps: [] },
+				{ ability: 'Corruption', conditional: false, when: '', steps: [] },
+				{ ability: 'Conflagrate', conditional: true, when: 'Immolate is on the target', steps: [] },
+				{ ability: 'Shadowburn', conditional: false, when: '', steps: [] },
+				{ ability: 'Life Tap', conditional: true, when: 'your mana is below 30% and the time left in the fight is above 60s', steps: [] },
+				{ ability: 'Incinerate', conditional: false, when: '', steps: [] },
+				{ ability: 'Life Tap', conditional: false, when: '', steps: [] },
+				{ ability: 'Shoot', conditional: false, when: '', steps: [] },
 			],
 		},
 		onUndo: fn(),
@@ -40,9 +56,10 @@ export const Unchanged: Story = {
 			score: 812.5,
 			candidates: 64,
 			changes: [],
+			prepull: [],
 			steps: [
-				{ ability: 'Sunder Armor', conditional: false },
-				{ ability: 'Heroic Strike', conditional: true },
+				{ ability: 'Sunder Armor', conditional: false, when: '', steps: [] },
+				{ ability: 'Heroic Strike', conditional: true, when: 'your rage is at least 50', steps: [] },
 			],
 		},
 	},
