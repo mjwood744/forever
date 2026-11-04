@@ -11351,6 +11351,59 @@
 					"additionalProperties": false,
 					"required": ["tps", "hps", "dps", "dtps", "oom", "death"]
 				},
+				"keys": {
+					"type": "object",
+					"properties": {
+						"title": {
+							"type": "string"
+						},
+						"intro": {
+							"type": "string"
+						},
+						"detail": {
+							"type": "string"
+						},
+						"main": {
+							"type": "string"
+						},
+						"when": {
+							"type": "string"
+						},
+						"nothing_yet": {
+							"type": "string"
+						},
+						"extra": {
+							"type": "string"
+						},
+						"none": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false,
+					"required": ["title", "intro", "detail", "main", "when", "nothing_yet", "extra", "none"]
+				},
+				"opener": {
+					"type": "object",
+					"properties": {
+						"title": {
+							"type": "string"
+						},
+						"intro": {
+							"type": "string"
+						},
+						"at": {
+							"type": "string"
+						},
+						"before": {
+							"type": "string"
+						},
+						"none": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false,
+					"required": ["title", "intro", "at", "before", "none"]
+				},
 				"rotation": {
 					"type": "object",
 					"properties": {
@@ -11394,6 +11447,8 @@
 				"unknown_talents",
 				"preset_gear",
 				"stats",
+				"keys",
+				"opener",
 				"rotation"
 			]
 		},

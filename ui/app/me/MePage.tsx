@@ -31,6 +31,8 @@ import { useEffect, useState } from 'react';
 import { ACTIVITIES, ACTIVITY_KEYS } from '../group/activities';
 import { fetchDungeons, runActivity, withDatabase } from '../group/activity_api';
 import { type CharacterPlayer, characterPlayer } from './character_player';
+import { type DuoKeys, fetchKeys, fetchOpener, type OpenerCast } from './keys_api';
+import { Opener, YourKeys } from './KeysView';
 
 // The characters pasted so far, by name, so a reload or a second visit keeps them.
 const STORAGE_KEY = '__meCharacters__';
@@ -68,6 +70,8 @@ interface Ran {
 	/** The other characters it ran with. */
 	with: string[];
 	rotation?: RotationSearchResult;
+	/** The first seconds of the pull, every character's casts. */
+	opener?: OpenerCast[];
 	warnings: string[];
 }
 
@@ -102,6 +106,7 @@ export const MePage = () => {
 	const [running, setRunning] = useState(false);
 	const [error, setError] = useState('');
 	const [ran, setRan] = useState<Record<string, Ran>>({});
+	const [keys, setKeys] = useState<Record<string, DuoKeys | undefined>>({});
 
 	const load = async (saved: Saved[]) => {
 		const out: Loaded[] = [];
@@ -118,6 +123,17 @@ export const MePage = () => {
 			.then(setLoaded)
 			.catch(() => writeSaved([]));
 	}, []);
+
+	useEffect(() => {
+		for (const l of loaded) {
+			const id = `${l.character.classToken}:${l.character.level}`;
+			if (id in keys) continue;
+			fetchKeys(l.character.classToken, l.character.level)
+				.then(k => setKeys(old => ({ ...old, [id]: k })))
+				.catch(e => setError(String(e)));
+		}
+	}, [loaded, keys]);
+	const keysOf = (l: Loaded) => keys[`${l.character.classToken}:${l.character.level}`];
 
 	const here = loaded[current];
 	const level = here?.character.level ?? 60;
@@ -178,28 +194,34 @@ export const MePage = () => {
 		const tank = group.findIndex(l => l.built.role === 'tank');
 		const goal = goalFor(PlayerSpecs.fromProto(here.built.entry.spec));
 		try {
+			const withDb = await withDatabase(players);
+			const request = (searched?: RotationSearchResult) =>
+				RaidSimRequest.create({
+					raid: Raid.create({
+						parties: [
+							Party.create({
+								// the character on show plays the priority list the search found
+								players: searched?.rotation ? [{ ...withDb[0], rotation: searched.rotation }, ...withDb.slice(1)] : withDb,
+								buffs: PartyBuffs.create(),
+							}),
+						],
+						buffs: RaidBuffs.create(),
+						debuffs: Debuffs.create(),
+						tanks: tank >= 0 ? [UnitReference.create({ type: UnitReference_Type.Player, index: tank })] : [],
+					}),
+					encounter: Encounter.defaultEncounterProto(),
+					simOptions: SimOptions.create({ iterations: 300, randomSeed: BigInt(Math.floor(Math.random() * 2 ** 31)) }),
+					type: SimType.SimTypeRaid,
+				});
 			const [activityResult, rotation] = await Promise.all([
 				runActivity({ players, tank: Math.max(0, tank), activity, level, dungeon, iterations: ITERATIONS, untanked: tank < 0 }),
 				// The sims heal with a built-in plan per healer, which has no priority list to search.
-				here.built.role === 'healer'
-					? Promise.resolve(undefined)
-					: withDatabase(players).then(withDb =>
-							searchRotation(
-								RaidSimRequest.create({
-									raid: Raid.create({
-										parties: [Party.create({ players: withDb, buffs: PartyBuffs.create() })],
-										buffs: RaidBuffs.create(),
-										debuffs: Debuffs.create(),
-										tanks: tank >= 0 ? [UnitReference.create({ type: UnitReference_Type.Player, index: tank })] : [],
-									}),
-									encounter: Encounter.defaultEncounterProto(),
-									simOptions: SimOptions.create({ iterations: 300, randomSeed: BigInt(Math.floor(Math.random() * 2 ** 31)) }),
-									type: SimType.SimTypeRaid,
-								}),
-								goal,
-							),
-						),
+				here.built.role === 'healer' ? Promise.resolve(undefined) : searchRotation(request(), goal),
 			]);
+			const opener = await fetchOpener(request(rotation?.error ? undefined : rotation)).catch((e: unknown) => {
+				setError(String(e));
+				return undefined;
+			});
 			if (activityResult.error) setError(activityResult.error.message);
 			if (rotation?.error) setError(rotation.error.message);
 			setRan(r => {
@@ -209,6 +231,7 @@ export const MePage = () => {
 					next[keyOf(l)] = {
 						summary: activityResult.players[i],
 						rotation: l === here ? (rotation?.error ? undefined : rotation) : old?.rotation,
+						opener: l === here ? opener : old?.opener,
 						warnings: activityResult.warnings,
 						with: group.filter(o => o !== l).map(o => o.character.name),
 					};
@@ -332,11 +355,34 @@ export const MePage = () => {
 				</div>
 			)}
 
-			{here && result && role === 'healer' && <Notice level="info">{i18n.t('me.rotation.healer')}</Notice>}
+			{loaded.length > 0 && (
+				<YourKeys
+					characters={[...(here ? [here] : []), ...loaded.filter(l => l !== here)].map(l => ({
+						name: l.character.name,
+						detail: i18n.t('me.keys.detail', {
+							role: i18n.t(`group.roles.${l.built.role}`),
+							from: keysOf(l)?.from ?? '',
+							level: l.character.level,
+						}),
+						keys: keysOf(l),
+					}))}
+				/>
+			)}
+
+			{here && result?.opener && (
+				<Opener
+					casts={result.opener}
+					keysOf={player => {
+						const l = loaded.find(x => x.character.name === player);
+						return l && keysOf(l);
+					}}
+				/>
+			)}
+
 			{here && rot && (
-				<section className="rounded-lg border border-gray-700 bg-gray-900 p-4">
-					<h2 className="mb-1 text-sm tracking-wider text-gray-400 uppercase">{i18n.t('me.rotation.title')}</h2>
-					<p className="mb-3 text-sm text-gray-400">{gain ? i18n.t('me.rotation.gain', { gain, unit }) : i18n.t('me.rotation.same')}</p>
+				<details className="rounded-lg border border-gray-700 bg-gray-900 p-4">
+					<summary className="cursor-pointer text-sm text-gray-400">{i18n.t('me.rotation.title')}</summary>
+					<p className="mt-2 mb-3 text-sm text-gray-400">{gain ? i18n.t('me.rotation.gain', { gain, unit }) : i18n.t('me.rotation.same')}</p>
 					{rot.prepull.length > 0 && (
 						<>
 							<p className="mb-1 font-bold">{i18n.t('me.rotation.prepull')}</p>
@@ -344,7 +390,7 @@ export const MePage = () => {
 						</>
 					)}
 					<Steps steps={rot.steps} />
-				</section>
+				</details>
 			)}
 
 			{loaded.length > 0 && (

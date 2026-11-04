@@ -13,6 +13,7 @@ import (
 	"os/signal"
 	"runtime/debug"
 	"runtime/pprof"
+	"strconv"
 	"strings"
 	"sync"
 	"syscall"
@@ -27,7 +28,9 @@ import (
 	proto "github.com/wowsims/forever/sim/core/proto"
 	reforgeoptimizer "github.com/wowsims/forever/sim/core/reforge_optimizer"
 	"github.com/wowsims/forever/sim/core/simsignals"
+	"github.com/wowsims/forever/sim/opener"
 	"github.com/wowsims/forever/sim/rotations"
+	"github.com/wowsims/forever/sim/trios"
 
 	googleProto "google.golang.org/protobuf/proto"
 )
@@ -384,6 +387,33 @@ func (s *server) runServer(useFS bool, host string, launchBrowser bool, simName 
 		http.Handle(route, corsMiddleware(http.HandlerFunc(handleAPI)))
 	}
 
+	// The FMS macro keys a class has at a level and when the sims press each one, for the My characters page.
+	http.Handle("/duoKeys", corsMiddleware(http.HandlerFunc(func(resp http.ResponseWriter, req *http.Request) {
+		level, _ := strconv.Atoi(req.URL.Query().Get("level"))
+		keys, ok := trios.KeysFor(req.URL.Query().Get("class"), int32(level))
+		if !ok {
+			resp.WriteHeader(http.StatusNotFound)
+			return
+		}
+		resp.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(resp).Encode(keys)
+	})))
+	// What each player casts in the first 20 seconds of one simmed fight, for the My characters page.
+	http.Handle("/opener", corsMiddleware(http.HandlerFunc(func(resp http.ResponseWriter, req *http.Request) {
+		body, err := io.ReadAll(req.Body)
+		if err != nil {
+			resp.WriteHeader(http.StatusBadRequest)
+			return
+		}
+		msg := &proto.RaidSimRequest{}
+		if err := googleProto.Unmarshal(body, msg); err != nil {
+			resp.WriteHeader(http.StatusBadRequest)
+			return
+		}
+		casts, failed := opener.Casts(msg, 20)
+		resp.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(resp).Encode(map[string]any{"casts": casts, "error": failed})
+	})))
 	http.HandleFunc("/version", func(resp http.ResponseWriter, req *http.Request) {
 		msg := fmt.Sprintf(`{"version": "%s", "outdated": %d}`, Version, outdated)
 		resp.Write([]byte(msg))

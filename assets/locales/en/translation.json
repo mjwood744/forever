@@ -3364,8 +3364,25 @@
 			"oom": "Seconds out of mana",
 			"death": "Death chance"
 		},
+		"keys": {
+			"title": "Your keys",
+			"intro": "Mash the blue key. Press the others only when what's next to them happens. The macros pick the spell for you.",
+			"detail": "{{role}} · level {{level}} · {{from}}'s keys",
+			"main": "Most of the time",
+			"when": "When {{when}}",
+			"nothing_yet": "Nothing on this key yet at this level",
+			"extra": "Only when you need them:",
+			"none": "The sims have no keys for this class yet."
+		},
+		"opener": {
+			"title": "The first 20 seconds of a pull",
+			"intro": "One simmed pull, press by press, for everyone in the group.",
+			"at": "{{at}}s",
+			"before": "pre-pull",
+			"none": "Nothing in the first 20 seconds came from your keys."
+		},
 		"rotation": {
-			"title": "Priority list, top first",
+			"title": "Sim details: the priority list behind the keys",
 			"healer": "The priority finder doesn't cover healers yet. The sims heal with their built-in plan for the class: the biggest heal when health is low, a heal over time kept up, and smaller heals when health is near full.",
 			"gain": "Each press, use the first ability whose condition holds. This order gives {{gain}}% more {{unit}} than the sims' starting list for this build.",
 			"same": "Each press, use the first ability whose condition holds. The sims' starting list for this build was already the best they found.",

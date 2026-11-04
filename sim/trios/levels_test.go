@@ -22,22 +22,6 @@ import (
 // talents.json (each character's points at the level) and keys.json (each key's casts at the level,
 // every rank known at the level, highest first).
 
-type keyItem struct {
-	Kind   string          `json:"kind"`
-	Spells [][]int32       `json:"spells"`
-	Target json.RawMessage `json:"target"`
-	Cond   *string         `json:"cond"`
-}
-
-type charKeys struct {
-	Class  string `json:"class"`
-	Trio   int    `json:"trio"`
-	Levels map[string]struct {
-		Keys    map[string][]keyItem `json:"keys"`
-		Missing []string             `json:"missing"`
-	} `json:"levels"`
-}
-
 var (
 	questGear  map[string]map[string][]int32
 	talentsAt  map[string]map[string]string
@@ -177,19 +161,6 @@ type trio struct {
 	tankRef  string // the tank as an APL unit
 	petRef   string // Hawke's pet, "" without one
 	otherRef string // the healer's second heal target; "" means player 2
-}
-
-// The 6-level bracket a level's keys come from: the last one reached. Gear and talents are per level.
-// The highest level at or below lvl that the character's keys are written for: every 6 levels, plus
-// any level a respec adds keys at.
-func bracket(ck charKeys, lvl int32) string {
-	best := int32(6)
-	for l := range ck.Levels {
-		if n, err := strconv.Atoi(l); err == nil && int32(n) <= lvl && int32(n) > best {
-			best = int32(n)
-		}
-	}
-	return strconv.Itoa(int(best))
 }
 
 func baseConsumes() *proto.ConsumesSpec { return &proto.ConsumesSpec{} }
