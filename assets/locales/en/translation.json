@@ -2239,13 +2239,13 @@
 			"headline_same": "Your rotation is already the best found",
 			"score_improved": "{{to}} {{unit}}, up from {{from}}",
 			"score_same": "{{from}} {{unit}}, nothing tried beat it",
-			"steps_intro": "Use the first ability on this list that is ready:",
-			"conditional": "(only when its conditions are met)",
+			"prepull_intro": "Before the pull",
+			"steps_intro": "In the fight, use the first ability on this list that is ready",
+			"when": "when {{when}}",
 			"applied": "This rotation has replaced yours in the editor.",
 			"undo": "Undo, put my old rotation back",
-			"details": "Details",
 			"details_count": "{{count}} rotations were simmed to find this one.",
-			"details_changes": "Changes made, in order:"
+			"details_changes": "What changed from your rotation"
 		},
 		"saved_rotations": {
 			"title": "Saved Rotations",

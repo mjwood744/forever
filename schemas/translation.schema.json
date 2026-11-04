@@ -7998,16 +7998,16 @@
 						"steps_intro": {
 							"type": "string"
 						},
-						"conditional": {
+						"prepull_intro": {
+							"type": "string"
+						},
+						"when": {
 							"type": "string"
 						},
 						"applied": {
 							"type": "string"
 						},
 						"undo": {
-							"type": "string"
-						},
-						"details": {
 							"type": "string"
 						},
 						"details_count": {
@@ -8027,11 +8027,11 @@
 						"headline_same",
 						"score_improved",
 						"score_same",
+						"prepull_intro",
 						"steps_intro",
-						"conditional",
+						"when",
 						"applied",
 						"undo",
-						"details",
 						"details_count",
 						"details_changes"
 					]

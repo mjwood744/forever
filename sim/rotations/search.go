@@ -3,12 +3,14 @@ package rotations
 
 import (
 	"fmt"
+	"regexp"
 	"runtime"
 	"sort"
 	"strings"
 	"sync"
 	"time"
 
+	"github.com/wowsims/forever/assets/database"
 	"github.com/wowsims/forever/sim/core"
 	"github.com/wowsims/forever/sim/core/proto"
 	"github.com/wowsims/forever/sim/core/spelldata"
@@ -94,22 +96,16 @@ func Search(req *proto.RotationSearchRequest) (result *proto.RotationSearchResul
 	out := googleProto.Clone(start).(*proto.APLRotation)
 	out.Type = proto.APLRotation_TypeAPL
 	out.PriorityList = append(append([]*proto.APLListItem{}, best...), hidden...)
+	words := newDescriber(out)
 	return &proto.RotationSearchResult{
 		Rotation:   out,
 		Score:      bestScore,
 		StartScore: startScore,
 		Candidates: s.simmed,
 		Changes:    changes,
-		Steps:      steps(best),
+		Steps:      words.steps(best, 0),
+		Prepull:    words.prepull(),
 	}
-}
-
-func steps(items []*proto.APLListItem) []*proto.RotationStep {
-	out := make([]*proto.RotationStep, len(items))
-	for i, it := range items {
-		out[i] = &proto.RotationStep{Ability: label(it), Conditional: it.GetAction().GetCondition() != nil}
-	}
-	return out
 }
 
 func errorResult(msg string) *proto.RotationSearchResult {
@@ -294,12 +290,37 @@ func castSpellID(it *proto.APLListItem) int32 {
 	return it.GetAction().GetCastSpell().GetSpellId().GetSpellId()
 }
 
+// A spell's name from the spell store, or from the database's spell names for a spell whose row has none.
 func familyName(id int32) string {
-	if s := spelldata.Find(id); s != nil {
+	if s := spelldata.Find(id); s != nil && s.Name != "" {
 		return s.Name
+	}
+	if name := dbNames().spells[id]; name != "" {
+		return name
 	}
 	return fmt.Sprint(id)
 }
+
+var camelWords = regexp.MustCompile(`([a-z])([A-Z])`)
+
+type names struct{ spells, items map[int32]string }
+
+var dbNames = sync.OnceValue(func() names {
+	db := database.Load()
+	n := names{spells: map[int32]string{}, items: map[int32]string{}}
+	for _, s := range db.SpellIcons {
+		n.spells[s.Id] = s.Name
+	}
+	for _, it := range db.Items {
+		n.items[it.Id] = it.Name
+	}
+	for _, it := range db.ItemIcons {
+		if n.items[it.Id] == "" {
+			n.items[it.Id] = it.Name
+		}
+	}
+	return n
+})
 
 // The names of the spells a rotation names anywhere: in actions, conditions and groups.
 func namedSpells(rot *proto.APLRotation) map[string]bool {
@@ -309,10 +330,16 @@ func namedSpells(rot *proto.APLRotation) map[string]bool {
 }
 
 func walk(m protoreflect.Message, visit func(int32)) {
-	if id, ok := m.Interface().(*proto.ActionID); ok {
+	walkIDs(m, func(id *proto.ActionID) {
 		if sid := id.GetSpellId(); sid != 0 {
 			visit(sid)
 		}
+	})
+}
+
+func walkIDs(m protoreflect.Message, visit func(*proto.ActionID)) {
+	if id, ok := m.Interface().(*proto.ActionID); ok {
+		visit(id)
 		return
 	}
 	m.Range(func(fd protoreflect.FieldDescriptor, v protoreflect.Value) bool {
@@ -322,34 +349,50 @@ func walk(m protoreflect.Message, visit func(int32)) {
 		switch {
 		case fd.IsList():
 			for i := 0; i < v.List().Len(); i++ {
-				walk(v.List().Get(i).Message(), visit)
+				walkIDs(v.List().Get(i).Message(), visit)
 			}
 		case fd.IsMap():
 		default:
-			walk(v.Message(), visit)
+			walkIDs(v.Message(), visit)
 		}
 		return true
 	})
 }
 
-// A short name for an action: the spell it casts, the group it runs, or its kind.
+// The name of the first spell or item a message names, or "" when it names none.
+func firstName(m protoreflect.Message) (name string) {
+	walkIDs(m, func(id *proto.ActionID) {
+		if name != "" {
+			return
+		}
+		if sid := id.GetSpellId(); sid != 0 {
+			name = familyName(sid)
+		} else if iid := id.GetItemId(); iid != 0 {
+			if name = dbNames().items[iid]; name == "" {
+				name = fmt.Sprintf("item %d", iid)
+			}
+		} else if other := id.GetOtherId(); other != proto.OtherAction_OtherActionNone {
+			// OtherActionResourcePotion reads "Resource Potion".
+			name = strings.TrimSpace(camelWords.ReplaceAllString(strings.TrimPrefix(other.String(), "OtherAction"), "$1 $2"))
+		}
+	})
+	return name
+}
+
+// A short name for an action, as the page lists it.
 func label(it *proto.APLListItem) string {
-	if g := it.GetAction().GetGroupReference(); g != nil && g.GroupName != "" {
-		return g.GroupName
-	}
-	a := it.GetAction().ProtoReflect()
-	fd := a.WhichOneof(a.Descriptor().Oneofs().ByName("action"))
+	return (&describer{}).action(it.GetAction())
+}
+
+// An action's spell or item, or its kind when it names neither.
+func kindLabel(a *proto.APLAction) string {
+	m := a.ProtoReflect()
+	fd := m.WhichOneof(m.Descriptor().Oneofs().ByName("action"))
 	if fd == nil {
 		return "an empty action"
 	}
-	name := ""
-	walk(a.Get(fd).Message(), func(id int32) {
-		if name == "" {
-			name = familyName(id)
-		}
-	})
-	if name == "" {
-		return strings.ReplaceAll(string(fd.Name()), "_", " ")
+	if name := firstName(m.Get(fd).Message()); name != "" {
+		return name
 	}
-	return name
+	return strings.ReplaceAll(string(fd.Name()), "_", " ")
 }
