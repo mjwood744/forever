@@ -21,7 +21,9 @@ services:
             dockerfile: Dockerfile
             target: prod
         image: ghcr.io/mjwood744/forever:${SIM_TAG:-trio-planning}
-        pull_policy: missing
+        # Every deploy pulls the tag again, so a redeploy picks up the image GitHub built last. With
+        # `missing`, a server that already held the tag kept running the old image.
+        pull_policy: always
         restart: unless-stopped
         # The server exits cleanly on SIGINT (its only handled signal).
         stop_signal: SIGINT
