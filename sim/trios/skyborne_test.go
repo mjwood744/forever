@@ -2,6 +2,7 @@ package trios
 
 import (
 	"encoding/json"
+	"os"
 
 	"github.com/wowsims/forever/sim/core"
 	"github.com/wowsims/forever/sim/core/proto"
@@ -20,6 +21,13 @@ func makeSkyborneTrio(lvl int32) trio {
 		pet = proto.HunterOptions_Cat
 	}
 	core.WithSpec(hk.player, &proto.Player_Hunter{Hunter: &proto.Hunter{Options: &proto.Hunter_Options{ClassOptions: &proto.HunterOptions{PetType: pet, PetUptime: 1}}}})
+	// SKY_DPS=shaman: an Elemental Shaman does the damage in Hawke's place (Wyther's keys, played with ROLE_Wyther=dps).
+	if os.Getenv("SKY_DPS") == "shaman" {
+		sh := makeTrio(2, lvl).members[0]
+		sh.player.Race = proto.Race_RaceWindshaperSkyborne
+		core.WithSpec(sh.player, &proto.Player_ElementalShaman{ElementalShaman: &proto.ElementalShaman{Options: &proto.ElementalShaman_Options{ClassOptions: &proto.ShamanOptions{}}}})
+		hk = sh
+	}
 	return trio{8, []member{wd, sk, hk}, &proto.UnitReference{Type: proto.UnitReference_Player, Index: 1}, unitPlayer(1), "", ""}
 }
 
