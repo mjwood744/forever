@@ -227,6 +227,8 @@ func makeTrio(n int, lvl int32) trio {
 	switch n {
 	case 4:
 		return makeDuoNyxxMalyce(lvl)
+	case 8:
+		return makeSkyborneTrio(lvl)
 	case 5:
 		// Duo 2: Hawke on the main screen with the Turtle tanking from 10, Wyldd following and healing it.
 		// Below 10 the mobs go for Hawke.
@@ -663,6 +665,9 @@ func buildAPL(name string, t trio, lvl int32, f fight, have map[int32]bool, drop
 			target := targetJSON(it.Target)
 			if t.n == 4 && name == "Nyxx" {
 				target = duoTarget(target, t)
+			}
+			if t.n == 8 && name == "Wyldd" {
+				target = skyborneTarget(target, t)
 			}
 			cond := p.cond
 			// Conditions that read the key's own spells.
