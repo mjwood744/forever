@@ -229,6 +229,8 @@ func makeTrio(n int, lvl int32) trio {
 		return makeDuoNyxxMalyce(lvl)
 	case 8:
 		return makeSkyborneTrio(lvl)
+	case 22:
+		return makeDruidShamanDuo(lvl)
 	case 21:
 		return makeDruidTankTrio(lvl)
 	case 5:
