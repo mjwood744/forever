@@ -1,0 +1,8 @@
+{"type":"TypeAPL","priorityList":[
+{"action":{"condition":{"cmp":{"op":"OpLe","lhs":{"currentRage":{}},"rhs":{"const":{"val":"10"}}}},"castSpell":{"spellId":{"spellId":5229}}}},
+{"action":{"condition":{"and":{"vals":[{"cmp":{"op":"OpGe","lhs":{"numberTargets":{}},"rhs":{"const":{"val":"2"}}}},{"not":{"val":{"auraIsActive":{"sourceUnit":{"type":"CurrentTarget"},"auraId":{"spellId":99}}}}}]}},"castSpell":{"spellId":{"spellId":99}}}},
+{"action":{"condition":{"cmp":{"op":"OpGe","lhs":{"numberTargets":{}},"rhs":{"const":{"val":"2"}}}},"castSpell":{"spellId":{"spellId":779}}}},
+{"action":{"castSpell":{"spellId":{"spellId":407995}}}},
+{"action":{"condition":{"not":{"val":{"dotIsActive":{"spellId":{"spellId":1328617}}}}},"castSpell":{"spellId":{"spellId":1328617}}}},
+{"action":{"condition":{"cmp":{"op":"OpGe","lhs":{"currentRage":{}},"rhs":{"const":{"val":"15"}}}},"castSpell":{"spellId":{"spellId":6807}}}}
+]}

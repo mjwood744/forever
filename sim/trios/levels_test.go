@@ -229,6 +229,8 @@ func makeTrio(n int, lvl int32) trio {
 		return makeDuoNyxxMalyce(lvl)
 	case 8:
 		return makeSkyborneTrio(lvl)
+	case 21:
+		return makeDruidTankTrio(lvl)
 	case 5:
 		// Duo 2: Hawke on the main screen with the Turtle tanking from 10, Wyldd following and healing it.
 		// Below 10 the mobs go for Hawke.
