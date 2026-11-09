@@ -28,6 +28,10 @@ func makeSkyborneTrio(lvl int32) trio {
 		core.WithSpec(sh.player, &proto.Player_ElementalShaman{ElementalShaman: &proto.ElementalShaman{Options: &proto.ElementalShaman_Options{ClassOptions: &proto.ShamanOptions{}}}})
 		hk = sh
 	}
+	// WYLDD_FERAL_GEAR=1: Wyldd heals in the solo Feral Druid's levelling gear (leather and a staff or mace).
+	if os.Getenv("WYLDD_FERAL_GEAR") != "" {
+		wd.player.Equipment = soloGear("cat", lvl)
+	}
 	return trio{8, []member{wd, sk, hk}, &proto.UnitReference{Type: proto.UnitReference_Player, Index: 1}, unitPlayer(1), "", ""}
 }
 
